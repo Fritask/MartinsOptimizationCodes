@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+	$(document).ready(function()
+	{
+		var teste = "teste teste teste";
+		var res = teste.split(" ");
+		alert(res[0]);
+		$("#IGLojasParceirasButton").mouseenter(function() {
+			if (document.getElementById("IGStoresIframe").style.display == "none")
+			{
+				document.getElementById("IGStoresIframe").style.display = "block";
+				$("#IGStoresIframe").mouseleave(function() {
+					document.getElementById("IGStoresIframe").style.display = "none";
+				});
+			}
+			else
+			{
+				document.getElementById("IGStoresIframe").style.display = "none";
+			}
+		});
+	});
+</script>
+
+<style>
+	li.yCmsComponent a:hover, li.yCmsComponent a:link {
+		text-decoration: none;
+	}
+    li.yCmsComponent:after {
+      border: none !important;
+    }
+	li.yCmsComponent {
+		background-image: linear-gradient(#F0F1F1, #F0F1F1) !important;
+		background-position: 50% 50% !important;
+		background-repeat: no-repeat !important;
+		background-size: 0% 100% !important;
+		transition: background-size .5s, color .5s !important;
+	}
+	#menuMaster {
+		background-color: rgba(255, 255, 255, 1);
+
+	}
+	li.yCmsComponent:hover, .menuLiFirst:hover {
+		background-size: 100% 100% !important;
+ 		 color: #fff !important;
+	}
+</style>
+<i class="material-icons">storefront</i>
+</head>
+
+<body>
+	<div>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<li class="yCmsComponent martins-lmenu">
+			<a href="https://www.martinsatacado.com.br/lojasmarketplace" target="_blank" title="Lojas Parceiras"><i class="material-icons">storefront</i>&nbsp;<span>Lojas parceiras</span></a>
+		</li>
+		<style>
+			li.yCmsComponent a:hover, li.yCmsComponent a:link {
+				text-decoration: none;
+			}
+			li.yCmsComponent:after {
+			border: none !important;
+			}
+			li.yCmsComponent, li.menuLiFirst {
+				background-image: linear-gradient(#F0F1F1, #F0F1F1) !important;
+				background-position: 50% 50% !important;
+				background-repeat: no-repeat !important;
+				background-size: 0% 100% !important;
+				transition: background-size .5s, color .5s !important;
+			}
+			#menuMaster {
+				background-color: rgba(255, 255, 255, 1);
+			}
+			li.yCmsComponent:hover, .menuLiFirst:hover {
+				cursor: pointer;
+				background-size: 100% 100% !important;
+				background-color: #ffffff !important;
+			}
+		</style>
+
+
+
+
+	</div>
+
+	<div class="container">
+		<iframe id="IGStoresIframe" src="https://parceiro.martins.com.br/pages/marketplace/index.html" sandbox="allow-top-navigation allow-scripts allow-forms allow-modals allow-popups" height="500" style="width: 70vw; min-width: 70vw; overflow: hidden; position: absolute; z-index: 1; border-top: none; border-left: 1px solid #808080; border-right: 1px solid #808080; border-bottom: 1px solid #808080; border-radius: 0 0 30px 30px; display: none;"></iframe>
+	</div>
+
+	
+
+</body>
+</html>

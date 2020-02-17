@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.IGIconRight {
+    position: absolute;
+    right: 4%;
+}
+
+</style>
+
+
+<script>
+    $(document).ready(function(){
+      $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+    </script>
+
+</head>
+<body>
+   
+<div class="container">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-bars"></i>&nbsp;Compre por departamento&nbsp;&nbsp;<i class="fas fa-chevron-down"></i></button>
+        <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+
+            <a class="test" tabindex="-1" href="#">Supermercado&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <!-- <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                <li><a tabindex="-1" href="#">2nd level dropdown</a></li> -->
+                <li><a href="/martins/pt/BRL/c/area-de-servico" title="- Área de Serviço">- Área de Serviço</a></li>
+                <li><a href="/martins/pt/BRL/c/bebida-alcoolica" title="- Bebida Alcoólica">- Bebida Alcoólica</a></li>
+                <li><a href="/martins/pt/BRL/c/mercearia" title="- Mercearia">- Mercearia</a></li>
+                <li><a href="/martins/pt/BRL/c/higiene-e-beleza" title="- Higiene e Beleza">- Higiene e Beleza</a></li>
+                <li><a href="/martins/pt/BRL/c/limpeza-martins" title="- Limpeza">- Limpeza</a></li>
+                <li><a href="/martins/pt/BRL/c/bebes" title="- Bebês">- Bebês</a></li>
+                <li><a href="/martins/pt/BRL/c/frios-e-laticinios" title="- Frios e Laticínios">- Frios e Laticínios</a></li>
+                <li><a href="/martins/pt/BRL/c/utilidades" title="- Utilidades">- Utilidades</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Eletrônico/Informática&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/audio-martins" title="- Áudio">- Áudio</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/beleza-e-saude" title="- Beleza e Saúde">- Beleza e Saúde</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/informatica-martins" title="- Informática">- Informática</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/eletronico-drone" title="- Drone">- Drone</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/tv-e-monitores" title="- TV e Monitores">- TV e Monitores</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Telefonia&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/acessorios-para-telefonia" title="- Acessórios p/ Telefonia">- Acessórios p/ Telefonia</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/celular" title="- Celular">- Celular</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/fones-headphones" title="- Fone e Headphone">- Fone e Headphone</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/telefonia-radio-comunicador" title="- Rádio Comunicador">- Rádio Comunicador</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/telefonia-smartphone" title="- Smartphone">- Smartphone</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/telefonia-fixa-martins" title="- Telefonia Fixa">- Telefonia Fixa</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/telefonia-tablet" title="- Tablet">- Tablet</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Eletrodomésticos&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/climatizacao-martins" title="- Climatização">- Climatização</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/coifa-e-depurador" title="- Coifa e Depurador">- Coifa e Depurador</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/fogao-e-cooktop" title="- Fogão e Cooktop">- Fogão e Cooktop</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/eletroportateis-martins" title="- Eletroportáteis">- Eletroportáteis</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/forno-e-microondas" title="- Forno e Microondas">- Forno e Microondas</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/lavadora-secadora-de-roupas" title="- Lavadora/Secadora de Roupas">- Lavadora/Secadora de Roupas</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/eletrodomesticos-lava-louca" title="- Lava-Louças">- Lava-Louças</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/refrigeracao" title="- Refrigeração">- Refrigeração</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Agrovet&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/agroquimico-martins" title="- Agroquímico">- Agroquímico</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/corda-martins" title="- Cordas">- Cordas</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/cercado" title="- Cercado">- Cercado</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/domissanitario-martins" title="- Domissanitário">- Domissanitário</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/higiene-veterinaria-martins" title="- Higiene Veterinária">- Higiene Veterinária</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/lonas" title="- Lonas">- Lonas</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/pet-shop" title="- Pet Shop">- Pet Shop</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/tela-martins" title="- Telas">- Telas</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Utilidades Domésticas&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/aparelho-de-jantar" title="- Aparelho de Jantar">- Aparelho de Jantar</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/forma-e-assadeira" title="- Formas e Assadeiras">- Formas e Assadeiras</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/copo-taca-e-xicara" title="- Copo/Taça e Xícara">- Copo/Taça e Xícara</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/utilidades-domesticas-faqueiro" title="- Faqueiro">- Faqueiro</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/jarra" title="- Jarras">- Jarras</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/termicos" title="- Térmicos">- Térmicos</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/utensilios-de-cozinha-martins" title="- Utensílios de Cozinha">- Utensílios de Cozinha</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/panela-martins" title="- Panelas">- Panelas</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Indústria/Comércio&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/industria-automacao-comercial" title="- Automação Comercial">- Automação Comercial</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/mobiliario" title="- Mobiliário">- Mobiliário</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Papelaria&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/blocos-e-papeis" title="- Blocos e Papéis">- Blocos e Papéis</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/material-escolar-martins" title="- Material Escolar">- Material Escolar</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/material-para-escritorio" title="- Material p/ Escritório">- Material p/ Escritório</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Construção/Segurança&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/banheiro" title="- Banheiro">- Banheiro</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/seguranca-epi" title="- EPI">- EPI</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/construcao-ferramentas" title="- Ferramentas">- Ferramentas</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/material-eletrico-martins" title="- Material Elétrico">- Material Elétrico</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/iluminacao" title="- Iluminação">- Iluminação</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/monitoramento-eletronico" title="- Monitoramento Eletrônico">- Monitoramento Eletrônico</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/construcao-material-hidraulico" title="- Material Hidráulico">- Material Hidráulico</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/tinta-e-acessorios" title="- Tinta e Acessórios">- Tinta e Acessórios</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Automotivo&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/automotivo-limpeza" title="- Limpeza">- Limpeza</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/pneu-camara-de-ar" title="- Pneu/Câmara de Ar">- Pneu/Câmara de Ar</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/produtos-diversos" title="- Produtos Diversos">- Produtos Diversos</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/som-automotivo" title="- Som Automotivo">- Som Automotivo</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">Esporte/Lazer&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/brinquedos-e-jogos" title="- Brinquedos e Jogos">- Brinquedos e Jogos</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/artigos-para-viagem" title="- Artigos p/ Viagem">- Artigos p/ Viagem</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/bicicleta-martins" title="- Bicicleta">- Bicicleta</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/camping-aventura-martins" title="- Camping/Aventura">- Camping/Aventura</a></li>
+            </ul>
+
+            <a class="test" tabindex="-1" href="#">+ Departamentos&nbsp;<i class="fas fa-chevron-right IGIconRight"></i></a>
+            <ul class="dropdown-menu">
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/calcados" title="- Calçados">- Calçados</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/instrumentos-musicais" title="- Instrumentos Musicais">- Instrumentos Musicais</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/colchao-e-cia" title="- Colchão e Cia">- Colchão e Cia</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/moveis-e-decoracao" title="- Móveis e Decoração">- Móveis e Decoração</a></li>
+                <li class="yCmsComponent"><a href="/martins/pt/BRL/c/artigos-para-festa" title="- Artigos p/ Festa">- Artigos p/ Festa</a></li>
+            </ul>
+
+        </li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

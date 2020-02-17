@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style>
+    .IGFaixas {
+        display: none;
+    }
+    div.IGFaixaName {
+        color: inherit;
+        text-align: center;
+        border-bottom: 2px solid rgb(204, 204, 204);
+        font-weight: 600;
+        cursor: pointer;
+        background-color: white;
+        padding-top: 15px;
+        width: 227px;
+        max-width: 227px;
+        display: inline-block;
+    }
+    div.IGFaixaName.active {
+        color: rgb(0, 66, 130);
+        border-bottom: 2px solid rgb(0, 66, 130);
+    }
+    .IGFaixasContainer {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    .IGRowOpcoesFaixas {
+        max-width: 1136px;
+        width: 1136px;
+        margin: 0 auto;
+    }
+    .IGFaixaFade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    div.IGFaixaName:hover {
+        background-color: #F0F1F1;
+    }
+    @media only screen and (max-width: 1199px) {
+        .IGRowOpcoesFaixas {
+            max-width: 940px;
+            width: 940px;
+        }
+        div.IGFaixaName {
+            width: 188px;
+            max-width: 188px;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        .IGRowOpcoesFaixas {
+            max-width: 750px;
+            width: 750px;
+            margin-right: 0;
+        }
+        div.IGFaixaName {
+            width: 150px;
+            max-width: 150px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .IGRowOpcoesFaixas {
+            max-width: calc(100vw - 30px);
+            width: calc(100vw - 30px);
+        }
+        div.IGFaixaName {
+            width: calc((100vw - 30px)/5);
+            max-width: calc((100vw - 30px)/5)
+        }
+    }
+</style>
+
+<script>
+	$(document).ready(function()
+	{
+        var IGFaixaAtual = 0; // 0 = Primeira Faixa (Parceiro)
+        document.getElementById("IGFaixa0").style.display = "block";
+        $("#IGNomeFaixa0").click(function()
+        {
+            if (IGFaixaAtual != 0)
+            {
+                document.getElementById("IGNomeFaixa" + IGFaixaAtual).classList = "IGFaixaName col col-md-2";
+                document.getElementById("IGNomeFaixa0").classList = "IGFaixaName col col-md-2 active";
+                document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
+                document.getElementById("IGFaixa0").style.display = "block";
+                IGFaixaAtual = 0;
+            }
+        });
+        $("#IGNomeFaixa1").click(function()
+        {
+            if (IGFaixaAtual != 1)
+            {
+                document.getElementById("IGNomeFaixa" + IGFaixaAtual).classList = "IGFaixaName col col-md-2";
+                document.getElementById("IGNomeFaixa1").classList = "IGFaixaName col col-md-2 active";
+                document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
+                document.getElementById("IGFaixa1").style.display = "block";
+                IGFaixaAtual = 1;
+            }
+        });
+        $("#IGNomeFaixa2").click(function()
+        {
+            if (IGFaixaAtual != 2)
+            {
+                document.getElementById("IGNomeFaixa" + IGFaixaAtual).classList = "IGFaixaName col col-md-2";
+                document.getElementById("IGNomeFaixa2").classList = "IGFaixaName col col-md-2 active";
+                document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
+                document.getElementById("IGFaixa2").style.display = "block";
+                IGFaixaAtual = 2;
+            }
+            // window.open("https://vendamais.martinsatacado.com.br/gestao-fiscal?utm_source=martins&utm_medium=link&utm_campaign=algarfiscal&utm_term=algar&utm_content=algargestaofiscal", "_blank");
+        });
+        $("#IGNomeFaixa3").click(function()
+        {
+            window.open("https://www.martinsatacado.com.br/venda-no-marketplace", "_blank");
+        });
+        $("#IGNomeFaixa4").click(function()
+        {
+            window.open("https://www.martinsatacado.com.br/super-ofertas", "_blank");
+        });
+    });
+</script>
+
+</head>
+
+<body>
+
+    <div class="container IGFaixasContainer">
+        <div class="IGRowOpcoesFaixas">
+            <div id="IGNomeFaixa0" class="IGFaixaName active" style="border-right: 1px solid #F0F1F1;">
+                <p>Cartão Super Empresarial</p>
+            </div><div id="IGNomeFaixa1" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
+                <p>Parceiro Martins</p>
+            </div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
+                <p>Solicitar cotação</p>
+            </div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
+                <p>Ofertas da semana</p>
+            </div><div id="IGNomeFaixa3" class="IGFaixaName">
+                <p>Venda com a gente</p>
+            </div>
+        </div>
+        <div id="IGFaixa1" class="IGFaixas IGFaixaFade">
+            <h1>colocar aqui</h1>
+        </div>
+        <div id="IGFaixa0" class="IGFaixas IGFaixaFade">
+            <div class="box-sticky-banner clear _ptxs _pbxxs">
+                <div class="container">
+                
+                    <div class="c-stickyBanner c-stickyBanner--customOne o-layout o-layout--flush">
+                            <a target="_blank" href="http://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&amp;utm_medium=Site&amp;utm_campaign=home_b2bhttp://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&amp;utm_medium=Site&amp;utm_campaign=home_b2b" class="c-stickyBanner__link">
+                                <div class="o-layout__item _p0 _8/12@tabletH _9/12@laptop">
+                                    <div class="c-stickyBanner__item">
+                                        <div class="c-stickyBanner__leftBg _1/1">
+                                            <div class="_1/1 _1/2@tabletV _dib">
+                                                <img src="https://imgprd.martins.com.br/_ui/responsive/theme-martins/img/banner-emp-01.png" class="_1/1 _phsm _ptsm _psm@tabletV _plxs@tabletH _pvsm@tabletH" alt="">
+                                            </div><div class="_1/1 _1/2@tabletV _dib">
+                                                <img src="https://imgprd.martins.com.br/_ui/responsive/theme-martins/img/banner-emp-02.png" class="_1/1 _phsm _ptxxs _pbsm _psm@tabletV _prsm@tabletH _plxs@tabletH _pvsm@tabletH" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class="o-layout__item _p0 _4/12@tabletH _3/12@laptop">
+                                    <div class="c-stickyBanner__item c-stickyBanner__itemRight c-stickyBanner__item--arrow">
+                                        <div class="_black">
+                                            <span class="_fz26">
+                                                QUERO SOLICITAR</span>
+                                            <span class="_db _fz18">
+                                                Meu Cartão Super Empresarial</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div id="IGFaixa2" class="IGFaixas IGFaixaFade">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 border">
+                        <h1 style="text-align: center;">solicite uma cotação</h1> 
+                        <p style="text-align: center;"> Informe o seu <b>CNPJ</b> e <b>número para contato</b> que iremos te ajudar.
+                        <br></p>
+                        <h4 style="text-align: center;"><br>cotacao@martins.com.br</h4>
+                        <br>
+                        <div style="text-align: center;">
+                            <a class="btn btn-primary" href="mailto:cotacao@martins.com.br" target="_blank">enviar e-mail</a><br><br>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

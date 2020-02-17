@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+	$(document).ready(function()
+	{
+		var IGAccordion = document.getElementsByClassName("IGAccordion");
+
+        for (var i = 0; i < IGAccordion.length; i++) {
+            IGAccordion[i].addEventListener("click", function() {
+                this.classList.toggle("IGAccordionActive");
+                var IGPanel = this.nextElementSibling;
+                if (IGPanel.style.maxHeight) {
+                IGPanel.style.maxHeight = null;
+                } else {
+                IGPanel.style.maxHeight = IGPanel.scrollHeight + "px";
+                } 
+            });
+        }
+	});
+</script>
+
+<style>
+.IGAccordion {
+    background-color: rgba(0,0,0,0.03);
+    color: #004282;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    padding: 18px 32px;
+    font-weight: bold;
+}
+
+.IGAccordionActive, .IGAccordion:hover {
+    color: #001B36;
+}
+
+.IGPanel {
+    color: #212529;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding: 0 20px;
+}
+
+.IGCardTermos {
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .25rem;
+    margin-bottom: 10px;
+}
+</style>
+
+</head>
+
+<body>
+    
+    <div class="container" style="max-width: 75vw">
+        <div class="title1" style="text-align: center">Termos de uso Martins Comércio e Serviço de Distribuição S/A</div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">1. Qualificação e objeto</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    O <b>Martins Comércio e Serviços de Distribuição S/A</b>, sociedade anônima, inscrita no CNPJ/MF sob o nº 43.214.055/0001-07, com sede na cidade de Uberlândia, Estado de Minas Gerais, na Av. José Andraus Gassani, 5400, comercializa produtos por meio da rede mundial de computadores (Internet), através do site <b>www.martinsatacado.com.br</b>, com produtos e negociações direcionadas exclusivamente para pessoas jurídicas devidamente registradas e desde que, tenha como intenção de compra, a revenda.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">2. Cadastro</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    Para formalizar uma compra no site <b>www.martinsatacado.com.br</b> o interessado deverá se cadastrar fornecendo os dados de sua empresa, indicando os dados solicitados. As informações precisam ser corretas e verdadeiras, sendo vedado o cadastramento de mediante o uso de codinomes que ocultem a sua real identidade.<br>
+                    Ao finalizar seu cadastro, o <b>cliente</b> deverá ler na íntegra e manifestar a aceitação ao presente Termo de uso, sendo obrigatória sua aceitação, mediante marcação na caixa de seleção "<b><ins>De acordo</ins></b>". Somente com a leitura e aceitação do presente Termo é que o interessado será admitido como <b>cliente</b>.<br>
+                    Uma mesma pessoa jurídica poderá ostentar dois ou mais cadastros junto ao site <b>Martins Atacado</b>. No entanto, para o cadastro de filiais de um mesmo grupo econômica, é necessário que entre em contato com nossa central de atendimento para que seja realizado o cadastro.<br>
+                    É de responsabilidade única e exclusiva do <b>cliente</b> a responsabilidade sobre os dados informados, devendo zelar pela segurança e sigilo de seu login, tendo em vista que são pessoais e intransferíveis, nunca os revelando a terceiros. Constitui ainda responsabilidade do <b>cliente</b> a manutenção do seu equipamento de informática protegido com softwares atualizados, municiados com antivírus atualizados e firewalls conforme o estado da arte. Tais medidas são indispensáveis para a realização de uma compra segura.<br>
+                    Após o cadastro, o <b>Martins Atacado</b> analisará as informações e liberará o <b>cliente</b> para compra em nosso portal, em até 48 (quarenta e oito) horas.<br>
+                    Importante:<br>
+                    a. Pessoas jurídicas que não estejam com suas obrigações fiscais e cadastrais em dia, não terão seu cadastro aceito e validado pelo <b>Martins Atacado</b>.<br>
+                    b. Em qualquer hipótese cadastros realizados com dados falsos serão considerados nulos.<br>
+                    c. Caso a alteração dos dados cadastrais seja necessária, o <b>cliente</b> deverá realizá-la diretamente no link "Meu Cadastro", disponível no site após a realização de login, ou entrando em contato diretamente com um dos nossos canais de atendimento.<br>
+                    d. Os <b>clientes</b> terão suas entregas realizadas, obrigatoriamente, no endereço de cadastro junto ao SINTEGRA.<br>
+                    e. Todos os dados disponibilizados pelo <b>cliente</b> ao efetuar seu cadastro junto ao <b>www.martinsatacado.com.br</b>, são tratados com a proteção e inviolabilidade exigidos pela Lei Geral de Proteção de Dados brasileira.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">3. Processo de COMPRA E VENDA</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    O processo de aquisição de itens no site <b>Martins Atacado</b> é composto pelas seguintes etapas:<br>
+                    <b>1ª etapa</b> – Após escolher o(s) itens(s) de seu interesse, o <b>cliente</b> deverá concluir a solicitação de compra por meio do link “Comprar”. Ao finalizar este procedimento o pedido será encaminhado eletronicamente ao <b>Martins Atacado</b> e será analisada.<br>
+                    <b>2ª etapa</b> – O pedido será aprovado após a confirmação do pagamento, nos casos das formas de pagamento CASH e cartão de crédito. Para os pedidos com meio de pagamento boleto parcelado, estes serão aprovados de acordo com as regras de liberação de crédito do <b>Martins Atacado</b>.<br>
+                    <b>a.</b> Sendo autorizado o pedido na modalidade de pagamento cartão de crédito, o valor será devidamente debitado do cartão indicado pelo <b>cliente</b>, nas condições ofertadas e por ele escolhidas.<br>
+                    <b>b.</b> Não sendo autorizado o pedido, o limite pré-reservado no cartão de crédito indicado pelo <b>cliente</b>, será estornado automaticamente no prazo de 24 (vinte e quatro) horas dependendo da operadora do cartão de crédito indicado, não tendo o <b>Martins Atacado</b> qualquer responsabilidade sobre o referido estorno.<br>
+                    <b>c.</b> Sendo o pedido na modalidade Cash e não sendo o boleto devidamente pago pelo <b>cliente</b> até a data de seu vencimento, o pedido será cancelado.<br>
+                    O <b>Martins Atacado</b> esclarece que adota todas as medidas necessárias para evitar fraudes em nome de seus <b>clientes</b>, o que poderia gerar grandes prejuízos aos mesmos. Assim, medidas de segurança são tomadas de modo a não permitir que terceiros lesem seus <b>clientes</b>. <br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">4. Do preço da compra e venda</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    Por abranger grande parte do território nacional, os valores dos produtos disponíveis para compra no site <b>www.martinsatacado.com.br</b>, poderão sofrer variações de acordo com a região geográfica do <b>cliente</b> e, até mesmo, ser restrita para determinadas regiões. Assim, faz-se necessário que o <b>cliente</b> faça o login no portal, para que possa confirmar o valor do produto e a disponibilidade para sua região.<br>
+                    Para todos os efeitos o valor do produto válido será aquele visualizado no carrinho de compras, após o <b>cliente</b> realizar o login.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">5. Política de Pagamento</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    Após a aprovação do cadastro, será disponibilizado ao <b>cliente</b> a possibilidade de compra no portal <b>Martins Atacado</b> com pagamentos através de cartão de crédito ou modalidade Cash.<br>
+                    A venda via parcelamento em boleto será liberada apenas mediante análise prévia do cadastro do <b>cliente</b>, que inclui seu histórico de compras, relacionamento com o mercado e scores bancários. A aprovação da modalidade de pagamento boleto parcelado, será de exclusiva liberalidade do <b>Martins Atacado</b>.<br>
+                    O prazo de entrega do pedido começa a contar somente após a sua roteirização.<br>
+                    <ins>Cartão de Crédito</ins>:<br>
+                    Os preços e condições de pagamento anunciados no site, para a modalidade Cartão de Crédito, são exclusivos para vendas online e para o Chat on line disponível no site, não havendo vendas diretas em lojas físicas de nenhuma espécie.<br>
+                    O <b>cliente</b> poderá optar em realizar um pagamento em parcela única ou na quantidade disponibilizada de parcelas, no entanto, é necessário que o valor total da compra esteja dentro do limite de crédito disponível em seu cartão.<br>
+                    O <b>Martins Atacado</b> reforça que não possui qualquer ingerência sobre os meios de pagamento disponíveis em seu site, não podendo servir de interlocutor entre esses e o <b>cliente</b> quando a questão envolve a disponibilidade de crédito.<br>
+                    <ins>CASH - Boleto Bancário</ins>:<br>
+                    Para compras à vista por Boleto Bancário, o boleto terá o vencimento de <b>03 (três) dias</b> após a realização do pedido e o pagamento pode ser efetuado em qualquer banco. Nesta modalidade, o mesmo deverá ser feito em uma única parcela no valor total da compra.<br>
+                    O <b>cliente</b> poderá imprimir o boleto bancário quando finalizar seu pedido de compra no site, poderá acessar o link para visualização e impressão de seu boleto através do e-mail enviado após a realização de seu pedido, ou ainda, imprimi-lo dentro do ambiente virtual da “Minha Conta”, ingressando com seu login e senha.<br>
+                    Nessa modalidade, <ins>o <b>Martins Atacado</b> não envia o boleto para o estabelecimento comercial do <b>cliente</b>, para a realização do pagamento e se a confirmação do pagamento (que é feita automaticamente pelo banco) não ocorrer em até um (1) dia após o vencimento do boleto, o pedido será cancelado e o <b>cliente</b> será informado por e-mail</ins>.<br>
+                    <ins>PARCELAMENTO BOLETO BANCÁRIO</ins>:<br>
+                    Nessa modalidade, o <b>cliente</b> possui a possibilidade de efetuar o pagamento do seu pedido através de parcelamento em boleto bancário. Nesses casos, a quantidade de parcelas e prazos para pagamento dependerão exclusivamente da análise de crédito do <b>Martins Atacado</b>, que possui total independência em sua aprovação.<br>
+                    Os boletos, exclusivamente para essa modalidade, serão encaminhados ao <b>cliente</b> juntamente com os pedidos, ou seja, serão entregues boletos impressos ao <b>cliente</b> no local de entrega.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">6. Política de entrega</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    O prazo de entrega de produtos, que é contato sempre em dias úteis, pode variar de acordo com a região de entrega, local de disponibilidade do produto e forma de pagamento.<br>
+                    O sistema automaticamente irá informar o valor do frete e o prazo de entrega. Havendo no carrinho algum produto que esteja inserido em promoções de frete grátis, o valor do frete destes produtos será igual a zero, sendo cobrado apenas o frete dos produtos que não estejam inseridos na mesma promoção.<br>
+                    Não é possível enviar pedidos para endereços de caixa postal.<br>
+                    Na compra de mais de um item por pedido, ou nas compras em que o pedido possuir itens vendidos e entregue pelo próprio <b>Martins Atacado</b> e pelo seller (parceiro Market Place), as entregas poderão ser realizadas separadamente em datas diferentes, variando de acordo com a modalidade de entrega da transportadora, fornecedor e disponibilidade do produto. O cálculo do prazo de entrega leva em consideração essa possibilidade, informando ao <b>cliente</b> apenas a maior prazo.<br>
+                    <ins>Atenção: Para todos os efeitos, o prazo de entrega somente passará a correr após a aprovação do pagamento e a roteirização do pedido</ins>.<br>
+                    Não serão aceitos ou atendidos, em nenhuma etapa da compra e venda, pedidos de antecipação ou prioridade de realização de entrega.<br>
+                    As entregas serão realizadas de segunda a sexta-feira, entre 8h e 18h, e aos sábados excepcionalmente das 8h às 12h, nas localidades atendidas pelo <b>Martins Atacado</b>. O prazo de entrega do produto poderá ser suspenso devido a caso fortuito ou de força maior, como por exemplo, mas não se limitando, alagamentos, greves, manifestações populares, piquetes, desastres naturais, entre outros.<br>
+                    Em caso de ausência de responsável que possa receber o produto, ou estando o empreendimento fechado, serão realizadas mais 2 (duas) tentativas, em dias alternados, dentro de um período de 5 (cinco) dias. Caso resultem infrutíferas as tentativas, o produto será direcionado novamente ao <b>Martins Atacado</b>.<br>
+                    Os produtos somente serão entregues a pessoas maiores de 18 (dezoito) anos de idade, que sejam representantes legais do <b>cliente</b> e, caso haja dúvidas quanto a essa condição ou a qualquer outra, um documento de identidade poderá ser solicitado.<br>
+                    É de responsabilidade do <b>cliente</b> averiguar se as dimensões do produto embalado são adequadas para locomoção por elevadores, rampas, portas e corredores do local da entrega, pois aos entregadores do <b>Martins Atacado</b> é proibido realizar entregas ou coletas em condições que ofereçam risco às pessoas ou aos produtos, como utilizar escadas improvisadas, içar o produto, etc., bem como abrir a embalagem, realizar instalações ou entregar ou recolher produtos em local diferente daquele que consta na nota fiscal.<br>
+                    Verificando a condição inadequada para a entrega, o produto será devolvido ao <b>Martins Atacado</b>, procedendo-se o cancelamento do pedido. Se a condição inadequada se der no momento da coleta, a mesma não será realizada, cabendo ao <b>cliente</b> providenciar condição apropriada dentro do prazo do exercício de seu direito, comunicando tal fato ao <b>Martins Atacado</b> para que proceda nova tentativa de coleta.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">7. Política de trocas e devolução</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    As trocas e devoluções de produtos deverão ser solicitadas através de um dos canais de nossa central de atendimento ao <b>cliente</b>, e dependerão de análise e autorização prévia de nossa área de pós-vendas. Ao solicitar a troca ou devolução, o <b>cliente</b> deverá informar o motivo pelo qual está realizando a solicitação.<br>
+                    Caso seja aprovada a troca ou devolução, os produtos a serem devolvidos deverão estar em perfeito estado, sem rasuras e sem etiquetas coladas em sua embalagem.<br>
+                    São motivos para a solicitação de troca ou devolução:<br>
+                    <ins>Desistência da mercadoria antes da entrega</ins><br>
+                    Para cancelar um pedido registrado e ainda não encaminhado para entrega, ou seja, antes da emissão da nota fiscal, o <b>cliente</b> deverá entrar em contato com a Central de Atendimento do Martins Atacado ou clicar no botão 'Registrar Ocorrência' disponível no ambiente Minha Conta em seu site e informar sobre a desistência.<br>
+                    Caso o produto já tenho sido enviado para o estabelecimento comercial do <b>cliente</b>, a mercadoria deverá ser recusada no ato da entrega e exigir que o motorista realize a devolução.<br>
+                    <ins>Desistência da mercadoria após a entrega</ins><br>
+                    Para desistir de um produto após a entrega, o <b>cliente</b> deve entrar em contato com a Central de Atendimento do <b>Martins Atacado</b> ou clicando no botão, 'Registrar Ocorrência', disponível em seu site, observando as seguintes condições:<br>
+                        • O prazo para desistir da compra é de até 07 (sete) dias corridos, a contar da data da entrega.<br>
+                        • Apenas serão aceitas desistências, se os produtos estiverem lacrados em sua embalagem original e livres de quaisquer avarias.<br>
+                        • O recolhimento do produto será realizado no mesmo endereço que foi efetuada a entrega. O prazo para recolhimento será informado pela Central de Atendimento do <b>Martins Atacado</b>.<br>
+                        • O <b>cliente</b> é responsável pelas condições do produto a ser devolvido.<br>
+                        • As solicitações que envolvam a desistência de pedidos com brindes/descontos somente serão efetivadas com a devolução de todos os produtos da compra (itens principais e promocionais).<br>
+                    Caso alguma das condições acima não seja verificada, a solicitação de devolução não será acatada e o <b>cliente</b> será comunicado por e-mail ou por telefone.<br>
+                    <ins>Mercadoria danificada no transporte</ins><br>
+                    Caso seja verificado avaria no momento da entrega do produto, o <b>cliente</b> deverá recusar o recebimento e entrar em contato com a Central de Atendimento do <b>Martins Atacado</b>.<br>
+                    Na hipótese do produto ter sido recebido, o prazo para solicitação de Troca ou Devolução é de no máximo 07 (sete) dias corridos, a contar da data de seu recebimento.<br>
+                    Para solicitar a troca da mercadoria danificada no transporte, o <b>cliente</b> deve entrar em contato com a Central de Atendimento do <b>Martins Atacado</b> ou clicando no botão, 'Registrar Ocorrência' disponível em nosso portal, devendo ser relatado todas as irregularidades observadas no produto, como: arranhões, amassados, caixa danificada, lacre violado, entre outros.<br>
+                    A aprovação da ocorrência dependerá de análise do <b>Martins Atacado</b> que, decidirá sua procedência. Sendo aprovada, os produtos deverão ser devolvidos ao <b>Martins Atacado</b> na embalagem original (interna e externa), acompanhado da respectiva nota fiscal, manual e todos os seus acessórios.<br>
+                    As solicitações que envolvam o cancelamento de pedidos com brindes/descontos somente serão efetivadas com a devolução de todos os produtos da compra (itens principais e promocionais).<br>
+                    <ins>Mercadoria com defeito de fábrica</ins><br>
+                    Produtos que vierem a apresentar defeito de fabricação são de responsabilidade do fabricante. Nestes casos, o <b>Martins Atacado</b> analisará a solicitação do <b>cliente</b> e encaminhará ao fabricante para análise, podendo ser aprovado, ou não.<br>
+                    Os itens deverão ser devolvidos na embalagem original (interna e externa), ou neutra, acompanhado da respectiva nota fiscal, manual e todos os seus acessórios.<br>
+                    As solicitações que envolvam o cancelamento de pedidos com brindes/descontos somente serão efetivadas com a devolução de todos os produtos da compra (itens principais e promocionais).<br>
+                    <ins>Erro de venda</ins><br>
+                    Erro de venda consiste no pedido e faturamento de itens não solicitados pelo <b>cliente</b>.<br>
+                    Sendo constatado erro de venda, para solicitar o recolhimento dos itens, o <b>cliente</b> deve entrar em contato com a Central de Atendimento do <b>Martins Atacado</b> ou clicando no botão 'Registrar Ocorrência' disponível em nosso portal.<br>
+                    A aprovação da ocorrência dependerá de análise do <b>Martins Atacado</b> que, decidirá sua procedência. Sendo aprovada, os produtos deverão ser devolvidos ao <b>Martins Atacado</b> na embalagem original (interna e externa), acompanhado da respectiva nota fiscal, manual e todos os seus acessórios.<br>
+                    <ins>Restituição de valores em todos os casos</ins>:<br>
+                    Registrada a Ocorrência, esta será analisada pelo <b>Martins Atacado</b> e caso seja aprovada, o valor pago pelo <b>cliente</b> será restituído conforme os seguintes procedimentos:<br>
+                        • O prazo para restituição ou estorno do valor pago inicia-se somente após recolhimento do produto e seu recebimento e análise pela Central de Distribuição do <b>Martins Atacado</b>. Conforme já destacado, o produto deverá ser encaminhado na embalagem original (interna e externa), ou neutra (quando defeito de fábrica) acompanhado de nota fiscal, manual e todos os seus acessórios.<br>
+                        • Compras feitas com cartão de crédito: o estorno será efetuado na fatura do cartão de crédito utilizado para realizar a compra. Este procedimento é de responsabilidade da administradora do cartão utilizado, e poderá ser efetuado em até 02 (duas) faturas subsequentes.<br>
+                        • Compras feitas através da modalidade CASH - boleto bancário: o estorno será efetuado mediante crédito em conta corrente do <b>cliente</b> no prazo de até <ins>10 (dez) dias úteis após a indicação da conta bancária pelo mesmo</ins>. A conta corrente para crédito do valor deverá obrigatoriamente estar em nome da razão social do <b>cliente</b>.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">8. Campanhas publicitárias</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    O <b>Martins Atacado</b> poderá anunciar em datas comemorativas ou publicitárias produtos com desconto nos preços, como forma de fomentar o consumo em cada época. Tal liberalidade não constitui regra ou obrigação e poderá alcançar todos os produtos em estoque ou parte dele. Em todo caso o <b>Martins Atacado</b> informará em cada oferta a condição de cada campanha promocional.<br>
+                    Encerrando a campanha publicitária ou o estoque negociado para a respectiva promoção, o <b>Martins Atacado</b> retornará os valores de cada oferta ao seu status anterior em condições de preço e forma de pagamento.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">9. MarketPlace</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    Através de parcerias, o <b>Martins Atacado</b> opera como MarketPlace, divulgando em sua loja produtos de outros lojistas. Neste caso, a responsabilidade sobre o recebimento do pedido e processamento dos pagamentos é de exclusiva responsabilidade do <b>Martins Atacado</b>, enquanto que as responsabilidades quanto ao faturamento e entrega dos itens é do parceiro lojista.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">10. Interoperacionalidade do site</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    O site <b>Martins Atacado</b> foi planejado para ser acessado por todos os principais navegadores de internet disponíveis no mercado, incluindo navegadores utilizados em smartphones, tablets e smart Tvs, sem que haja qualquer distinção técnica entre eles que possa causar prejuízo à navegação. O <b>Martins Atacado</b> se dedica continuamente a corrigir e/ou aperfeiçoar seu site, de forma que a implementação de novas tecnologias ou criação de novos navegadores não causem prejuízo ao acesso de seus <b>clientes</b>.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">11. Da Política de Privacidade</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    <b>Uso e obtenção de informações</b><br>
+                    É possível coletar, gravar e utilizar em conexão com outros sites e parceiros as informações pessoais dos <b>clientes</b>, incluindo, mas não se limitando ao nome do <b>cliente</b>, CPF, endereço, número de telefone, interesses, atividades, últimas compras realizadas, etc.<br>
+                    O <b>Martins Atacado</b> se resguarda ao direito de gravar seu IP, tipo de navegador, aparelho e operadora de celular, posição geográfica e outros dados relativos aos <b>clientes</b> (Dados de Acesso).<br>
+                    As informações coletadas e existentes em nossos sistemas são (i) informações que o <b>cliente</b> se prontifica a fornecer por meio do cadastro (dados da pessoa jurídica, dados financeiros, dados de conta e dados de acesso), emissão de notas fiscais ou importação de extratos bancários e (ii) informações obtidas automaticamente.<br>
+                    A coleta dos dados financeiros se dará no momento da inserção de dados de pagamento.<br>
+                    As informações coletadas automaticamente não são informações pessoais, mas sim sobre os computadores, smartphones ou outros dispositivos que o <b>cliente</b> utiliza para acessar a plataforma, bem como o nome de domínio do seu provedor de acesso à internet, o endereço de protocolo IP utilizado para se conectar à Plataforma, o tipo e versão do browser do <b>cliente</b>, o sistema operacional, o tempo médio gasto na Plataforma, as páginas visitadas na Plataforma, as informações procuradas, os horários de acesso e outras estatísticas relevantes para o bom funcionamento da plataforma ao <b>cliente</b>.<br>
+                    O <b>cliente</b> declara estar ciente e concorda com a coleta, armazenamento, tratamento, processamento e uso das Informações enviadas e/ou transmitidas pelo ele mesmo nos termos estabelecidos na Política de Privacidade e Termos de Uso.<br>
+                    <br><b>Utilização das Informações coletadas</b><br>
+                    Com exceção do desenvolvedor da plataforma, não haverá divulgação pública das informações do <b>cliente</b> ou formas de identificá-lo. Tais informações, poderão ser utilizadas de forma agregada para realização de estudos, análises, melhorias do sistema e plataforma para direcionar venda, atender novas demandas e administrar as funcionalidades da plataforma.<br>
+                    As informações podem ser utilizadas para compor e oferecer serviços personalizados, bem como conduzir pesquisas e testes de recursos em desenvolvimento.<br>
+                    Com o aceite, o <b>cliente</b> autoriza o envio de e-mails, alertas e comunicados relacionados às funcionalidades da plataforma para que tenha melhor experiência de uso da plataforma.<br>
+                    <br><b>Plugins de Redes Sociais</b><br>
+                    Formato de coleta de informações por meio de testemunho de conexão (cookie), depositados nas máquinas dos <b>clientes</b> não coletam informações identificadas do <b>cliente</b>, mas apresenta informações de forma global e se fazem necessárias para aperfeiçoar a navegação na plataforma. Poderá ser utilizada para contabilizar o número de visitas em seu site e em todas as suas páginas subjacentes, inclusive mediante utilização de cookies, de forma a melhorar a qualidade dos serviços prestados.<br>
+                    <br><b>Compartilhamento de informações</b><br>
+                    As informações não serão divulgadas, vendidas ou alugadas para qualquer organização ou entidade, tampouco com elas será feita permuta sem antes comunicar ao <b>cliente</b> e obter seu consentimento expresso, com exceção de informações exigidas por leis ou por ordem judicial. a presente previsão de não divulgação das informações não se aplicam à empresa desenvolvedora da presente plataforma.<br>
+                    Na plataforma pode conter links a outros websites. E a presente declaração de privacidade não abrange os referidos sites, da forma que não há de se falar em responsabilização pelas práticas de privacidade de outros sites.<br>
+                    As informações serão armazenadas em banco de dados reservado, com acesso restrito aos empregados habilitados e desenvolvedores da plataforma, obrigados, por confidencialidade, a manter o sigilo das informações dos <b>clientes</b>.<br>
+                    <br><b>Da exclusão das informações e dados pessoais</b><br>
+                    O <b>cliente</b> é proprietário dos dados e poderá realizar a exclusão e/ou modificação de sua conta a qualquer momento, bastando fazê-lo também por meio da plataforma.<br>
+                    Quando o <b>cliente</b> exclui sua conta, o contrato ficará automaticamente rescindido, os dados pessoais serão excluídos, porém são mantidas as informações de guarda obrigatória, conforme determinação legal. Dessa forma, a solicitação de exclusão de dados pessoais poderá implicar na imediata desativação da sua conta, com perda permanente de qualquer um dos dados inseridos na mesma.<br>
+                    <br><b>Armazenamento e segurança das informações</b><br>
+                    As informações serão armazenadas em banco de dados reservado, com alto nível de proteção, acesso restrito a pessoas qualificadas e autorizadas.<br>
+                    Com exceção das formas de compartilhamento previstos nesta Política de Privacidade, fica vedada a divulgação das informações, salvo por meio de ordem judicial ou em virtude de lei.<br>
+                    Considerando que nenhum sistema de segurança é absoluto, o <b>Martins Atacado</b> se exime de quaisquer responsabilidades por eventuais danos e/ou prejuízos decorrentes de falhas, vírus ou invasões do banco de dados do site, salvo nos casos de dolo ou culpa da mesma.<br>
+                    <br><b>Alterações na política de privacidade</b><br>
+                    É possível a alteração da presente Política de Privacidade, a qualquer tempo e a seu exclusivo critério, disponibilizando a sua nova versão na plataforma, para visualização e consulta dos <b>clientes</b>.<br>
+                    No caso de eventuais alterações significativas da Política de Privacidade, se compromete a comunicar os <b>clientes</b>, por meio do envio de email. E, em caso de não concordância, o <b>cliente</b> pode, a qualquer momento e por sua liberalidade, desativar sua conta na plataforma.<br>
+                    Ao utilizar dos serviços do site e aplicativo <b>Martins Atacado</b>, o <b>cliente</b> concorda e aceita os termos da política de privacidade vigente na data, cabendo ao mesmo verificá-la previamente cada vez que visitar o site.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">12. Dicas importantes</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    Recomenda-se que o <b>cliente</b>:<br>
+                    • Atente para a descrição e ficha técnica do produto (voltagem, cor e dimensão);<br>
+                    • Guarde sempre a Nota Fiscal recebida no momento da entrega (ela faz parte da garantia do produto);<br>
+                    • Conserve em boas condições a embalagem original do produto, manuais, itens e acessórios que acompanham o produto, em caso de troca ou devolução, estes itens serão fiscalizados;<br>
+                    • Faça sempre a conferência dos itens do pedido no momento da entrega e da nota fiscal, jamais aceitando um produto com o lacre rompido;<br>
+                    • Caso haja algum problema (lacre rompido, avaria, ausência de algum item ou divergência entre nota e conteúdo), o <b>cliente</b> deverá recusar a entrega e não assinar o canhoto;<br>
+                    • É necessário que haja no local da entrega pessoa autorizada pelo <b>cliente</b>, maior de 18 anos, portando documento de identificação para receber a mercadoria e assinar o protocolo.<br>
+                    • Após a conferência positiva, deve haver a assinatura por extenso do responsável pelo recolhimento e número de RG no canhoto da nota.<br>
+                    • O recolhimento será realizado de segunda a sexta-feira, entre 8h e 18h, e aos sábados das 8h às 12h, nas localidades atendidas pelo <b>Martins Atacado</b>, por meio de transportadoras terceirizadas.<br>
+                    • Por questão de segurança, recomenda-se que o <b>cliente</b> exija sempre que o transportador lhe apresente no momento da coleta a Ordem de Recolhimento, onde estará descrito o produto que será devolvido.<br>
+                    • O Martins orienta que seus <b>clientes</b> não deixem de quitar títulos referentes às notas fiscais que possuam ocorrência SAC, pois a não quitação dos títulos e a reprovação da ocorrência, acarretarão ações de cobrança junto aos <b>clientes</b>, conforme procedimentos do setor de Cobrança. Vale ressaltar que nos casos de aprovação das ocorrências, o <b>cliente</b> será reembolsado após o recolhimento da(s) mercadoria(s) ou terá seu produto trocado, conforme o caso.<br>
+                </p>
+            </div>
+        </div>
+        <div class="IGCardTermos">
+            <button class="IGAccordion">13. Legislação aplicável, foro de eleição</button>
+            <div class="IGPanel">
+                <br>
+                <p>
+                    Aplica-se a todas as questões decorrentes do presente Termo de Uso a legislação brasileira. Para qualquer questionamento judicial dos termos do presente ou de aspectos das relações oriundas das relações comerciais aqui descritas, deverá ser submetida a uma das varas cíveis do Foro da Comarca de Uberlândia-MG.<br>
+                </p>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="title1 col-md-12 col-xs-12">Termos de uso Martins Comércio e Serviço de Distribuição S/A</div>
+            <p class="col-md-12 col-xs-12">
+                <b>TERMOS DE USO</b>
+                Este termo de uso e condições gerais aplica-se à utilização dos serviços do site <b>www.martinsatacado.com.br</b>. Qualquer pessoa jurídica que atenda aos requisitos deste termo, doravante designada simplesmente <b>cliente</b>, que pretenda utilizar quaisquer dos serviços oferecidos em nosso site, ou adquirir qualquer produto por ele comercializado, deverá ler e manifestar aceitação deste termo, que é submetido à apreciação de todo <b>cliente</b> no momento de seu cadastro. Ao clicar em “de acordo”, o <b>cliente</b> manifesta haver lido, compreendido e aceitado todas as cláusulas e condições deste termo.<br>
+                <b>1. Qualificação e objeto</b><br>
+                O <b>Martins Comércio e Serviços de Distribuição S/A</b>, sociedade anônima, inscrita no CNPJ/MF sob o nº 43.214.055/0001-07, com sede na cidade de Uberlândia, Estado de Minas Gerais, na Av. José Andraus Gassani, 5400, comercializa produtos por meio da rede mundial de computadores (Internet), através do site <b>www.martinsatacado.com.br</b>, com produtos e negociações direcionadas exclusivamente para pessoas jurídicas devidamente registradas e desde que, tenha como intenção de compra, a revenda.<br>
+                <b>2. Cadastro</b><br>
+                Para formalizar uma compra no site <b>www.martinsatacado.com.br</b> o interessado deverá se cadastrar fornecendo os dados de sua empresa, indicando os dados solicitados. As informações precisam ser corretas e verdadeiras, sendo vedado o cadastramento de mediante o uso de codinomes que ocultem a sua real identidade.<br>
+                Ao finalizar seu cadastro, o <b>cliente</b> deverá ler na íntegra e manifestar a aceitação ao presente Termo de uso, sendo obrigatória sua aceitação, mediante marcação na caixa de seleção <b><ins>“De acordo”</ins></b>. Somente com a leitura e aceitação do presente Termo é que o interessado será admitido como <b>cliente</b>.<br>
+                Uma mesma pessoa jurídica poderá ostentar dois ou mais cadastros junto ao site <b>Martins Atacado</b>. No entanto, para o cadastro de filiais de um mesmo grupo econômica, é necessário que entre em contato com nossa central de atendimento para que seja realizado o cadastro.<br>
+                É de responsabilidade única e exclusiva do <b>cliente</b> a responsabilidade sobre os dados informados, devendo zelar pela segurança e sigilo de seu login, tendo em vista que são pessoais e intransferíveis, nunca os revelando a terceiros. Constitui ainda responsabilidade do <b>cliente</b> a manutenção do seu equipamento de informática protegido com softwares atualizados, municiados com antivírus atualizados e firewalls conforme o estado da arte. Tais medidas são indispensáveis para a realização de uma compra segura.<br>
+                Após o cadastro, o <b>Martins Atacado</b> analisará as informações e liberará o <b>cliente</b> para compra em nosso portal, em até 48 (quarenta e oito) horas.<br>
+                Importante:<br>
+                a. Pessoas jurídicas que não estejam com suas obrigações fiscais e cadastrais em dia, não terão seu cadastro aceito e validado pelo <b>Martins Atacado</b>.<br>
+                b. Em qualquer hipótese cadastros realizados com dados falsos serão considerados nulos.<br>
+                c. Caso a alteração dos dados cadastrais seja necessária, o <b>cliente</b> deverá realizá-la diretamente no link “Meu Cadastro”, disponível no site após a realização de login, ou entrando em contato diretamente com um dos nossos canais de atendimento.<br>
+                d. Os <b>clientes</b> terão suas entregas realizadas, obrigatoriamente, no endereço de cadastro junto ao SINTEGRA.<br>
+                e. Todos os dados disponibilizados pelo <b>cliente</b> ao efetuar seu cadastro junto ao <b>www.martinsatacado.com.br</b>, são tratados com a proteção e inviolabilidade exigidos pela Lei Geral de Proteção de Dados brasileira.<br>
+                <b>3. Processo de COMPRA E VENDA</b><br>
+                O processo de aquisição de itens no site <b>Martins Atacado</b> é composto pelas seguintes etapas:<br>
+                <b>1ª etapa</b> – Após escolher o(s) itens(s) de seu interesse, o <b>cliente</b>1ª etapa</b>> deverá concluir a solicitação de compra por meio do link “Comprar”. Ao finalizar este procedimento o pedido será encaminhado eletronicamente ao <b>Martins Atacado</b> e será analisada.<br>
+                <b>2ª etapa</b> – O pedido será aprovado após a confirmação do pagamento, nos casos das formas de pagamento CASH e cartão de crédito. Para os pedidos com meio de pagamento boleto parcelado, estes serão aprovados de acordo com as regras de liberação de crédito do <b>Martins Atacado</b>2ª etapa</b>>.<br>
+                <b>a.</b> Sendo autorizado o pedido na modalidade de pagamento cartão de crédito, o valor será devidamente debitado do cartão indicado pelo <b>cliente</b>a.</b>>, nas condições ofertadas e por ele escolhidas.<br>
+                <b>b.</b> Não sendo autorizado o pedido, o limite pré-reservado no cartão de crédito indicado pelo <b>cliente</b>b.</b>>, será estornado automaticamente no prazo de 24 (vinte e quatro) horas dependendo da operadora do cartão de crédito indicado, não tendo o <b>Martins Atacado</b> qualquer responsabilidade sobre o referido estorno.<br>
+                <b>c.</b> Sendo o pedido na modalidade Cash e não sendo o boleto devidamente pago pelo <b>cliente</b>c.</b>> até a data de seu vencimento, o pedido será cancelado.<br>
+                O <b>Martins Atacado</b> esclarece que adota todas as medidas necessárias para evitar fraudes em nome de seus <b>clientes</b>, o que poderia gerar grandes prejuízos aos mesmos. Assim, medidas de segurança são tomadas de modo a não permitir que terceiros lesem seus <b>clientes</b>. <br>
+                <b>4. Do preço da compra e venda</b><br>
+                Por abranger grande parte do território nacional, os valores dos produtos disponíveis para compra no site <b>www.martinsatacado.com.br</b>, poderão sofrer variações de acordo com a região geográfica do <b>cliente</b> e, até mesmo, ser restrita para determinadas regiões. Assim, faz-se necessário que o <b>cliente</b> faça o login no portal, para que possa confirmar o valor do produto e a disponibilidade para sua região.<br>
+                Para todos os efeitos o valor do produto válido será aquele visualizado no carrinho de compras, após o <b>cliente</b> realizar o login.<br>
+                <b>5. Política de Pagamento</b><br>
+                Após a aprovação do cadastro, será disponibilizado ao <b>cliente</b> a possibilidade de compra no portal <b>Martins Atacado</b> com pagamentos através de cartão de crédito ou modalidade Cash.<br>
+                A venda via parcelamento em boleto será liberada apenas mediante análise prévia do cadastro do <b>cliente</b>, que inclui seu histórico de compras, relacionamento com o mercado e scores bancários. A aprovação da modalidade de pagamento boleto parcelado, será de exclusiva liberalidade do <b>Martins Atacado</b>.<br>
+                O prazo de entrega do pedido começa a contar somente após a sua roteirização.<br>
+                <ins>Cartão de Crédito:</ins><br>
+                Os preços e condições de pagamento anunciados no site, para a modalidade Cartão de Crédito, são exclusivos para vendas online e para o Chat on line disponível no site, não havendo vendas diretas em lojas físicas de nenhuma espécie.<br>
+                O <b>cliente</b> poderá optar em realizar um pagamento em parcela única ou na quantidade disponibilizada de parcelas, no entanto, é necessário que o valor total da compra esteja dentro do limite de crédito disponível em seu cartão.<br>
+                O <b>Martins Atacado</b> reforça que não possui qualquer ingerência sobre os meios de pagamento disponíveis em seu site, não podendo servir de interlocutor entre esses e o <b>cliente</b> quando a questão envolve a disponibilidade de crédito.<br>
+                <ins>CASH - Boleto Bancário:</ins><br>
+                Para compras à vista por Boleto Bancário, o boleto terá o vencimento de <b>03 (três) dias</b> após a realização do pedido e o pagamento pode ser efetuado em qualquer banco. Nesta modalidade, o mesmo deverá ser feito em uma única parcela no valor total da compra.<br>
+                O <b>cliente</b> poderá imprimir o boleto bancário quando finalizar seu pedido de compra no site, poderá acessar o link para visualização e impressão de seu boleto através do e-mail enviado após a realização de seu pedido, ou ainda, imprimi-lo dentro do ambiente virtual da “Minha Conta”, ingressando com seu login e senha.<br>
+                Nessa modalidade, <ins>o <b>Martins Atacado</b> não envia o boleto para o estabelecimento comercial do <b>cliente</b>, para a realização do pagamento e se a confirmação do pagamento (que é feita automaticamente pelo banco) não ocorrer em até um (1) dia após o vencimento do boleto, o pedido será cancelado e o <b>cliente</b> será informado por e-mail.</ins><br>
+                <ins>PARCELAMENTO BOLETO BANCÁRIO</ins><br>
+                Nessa modalidade, o <b>cliente</b> possui a possibilidade de efetuar o pagamento do seu pedido através de parcelamento em boleto bancário. Nesses casos, a quantidade de parcelas e prazos para pagamento dependerão exclusivamente da análise de crédito do <b>Martins Atacado</b>, que possui total independência em sua aprovação.<br>
+                Os boletos, exclusivamente para essa modalidade, serão encaminhados ao <b>cliente</b> juntamente com os pedidos, ou seja, serão entregues boletos impressos ao <b>cliente</b> no local de entrega.<br>
+                <b>7. Política de entrega</b><br>
+                O prazo de entrega de produtos, que é contato sempre em dias úteis, pode variar de acordo com a região de entrega, local de disponibilidade do produto e forma de pagamento.<br>
+                O sistema automaticamente irá informar o valor do frete e o prazo de entrega. Havendo no carrinho algum produto que esteja inserido em promoções de frete grátis, o valor do frete destes produtos será igual a zero, sendo cobrado apenas o frete dos produtos que não estejam inseridos na mesma promoção.<br>
+                Não é possível enviar pedidos para endereços de caixa postal.<br>
+                Na compra de mais de um item por pedido, ou nas compras em que o pedido possuir itens vendidos e entregue pelo próprio <b>Martins Atacado</b> e pelo seller (parceiro Market Place), as entregas poderão ser realizadas separadamente em datas diferentes, variando de acordo com a modalidade de entrega da transportadora, fornecedor e disponibilidade do produto. O cálculo do prazo de entrega leva em consideração essa possibilidade, informando ao <b>cliente</b> apenas a maior prazo.<br>
+                <ins>Atenção: Para todos os efeitos, o prazo de entrega somente passará a correr após a aprovação do pagamento e a roteirização do pedido.</ins><br>
+                Não serão aceitos ou atendidos, em nenhuma etapa da compra e venda, pedidos de antecipação ou prioridade de realização de entrega.<br>
+                As entregas serão realizadas de segunda a sexta-feira, entre 8h e 18h, e aos sábados excepcionalmente das 8h às 12h, nas localidades atendidas pelo <b>Martins Atacado</b>. O prazo de entrega do produto poderá ser suspenso devido a caso fortuito ou de força maior, como por exemplo, mas não se limitando, alagamentos, greves, manifestações populares, piquetes, desastres naturais, entre outros.<br>
+                Em caso de ausência de responsável que possa receber o produto, ou estando o empreendimento fechado, serão realizadas mais 2 (duas) tentativas, em dias alternados, dentro de um período de 5 (cinco) dias. Caso resultem infrutíferas as tentativas, o produto será direcionado novamente ao <b>Martins Atacado</b>.<br>
+                Os produtos somente serão entregues a pessoas maiores de 18 (dezoito) anos de idade, que sejam representantes legais do <b>cliente</b> e, caso haja dúvidas quanto a essa condição ou a qualquer outra, um documento de identidade poderá ser solicitado.<br>
+                É de responsabilidade do <b>cliente</b> averiguar se as dimensões do produto embalado são adequadas para locomoção por elevadores, rampas, portas e corredores do local da entrega, pois aos entregadores do <b>Martins Atacado</b> é proibido realizar entregas ou coletas em condições que ofereçam risco às pessoas ou aos produtos, como utilizar escadas improvisadas, içar o produto, etc., bem como abrir a embalagem, realizar instalações ou entregar ou recolher produtos em local diferente daquele que consta na nota fiscal.<br>
+                Verificando a condição inadequada para a entrega, o produto será devolvido ao <b>Martins Atacado</b>, procedendo-se o cancelamento do pedido. Se a condição inadequada se der no momento da coleta, a mesma não será realizada, cabendo ao <b>cliente</b> providenciar condição apropriada dentro do prazo do exercício de seu direito, comunicando tal fato ao <b>Martins Atacado</b> para que proceda nova tentativa de coleta.<br>
+                <b>8. Política de trocas e devolução</b><br>
+                As trocas e devoluções de produtos deverão ser solicitadas através de um dos canais de nossa central de atendimento ao <b>cliente</b>, e dependerão de análise e autorização prévia de nossa área de pós-vendas. Ao solicitar a troca ou devolução, o <b>cliente</b> deverá informar o motivo pelo qual está realizando a solicitação.<br>
+                Caso seja aprovada a troca ou devolução, os produtos a serem devolvidos deverão estar em perfeito estado, sem rasuras e sem etiquetas coladas em sua embalagem.<br>
+                São motivos para a solicitação de troca ou devolução:<br>
+                <ins>Desistência da mercadoria antes da entrega</ins><br>
+                Para cancelar um pedido registrado e ainda não encaminhado para entrega, ou seja, antes da emissão da nota fiscal, o <b>cliente</b> deverá entrar em contato com a Central de Atendimento do Martins Atacado ou clicar no botão 'Registrar Ocorrência' disponível no ambiente Minha Conta em seu site e informar sobre a desistência.<br>
+                Caso o produto já tenho sido enviado para o estabelecimento comercial do <b>cliente</b>, a mercadoria deverá ser recusada no ato da entrega e exigir que o motorista realize a devolução.<br>
+                <ins>Desistência da mercadoria após a entrega</ins><br>
+                Para desistir de um produto após a entrega, o <b>cliente</b> deve entrar em contato com a Central de Atendimento do <b>Martins Atacado</b> ou clicando no botão, 'Registrar Ocorrência', disponível em seu site, observando as seguintes condições:<br>
+                    • O prazo para desistir da compra é de até 07 (sete) dias corridos, a contar da data da entrega.<br>
+                    • Apenas serão aceitas desistências, se os produtos estiverem lacrados em sua embalagem original e livres de quaisquer avarias.<br>
+                    • O recolhimento do produto será realizado no mesmo endereço que foi efetuada a entrega. O prazo para recolhimento será informado pela Central de Atendimento do <b>Martins Atacado</b>.<br>
+                    • O <b>cliente</b> é responsável pelas condições do produto a ser devolvido.<br>
+                    • As solicitações que envolvam a desistência de pedidos com brindes/descontos somente serão efetivadas com a devolução de todos os produtos da compra (itens principais e promocionais).<br>
+                Caso alguma das condições acima não seja verificada, a solicitação de devolução não será acatada e o <b>cliente</b> será comunicado por e-mail ou por telefone.<br>
+                <ins>Mercadoria danificada no transporte</ins><br>
+                Caso seja verificado avaria no momento da entrega do produto, o <b>cliente</b> deverá recusar o recebimento e entrar em contato com a Central de Atendimento do <b>Martins Atacado</b>.<br>
+                Na hipótese do produto ter sido recebido, o prazo para solicitação de Troca ou Devolução é de no máximo 07 (sete) dias corridos, a contar da data de seu recebimento.<br>
+                Para solicitar a troca da mercadoria danificada no transporte, o <b>cliente</b> deve entrar em contato com a Central de Atendimento do <b>Martins Atacado</b> ou clicando no botão, 'Registrar Ocorrência' disponível em nosso portal, devendo ser relatado todas as irregularidades observadas no produto, como: arranhões, amassados, caixa danificada, lacre violado, entre outros.<br>
+                A aprovação da ocorrência dependerá de análise do <b>Martins Atacado</b> que, decidirá sua procedência. Sendo aprovada, os produtos deverão ser devolvidos ao <b>Martins Atacado</b> na embalagem original (interna e externa), acompanhado da respectiva nota fiscal, manual e todos os seus acessórios.<br>
+                As solicitações que envolvam o cancelamento de pedidos com brindes/descontos somente serão efetivadas com a devolução de todos os produtos da compra (itens principais e promocionais).<br>
+                <ins>Mercadoria com defeito de fábrica</ins><br>
+                Produtos que vierem a apresentar defeito de fabricação são de responsabilidade do fabricante. Nestes casos, o <b>Martins Atacado</b> analisará a solicitação do <b>cliente</b> e encaminhará ao fabricante para análise, podendo ser aprovado, ou não.<br>
+                Os itens deverão ser devolvidos na embalagem original (interna e externa), ou neutra, acompanhado da respectiva nota fiscal, manual e todos os seus acessórios.<br>
+                As solicitações que envolvam o cancelamento de pedidos com brindes/descontos somente serão efetivadas com a devolução de todos os produtos da compra (itens principais e promocionais).<br>
+                <ins>Erro de venda</ins><br>
+                Erro de venda consiste no pedido e faturamento de itens não solicitados pelo <b>cliente</b>.<br>
+                Sendo constatado erro de venda, para solicitar o recolhimento dos itens, o <b>cliente</b> deve entrar em contato com a Central de Atendimento do <b>Martins Atacado</b> ou clicando no botão 'Registrar Ocorrência' disponível em nosso portal.<br>
+                A aprovação da ocorrência dependerá de análise do <b>Martins Atacado</b> que, decidirá sua procedência. Sendo aprovada, os produtos deverão ser devolvidos ao <b>Martins Atacado</b> na embalagem original (interna e externa), acompanhado da respectiva nota fiscal, manual e todos os seus acessórios.<br>
+                <ins>Restituição de valores em todos os casos:</ins><br>
+                Registrada a Ocorrência, esta será analisada pelo <b>Martins Atacado</b> e caso seja aprovada, o valor pago pelo <b>cliente</b> será restituído conforme os seguintes procedimentos:<br>
+                    • O prazo para restituição ou estorno do valor pago inicia-se somente após recolhimento do produto e seu recebimento e análise pela Central de Distribuição do <b>Martins Atacado</b>. Conforme já destacado, o produto deverá ser encaminhado na embalagem original (interna e externa), ou neutra (quando defeito de fábrica) acompanhado de nota fiscal, manual e todos os seus acessórios.<br>
+                    • Compras feitas com cartão de crédito: o estorno será efetuado na fatura do cartão de crédito utilizado para realizar a compra. Este procedimento é de responsabilidade da administradora do cartão utilizado, e poderá ser efetuado em até 02 (duas) faturas subsequentes.<br>
+                    • Compras feitas através da modalidade CASH - boleto bancário: o estorno será efetuado mediante crédito em conta corrente do <b>cliente</b> no prazo de até <ins>10 (dez) dias úteis após a indicação da conta bancária pelo mesmo</ins>. A conta corrente para crédito do valor deverá obrigatoriamente estar em nome da razão social do <b>cliente</b>.<br>
+                <b>9. Campanhas publicitárias</b><br>
+                O <b>Martins Atacado</b> poderá anunciar em datas comemorativas ou publicitárias produtos com desconto nos preços, como forma de fomentar o consumo em cada época. Tal liberalidade não constitui regra ou obrigação e poderá alcançar todos os produtos em estoque ou parte dele. Em todo caso o <b>Martins Atacado</b> informará em cada oferta a condição de cada campanha promocional.<br>
+                Encerrando a campanha publicitária ou o estoque negociado para a respectiva promoção, o <b>Martins Atacado</b> retornará os valores de cada oferta ao seu status anterior em condições de preço e forma de pagamento.<br>
+                <b>10. MarketPlace</b><br>
+                Através de parcerias, o <b>Martins Atacado</b> opera como MarketPlace, divulgando em sua loja produtos de outros lojistas. Neste caso, a responsabilidade sobre o recebimento do pedido e processamento dos pagamentos é de exclusiva responsabilidade do <b>Martins Atacado</b>, enquanto que as responsabilidades quanto ao faturamento e entrega dos itens é do parceiro lojista.<br>
+                <b>11. Interoperacionalidade do site</b><br>
+                O site <b>Martins Atacado</b> foi planejado para ser acessado por todos os principais navegadores de internet disponíveis no mercado, incluindo navegadores utilizados em smartphones, tablets e smart Tvs, sem que haja qualquer distinção técnica entre eles que possa causar prejuízo à navegação. O <b>Martins Atacado</b> se dedica continuamente a corrigir e/ou aperfeiçoar seu site, de forma que a implementação de novas tecnologias ou criação de novos navegadores não causem prejuízo ao acesso de seus <b>clientes</b>.<br>
+                <b>12. Da Política de Privacidade</b><br>
+                <b>Uso e obtenção de informações</b><br>
+                É possível coletar, gravar e utilizar em conexão com outros sites e parceiros as informações pessoais dos <b>clientes</b>, incluindo, mas não se limitando ao nome do <b>cliente</b>, CPF, endereço, número de telefone, interesses, atividades, últimas compras realizadas, etc.<br>
+                O <b>Martins Atacado</b> se resguarda ao direito de gravar seu IP, tipo de navegador, aparelho e operadora de celular, posição geográfica e outros dados relativos aos <b>clientes</b> (Dados de Acesso).<br>
+                As informações coletadas e existentes em nossos sistemas são (i) informações que o <b>cliente</b> se prontifica a fornecer por meio do cadastro (dados da pessoa jurídica, dados financeiros, dados de conta e dados de acesso), emissão de notas fiscais ou importação de extratos bancários e (ii) informações obtidas automaticamente.<br>
+                A coleta dos dados financeiros se dará no momento da inserção de dados de pagamento.<br>
+                As informações coletadas automaticamente não são informações pessoais, mas sim sobre os computadores, smartphones ou outros dispositivos que o <b>cliente</b> utiliza para acessar a plataforma, bem como o nome de domínio do seu provedor de acesso à internet, o endereço de protocolo IP utilizado para se conectar à Plataforma, o tipo e versão do browser do <b>cliente</b>, o sistema operacional, o tempo médio gasto na Plataforma, as páginas visitadas na Plataforma, as informações procuradas, os horários de acesso e outras estatísticas relevantes para o bom funcionamento da plataforma ao <b>cliente</b>.<br>
+                O <b>cliente</b> declara estar ciente e concorda com a coleta, armazenamento, tratamento, processamento e uso das Informações enviadas e/ou transmitidas pelo ele mesmo nos termos estabelecidos na Política de Privacidade e Termos de Uso.<br>
+                <b>Utilização das Informações coletadas</b><br>
+                Com exceção do desenvolvedor da plataforma, não haverá divulgação pública das informações do <b>cliente</b> ou formas de identificá-lo. Tais informações, poderão ser utilizadas de forma agregada para realização de estudos, análises, melhorias do sistema e plataforma para direcionar venda, atender novas demandas e administrar as funcionalidades da plataforma.<br>
+                As informações podem ser utilizadas para compor e oferecer serviços personalizados, bem como conduzir pesquisas e testes de recursos em desenvolvimento.<br>
+                Com o aceite, o <b>cliente</b> autoriza o envio de e-mails, alertas e comunicados relacionados às funcionalidades da plataforma para que tenha melhor experiência de uso da plataforma.<br>
+                <b>Plugins de Redes Sociais</b><br>
+                Formato de coleta de informações por meio de testemunho de conexão (cookie), depositados nas máquinas dos <b>clientes</b> não coletam informações identificadas do <b>cliente</b>, mas apresenta informações de forma global e se fazem necessárias para aperfeiçoar a navegação na plataforma. Poderá ser utilizada para contabilizar o número de visitas em seu site e em todas as suas páginas subjacentes, inclusive mediante utilização de cookies, de forma a melhorar a qualidade dos serviços prestados.<br>
+                <b>Compartilhamento de informações</b><br>
+                As informações não serão divulgadas, vendidas ou alugadas para qualquer organização ou entidade, tampouco com elas será feita permuta sem antes comunicar ao <b>cliente</b> e obter seu consentimento expresso, com exceção de informações exigidas por leis ou por ordem judicial. a presente previsão de não divulgação das informações não se aplicam à empresa desenvolvedora da presente plataforma.<br>
+                Na plataforma pode conter links a outros websites. E a presente declaração de privacidade não abrange os referidos sites, da forma que não há de se falar em responsabilização pelas práticas de privacidade de outros sites.<br>
+                As informações serão armazenadas em banco de dados reservado, com acesso restrito aos empregados habilitados e desenvolvedores da plataforma, obrigados, por confidencialidade, a manter o sigilo das informações dos <b>clientes</b>.<br>
+                <b>Da exclusão das informações e dados pessoais</b><br>
+                O <b>cliente</b> é proprietário dos dados e poderá realizar a exclusão e/ou modificação de sua conta a qualquer momento, bastando fazê-lo também por meio da plataforma.<br>
+                Quando o <b>cliente</b> exclui sua conta, o contrato ficará automaticamente rescindido, os dados pessoais serão excluídos, porém são mantidas as informações de guarda obrigatória, conforme determinação legal. Dessa forma, a solicitação de exclusão de dados pessoais poderá implicar na imediata desativação da sua conta, com perda permanente de qualquer um dos dados inseridos na mesma.<br>
+                <b>Armazenamento e segurança das informações</b><br>
+                As informações serão armazenadas em banco de dados reservado, com alto nível de proteção, acesso restrito a pessoas qualificadas e autorizadas.<br>
+                Com exceção das formas de compartilhamento previstos nesta Política de Privacidade, fica vedada a divulgação das informações, salvo por meio de ordem judicial ou em virtude de lei.<br>
+                Considerando que nenhum sistema de segurança é absoluto, o <b>Martins Atacado</b> se exime de quaisquer responsabilidades por eventuais danos e/ou prejuízos decorrentes de falhas, vírus ou invasões do banco de dados do site, salvo nos casos de dolo ou culpa da mesma.<br>
+                <b>Alterações na política de privacidade</b><br>
+                É possível a alteração da presente Política de Privacidade, a qualquer tempo e a seu exclusivo critério, disponibilizando a sua nova versão na plataforma, para visualização e consulta dos <b>clientes</b>.<br>
+                No caso de eventuais alterações significativas da Política de Privacidade, se compromete a comunicar os <b>clientes</b>, por meio do envio de email. E, em caso de não concordância, o <b>cliente</b> pode, a qualquer momento e por sua liberalidade, desativar sua conta na plataforma.<br>
+                Ao utilizar dos serviços do site e aplicativo <b>Martins Atacado</b>, o <b>cliente</b> concorda e aceita os termos da política de privacidade vigente na data, cabendo ao mesmo verificá-la previamente cada vez que visitar o site.<br>
+                <b>13. Dicas importantes</b><br>
+                Recomenda-se que o <b>cliente</b>:<br>
+                    • Atente para a descrição e ficha técnica do produto (voltagem, cor e dimensão);<br>
+                    • Guarde sempre a Nota Fiscal recebida no momento da entrega (ela faz parte da garantia do produto);<br>
+                    • Conserve em boas condições a embalagem original do produto, manuais, itens e acessórios que acompanham o produto, em caso de troca ou devolução, estes itens serão fiscalizados;<br>
+                    • Faça sempre a conferência dos itens do pedido no momento da entrega e da nota fiscal, jamais aceitando um produto com o lacre rompido;<br>
+                    • Caso haja algum problema (lacre rompido, avaria, ausência de algum item ou divergência entre nota e conteúdo), o <b>cliente</b> deverá recusar a entrega e não assinar o canhoto;<br>
+                    • É necessário que haja no local da entrega pessoa autorizada pelo <b>cliente</b>, maior de 18 anos, portando documento de identificação para receber a mercadoria e assinar o protocolo.<br>
+                    • Após a conferência positiva, deve haver a assinatura por extenso do responsável pelo recolhimento e número de RG no canhoto da nota.<br>
+                    • O recolhimento será realizado de segunda a sexta-feira, entre 8h e 18h, e aos sábados das 8h às 12h, nas localidades atendidas pelo <b>Martins Atacado</b>, por meio de transportadoras terceirizadas.<br>
+                    • Por questão de segurança, recomenda-se que o <b>cliente</b> exija sempre que o transportador lhe apresente no momento da coleta a Ordem de Recolhimento, onde estará descrito o produto que será devolvido.<br>
+                    • O Martins orienta que seus <b>clientes</b> não deixem de quitar títulos referentes às notas fiscais que possuam ocorrência SAC, pois a não quitação dos títulos e a reprovação da ocorrência, acarretarão ações de cobrança junto aos <b>clientes</b>, conforme procedimentos do setor de Cobrança. Vale ressaltar que nos casos de aprovação das ocorrências, o <b>cliente</b> será reembolsado após o recolhimento da(s) mercadoria(s) ou terá seu produto trocado, conforme o caso.<br>
+                <b>14. Legislação aplicável, foro de eleição</b><br>
+                Aplica-se a todas as questões decorrentes do presente Termo de Uso a legislação brasileira. Para qualquer questionamento judicial dos termos do presente ou de aspectos das relações oriundas das relações comerciais aqui descritas, deverá ser submetida a uma das varas cíveis do Foro da Comarca de Uberlândia-MG.<br>
+            </p>
+        </div> -->
+
+    </div>
+
+</body>
+</html>

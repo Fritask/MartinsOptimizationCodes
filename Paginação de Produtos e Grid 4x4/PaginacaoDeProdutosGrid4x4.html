@@ -1,0 +1,350 @@
+<script>
+	$(document).ready(function()
+	{
+		var paginaAtual = 0; // Variável que indica a página atual (0 = primeira página)
+		var IGPgMontado;
+
+		var x = document.getElementsByClassName("fr obs1"); // variável que recebe o elemento que contém a quantidade de produtos do departamento
+
+		var str = x[0].textContent; // Variável que pega o texto do elemento que contém a quantidade de produtos
+		// var IGqtdProdutos = str.substr(0,str.indexOf(' ')); // Variável que pega a quantidade de produtos do texto str
+		var IGqtdProdutos = "";
+		for (var ij = 0; str[ij] != " "; ij++)
+		{
+			if (Number.isInteger(parseInt(str[ij])))
+				IGqtdProdutos = IGqtdProdutos.concat(str[ij]);
+		}
+		IGqtdProdutos = parseInt(IGqtdProdutos); // Transformando o texto de quantidade de produtos em inteiro
+
+        // Condições para determinar a quantidade de páginas
+		if (IGqtdProdutos%16 != 0)
+		{
+			var IGqtdPg = (IGqtdProdutos/16) + 1;
+		}
+		else
+		{
+			var IGqtdPg = IGqtdProdutos/16;
+		}
+
+		IGqtdPg = parseInt(IGqtdPg); // Transformando o texto de quantidade de páginas em inteiro
+
+        // Função que define a disposição dos produtos para o formato de lista sem imagem
+        $( "#IGlistNoImageProducts2" ).click(function() {
+            IGTrocaDispo(0);
+        });
+
+        // Função que define a disposição dos produtos para o formato de grid
+        $( "#IGgridProducts2" ).click(function() {
+            IGTrocaDispo(1);
+        });
+
+        // Função que define a disposição dos produtos para o formato de lista com imagem
+        $( "#IGlistProducts2" ).click(function() {
+            IGTrocaDispo(2);
+        });
+
+        // Função que alterna entre os formatos de disposição dos produtos
+        IGTrocaDispo = function(IGProdDispo) // Parâmetro que indica a forma em que os produtos estão dispostos no site (0 = Lista sem Imagem; 1 = Grid de Produtos; 2 = Lista de Produtos;)
+        {
+			var j;
+			var IGProdElem = document.getElementsByClassName("product");
+            document.getElementById("IGPgn2").classList = "";
+            document.getElementById("IGlistNoImageProducts2").classList = "btnGridlist";
+            document.getElementById("IGgridProducts2").classList = "btnGridlist";
+            document.getElementById("IGlistProducts2").classList = "btnGridlist";
+            if (IGProdDispo == 0)
+            {
+                document.getElementById("IGlistNoImageProducts2").classList.add("active");
+                document.getElementById("IGPgn2").classList = "products list listNoImage";
+				for (j = 0; j < IGProdElem.length; j++)
+					IGProdElem[j].setAttribute('style', 'width: 100% !important');
+            }
+            else if (IGProdDispo == 1)
+            {
+                document.getElementById("IGgridProducts2").classList.add("active");
+                document.getElementById("IGPgn2").classList = "products";
+				for (j = 0; j < IGProdElem.length; j++)
+					IGProdElem[j].setAttribute('style', 'width: calc(25% - 10px) !important');
+
+            }
+            else if (IGProdDispo == 2)
+            {
+                document.getElementById("IGlistProducts2").classList.add("active");
+                document.getElementById("IGPgn2").classList = "products list";
+				for (j = 0; j < IGProdElem.length; j++)
+					IGProdElem[j].setAttribute('style', 'width: 100% !important');
+            }
+
+            loadDoc(paginaAtual);           
+        }
+
+		// Função que monta o menu de páginas
+        montarOpcoes = function()
+		{
+			if (IGqtdPg < 11)
+			{
+				IGPgMontado = '';
+				if (paginaAtual != 0)
+					IGPgMontado += '<a name="IGopcao" id="IGanterior" onclick="IGanterior()">&lt; Anterior</a>';
+				for (var i = 0; i < IGqtdPg; i++)
+				{
+					IGPgMontado += '<a name="IGopcao" id="IGopcao' + i + '" onclick="loadDoc(' + i + ')">' + (i+1) + '</a>';
+				}
+				if (paginaAtual != (IGqtdPg - 1))
+					IGPgMontado += '<a name="IGopcao" id="IGproxima" onclick="IGproxima()">Próxima &gt;</a>';
+
+				document.getElementById("IGPages2").innerHTML = IGPgMontado;
+			}
+			else
+			{
+				if (paginaAtual < 6)
+				{
+					IGPgMontado = '';
+					if (paginaAtual != 0)
+						IGPgMontado += '<a name="IGopcao" id="IGanterior" onclick="IGanterior()">&lt; Anterior</a>';
+					
+					for (var i = 0; i < 10; i++)
+					{
+						IGPgMontado += '<a name="IGopcao" id="IGopcao' + i + '" onclick="loadDoc(' + i + ')">' + (i+1) + '</a>';
+					}
+					IGPgMontado += '<span class="IGHellip" name="IGetc" id="IGetc">&hellip;</span>';
+					IGPgMontado += '<a name="IGopcao" id="IGopcao' + (IGqtdPg - 1) + '" onclick="loadDoc(' + (IGqtdPg - 1) + ')">' + IGqtdPg + '</a>';
+					if (paginaAtual != (IGqtdPg - 1))
+						IGPgMontado += '<a name="IGopcao" id="IGproxima" onclick="IGproxima()">Próxima &gt;</a>';
+
+					document.getElementById("IGPages2").innerHTML = IGPgMontado;
+				}
+				else if (paginaAtual > (IGqtdPg - 6))
+				{
+					IGPgMontado = '';
+					if (paginaAtual != 0)
+						IGPgMontado += '<a name="IGopcao" id="IGanterior" onclick="IGanterior()">&lt; Anterior</a>';
+					if (paginaAtual == (IGqtdPg - 1))
+					{
+						IGPgMontado += '<a name="IGopcao" id="IGopcao0" onclick="loadDoc(0)">1</a>';
+						IGPgMontado += '<span class="IGHellip" name="IGetc" id="IGetc">&hellip;</span>';
+					}
+
+					for (var i = (IGqtdPg - 10); i < IGqtdPg; i++)
+					{
+						IGPgMontado += '<a name="IGopcao" id="IGopcao' + i + '" onclick="loadDoc(' + i + ')">' + (i+1) + '</a>';
+					}
+					if (paginaAtual != (IGqtdPg - 1))
+						IGPgMontado += '<a name="IGopcao" id="IGproxima" onclick="IGproxima()">Próxima &gt;</a>';
+
+					document.getElementById("IGPages2").innerHTML = IGPgMontado;
+				}
+				else
+				{
+					IGPgMontado = '';
+					if (paginaAtual != 0)
+						IGPgMontado += '<a name="IGopcao" id="IGanterior" onclick="IGanterior()">&lt; Anterior</a>';
+
+					for (var i = (paginaAtual - 5); i < (paginaAtual + 5); i++)
+					{
+						IGPgMontado += '<a name="IGopcao" id="IGopcao' + i + '" onclick="loadDoc(' + i + ')">' + (i+1) + '</a>';
+					}
+					if (paginaAtual < (IGqtdPg - 6))
+					{
+						IGPgMontado += '<span class="IGHellip" name="IGetc" id="IGetc">&hellip;</span>';
+					}
+					IGPgMontado += '<a name="IGopcao" id="IGopcao' + (IGqtdPg - 1) + '" onclick="loadDoc(' + (IGqtdPg - 1) + ')">' + IGqtdPg + '</a>';
+					if (paginaAtual != (IGqtdPg - 1))
+						IGPgMontado += '<a name="IGopcao" id="IGproxima" onclick="IGproxima()">Próxima &gt;</a>';
+
+					document.getElementById("IGPages2").innerHTML = IGPgMontado;
+				}
+			}
+		};
+
+        // Condições que montam o menu de páginas inicial
+		if (IGqtdPg < 11)
+		{
+			IGPgMontado = '';
+			for (var i = 0; i < IGqtdPg; i++)
+			{
+				IGPgMontado += '<a name="IGopcao" id="IGopcao' + i + '" onclick="loadDoc(' + i + ')">' + (i+1) + '</a>';
+			}
+			IGPgMontado += '<a name="IGopcao" id="IGproxima" onclick="IGproxima()">Próxima &gt;</a>';
+
+			document.getElementById("IGPages2").innerHTML = IGPgMontado;
+		}
+		else
+		{
+			IGPgMontado = '';
+			for (var i = 0; i < 10; i++)
+			{
+				IGPgMontado += '<a name="IGopcao" id="IGopcao' + i + '" onclick="loadDoc(' + i + ')">' + (i+1) + '</a>';
+			}
+			IGPgMontado += '<a name="IGetc" id="IGetc">&hellip;</a>';
+			IGPgMontado += '<a name="IGopcao" id="IGopcao' + (IGqtdPg - 1) + '" onclick="loadDoc(' + (IGqtdPg - 1) + ')">' + IGqtdPg + '</a>';
+			IGPgMontado += '<a name="IGopcao" id="IGproxima" onclick="IGproxima()">Próxima &gt;</a>';
+			document.getElementById("IGPages2").innerHTML = IGPgMontado;
+		}
+
+        // Função que decresce uma página da atual
+		IGanterior = function()
+		{
+			if (paginaAtual > 0)
+			{
+				dslCor();
+				paginaAtual = paginaAtual - 1;
+			}
+			loadDoc(paginaAtual);
+		};
+
+        // Função que acresce uma página da atual
+		IGproxima = function()
+		{
+			if (paginaAtual < (IGqtdPg-1))
+			{
+				dslCor();
+				paginaAtual = paginaAtual + 1;
+			}
+			loadDoc(paginaAtual);
+		};
+
+        var IGElemFiltro = document.getElementById("sortOptions2"); // Variável que representa o elemento de modo de ordenação dos produtos
+        IGElemFiltro.addEventListener('change', function(){loadDoc(0)}); // Evento que realiza a troca do modo de ordenação dos produtos
+
+        // Função que monta a página selecionada
+		loadDoc = function(pageVar)
+		{
+			dslCor();
+			paginaAtual = pageVar;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange=function()
+			{
+				if (this.readyState == 4 && this.status == 200)
+				{
+				    document.getElementById("IGPgn2").innerHTML = this.responseText;
+				}
+			};
+            var IGFiltro = IGElemFiltro.options[IGElemFiltro.selectedIndex].value;
+			var IGLinkAtual = window.location.href;
+			if (IGLinkAtual.includes("?"))
+			{
+				// IGInterrogacaoPos = IGLinkAtual.indexOf("?");
+				IGLinkAtual = IGLinkAtual.replace("?", "/showMore?");
+			}
+			else
+			{
+				IGLinkAtual = IGLinkAtual + "/showMore?&q=%3Arelevance%3A";
+			}
+			// xhttp.open("GET", "https://www.martinsatacado.com.br/martins/pt/BRL/c/eletrodomesticos/showMore?page=" + pageVar + "&q=%3Arelevance%3A&sort=" + IGFiltro + "&pageSize=16", true);
+			xhttp.open("GET", IGLinkAtual + "&page=" + pageVar + "&sort=" + IGFiltro + "&pageSize=16", true);
+			xhttp.send();
+
+			montarOpcoes();
+			lgCor();
+            IGtopFunction();
+		};
+
+        // Função que redireciona a página ao topo
+        IGtopFunction = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Função que desmarca o botão da página atual do menu de páginas
+		dslCor = function()
+		{
+			document.getElementById("IGopcao" + paginaAtual).classList.remove("active");
+		};
+
+        // Função que marca o botão da página atual do menu de páginas
+		lgCor = function()
+		{
+			document.getElementById("IGopcao" + paginaAtual).classList.add("active");
+		};
+
+        // Chamada inicial da função loadDoc para carregamento da primeira página
+		loadDoc(0);
+	});
+
+</script>
+
+<div class="yCmsContentSlot product-grid-right-result-slot">
+	<div class="yCmsComponent product__list--wrapper yComponentWrapper product-grid-right-result-component">
+		<div name="IGPgn2" id="IGPgn2" class="products">
+		</div>
+	</div>
+</div>
+<div id="addToCartTitle" class="display-none">
+    <div class="add-to-cart-header">
+        <div class="headline">
+            <span class="headline-text">Carrinho</span>
+        </div>
+    </div>
+</div>
+<style>
+	.centerIG {
+		text-align: center;
+	}
+	
+	.paginationIG {
+		display: inline-block;
+	}
+	
+	.paginationIG a {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+		/* border: 1px solid #ddd; */
+		margin: 0 4px;
+	}
+
+	span.IGHellip {
+		color: black;
+		float: left;
+		padding: 8px 4px;
+		text-decoration: none;
+		/* transition: background-color .3s; */
+		/* border: 1px solid #ddd; */
+		margin: 0 4px;
+	}
+	
+	.paginationIG a.active {
+		background-color: #f27934;
+		color: white;
+		border: 1px solid #f27934;
+	}
+	
+	.paginationIG a:hover:not(.active) {
+		background-color: #f27934;
+		color: white;
+		cursor: pointer;
+	}
+
+	.products .product {
+		width: calc(25% - 10px) !important;
+	}
+
+	.products.list .product {
+		width: 100% !important;
+	}
+
+</style>
+
+<div class="yCmsContentSlot product-grid-right-result-slot"></div>
+
+<div>
+	<div class="centerIG">
+		<div id="IGPages2" class="paginationIG"></div>
+	</div>
+</div>
+
+<!--Pegar os IDs desses botões:-->
+<!-- <button id="IGlistNoImageProducts2" class="btnGridlist">
+    <i class="glyphicon glyphicon-align-justify"></i>
+</button>
+
+<button id="IGgridProducts2" class="btnGridlist active">
+    <i class="glyphicon glyphicon-th"></i>
+</button>
+
+<button id="IGlistProducts2" class="btnGridlist">
+    <i class="glyphicon glyphicon-th-list"></i>
+</button> -->
