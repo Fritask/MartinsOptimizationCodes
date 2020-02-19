@@ -1,0 +1,29 @@
+https://imgprd.martins.com.br/medias/sys_master/images/images/h1c/h2a/9019721875486/BANNER-PRINCIPAL-teste2.jpg
+h1c = h28
+h2a = h42
+9019721875486 = PK do arquivo
+identificador = BANNER PRINCIPAL teste2.jpg5
+localização = images/h1c/h2a/9019721875486.jpg
+
+Media Guide
+https://help.sap.com/viewer/d0224eca81e249cb821f2cdf45a82ace/1808/en-US/8c0f64c786691014aa95f9f6b572f248.html
+
+Class MediaModel
+https://help.sap.com/doc/a4265d5ea8314eb2929e6cf6fb8e35a5/1811/en-US/de/hybris/platform/core/model/media/MediaModel.html#INTERNALURL
+
+Class GeneratedMedia
+https://help.sap.com/doc/a4265d5ea8314eb2929e6cf6fb8e35a5/1811/en-US/de/hybris/platform/jalo/media/GeneratedMedia.html
+
+Question on how to customize media url generation
+https://answers.sap.com/questions/12759685/question-on-how-to-customize-media-url-generation.html
+
+Image with custom URL
+https://answers.sap.com/questions/12763186/image-with-custom-url.html
+
+A Hybrid Hashing Security Algorithm for Data Storage on Cloud Computing
+https://www.researchgate.net/publication/303842608_A_Hybrid_Hashing_Security_Algorithm_for_Data_Storage_on_Cloud_Computing
+
+SAP hybris Data Folder Structure. Media folders.
+https://hybrismart.com/2018/07/01/sap-hybris-data-folder-structure/
+Hash hierarchy of the specified depth (such as h04/ha3/). Each component is one of the 256 values (h00..hff).
+The folders are created only if there is at least one file in them.
