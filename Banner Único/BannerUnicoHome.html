@@ -5,7 +5,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <style>
-.mySlides {display: none}
+.mySlides {
+	display: none;
+	text-align: center;
+}
 img.IGBanner {
 	vertical-align: middle;
 	width: auto;
@@ -145,6 +148,7 @@ img.IGBanner {
 		var slideAtual = 1;
 		var qtdSlides;
 		var i;
+		var IGPageFirstLoad = 1;
 		var IGConjuntoLinksImagensBanners = new Set();
 		var IGDicionarioLinksBanner = new Object();
 		var IGArrayLinksImagensBanners = [];
@@ -186,7 +190,7 @@ img.IGBanner {
 		{
 			for(var i = 0; i < qtdSlides; i++)
 			{
-				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><a href="'+ IGDicionarioLinksBanner[IGArrayLinksImagensBanners[i]] +'"><img id="IGPecaBanner2" class="IGBanner" src="' + IGArrayLinksImagensBanners[i] + '"></a></div>');
+				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><a href="'+ IGDicionarioLinksBanner[IGArrayLinksImagensBanners[i]] +'"><img crossorigin="anonymous" id="IGPecaBanner' + (i+1) + '" class="IGBanner" src="' + IGArrayLinksImagensBanners[i] + '"></a></div>');
 			}
 			$('#IGContainerSlides').append('<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a><a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a><div id="IGDots" class="IGDots"></div>');
 		};
@@ -244,6 +248,28 @@ img.IGBanner {
 
 		IGAddBotoesSlides();
 
+		IGBannerBGColor = function(slide)
+		{
+			var IGCanvas = document.getElementById("IGBannerCanvas");
+			var IGCanvasContext = IGCanvas.getContext("2d");
+			var IGImgID = "IGPecaBanner" + slide;
+			var IGImg = document.getElementById(IGImgID);
+			IGCanvasContext.drawImage(IGImg, -855, -385);
+			var data = IGCanvasContext.getImageData(13, 13, 13, 13).data;
+			var IGRGB = [ data[0], data[1], data[2] ];
+			var IGCorDeFundo = "rgb(" + IGRGB + ")";
+			// alert(IGRGB);
+			if(IGPageFirstLoad)
+			{
+				document.getElementById("IGContainerSlides").style.backgroundColor = "#ffffff";
+			}
+			else
+			{
+				document.getElementById("IGContainerSlides").style.backgroundColor = IGCorDeFundo;
+			}
+			IGPageFirstLoad = 0;
+		};
+
 		IGShowSlide = function(slide)
 		{
 			IGFunctTempStop();
@@ -264,6 +290,7 @@ img.IGBanner {
 
 			document.getElementById("IGSlide" + slideAtual).style.display = "none";
 			document.getElementById("IGSlide" + slide).style.display = "block";
+			IGBannerBGColor(slide);
 			
 			slideAtual = slide;
 
@@ -339,6 +366,7 @@ img.IGBanner {
 	<div id="IGDots" class="IGDots"></div> -->
 
 </div>
+<canvas style="display:none" id="IGBannerCanvas"></canvas>
 
 <div id="IGprogressBar1">
 	<div id="IGprogressBar2"></div>

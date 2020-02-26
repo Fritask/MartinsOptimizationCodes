@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+</style>
+
+<script>
+    $(document).ready(function()
+	{
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        debugger;
+        var img = document.getElementById("IGImg");
+        ctx.drawImage(img,-855,-385);
+        var IGWidth = img.offsetWidth;
+        var IGHeight = img.offsetHeight;
+        // var context = document.getElementById('myCanvas').getContext('2d');
+        var data = ctx.getImageData(15, 15, 15, 15).data;
+        var rgb = [ data[0], data[1], data[2] ];
+        var IGCorDeFundo = "rgb(" + rgb + ")";
+        alert(rgb);
+        document.getElementById("IGDivImg").style.backgroundColor = IGCorDeFundo;
+
+    });
+</script>
+
+</head>
+
+<body style="background-color: #F0F1F1; margin: 0">
+
+    <canvas style="display:none" id="myCanvas"></canvas>
+    <div id="IGDivImg" style="width: 100vw; height: 400px; text-align: center;">
+        <img crossorigin="anonymous" id="IGImg" src="https://imgprd.martins.com.br/medias/sys_master/images/images/h0b/he1/9022261362718/BANNER-PRINCIPAL-17-.jpg">
+        <!-- <img crossorigin="anonymous" id="IGImg" src="https://imgprd.martins.com.br/medias/sys_master/images/images/h0f/h65/9020573122590/BANNER-MARTINS-CONSTROI-870x400-1-.jpg"> -->
+        <!-- <img crossorigin="anonymous" id="IGImg" src="https://imgprd.martins.com.br/medias/sys_master/images/images/he5/hc8/9019721220126/BANNER-PRINCIPAL-SECRETO-teste.jpg"> -->
+        <!-- <img crossorigin="anonymous" id="IGImg" src="https://imgprd.martins.com.br/medias/sys_master/images/images/h79/h00/9019370012702/BANNER-PRINCIPAL-SECRETO-6-.jpg"> -->
+    </div>
+
+<!-- <img crossorigin="anonymous" id="IGImg" src="https://imgprd.martins.com.br/medias/sys_master/images/images/h0b/he1/9022261362718/BANNER-PRINCIPAL-17-.jpg"> -->
+
+</body>
+</html>
