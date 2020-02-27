@@ -178,9 +178,9 @@ img.IGBanner {
 		{
 			for(var i = 0; i < qtdSlides; i++)
 			{
-				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><a href="'+ IGDicionarioLinksBanner[IGArrayLinksImagensBanners[i]] +'"><img crossorigin="anonymous" id="IGPecaBanner' + (i+1) + '" class="IGBanner" src="' + IGArrayLinksImagensBanners[i] + '"></a></div>');
+				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><img crossorigin="anonymous" id="IGPecaBanner' + (i+1) + '" class="IGBanner" src="' + IGArrayLinksImagensBanners[i] + '"></div>');
 			}
-			$('#IGContainerSlides').append('<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a><a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a><div id="IGDots" class="IGDots"></div>');
+			$('#IGContainerSlidesDiv').append('<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a><a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a><div id="IGDots" class="IGDots"></div>');
 		};
 
 		IGMontarBanners();
@@ -249,14 +249,17 @@ img.IGBanner {
 
 			if(IGPageFirstLoad)
 			{
-				document.getElementById("IGContainerSlides").style.backgroundColor = "#ffffff";
+				document.getElementById("IGContainerSlidesDiv").style.backgroundColor = "#ffffff";
 			}
 			else
 			{
-				document.getElementById("IGContainerSlides").style.backgroundColor = IGCorDeFundo;
+				document.getElementById("IGContainerSlidesDiv").style.backgroundColor = IGCorDeFundo;
 			}
 
 			IGPageFirstLoad = 0;
+
+			document.getElementById("IGContainerSlides").href = IGDicionarioLinksBanner[IGArrayLinksImagensBanners[slide-1]];
+			
 		};
 
 		IGShowSlide = function(slide)
@@ -311,8 +314,8 @@ img.IGBanner {
 
 <body style="background-color: #F0F1F1;">
 
-<div id="IGContainerSlides" class="IGContainerSlides">
-
+<div id="IGContainerSlidesDiv" class="IGContainerSlides">
+	<a id="IGContainerSlides"></a>
 </div>
 <canvas style="display:none" id="IGBannerCanvas"></canvas>
 
