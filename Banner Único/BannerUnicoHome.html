@@ -180,7 +180,7 @@ img.IGBanner {
 			{
 				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><img crossorigin="anonymous" id="IGPecaBanner' + (i+1) + '" class="IGBanner" src="' + IGArrayLinksImagensBanners[i] + '"></div>');
 			}
-			$('#IGContainerSlidesDiv').append('<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a><a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a><div id="IGDots" class="IGDots"></div>');
+			// $('#IGContainerSlidesDiv').append('<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a><a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a><div id="IGDots" class="IGDots"></div>');
 		};
 
 		IGMontarBanners();
@@ -316,6 +316,9 @@ img.IGBanner {
 
 <div id="IGContainerSlidesDiv" class="IGContainerSlides">
 	<a id="IGContainerSlides"></a>
+	<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a>
+	<a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a>
+	<div id="IGDots" class="IGDots"></div>
 </div>
 <canvas style="display:none" id="IGBannerCanvas"></canvas>
 
