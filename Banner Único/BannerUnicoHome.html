@@ -163,13 +163,7 @@ img.IGBanner {
 
 				IGConjuntoLinksImagensBanners.add(IGTemp);
 			}
-			var IGDictSize = Object.size(IGDicionarioLinksBanner);
-			for (ijk = 0; ijk < IGDictSize; ijk++)
-			{
-				IGArrayLinksImagensBanners[ijk] = Object.keys(IGDicionarioLinksBanner)[ijk];
-			}
-			
-			qtdSlides = IGConjuntoLinksImagensBanners.size;
+			qtdSlides = Object.size(IGDicionarioLinksBanner);
 		};
 
 		IGGetQtdSlides();
@@ -178,9 +172,8 @@ img.IGBanner {
 		{
 			for(var i = 0; i < qtdSlides; i++)
 			{
-				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><img crossorigin="anonymous" id="IGPecaBanner' + (i+1) + '" class="IGBanner" src="' + IGArrayLinksImagensBanners[i] + '"></div>');
+				$('#IGContainerSlides').append('<div id="IGSlide' + (i+1) + '" name="IGSlides" class="mySlides IGfade"><img crossorigin="anonymous" id="IGPecaBanner' + (i+1) + '" class="IGBanner" src="' + Object.keys(IGDicionarioLinksBanner)[i] + '"></div>');
 			}
-			// $('#IGContainerSlidesDiv').append('<a class="IGPrevSlideButton" onclick="IGAntSlide()">&#10094;</a><a class="IGNextSlideButton" onclick="IGProxSlide()">&#10095;</a><div id="IGDots" class="IGDots"></div>');
 		};
 
 		IGMontarBanners();
