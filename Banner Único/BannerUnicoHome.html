@@ -231,27 +231,38 @@ img.IGBanner {
 
 		IGBannerBGColor = function(slide)
 		{
-			var IGCanvas = document.getElementById("IGBannerCanvas");
-			var IGCanvasContext = IGCanvas.getContext("2d");
-			var IGImgID = "IGPecaBanner" + slide;
-			var IGImg = document.getElementById(IGImgID);
-			IGCanvasContext.drawImage(IGImg, -855, -385);
-			var data = IGCanvasContext.getImageData(13, 13, 13, 13).data;
-			var IGRGB = [ data[0], data[1], data[2] ];
-			var IGCorDeFundo = "rgb(" + IGRGB + ")";
+			
 
 			if(IGPageFirstLoad)
 			{
-				document.getElementById("IGContainerSlidesDiv").style.backgroundColor = "#ffffff";
+				setTimeout(function(){
+					var IGCanvas = document.getElementById("IGBannerCanvas");
+					var IGCanvasContext = IGCanvas.getContext("2d");
+					var IGImgID = "IGPecaBanner" + slide;
+					var IGImg = document.getElementById(IGImgID);
+					IGCanvasContext.drawImage(IGImg, -855, -385);
+					var data = IGCanvasContext.getImageData(13, 13, 13, 13).data;
+					var IGRGB = [ data[0], data[1], data[2] ];
+					var IGCorDeFundo = "rgb(" + IGRGB + ")";
+					document.getElementById("IGContainerSlidesDiv").style.backgroundColor = IGCorDeFundo;
+				}, 175);
 			}
 			else
 			{
+				var IGCanvas = document.getElementById("IGBannerCanvas");
+				var IGCanvasContext = IGCanvas.getContext("2d");
+				var IGImgID = "IGPecaBanner" + slide;
+				var IGImg = document.getElementById(IGImgID);
+				IGCanvasContext.drawImage(IGImg, -855, -385);
+				var data = IGCanvasContext.getImageData(13, 13, 13, 13).data;
+				var IGRGB = [ data[0], data[1], data[2] ];
+				var IGCorDeFundo = "rgb(" + IGRGB + ")";
 				document.getElementById("IGContainerSlidesDiv").style.backgroundColor = IGCorDeFundo;
 			}
 
 			IGPageFirstLoad = 0;
 
-			document.getElementById("IGContainerSlides").href = IGDicionarioLinksBanner[IGArrayLinksImagensBanners[slide-1]];
+			document.getElementById("IGContainerSlides").href = IGDicionarioLinksBanner[Object.keys(IGDicionarioLinksBanner)[slide-1]];
 			
 		};
 

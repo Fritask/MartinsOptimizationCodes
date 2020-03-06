@@ -31,8 +31,8 @@ $(document).ready(function()
         {
             var tempStr = IGPrecosProdutosPlus2Pct[i].innerText;
             var tempVar = tempStr.substring(3, tempStr.length);
-            var tempVar = tempVar.replace(",", ".");
-            var tempVar = parseFloat(tempVar).toFixed(2);
+            tempVar = tempVar.replace(",", ".");
+            tempVar = parseFloat(tempVar).toFixed(2);
             IGNumber[i] = tempVar;
         }
         
