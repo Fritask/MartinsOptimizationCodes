@@ -8,13 +8,7 @@ $(document).ready(function()
         if(IGDivCLassDispoProds.classList.contains("listNoImage") || IGDivCLassDispoProds.classList.contains("list"))
         {
             $(".product a").css('max-width', '550px');
-            // $(".product div").css('width', '100%');
-            // $(".qd2").css('width', '230px');
-            // $(".qdValue").css('width', '100%');
-            // $(".qdValue .value").css('max-width', '100%');
             $(".details").css('width', 'calc((100%/3)*1)');
-            // $(".sectionButtons").css('max-width', '141px');
-            // $(".product--add-to-cart-form js-add-cart").css('max-width', '141px');
             $(".qdValue").css('text-align', 'center');
         }
         else
@@ -43,29 +37,16 @@ $(document).ready(function()
                 var IGTempVar = (parseFloat(IGNumber[i]) + (IGNumber[i] * 0.02)).toFixed(2);
                 IGTempVar = String(IGTempVar);
                 IGTempVar = IGTempVar.replace(".", ",");
-                // let tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-top: 10px; margin-bottom: 0px">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
             }
             if(IGDivCLassDispoProds.classList.contains("listNoImage") || IGDivCLassDispoProds.classList.contains("list"))
             {
-                // if (IGNumber[i] != "NaN")
-                // {
-                    // var IGTempVar = (parseFloat(IGNumber[i]) + (IGNumber[i] * 0.02)).toFixed(2);
-                    // IGTempVar = String(IGTempVar);
-                    // IGTempVar = IGTempVar.replace(".", ",");
-                    tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-top: 10px; margin-bottom: 0px; margin-right: 6px; display: inline">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
-                    // $(this).prepend(tempHtml);
-                // }
-                // alert('listagem sem imagem');
+                tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-top: 10px; margin-bottom: 0px; margin-right: 6px; display: inline">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
             }
             else
             {
                 if (IGNumber[i] != "NaN")
                 {
-                    // var IGTempVar = (parseFloat(IGNumber[i]) + (IGNumber[i] * 0.02)).toFixed(2);
-                    // IGTempVar = String(IGTempVar);
-                    // IGTempVar = IGTempVar.replace(".", ",");
                     tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-top: 10px; margin-bottom: 0px">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
-                    // $(this).prepend(tempHtml);
                 }
             }
             $(this).prepend(tempHtml);
