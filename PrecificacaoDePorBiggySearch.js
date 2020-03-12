@@ -16,7 +16,7 @@ $(document).ready(function()
             $(".detailProd").css('display', 'none');
             $(".qd2").css('margin', 'auto 0px 10px').css('width', 'auto');
             $(".boxQtde").css('max-width', '71px');
-            $(".popover-mart-container").css('padding-top', '28px');
+            $(".popover-mart-container").css('padding-top', '25px');
         }
         
         var IGPrecosProdutosPlus2Pct = document.getElementsByClassName("value");
