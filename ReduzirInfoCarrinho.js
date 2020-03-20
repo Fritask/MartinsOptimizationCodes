@@ -14,9 +14,21 @@ $(document).ready(function()
         $(this).click(function(){
             $(this).next().toggle();
         })
-    }).mouseover(function(){
-        $(this).css('background-color', '#23527C').css('color', '#ffffff');
-    }).mouseout(function(){
-        $(this).css('background-color', '#ffffff').css('color', '#23527C');
     });
 });
+
+<style>
+    .IGToggleCupomDesconto {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 3px;
+        border: 1px solid #23527C;
+        background-color: #ffffff;
+        color: #23527C;
+    }
+    .IGToggleCupomDesconto:hover {
+        background-color: #23527C;
+        color: #ffffff;
+    }
+</style>
