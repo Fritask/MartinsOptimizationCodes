@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <style>
+    .c-stickyBanner--customOne .c-stickyBanner__item--arrow:after {
+        border-left-color: rgb(0, 175, 240);
+    }
     .IGFaixas {
         display: none;
     }
@@ -14,25 +17,26 @@
         color: inherit;
         text-align: center;
         border-bottom: 2px solid rgb(204, 204, 204);
-        font-weight: 600;
+        font-weight: normal;
         cursor: pointer;
-        background-color: white;
         padding-top: 15px;
-        width: 227px;
-        max-width: 227px;
+        width: 285px;
+        max-width: 285px;
         display: inline-block;
     }
-    div.IGFaixaName.active {
+    div.IGFaixaName.active, div.IGFaixaName:hover {
         color: rgb(0, 66, 130);
-        border-bottom: 2px solid rgb(0, 66, 130);
+        border-bottom: 4px solid rgb(0, 66, 130);
+        font-weight: bold;
     }
     .IGFaixasContainer {
-        padding-top: 50px;
+        padding-top: 10px;
         padding-bottom: 30px;
+        background-color: #F0F1F1;
     }
     .IGRowOpcoesFaixas {
-        max-width: 1136px;
-        width: 1136px;
+        max-width: 1140px;
+        width: 1140px;
         margin: 0 auto;
     }
     .IGFaixaFade {
@@ -49,28 +53,29 @@
         from {opacity: .4} 
         to {opacity: 1}
     }
-    div.IGFaixaName:hover {
-        background-color: #F0F1F1;
-    }
     @media only screen and (max-width: 1199px) {
         .IGRowOpcoesFaixas {
             max-width: 940px;
             width: 940px;
         }
         div.IGFaixaName {
-            width: 188px;
-            max-width: 188px;
+            width: 235px;
+            max-width: 235px;
         }
     }
     @media only screen and (max-width: 991px) {
         .IGRowOpcoesFaixas {
-            max-width: 750px;
-            width: 750px;
+            max-width: 720px;
+            width: 720px;
             margin-right: 0;
         }
         div.IGFaixaName {
-            width: 150px;
-            max-width: 150px;
+            width: 180px;
+            max-width: 180px;
+        }
+        .c-stickyBanner__link {
+            max-width: 716px;
+            width: 716px;
         }
     }
     @media only screen and (max-width: 767px) {
@@ -79,8 +84,8 @@
             width: calc(100vw - 30px);
         }
         div.IGFaixaName {
-            width: calc((100vw - 30px)/5);
-            max-width: calc((100vw - 30px)/5)
+            width: calc((100vw - 30px)/4);
+            max-width: calc((100vw - 30px)/4)
         }
     }
 </style>
@@ -99,17 +104,6 @@
                 document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
                 document.getElementById("IGFaixa0").style.display = "block";
                 IGFaixaAtual = 0;
-            }
-        });
-        $("#IGNomeFaixa1").click(function()
-        {
-            if (IGFaixaAtual != 1)
-            {
-                document.getElementById("IGNomeFaixa" + IGFaixaAtual).classList = "IGFaixaName col col-md-2";
-                document.getElementById("IGNomeFaixa1").classList = "IGFaixaName col col-md-2 active";
-                document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
-                document.getElementById("IGFaixa1").style.display = "block";
-                IGFaixaAtual = 1;
             }
         });
         $("#IGNomeFaixa2").click(function()
@@ -143,8 +137,6 @@
         <div class="IGRowOpcoesFaixas">
             <div id="IGNomeFaixa0" class="IGFaixaName active" style="border-right: 1px solid #F0F1F1;">
                 <p>Cartão Super Empresarial</p>
-            </div><div id="IGNomeFaixa1" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
-                <p>Parceiro Martins</p>
             </div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
                 <p>Solicitar cotação</p>
             </div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
@@ -153,11 +145,9 @@
                 <p>Venda com a gente</p>
             </div>
         </div>
-        <div id="IGFaixa1" class="IGFaixas IGFaixaFade">
-            <h1>colocar aqui</h1>
-        </div>
         <div id="IGFaixa0" class="IGFaixas IGFaixaFade">
-            <div class="box-sticky-banner clear _ptxs _pbxxs">
+            <h1>Colocar faixa cartão aqui</h1>
+            <!-- <div class="box-sticky-banner clear _ptxs _pbxxs">
                 <div class="container">
                 
                     <div class="c-stickyBanner c-stickyBanner--customOne o-layout o-layout--flush">
@@ -185,13 +175,13 @@
                             </a>
                         </div>
                     </div>
-            </div>
+            </div> -->
         </div>
         <div id="IGFaixa2" class="IGFaixas IGFaixaFade">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 border">
-                        <h1 style="text-align: center;">solicite uma cotação</h1> 
+                        <h1 style="text-align: center;">Solicite uma cotação</h1> 
                         <p style="text-align: center;"> Informe o seu <b>CNPJ</b> e <b>número para contato</b> que iremos te ajudar.
                         <br></p>
                         <h4 style="text-align: center;"><br>cotacao@martins.com.br</h4>
