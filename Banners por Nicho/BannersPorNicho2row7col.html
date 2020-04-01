@@ -6,16 +6,42 @@
 <script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<script>
+$(document).ready(function()
+{
+    $('#IGButtonSeeAllCategoryIconsMobile').click(function(){
+        $('#IGHiddenCategoryIconsMobile').css('display', 'block');
+        $(this).css('display', 'none');
+    });
+    $('#IGButtonCloseCategoryIconsMobile').click(function(){
+        $('#IGHiddenCategoryIconsMobile').css('display', 'none');
+        $('#IGButtonSeeAllCategoryIconsMobile').css('display', 'block');
+    });
+});
+</script>
+
 <style>
+    #IGBiggestElementFromCategoryIcons {
+        background-color: #F0F1F1;
+        height: 410px;
+        margin-bottom: 30px;
+    }
+    #IGBiggestElementFromKitIcons {
+        background-color: #FFFFFF;
+        height: 245px;
+        margin-top: -70px;
+    }
     .IGCategoryLine {
+        margin: auto;
         margin-bottom: 11px;
-        margin-left: auto;
-        margin-right: auto;
     }
     .IGCategoryIcons {
         width: 151.8px;
         height: 151.8px;
         margin: 0 5.5px;
+    }
+    .IGIconAndTextElement {
+        padding-top: 40px;
     }
     .IGCategoryIcons, .IGCategoryIcons:link {
         text-align: center;
@@ -29,11 +55,30 @@
         cursor: pointer;
         text-decoration: none;
     }
+    #IGParentContainerIconesCatDesktop {
+        max-width: 1170px;
+        width: 1170px;
+    }
+    #IGParentContainerIconesCatMobile {
+        display: none;
+    }
+    #IGParentContainerIconesKitMobile {
+        display: none;
+    }
+    #IGHiddenCategoryIconsMobile {
+        display: none;
+    }
+    .IGButtonsToggleCategoryIconsMobile {
+        text-decoration: none;
+        background-color: #004282;
+        color: #FFFFFF;
+        font-weight: bold;
+        padding: 12px 15px;
+    }
     .title1 {
         text-align: center;
         padding: 15px 0px 0px;
     }
-
     .IGKitsIcons {
         width: 151.8px;
         height: 151.8px;
@@ -51,51 +96,353 @@
         cursor: pointer;
         text-decoration: none;
     }
+    #IGParentContainerIconesKitDesktop{
+        max-width: 1007px;
+        width: 1007px;
+    }
+    @media only screen and (max-width: 1199px) {
+        #IGBiggestElementFromCategoryIcons {
+            height: 350px;
+        }
+        #IGBiggestElementFromKitIcons {
+            height: 209.1px;
+        }
+        #IGParentContainerIconesCatDesktop {
+            max-width: 970px;
+            width: 970px;
+        }
+        #IGParentContainerIconesKitDesktop {
+            max-width: 834.8px;
+            width: 834.8px;
+        }
+        .IGCategoryLine {
+            max-width: 940px;
+            width: 940px;
+            margin-bottom: 8.3px;
+        }
+        .IGCategoryIcons {
+            width: 125.8px;
+            height: 125.8px;
+            margin: 0 4.14px;
+            font-size: 12px;
+        }
+        .IGKitsIcons {
+            width: 125.8px;
+            height: 125.8px;
+            margin: 0 4.14px;
+            font-size: 12px;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        #IGBiggestElementFromCategoryIcons {
+            height: 280px;
+        }
+        #IGBiggestElementFromKitIcons {
+            height: 167.3px;
+        }
+        #IGParentContainerIconesCatDesktop {
+            max-width: 750px;
+            width: 750px;
+        }
+        #IGParentContainerIconesKitDesktop {
+            max-width: 645.5px;
+            width: 645.5px;
+        }
+        .IGCategoryLine {
+            max-width: 720px;
+            width: 720px;
+            margin-bottom: 6px;
+        }
+        .IGCategoryIcons {
+            width: 97.2px;
+            height: 97.2px;
+            margin: 0 2.8px;
+        }
+        .IGKitsIcons {
+            width: 97.2px;
+            height: 97.2px;
+            margin: 0 2.8px;
+        }
+        .IGIconAndTextElement {
+            padding-top: 25px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        #IGBiggestElementFromCategoryIcons {
+            padding-bottom: 25px;
+            height: 100%;
+        }
+        #IGBiggestElementFromKitIcons {
+            padding-bottom: 25px;
+            height: 100%;
+        }
+        .IGIconAndTextElement {
+            padding-top: 30%;
+        }
+        #IGParentContainerIconesCatDesktop {
+            display: none;
+        }
+        #IGParentContainerIconesKitDesktop {
+            display: none;
+        }
+        #IGParentContainerIconesCatMobile {
+            display: block;
+        }
+        #IGParentContainerIconesKitMobile {
+            display: block;
+        }
+        .IGCategoryLine {
+            max-width: calc(100vw - 30px);
+            width: calc(100vw - 30px);
+        }
+        .IGCategoryIcons {
+            color: #FFFFFF !important;
+            background-color: #004282 !important;
+            width: calc((100vw - 47px)/3);
+            height: calc((100vw - 47px)/3);
+            font-size: 14px;
+        }
+        .IGKitsIcons {
+            color: #FFFFFF !important;
+            background-color: #F27934 !important;
+            width: calc((100vw - 47px)/3);
+            height: calc((100vw - 47px)/3);
+            font-size: 14px;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        #IGBiggestElementFromKitIcons {
+            margin-top: -40px;
+        }
+    }
+    @media only screen and (max-width: 380px) {
+        .IGCategoryName {
+            font-size: 11px;
+        }
+    }
 
 </style>
-<div style="background-color: #F0F1F1; height: 410px; max-height: 410px; margin-bottom: 30px;">
-        <div class="container" style="max-width: 1170px; width: 1170px;">
-            <div style="text-align: center; border-bottom: none;" class="title1">VISITE SUA CATEGORIA FAVORITA!</div>
+<div id="IGBiggestElementFromCategoryIcons">
+    <div id="IGParentContainerIconesCatDesktop" class="container">
+        <div style="border-bottom: none;" class="title1">VISITE SUA CATEGORIA FAVORITA!</div>
 
 
-            <div style="position: relative">
+        <div style="position: relative">
 
+            <div class="row IGCategoryLine">
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/supermercado" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-cash-register fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Supermercado</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/eletronico-e-informatica" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-tv fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Eletrônicos</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/telefonia" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-mobile fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Telefonia</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/eletrodomesticos" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-blender fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Eletrodomésticos</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/agrovet" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-paw fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Agrovet</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/utilidades-domesticas-martins" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-utensils fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Utilidades Domésticas</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/industria-e-comercio" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-industry fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Indústria / Comércio</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+
+            <div class="row IGCategoryLine">
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/papelaria" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-pencil-ruler fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Papelaria</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/construcao-e-seguranca" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-hard-hat fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Construção / Segurança</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/automotivo-martins" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-car-side fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Automotivo</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/esporte-e-lazer" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-biking fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Esporte/Lazer</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/bebida-alcoolica" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-glass-cheers fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Bebida Alcoólica</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/bebes" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-baby-carriage fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Bebês</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/outras-categorias" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Departamentos</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="IGParentContainerIconesCatMobile" class="container">
+        <div style="border-bottom: none;" class="title1">VISITE SUA CATEGORIA FAVORITA!</div>
+
+
+        <div>
+
+            <div class="row IGCategoryLine">
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/supermercado" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-cash-register fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Supermercado</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/eletronico-e-informatica" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-tv fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Eletrônicos</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/telefonia" class="IGCategoryIcons col col-md-1 col-xs-1">
+                    <div class="IGIconAndTextElement">
+                        <div class="row">
+                            <i class="fas fa-mobile fa-3x"></i>
+                        </div>
+                        <div class="row">
+                            <p class="IGCategoryName">Telefonia</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="IGButtonSeeAllCategoryIconsMobile" style="text-align: center; margin-top: 25px;">
+                <a class="IGButtonsToggleCategoryIconsMobile">VER TODAS</a>
+            </div>
+
+            <div id="IGHiddenCategoryIconsMobile">
                 <div class="row IGCategoryLine">
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/supermercado" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
-                            <div class="row">
-                                <i class="fas fa-cash-register fa-3x"></i>
-                            </div>
-                            <div class="row">
-                                <p class="IGCategoryName">Supermercado</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/eletronico-e-informatica" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
-                            <div class="row">
-                                <i class="fas fa-tv fa-3x"></i>
-                            </div>
-                            <div class="row">
-                                <p class="IGCategoryName">Eletrônicos</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/telefonia" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
-                            <div class="row">
-                                <i class="fas fa-mobile fa-3x"></i>
-                            </div>
-                            <div class="row">
-                                <p class="IGCategoryName">Telefonia</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/eletrodomesticos" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/eletrodomesticos" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-blender fa-3x"></i>
                             </div>
@@ -105,8 +452,8 @@
                         </div>
                     </a>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/agrovet" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/agrovet" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-paw fa-3x"></i>
                             </div>
@@ -116,8 +463,8 @@
                         </div>
                     </a>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/utilidades-domesticas-martins" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/utilidades-domesticas-martins" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-utensils fa-3x"></i>
                             </div>
@@ -126,26 +473,22 @@
                             </div>
                         </div>
                     </a>
+                </div>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/industria-e-comercio" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+
+                <div class="row IGCategoryLine">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/industria-e-comercio" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-industry fa-3x"></i>
                             </div>
                             <div class="row">
-                                <p class="IGCategoryName">Indústria/Comércio</p>
+                                <p class="IGCategoryName">Indústria / Comércio</p>
                             </div>
                         </div>
                     </a>
-
-                </div>
-
-
-
-                <div class="row IGCategoryLine">
-
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/papelaria" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/papelaria" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-pencil-ruler fa-3x"></i>
                             </div>
@@ -155,19 +498,22 @@
                         </div>
                     </a>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/construcao-e-seguranca" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/construcao-e-seguranca" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-hard-hat fa-3x"></i>
                             </div>
                             <div class="row">
-                                <p class="IGCategoryName">Construção/Segurança</p>
+                                <p class="IGCategoryName">Construção / Segurança</p>
                             </div>
                         </div>
                     </a>
+                </div>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/automotivo-martins" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+
+                <div class="row IGCategoryLine">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/automotivo-martins" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-car-side fa-3x"></i>
                             </div>
@@ -177,8 +523,8 @@
                         </div>
                     </a>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/esporte-e-lazer" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/esporte-e-lazer" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-biking fa-3x"></i>
                             </div>
@@ -188,8 +534,8 @@
                         </div>
                     </a>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/bebida-alcoolica" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/bebida-alcoolica" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-glass-cheers fa-3x"></i>
                             </div>
@@ -198,9 +544,12 @@
                             </div>
                         </div>
                     </a>
-
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/bebes" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                </div>
+                    
+                    
+                <div class="row IGCategoryLine">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/bebes" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-baby-carriage fa-3x"></i>
                             </div>
@@ -210,8 +559,19 @@
                         </div>
                     </a>
 
-                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/outras-categorias" class="IGCategoryIcons col col-md-1">
-                        <div style="padding-top: 40px">
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/outras-categorias/sapatos-calcados" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
+                            <div class="row">
+                                <i class="fas fa-socks fa-3x"></i>
+                            </div>
+                            <div class="row">
+                                <p class="IGCategoryName">Calçados</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.martinsatacado.com.br/martins/pt/BRL/c/outras-categorias" class="IGCategoryIcons col col-md-1 col-xs-1">
+                        <div class="IGIconAndTextElement">
                             <div class="row">
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
@@ -222,9 +582,16 @@
                     </a>
 
                 </div>
+
+                <div id="IGButtonCloseCategoryIconsMobile" style="text-align: center; margin-top: 25px;">
+                    <a class="IGButtonsToggleCategoryIconsMobile">FECHAR</a>
+                </div>
+
             </div>
         </div>
     </div>
+
+</div>
 
 </body>
 </html>
