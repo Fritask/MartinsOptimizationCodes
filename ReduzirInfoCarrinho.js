@@ -1,6 +1,8 @@
 $(document).ready(function()
 {
-    $('.cods').css('display', 'none');
+    $('.col-2-wrapper').each(function( i ){
+        $(this).find('.cods').slice(0,2).css('display', 'none');
+    });
 
     $('.js-voucher-validation-container').each(function( i ){
         if(!($(this).children().length > 0))
