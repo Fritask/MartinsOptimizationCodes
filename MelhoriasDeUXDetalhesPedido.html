@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('#IGNumPedido').text($('.info').slice(0,1).find('p').slice(1,2).text());
+    $('#IGDataHoraPedido').text($('.info').slice(1,2).find('p').slice(1,2).text());
+    $('#IGValorTotalPedido').text($('.info').slice(3,4).find('p').slice(1,2).text());
+});
+</script>
+
+<style>
+    /*Tira a frase "Clique abaixo para visualizar mais detalhes por Vendedor"*/
+    .comments {
+        display: none;
+    }
+    /*Diminuir barra laranjada deixando mais fina e descer para caber o nome "Status do pedido" em cima*/
+    .barStatus, .nivel {
+        height: 10px !important;
+    }
+    .IGFlexContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 1140px;
+        margin: auto;
+    }
+    .IGOrderDetailsButtonLinks1 {
+        font-weight: bold;
+        color: #004282;
+        background-color: #FFFFFF;
+        border: 1px solid #004282;
+        text-decoration: none !important;
+        cursor: pointer;
+        margin-right: 15px;
+        height: 40px;
+    }
+    .IGOrderDetailsButtonLinks1:hover {
+        background-color: #004282;
+        color: #FFFFFF;
+    }
+    .IGOrderDetailsTextContent1 {
+        width: 287px;
+        padding: 10px 10px 10px 20px;
+        color: #525252;
+        background-color: #F0F1F1;
+        position: relative;
+    }
+    .IGSideBordersGray:after {
+        content: "";
+        border-right: 1px solid #CCCCCC;
+        position: absolute;
+        right: 0px;
+        height: 45%;
+    }
+    .IGSideBordersBlue:after {
+        content: "";
+        border-right: 1px solid #3485c2;
+        position: absolute;
+        right: 0px;
+        height: 45%;
+    }
+    @media only screen and (max-width: 1199px) {
+        
+    }
+    @media only screen and (max-width: 991px) {
+        
+    }
+    @media only screen and (max-width: 767px) {
+        
+    }
+</style>
+
+
+
+<!--INÍCIO Primeiro menu alterado (abaixo de "Detalhes do pedido")-->
+<div class="IGFlexContainer">
+    <div style="line-height: 40px;">
+        <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px; padding: 10px;">
+            <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
+        </a>
+    </div>
+    <div style="line-height: 40px;">
+        <button class="IGOrderDetailsButtonLinks1" style="width: 153px;" data-toggle="modal" data-target="#modal--reorderConfirm">
+            <i style="color: #F27934; margin-right: 10px" class="fas fa-redo-alt"></i><span>REFAZER PEDIDO</span>
+        </button>
+    </div>
+    <div style="display:flex; flex-wrap: nowrap; height: 40px;">
+        <div class="IGOrderDetailsTextContent1">
+            <div class="IGSideBordersGray">
+                <span>N° do Pedido: <b id="IGNumPedido"></b></span>
+            </div>
+        </div>
+        <div class="IGOrderDetailsTextContent1">
+            <div class="IGSideBordersGray">
+                <span>Data/Hora: <b id="IGDataHoraPedido"></b></span>
+            </div>
+        </div>
+        <div class="IGOrderDetailsTextContent1">
+            <span>Total: <b id="IGValorTotalPedido" style="color: #F27934"></b></span>
+        </div>
+    </div>
+</div>
+<!--FIM Primeiro menu alterado (abaixo de "Detalhes do pedido")-->
+
+
+<!--INÍCIO Segundo menu alterado (abaixo de "Detalhes do pedido")-->
+<div class="IGFlexContainer">
+    <div class="IGOrderDetailsTextContent2">
+        <div class="IGSideBordersBlue">
+            <span>Finalizar aqui <b id="IGNumPedido"></b></span>
+        </div>
+    </div>
+</div>
+<!--FIM Segundo menu alterado (abaixo de "Detalhes do pedido")-->
+
+
+
+</div>
+</body>
+</html>
