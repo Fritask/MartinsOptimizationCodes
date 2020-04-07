@@ -9,20 +9,63 @@
 <script>
 $(document).ready(function()
 {
-    $('#IGNumPedido').text($('.info').slice(0,1).find('p').slice(1,2).text());
-    $('#IGDataHoraPedido').text($('.info').slice(1,2).find('p').slice(1,2).text());
-    $('#IGValorTotalPedido').text($('.info').slice(3,4).find('p').slice(1,2).text());
+    //Verifica se o pedido possui botão para visualizar boleto
+    if($('.info').slice(2,3).children().length)
+    {
+        $('#IGOrderDetailsMenu1WithBoleto').css('display', 'flex');
+        $('#IGCTABoletoOrderDetails').attr('href', $('.info').slice(2,3).children().children().attr('href'));
+    }
+    else
+    {
+        $('#IGOrderDetailsMenu1').css('display', 'flex');
+    }
+
+    //Muda o modal de confirmação de refazer pedido para que ele não sofra display: none
+    $('#modal--reorderConfirm').appendTo('.account-cart-details');
+
+    //Obtem as informações: Número do Pedido, Data/Hora do Pedido e Valor do Pedido
+    $('.IGNumPedido').text($('.info').slice(0,1).find('p').slice(1,2).text());
+    $('.IGDataHoraPedido').text($('.info').slice(1,2).find('p').slice(1,2).text());
+    $('.IGValorTotalPedido').text($('.info').slice(3,4).find('p').slice(1,2).text());
+
+    //Corrige texto de observações importantes
+    let IGTxtObsOrderDetails = '<p><b>Observações importantes:</b><br>- O prazo começa a contar a partir da aprovação do pagamento.<br>- Os produtos podem ser entregues separadamente.<br>- As promoções e os totais refletem o que existia no momento do carrinho salvo.<br>- As promoções e os totais podem mudar ou não, mas se aplicarão quando o carrinho for restaurado.</p>'
+    $('.orderDetails-bottom').find('div').first().html(IGTxtObsOrderDetails);
+
+    //Edições headers de Vendors
+    $('.headerVendor').find('div').slice(3,4).css('display', 'none'); //Ocultando elemento sem conteúdo
+    $('.headerVendor').find('div').first().after('<ul class="IGElementoStatusPlusStatusBar"></ul>'); //Criando novo elemento pai da barra de status e frase status do pedido
+    $('.headerVendor').each(function( i ){
+        $(this).find('div').slice(1,2).appendTo($(this).find('div').find('.IGElementoStatusPlusStatusBar'));
+        $(this).find('div').slice(2,3).appendTo($(this).find('div').find('.IGElementoStatusPlusStatusBar'));
+    }); //Movendo os elementos para o novo elemento pai
+    
 });
 </script>
 
 <style>
-    /*Tira a frase "Clique abaixo para visualizar mais detalhes por Vendedor"*/
+    /*Ocultar o antigo menu de informações e boleto*/
+    .headerOrder {
+        display: none;
+    }
+    /*Ocultar a frase "Clique abaixo para visualizar mais detalhes por Vendedor"*/
     .comments {
         display: none;
     }
     /*Diminuir barra laranjada deixando mais fina e descer para caber o nome "Status do pedido" em cima*/
     .barStatus, .nivel {
         height: 10px !important;
+    }
+    /*Ocultar menu inferior que contém observações fora do lugar e CTAs "Histórico de pedidos" e "Refazer Pedido"*/
+    .accountActions-bottom {
+        display: none;
+    }
+    /*Estilo do elemento pai da barra de status e frase status do pedido*/
+    .IGElementoStatusPlusStatusBar {
+        list-style-type: none;
+        width: 738px;
+        margin: 0;
+        padding: 0;
     }
     .IGFlexContainer {
         display: flex;
@@ -44,8 +87,29 @@ $(document).ready(function()
         background-color: #004282;
         color: #FFFFFF;
     }
+    .IGOrderDetailsMainButtonLinks1, .IGOrderDetailsMainButtonLinks1:focus {
+        font-weight: bold;
+        color: #FFFFFF;
+        background-color: #004282;
+        border: 1px solid #004282;
+        text-decoration: none !important;
+        cursor: pointer;
+        margin-right: 15px;
+        height: 40px;
+    }
+    .IGOrderDetailsMainButtonLinks1:hover {
+        background-color: #FFFFFF;
+        color: #004282;
+    }
     .IGOrderDetailsTextContent1 {
         width: 287px;
+        padding: 10px 10px 10px 20px;
+        color: #525252;
+        background-color: #F0F1F1;
+        position: relative;
+    }
+    .IGOrderDetailsTextContent1WithBoleto {
+        width: 250px;
         padding: 10px 10px 10px 20px;
         color: #525252;
         background-color: #F0F1F1;
@@ -79,7 +143,41 @@ $(document).ready(function()
 
 
 <!--INÍCIO Primeiro menu alterado (abaixo de "Detalhes do pedido")-->
-<div class="IGFlexContainer">
+<div id="IGOrderDetailsMenu1WithBoleto" class="IGFlexContainer" style="display: none">
+    <div style="line-height: 40px;">
+        <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px; padding: 10px;">
+            <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
+        </a>
+    </div>
+    <div style="line-height: 40px;">
+        <button class="IGOrderDetailsButtonLinks1" style="width: 153px;" data-toggle="modal" data-target="#modal--reorderConfirm">
+            <i style="color: #F27934; margin-right: 10px" class="fas fa-redo-alt"></i><span>REFAZER PEDIDO</span>
+        </button>
+    </div>
+    <div style="line-height: 40px;">
+        <a target="_blank" id="IGCTABoletoOrderDetails" class="IGOrderDetailsMainButtonLinks1" style="width: 97px; padding: 10px;">
+            <i style="margin-right: 10px" class="fas fa-barcode"></i><span>BOLETO</span>
+        </a>
+    </div>
+    <div style="display:flex; flex-wrap: nowrap; height: 40px;">
+        <div class="IGOrderDetailsTextContent1WithBoleto">
+            <div class="IGSideBordersGray">
+                <span>N° do Pedido: <b class="IGNumPedido"></b></span>
+            </div>
+        </div>
+        <div class="IGOrderDetailsTextContent1WithBoleto">
+            <div class="IGSideBordersGray">
+                <span>Data/Hora: <b class="IGDataHoraPedido"></b></span>
+            </div>
+        </div>
+        <div class="IGOrderDetailsTextContent1WithBoleto">
+            <span>Total: <b class="IGValorTotalPedido" style="color: #F27934"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div id="IGOrderDetailsMenu1" class="IGFlexContainer" style="display: none">
     <div style="line-height: 40px;">
         <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px; padding: 10px;">
             <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
@@ -93,16 +191,16 @@ $(document).ready(function()
     <div style="display:flex; flex-wrap: nowrap; height: 40px;">
         <div class="IGOrderDetailsTextContent1">
             <div class="IGSideBordersGray">
-                <span>N° do Pedido: <b id="IGNumPedido"></b></span>
+                <span>N° do Pedido: <b class="IGNumPedido"></b></span>
             </div>
         </div>
         <div class="IGOrderDetailsTextContent1">
             <div class="IGSideBordersGray">
-                <span>Data/Hora: <b id="IGDataHoraPedido"></b></span>
+                <span>Data/Hora: <b class="IGDataHoraPedido"></b></span>
             </div>
         </div>
         <div class="IGOrderDetailsTextContent1">
-            <span>Total: <b id="IGValorTotalPedido" style="color: #F27934"></b></span>
+            <span>Total: <b class="IGValorTotalPedido" style="color: #F27934"></b></span>
         </div>
     </div>
 </div>
@@ -113,7 +211,7 @@ $(document).ready(function()
 <div class="IGFlexContainer">
     <div class="IGOrderDetailsTextContent2">
         <div class="IGSideBordersBlue">
-            <span>Finalizar aqui <b id="IGNumPedido"></b></span>
+            <span>Finalizar aqui <b></b></span>
         </div>
     </div>
 </div>
@@ -121,6 +219,8 @@ $(document).ready(function()
 
 
 
-</div>
+
+
+
 </body>
 </html>
