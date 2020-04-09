@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function(){
+    if ($(window).width() > 991)
+    {
+        $('div.container-fluid').after('<div id="IGEFacilModalLogin"><div id="IGAskIfEfacil">Quer comprar para consumo?</div><hr style="width: 15%; border: 1px solid #FFFFFF; margin-top: 3px; margin-bottom: 5px"><div id="IGLinkEfacilModal"><a href="https://www.efacil.com.br/"><ins>Acesse o eFacil.com.br</ins></a></div></div>');
+        $('.pt-modal-login').click(function(){
+            $('i.pt-close').click();
+        });
+        $('div.dropdown-menu').click(function(e){
+            e.stopPropagation();
+        });
+    }
+});
+</script>
+
+<style>
+    @media only screen and (min-width: 992px) {
+        div.dropdown-menu {
+            border-radius: 4px 4px 0px 0px;
+        }
+        #IGEFacilModalLogin {
+            width: 100%;
+            border-radius: 0px 0px 4px 4px;
+            background-color: #FF9900;
+            margin-bottom: -14px;
+            margin-top: 20px;
+            padding: 15px;
+        }
+        #IGAskIfEfacil {
+            color: #FFFFFF;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+        #IGLinkEfacilModal {
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: normal;
+        }
+        div.container-fluid>div:nth-of-type(1) {
+            font-weight: 900;
+            position: relative;
+        }
+        div.container-fluid>div:nth-of-type(1):before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            width: 15%;
+            left: 0%; /*this centers it based on the above width*/
+            border-bottom: 2px solid #004085;
+            margin-left: 15px;
+        }
+        label.col-md-12 {
+            text-align: left;
+            color: #51ADED !important;
+            position: relative;
+        }
+        label.col-md-12:before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            width: 15%;
+            left: 0%; /*this centers it based on the above width*/
+            border-bottom: 2px solid #51ADED;
+            margin-left: 15px;
+        }
+        div.pt-btn-cont {
+            margin-top: 35px;
+        }
+        div.pt-btn-cont>a>button {
+            background-color: #51ADED;
+        }
+    }
+</style>
+
+</div>
+
+</body>
+</html>

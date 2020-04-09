@@ -24,8 +24,9 @@ $(document).ready(function()
     $('.headerVendor').first().click();
 
     //Edições headers de Vendors
-    $('.headerVendor').find('div').first().after('<ul class="IGElementoStatusPlusStatusBar"></ul>'); //Criando novo elemento pai da barra de status e frase status do pedido
+    // $('.headerVendor').find('div').first().after('<ul class="IGElementoStatusPlusStatusBar"></ul>'); //Criando novo elemento pai da barra de status e frase status do pedido
     $('.headerVendor').each(function( i ){
+        $(this).find('div').first().after('<ul class="IGElementoStatusPlusStatusBar"></ul>'); //Criando novo elemento pai da barra de status e frase status do pedido
         $(this).find('div').slice(1,2).appendTo($(this).find('.IGElementoStatusPlusStatusBar'));
         $(this).find('div').slice(2,3).appendTo($(this).find('.IGElementoStatusPlusStatusBar'));
         $(this).find('div.icon').css('display', 'none'); //Oculta elemento sem conteúdo
@@ -41,17 +42,20 @@ $(document).ready(function()
         }
         
         $(this).click(function(e){
+            let $IGHeaderVendorToggableIcon = $(this);
             if($(this).find('.IGToggableIcon').hasClass('fa-chevron-down'))
             {
                 setTimeout(function() {
-                    $(('.headerVendor')).find('.IGToggableIcon').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                    // $('.headerVendor').find('.IGToggableIcon').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                    $IGHeaderVendorToggableIcon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
                 }, 300);
                 e.preventDefault();
             }
             else
             {
                 setTimeout(function() {
-                    $(('.headerVendor')).find('.IGToggableIcon').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    // $('.headerVendor').find('.IGToggableIcon').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $IGHeaderVendorToggableIcon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
                 }, 300);
                 e.preventDefault();
 
@@ -62,14 +66,15 @@ $(document).ready(function()
 
     //Verifica se o pedido possui nota fiscal
     $('.vendors').each(function( i ){
-        if($(this).find('div').find('.bx-totals').find('.bx-cupons').children().length)
+        let $IGElementWithNFCTA = $(this).find('div').find('.bx-totals').find('.bx-cupons').children();
+        if($IGElementWithNFCTA.length)
         {
             let IGElement = '<a class="IGCTANFOrderDetails IGOrderDetailsMainButtonLinks" style="margin-top: auto; margin-bottom: auto; margin-left: 25px;"><i style="margin-right: 10px" class="fas fa-clipboard-list"></i><span>VISUALIZAR NOTA FISCAL</span></a>';
             $(this).find('.IGElementoStatusPlusStatusBar').after(IGElement);
             $(this).find('.IGCTANFOrderDetails').click(function(e){
                 e.stopPropagation();
                 e.preventDefault();
-                $('.vendors').find('div').find('.bx-totals').find('.bx-cupons').children().find('.boxButton').children().click();
+                $IGElementWithNFCTA.find('.boxButton').children().click();
             });
 
         }
