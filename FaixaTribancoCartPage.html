@@ -1,9 +1,113 @@
-body > *:not(#loading) {
-  background: #ffd83c;
-  filter: blur(3px);
-}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-div, p {
-  margin: 10px;
-  padding: 5px;
-}
+<script>
+$(document).ready(function()
+{
+	//Verifica se a função já foi aplicada hoje para um cliente
+	function IGCheckIfDifferentDay()
+	{
+		var IGDate = new Date().toLocaleDateString();
+
+		if( localStorage.IGData == IGDate )
+			return false;
+
+		localStorage.IGData = IGDate;
+		return true;
+	}
+
+	IGFocusOnBanner = function()
+	{
+		//Cria elemento para ofuscar a página
+		var $div = $('<div></div>').appendTo('body');
+		$div.attr('id', 'IGFullSizeDivCartPage');
+
+		//Clona o banner e o adiciona ao elemento de ofuscamento
+		$( ".box-sticky-banner" ).clone().attr('id', 'IGClonedBannerCard').appendTo("#IGFullSizeDivCartPage");
+
+		//Faz as alterações necessárias no banner e em sua cópia
+		$('div.c-stickyBanner').each(function(){
+			$(this).children().first().children().children().css('display', 'none');
+			$(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/1HLlYDu.png">');
+
+		});
+
+		//Não executa o resto da função se ela já tiver sido executada hoje
+		if( !IGCheckIfDifferentDay() )
+		{
+			return false;
+		}
+
+		//Exibe o elemento de ofuscamento
+		$('#IGFullSizeDivCartPage').css('display', 'block');
+
+		let $IGOffsetBanner = $( ".box-sticky-banner" ).position();
+		$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top - 40);
+
+		//Desabilitando Scroll
+		var IGScrollPosition = [
+			self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+			self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+		];
+		var IGhtml = jQuery('html');
+		IGhtml.data('scroll-position', IGScrollPosition);
+		IGhtml.data('previous-overflow', IGhtml.css('overflow'));
+		IGhtml.css('overflow', 'hidden');
+		window.scrollTo(IGScrollPosition[0], IGScrollPosition[1]);
+
+		//Cria botão para remover o elemento de ofuscamento
+		$('#IGClonedBannerCard').children().css('position', 'relative');
+		$('#IGClonedBannerCard').children().append('<div style="background-color: #FFFFFF; display: flex; text-align: center; position: absolute; top: -25px; right: -25px;"><a id="IGCloseFocusedBanner"><i class="fas fa-times"></i></a></div>');
+
+		//Funcionamento do botão de rmeover o elemento de ofuscamento
+		$('#IGCloseFocusedBanner').click(function(){
+			$('#IGFullSizeDivCartPage').css('display', 'none');
+
+			//Habilitando Scroll
+			var IGhtml = jQuery('html');
+			var IGScrollPosition = IGhtml.data('scroll-position');
+			IGhtml.css('overflow', IGhtml.data('previous-overflow'));
+			window.scrollTo(IGScrollPosition[0], IGScrollPosition[1])
+		});
+	}
+	
+	IGFocusOnBanner();
+
+});
+</script>
+
+<style>
+	div.c-stickyBanner__item--fixedCta {
+		background-color: #AAFF00;
+	}
+	#IGFullSizeDivCartPage {
+		display: none;
+		background-color: #00000080;
+		height: 100%;
+		position: absolute;
+		top: 40px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		z-index: 5;
+	}
+	#IGClonedBannerCard {
+		z-index: 6;
+		position: relative;
+	}
+	#IGCloseFocusedBanner {
+		padding: 5px 10px;
+	}
+	#IGCloseFocusedBanner:hover {
+		cursor: pointer;
+	}
+</style>
+
+</body>
+</html>
