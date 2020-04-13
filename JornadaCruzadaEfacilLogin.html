@@ -8,11 +8,16 @@
 
 <script>
 $(document).ready(function(){
-        $('div.o-layout').first().css('position', 'relative').append('<div id="IGMenuEfacilLoginPage"> <div id="IGT1MenuEfacilLP">Quer comprar para consumo?</div>  <div id="IGT2MenuEfacilLP">No eFácil você pode!</div>  <div id="IGIconsMenuEfacilLP"> <div style="margin-bottom: 25px"><img class="IGIconEfacil" src="https://i.imgur.com/QOG1ETY.png"><img class="IGIconEfacil IGIconEfacilMid" src="https://i.imgur.com/0UVzFpY.png"><img class="IGIconEfacil" src="https://i.imgur.com/n3lRUIH.png"></div> <div><img class="IGIconEfacil" src="https://i.imgur.com/5Q9srQs.png"><img class="IGIconEfacil IGIconEfacilMid" src="https://i.imgur.com/pjH2uRj.png"><img class="IGIconEfacil" src="https://i.imgur.com/22OJvZ9.png"></div> </div> <a target="_blank" href="https://www.efacil.com.br/" id="IGCTAMenuEfacilLP">EU QUERO</a> </div>');
+    $('div.o-layout').first().css('position', 'relative').append('<div id="IGMenuEfacilLoginPage"> <div id="IGT1MenuEfacilLP">Quer comprar para consumo?</div>  <div id="IGT2MenuEfacilLP">No eFácil você pode!</div>  <div id="IGIconsMenuEfacilLP"> <div style="margin-bottom: 25px"><img class="IGIconEfacil" src="https://i.imgur.com/QOG1ETY.png"><img class="IGIconEfacil IGIconEfacilMid" src="https://i.imgur.com/0UVzFpY.png"><img class="IGIconEfacil" src="https://i.imgur.com/n3lRUIH.png"></div> <div><img class="IGIconEfacil" src="https://i.imgur.com/5Q9srQs.png"><img class="IGIconEfacil IGIconEfacilMid" src="https://i.imgur.com/pjH2uRj.png"><img class="IGIconEfacil" src="https://i.imgur.com/22OJvZ9.png"></div> </div> <a target="_blank" href="https://www.efacil.com.br/loja/departamento/lojas-especiais/martins-atacadista-/?utm_source=martinsatacado.com.br&utm_medium=site" id="IGCTAMenuEfacilLP">EU QUERO</a> </div>');
 });
 </script>
 
 <style>
+    button.c-login__button:hover {
+        background-color: #FFFFFF !important;
+        color: #004282 !important;
+        border: 1px solid #004282 !important;
+    }
     #IGMenuEfacilLoginPage {
         border-top: 6px solid #FF9900;
         background-color: #F0F1F1;
@@ -20,13 +25,13 @@ $(document).ready(function(){
         height: 376px;
         padding: 24px 32px 32px;
         position: absolute;
-        right: 40px;
+        right: 17%;
         top: 8px;
         border-radius: 4px;
     }
     #IGT1MenuEfacilLP {
         font-size: 24px;
-        color: #51ADED;
+        color: #00acec;
         margin-bottom: 15px;
         font-weight: bolder;
     }
@@ -56,6 +61,7 @@ $(document).ready(function(){
         background-color: #FF9900;
         color: #FFFFFF;
         font-weight: bold;
+        text-align: center;
     }
     #IGCTAMenuEfacilLP:hover {
         text-decoration: none;
@@ -63,9 +69,14 @@ $(document).ready(function(){
         color: #FF9900;
         border: 1px solid #FF9900;
     }
+    @media only screen and (min-width: 992px) {
+        div._mb {
+            margin-left: 12% !important;
+        }
+    }
     @media only screen and (max-width: 1199px) {
         #IGMenuEfacilLoginPage {
-            right: 0;
+            right: 8%;
         }
     }
     @media only screen and (max-width: 991px) {
@@ -74,6 +85,7 @@ $(document).ready(function(){
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
+            right: 0;
         }
     }
     @media only screen and (max-width: 899px) {
