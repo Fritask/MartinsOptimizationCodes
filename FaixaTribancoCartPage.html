@@ -33,7 +33,7 @@ $(document).ready(function()
 		//Faz as alterações necessárias no banner e em sua cópia
 		$('div.c-stickyBanner').each(function(){
 			$(this).children().first().children().children().css('display', 'none');
-			$(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/1HLlYDu.png">');
+			$(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/19hD9uR.png">');
 
 		});
 
@@ -47,7 +47,7 @@ $(document).ready(function()
 		$('#IGFullSizeDivCartPage').css('display', 'block');
 
 		let $IGOffsetBanner = $( ".box-sticky-banner" ).position();
-		$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top - 40);
+		$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top - 36);
 
 		//Desabilitando Scroll
 		var IGScrollPosition = [
@@ -90,7 +90,7 @@ $(document).ready(function()
 		background-color: #00000080;
 		height: 100%;
 		position: absolute;
-		top: 40px;
+		top: 36px;
 		bottom: 0;
 		left: 0;
 		right: 0;
@@ -103,6 +103,9 @@ $(document).ready(function()
 	}
 	#IGCloseFocusedBanner {
 		padding: 5px 10px;
+	}
+	#helpUser {
+		z-index: 9;
 	}
 	#IGCloseFocusedBanner:hover {
 		cursor: pointer;
