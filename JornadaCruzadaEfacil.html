@@ -10,7 +10,7 @@
 $(document).ready(function(){
     if ($(window).width() > 991)
     {
-        $('div.container-fluid').after('<div id="IGEFacilModalLogin"><div id="IGAskIfEfacil">Quer comprar para consumo?</div><hr style="width: 15%; border: 1px solid #FFFFFF; margin-top: 3px; margin-bottom: 5px"><div id="IGLinkEfacilModal"><a href="https://www.efacil.com.br/"><ins>Acesse o eFacil.com.br</ins></a></div></div>');
+        $('div.container-fluid').after('<div id="IGEFacilModalLogin"><div id="IGAskIfEfacil">Quer comprar para consumo?</div><div id="IGLinkEfacilModal"><a href="https://www.efacil.com.br/"><ins><i>Acesse o eFacil.com.br</i></ins></a></div></div>');
         $('.pt-modal-login').click(function(){
             $('i.pt-close').click();
         });
@@ -39,11 +39,22 @@ $(document).ready(function(){
             width: 100%;
             text-align: center;
             font-weight: bold;
+            position: relative;
+        }
+        #IGAskIfEfacil:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            width: 15%;
+            left: 35%; /*this centers it based on the above width*/
+            border-bottom: 2px solid #FFFFFF;
+            margin-left: 15px;
         }
         #IGLinkEfacilModal {
             color: #FFFFFF;
             text-align: center;
             font-weight: normal;
+            margin-top: 5px;
         }
         div.container-fluid>div:nth-of-type(1) {
             font-weight: 900;
