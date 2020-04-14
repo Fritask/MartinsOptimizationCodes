@@ -22,7 +22,7 @@ $(document).ready(function()
 	}
 
 	IGFocusOnBanner = function()
-	{
+	{		
 		//Cria elemento para ofuscar a página
 		var $div = $('<div></div>').appendTo('body');
 		$div.attr('id', 'IGFullSizeDivCartPage');
@@ -42,12 +42,24 @@ $(document).ready(function()
 		{
 			return false;
 		}
-
+		
 		//Exibe o elemento de ofuscamento
 		$('#IGFullSizeDivCartPage').css('display', 'block');
 
 		let $IGOffsetBanner = $( ".box-sticky-banner" ).position();
-		$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top - 36);
+		if($('section#searchSection').find('div.search-section').css('position') == 'fixed')
+		{
+			$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top + 50);
+		}
+		else
+		{
+			$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top - 36);
+		}
+		
+		//Coloca Scroll no início da página
+		window.scrollTo(0, 0);
+		$('section#searchSection').find('div.search-section').removeAttr('style');
+		$('section#searchSection').find('div.search-section').css('position', 'relative');
 
 		//Desabilitando Scroll
 		var IGScrollPosition = [
@@ -72,7 +84,9 @@ $(document).ready(function()
 			var IGhtml = jQuery('html');
 			var IGScrollPosition = IGhtml.data('scroll-position');
 			IGhtml.css('overflow', IGhtml.data('previous-overflow'));
-			window.scrollTo(IGScrollPosition[0], IGScrollPosition[1])
+			window.scrollTo(IGScrollPosition[0], IGScrollPosition[1]);
+
+			$('section#searchSection').find('div.search-section').removeAttr('style');
 		});
 	}
 	

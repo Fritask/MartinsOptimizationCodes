@@ -34,31 +34,24 @@ $(document).ready(function()
         //Adicionando ícone de seta e definindo seu comportamento
         if(i == 0)
         {
-            $(this).append('<div style="position: absolute; top: 35%; right: 1%"><i class="fas fa-chevron-down IGToggableIcon"></i></div>');
+            $(this).append('<div style="position: absolute; top: 35%; right: 1%"><i class="fas fa-chevron-down IGToggableIcon IGSetaOpen"></i></div>');
         }
         else
         {
-            $(this).append('<div style="position: absolute; top: 35%; right: 1%"><i class="fas fa-chevron-up IGToggableIcon"></i></div>');
+            $(this).append('<div style="position: absolute; top: 35%; right: 1%"><i class="fas fa-chevron-down IGToggableIcon"></i></div>');
         }
         
         $(this).click(function(e){
-            let $IGHeaderVendorToggableIcon = $(this);
-            if($(this).find('.IGToggableIcon').hasClass('fa-chevron-down'))
+            let $IGHeaderVendorToggableIcon = $(this).find('.IGToggableIcon');
+            if($IGHeaderVendorToggableIcon.hasClass('IGSetaOpen'))
             {
-                setTimeout(function() {
-                    // $('.headerVendor').find('.IGToggableIcon').removeClass('fa-chevron-down').addClass('fa-chevron-up');
-                    $IGHeaderVendorToggableIcon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-                }, 300);
-                e.preventDefault();
+                // $('.headerVendor').find('.IGToggableIcon').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                $IGHeaderVendorToggableIcon.removeClass('IGSetaOpen');
             }
             else
             {
-                setTimeout(function() {
-                    // $('.headerVendor').find('.IGToggableIcon').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-                    $IGHeaderVendorToggableIcon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
-                }, 300);
-                e.preventDefault();
-
+                // $('.headerVendor').find('.IGToggableIcon').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                $IGHeaderVendorToggableIcon.addClass('IGSetaOpen');
             }
         });
 
@@ -84,7 +77,10 @@ $(document).ready(function()
     $('#modal--reorderConfirm').appendTo('.account-cart-details');
 
     //Muda o(s) modal(modais) de NF para que ele(s) não sofra(m) display: none
-    $('#modal--viewInvoice').appendTo('.account-cart-details');
+    // $('#modal--viewInvoice').appendTo('.account-cart-details');
+    $('.modal--viewInvoice').each(function( i ){
+        $(this).appendTo('.account-cart-details')
+    });
 
     $('.bx-cupons').children().css('display', 'none');
 
@@ -102,12 +98,23 @@ $(document).ready(function()
     $('.orderDetails-bottom').find('div').first().html(IGTxtObsOrderDetails);
 
     //Layout dos produtos
-    $('.products-variants').children().slice(2,6).css('border-left', '1px solid #F0F1F1');
+    // $('.products-variants').children().slice(2,6).css('border-left', '1px solid #F0F1F1');
+    $('.products-variants').each(function( i ){
+        $(this).children().slice(2,6).css('border-left', '1px solid #F0F1F1');
+    });
 
 });
 </script>
 
 <style>
+    .IGToggableIcon {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+    }
+    .IGToggableIcon.IGSetaOpen {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
     /*Inserir borda no modal de valores*/
     div.details {
         background-color: #F5F5F5;
@@ -135,7 +142,7 @@ $(document).ready(function()
         position: static !important;
     }
     .orderStatus.w1 .nivel::after, .orderStatus.w2 .nivel::after, .orderStatus.w3 .nivel::after {
-        display: none;
+        display: none !important;
     }
     /*Ocultar menu inferior que contém observações fora do lugar e CTAs "Histórico de pedidos" e "Refazer Pedido"*/
     .accountActions-bottom {
