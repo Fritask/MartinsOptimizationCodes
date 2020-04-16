@@ -6,13 +6,16 @@ $(document).ready(function()
     }
     $('.responsive-table-link').parent().css('position', 'relative').append('<p class="IGCTAVisualizarPedido">VISUALIZAR</p>');
     $('.control-label').append(document.createTextNode(":"));
-    $('#sortForm1').append('<i style="position: relative; left: -15%" class="fas fa-chevron-down"></i>');
+    $('#sortForm1').append('<i style="position: absolute; right: 10px; top: 20%; pointer-events: none;" class="fas fa-chevron-down"></i>');
     $('.responsive-table-item').click(function(){
         window.location.href = $(this).find('.responsive-table-link').attr('href');
     });
 });
 
 <style>
+    #sortForm1 {
+        position: relative;
+    }
     .IGCTAVisualizarPedido {
         padding: 5px 8px;
         background-color: #CCCCCC;
@@ -79,8 +82,14 @@ $(document).ready(function()
         cursor: pointer;
     }
     .account-overview-table table tbody tr:hover .IGCTAVisualizarPedido {
-        background-color: #004282;
+        background-color: #F27934;
         color: #FFFFFF;
+    }
+    .account-overview-table table tbody tr:hover .responsive-table-link {
+        color: #F27934 !important;
+    }
+    .responsive-table-link {
+        color: #525252 !important;
     }
     .responsive-table-link:hover {
         text-decoration: none;
@@ -88,11 +97,24 @@ $(document).ready(function()
     .responsive-table-cell {
         border: 2px solid #FFFFFF;
     }
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+        .IGCTAVisualizarPedido {
+            font-size: 12px;
+            padding: 2px 4px;
+            top: 27%;
+        }
+    }
     @media only screen and (max-width: 767px) {
         .IGCTAVisualizarPedido {
             font-size: 12px;
             padding: 2px 4px;
             top: 10%;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        #sortOptions1 {
+            margin-left: 0 !important;
+            width: 100% !important;
         }
     }
 </style>
