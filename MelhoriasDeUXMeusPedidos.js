@@ -1,15 +1,54 @@
 $(document).ready(function()
 {
+    //////////Alterações Gerais (INÍCIO)//////////
     document.getElementsByClassName("control-label")[1].style.display = "none";
-    if ($(window).width() > 767) {
-        $('.sort-refine-bar').first().css('padding', '5px 0 5px 8px').css('border', '1px solid #CCCCCC').css('border-radius', '5px');
-    }
-    $('.responsive-table-link').parent().css('position', 'relative').append('<p class="IGCTAVisualizarPedido">VISUALIZAR</p>');
-    $('.control-label').append(document.createTextNode(":"));
+    $('.sort-refine-bar').first().css('padding', '5px 0 5px 8px').css('border', '1px solid #CCCCCC').css('border-radius', '5px');
     $('#sortForm1').append('<i style="position: absolute; right: 10px; top: 20%; pointer-events: none;" class="fas fa-chevron-down"></i>');
     $('.responsive-table-item').click(function(){
         window.location.href = $(this).find('.responsive-table-link').attr('href');
     });
+    //////////Alterações Gerais (FIM)//////////
+
+    
+
+    if ($(window).width() > 767)//////////Alterações Desktop + Tablet (INÍCIO)//////////
+    {
+        $('.responsive-table-item').each(function( i ){
+            let IGTempOrderStatus = $(this).children().slice(3,4).text();
+            if((IGTempOrderStatus.includes("Cancelado")) || (IGTempOrderStatus.includes("processamento")))
+            {
+                // console.log('A linha ' + i + ' é cancelada ou em processamento');
+                $(this).find('.responsive-table-link').parent().css('position', 'relative').append('<p class="IGCTAVisualizarPedido">VISUALIZAR</p>');
+            }
+            else
+            {
+                // console.log('A linha ' + i + ' não é cancelada nem em processamento');
+                $(this).find('.responsive-table-link').parent().css('position', 'relative').append('<p class="IGCTAVisualizarPedido IGCTAVisualizarPedidoNFE">VER NOTA FISCAL</p>');
+            }
+        });
+
+        // $('.responsive-table-link').parent().css('position', 'relative').append('<p class="IGCTAVisualizarPedido">VISUALIZAR</p>');
+        $('.control-label').append(document.createTextNode(":"));
+    }//////////Alterações Desktop + Tablet (FIM)//////////
+    else//////////Alterações Mobile (INÍCIO)//////////
+    {
+        $('.responsive-table-item').each(function( i ){
+            $(this).css('margin-bottom', '20px').css('border', '1px solid #CCCCCC').css('border-top-style', 'none');
+            let IGTempOrderStatus = $(this).children().slice(3,4).text();
+            if((IGTempOrderStatus.includes("Cancelado")) || (IGTempOrderStatus.includes("processamento")))
+            {
+                // console.log('A linha ' + i + ' é cancelada ou em processamento');
+                $(this).prepend('<td style="width: 100%; padding: 0"><div class="IGCTAVisualizarPedidoMobile">VISUALIZAR</div></td>');
+            }
+            else
+            {
+                // console.log('A linha ' + i + ' não é cancelada nem em processamento');
+                $(this).prepend('<td style="width: 100%; padding: 0"><div class="IGCTAVisualizarPedidoMobile">VER NOTA FISCAL</div></td>');
+                // $(this).find('.responsive-table-link').parent().css('position', 'relative').append('<p class="IGCTAVisualizarPedido IGCTAVisualizarPedidoNFE">VER NOTA FISCAL</p>');
+            }
+        }); 
+    }//////////Alterações Mobile (FIM)//////////
+
 });
 
 <style>
@@ -23,6 +62,14 @@ $(document).ready(function()
         position: absolute;
         top: 20%;
         right: 5%;
+    }
+    .IGCTAVisualizarPedidoMobile {
+        width: 100%;
+        height: 100%;
+        background-color: #F27934;
+        color: #FFFFFF;
+        padding: 5px 0px;
+        text-align: center;
     }
     .pagination-prev, .pagination-next {
 
@@ -102,6 +149,11 @@ $(document).ready(function()
             font-size: 12px;
             padding: 2px 4px;
             top: 27%;
+        }
+        .IGCTAVisualizarPedidoNFE {
+            font-size: 10px;
+            top: 30% !important;
+            right: 2%;
         }
     }
     @media only screen and (max-width: 767px) {
