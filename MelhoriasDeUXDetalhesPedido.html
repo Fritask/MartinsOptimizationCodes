@@ -9,7 +9,7 @@
 <script>
 $(document).ready(function()
 {
-    //////////Alterações Gerais Desktop + Mobile (INÍCIO)//////////
+    //////////Alterações Gerais Desktop + Mobile + Tablet (INÍCIO)//////////
 
 
     //Abrindo o primeiro vendor
@@ -42,20 +42,11 @@ $(document).ready(function()
         });
     });
 
-    //Verifica se o pedido possui nota fiscal
-    $('.vendors').each(function( i ){
-        let $IGElementWithNFCTA = $(this).find('div').find('.bx-totals').find('.bx-cupons').children();
-        if($IGElementWithNFCTA.length)
-        {
-            let IGElement = '<a class="IGCTANFOrderDetails IGOrderDetailsMainButtonLinks"><i style="margin-right: 10px" class="fas fa-clipboard-list"></i><span>VISUALIZAR NOTA FISCAL</span></a>';
-            $(this).find('.IGElementoStatusPlusStatusBar').after(IGElement);
-            $(this).find('.IGCTANFOrderDetails').click(function(e){
-                e.stopPropagation();
-                e.preventDefault();
-                $IGElementWithNFCTA.find('.boxButton').children().click();
-            });
-
-        }
+    //Adiciona função ao CTA "Refazer Pedido"
+    $('.IGCTARedoOrder').each(function( i ){
+        $(this).click(function(){
+            $('div.AccountOrderDetailsReorderComponent-MartinsReorderAction').children().first().find('button').first().click();
+        });
     });
 
     //Muda o modal de confirmação de refazer pedido de lugar para que ele não sofra display: none
@@ -82,79 +73,117 @@ $(document).ready(function()
     let IGTxtObsOrderDetails = '<p><b>Observações importantes:</b><br>- O prazo começa a contar a partir da aprovação do pagamento.<br>- Os produtos podem ser entregues separadamente.<br>- As promoções e os totais refletem o que existia no momento do carrinho salvo.<br>- As promoções e os totais podem mudar ou não, mas se aplicarão quando o carrinho for restaurado.</p>'
     $('.orderDetails-bottom').find('div').first().html(IGTxtObsOrderDetails);
 
-
-    //////////Alterações Gerais Desktop + Mobile (FIM)//////////
-
-
-
-    //////////Alterações Desktop (INÍCIO)//////////
-    
-
-    //Edições headers de Vendors
-    $('.headerVendor').each(function( i ){
-        $(this).find('div').first().after('<ul class="IGElementoStatusPlusStatusBar"></ul>'); //Criando novo elemento pai da barra de status e frase status do pedido
-        $(this).find('div').slice(1,2).appendTo($(this).find('.IGElementoStatusPlusStatusBar'));
-        $(this).find('div').slice(2,3).appendTo($(this).find('.IGElementoStatusPlusStatusBar'));
-    });
-    
-    //Layout do header da listagem de produtos
-    $('.vendors .box-base-product .header-products').each(function( i ){
-        $(this).find('p').css('margin', '0px').css('padding', '10px').css('border-top', '1px solid #CCCCCC');
-
-        $(this).find('.header-table').removeClass('text-uppercase');
-        $(this).find('.header-table').find('div.col-1').text('Imagem');
-        $(this).find('.header-table').find('div').slice(1,7).css('border-left', '1px solid #CCCCCC');
-        $(this).find('.header-table').find('div').not('.col-2').css('text-align', 'center').css('padding-left', '0px');
-    });
-    
-    //Layout dos produtos
-    $('.products-variants').each(function( i ){
-        $(this).children().slice(2,6).css('border-left', '1px solid #F0F1F1').css('padding-left', '0px').css('justify-content', 'center');
-        $(this).children().slice(4,5).find('.bx-div').css('justify-content', 'center');
-    });
-    
     //Layout modal de valores
     $('div.details').each(function( i ){
         $(this).find('.gr-line').last().css('background-color', '#F5F5F5');
     });
     
-    //Verifica se o pedido possui botão para visualizar boleto
-    if($('.info').slice(2,3).children().length)
+    //////////Alterações Gerais Desktop + Mobile + Tablet (FIM)//////////
+
+
+
+    if ($(window).width() > 991)//////////Alterações Desktop + Tablet (INÍCIO)//////////
     {
-        $('#IGOrderDetailsMenu1WithBoleto').css('display', 'flex');
-        $('#IGCTABoletoOrderDetails').attr('href', $('.info').slice(2,3).children().children().attr('href'));
-    }
-    else
+        //Edições headers de Vendors
+        $('.headerVendor').each(function( i ){
+            $(this).find('div').first().after('<ul class="IGElementoStatusPlusStatusBar"></ul>'); //Criando novo elemento pai da barra de status e frase status do pedido
+            $(this).find('div').slice(1,2).appendTo($(this).find('.IGElementoStatusPlusStatusBar'));
+            $(this).find('div').slice(2,3).appendTo($(this).find('.IGElementoStatusPlusStatusBar'));
+        });
+
+        //Verifica se o pedido possui nota fiscal
+        $('.vendors').each(function( i ){
+            let $IGElementWithNFCTA = $(this).find('div').find('.bx-totals').find('.bx-cupons').children();
+            if($IGElementWithNFCTA.length)
+            {
+                let IGElement = '<a class="IGCTANFOrderDetails IGOrderDetailsMainButtonLinks"><i style="margin-right: 10px" class="fas fa-clipboard-list"></i><span>VISUALIZAR NOTA FISCAL</span></a>';
+                $(this).find('.IGElementoStatusPlusStatusBar').after(IGElement);
+                $(this).find('.IGCTANFOrderDetails').click(function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $IGElementWithNFCTA.find('.boxButton').children().click();
+                });
+
+            }
+        });
+        
+        //Layout do header da listagem de produtos
+        $('.vendors .box-base-product .header-products').each(function( i ){
+            $(this).find('p').css('margin', '0px').css('padding', '10px').css('border-top', '1px solid #CCCCCC');
+
+            $(this).find('.header-table').removeClass('text-uppercase');
+            $(this).find('.header-table').find('div.col-1').text('Imagem');
+            $(this).find('.header-table').find('div').slice(1,7).css('border-left', '1px solid #CCCCCC');
+            $(this).find('.header-table').find('div').not('.col-2').css('text-align', 'center').css('padding-left', '0px');
+        });
+        
+        //Layout dos produtos
+        $('.products-variants').each(function( i ){
+            $(this).children().slice(2,6).css('border-left', '1px solid #F0F1F1').css('padding-left', '0px').css('justify-content', 'center').css('text-align', 'center');
+            $(this).children().slice(4,5).find('.bx-div').css('justify-content', 'center');
+        });
+
+        if($(window).width() > 1199)//////////Alterações Desktop (INÍCIO)//////////
+        {
+            //Verifica se o pedido possui botão para visualizar boleto
+            if($('.info').slice(2,3).children().length)
+            {
+                $('#IGOrderDetailsMenu1WithBoleto').css('display', 'flex');
+                $('#IGCTABoletoOrderDetailsDesktop').attr('href', $('.info').slice(2,3).children().children().attr('href'));
+            }
+            else
+            {
+                $('#IGOrderDetailsMenu1').css('display', 'flex');
+            }
+        }//////////Alterações Desktop (FIM)//////////
+        else//////////Alterações Tablet (INÍCIO)//////////
+        {
+            //Verifica se o pedido possui botão para visualizar boleto
+            if($('.info').slice(2,3).children().length)
+            {
+                $('#IGOrderDetailsMenu1WithBoletoMobile').css('display', 'block');
+                $('#IGCTABoletoOrderDetailsMobile').attr('href', $('.info').slice(2,3).children().children().attr('href'));
+            }
+            else
+            {
+                $('#IGOrderDetailsMenu1Mobile').css('display', 'block');
+            }
+        }//////////Alterações Tablet (FIM)//////////
+    }//////////Alterações Desktop + Tablet (FIM)//////////
+    else//////////Alterações Mobile (INÍCIO)//////////
     {
-        $('#IGOrderDetailsMenu1').css('display', 'flex');
-    }
+        //Verifica se o pedido possui nota fiscal
+        $('.vendors').each(function( i ){
+            let $IGElementWithNFCTA = $(this).find('div').find('.bx-totals').find('.bx-cupons').children();
+            if($IGElementWithNFCTA.length)
+            {
+                let IGElement = '<a class="IGCTANFOrderDetails IGOrderDetailsMainButtonLinks"><i style="margin-right: 10px" class="fas fa-clipboard-list"></i><span>VISUALIZAR NOTA FISCAL</span></a>';
+                $(this).find('.headerVendor').append(IGElement);
+                $(this).find('.IGCTANFOrderDetails').click(function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $IGElementWithNFCTA.find('.boxButton').children().click();
+                });
 
+            }
+        });
 
-    //////////Alterações Desktop (FIM)//////////
+        //Layout do header da listagem de produtos
+        $('.vendors .box-base-product .header-products').each(function( i ){
+            $(this).find('p').css('margin', '0px').css('padding', '10px').css('border-top', '1px solid #CCCCCC').css('border-bottom', '1px solid #CCCCCC');
+        });
 
-
-
-    //////////Alterações Mobile (INÍCIO)//////////
-
-
-
-
-
-    //////////Alterações Mobile (FIM)//////////
-
-    ///////////////////////////////////////////////////////////////Fazer esse para mobile também
-    //Verifica se o pedido possui botão para visualizar boleto
-    if($('.info').slice(2,3).children().length)
-    {
-        $('#IGOrderDetailsMenu1WithBoleto').css('display', 'flex');
-        $('#IGCTABoletoOrderDetails').attr('href', $('.info').slice(2,3).children().children().attr('href'));
-    }
-    else
-    {
-        $('#IGOrderDetailsMenu1').css('display', 'flex');
-    }
-
-
+        //Verifica se o pedido possui botão para visualizar boleto
+        if($('.info').slice(2,3).children().length)
+        {
+            $('#IGOrderDetailsMenu1WithBoletoMobile').css('display', 'block');
+            $('#IGCTABoletoOrderDetailsMobile').attr('href', $('.info').slice(2,3).children().children().attr('href'));
+        }
+        else
+        {
+            $('#IGOrderDetailsMenu1Mobile').css('display', 'block');
+        }
+    }//////////Alterações Mobile (FIM)//////////
 });
 </script>
 
@@ -163,11 +192,6 @@ $(document).ready(function()
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 25px;
-        /*MOBILE:
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        */
     }
     .vendors .box-base-product .header-products {
         padding: 0px !important;
@@ -191,6 +215,11 @@ $(document).ready(function()
         border: 1px solid #CCCCCC;
         border-radius: 5px;
         padding-top: 10px;
+    }
+    .IGOrderDetailsSubmenu2 {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 40px;
     }
     .headerVendor {
         position: relative;
@@ -241,6 +270,7 @@ $(document).ready(function()
         cursor: pointer;
         margin-right: 15px;
         height: 40px;
+        padding: 10px;
     }
     .IGOrderDetailsButtonLinks1:hover {
         background-color: #004282;
@@ -295,36 +325,116 @@ $(document).ready(function()
         height: 45%;
     }
     @media only screen and (max-width: 1199px) {
-        
+        .IGFlexContainer {
+            width: 940px;
+        }
+        .IGOrderDetailsTextContent1WithBoleto {
+            width: calc(940px/3);
+            padding: 10px;
+        }
+        #IGOrderDetailsMenu2 {
+            display: block;
+            text-align: center;
+        }
+        .IGOrderDetailsTextContent2 {
+            width: 100% !important;
+        }
+        .IGSideBordersBlue:after {
+            display: none;
+        }
+        .IGElementoStatusPlusStatusBar {
+            width: 538px;
+        }
+        .orderStatus .headerStatus>div {
+            font-size: 12px;
+        }
     }
     @media only screen and (max-width: 991px) {
-        
+        .IGFlexContainer {
+            width: 720px;
+            font-size: 12px;
+        }
+        .IGOrderDetailsTextContent1WithBoleto {
+            width: calc(720px/3);
+        }
+        .IGCTANFOrderDetails {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+        }
     }
     @media only screen and (max-width: 767px) {
-        
+        .IGFlexContainer {
+            width: calc(100vw - 30px);
+        } 
+        .IGOrderDetailsTextContent1WithBoleto {
+            width: calc((100vw - 30px)/3);
+        }
+    }
+    @media only screen and (max-width: 560px) {
+        .IGOrderDetailsSubmenu2 {
+            display: block;
+            height: auto;
+            text-align: center;
+            width: 100%;
+        }
+        .IGOrderDetailsTextContent1WithBoleto {
+            width: calc(100% - 130px);
+            border: 1px solid #CCCCCC;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .IGSideBordersGray:after {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 450px) {
+        #IGOrderDetailsSubmenu1 {
+            display: block !important;
+        }
+        #IGOrderDetailsSubmenu1>div {
+            line-height: initial !important;
+            text-align: center;
+        }
+        .IGOrderDetailsButtonLinks1, #IGCTABoletoOrderDetailsMobile {
+            width: calc(100% - 130px) !important;
+            display: inline-block;
+        }
+        .IGOrderDetailsButtonLinks1 {
+            margin: 0px 0px 15px 0px !important;
+        }
+    }
+    @media only screen and (max-width: 375px) {
+        .IGCTANFOrderDetails {
+            right: -10px;
+            margin-right: 0;
+        }
     }
 </style>
 
 
 
-<!--INÍCIO Primeiro menu alterado (abaixo de "Detalhes do pedido)-->
+<!--INÍCIO Primeiro menu alterado (abaixo de "Detalhes do pedido")-->
+
+<!--Menu 1 com Boleto - Desktop-->
 <div id="IGOrderDetailsMenu1WithBoleto" class="IGFlexContainer" style="display: none">
     <div style="line-height: 40px;">
-        <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px; padding: 9.5px 10px;">
+        <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px;">
             <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
         </a>
     </div>
     <div style="line-height: 40px;">
-        <button class="IGOrderDetailsButtonLinks1" style="width: 153px;" data-toggle="modal" data-target="#modal--reorderConfirm">
+        <a class="IGOrderDetailsButtonLinks1 IGCTARedoOrder" style="width: 153px;">
             <i style="color: #F27934; margin-right: 10px" class="fas fa-redo-alt"></i><span>REFAZER PEDIDO</span>
-        </button>
+        </a>
     </div>
     <div style="line-height: 40px;">
-        <a target="_blank" id="IGCTABoletoOrderDetails" class="IGOrderDetailsMainButtonLinks" style="width: 160px;">
+        <a target="_blank" id="IGCTABoletoOrderDetailsDesktop" class="IGOrderDetailsMainButtonLinks" style="width: 160px;">
             <i style="margin-right: 10px" class="fas fa-barcode"></i><span>VISUALIZAR BOLETO</span>
         </a>
     </div>
-    <div style="display:flex; flex-wrap: nowrap; height: 40px;">
+    <div class="IGOrderDetailsSubmenu2">
         <div class="IGOrderDetailsTextContent1WithBoleto">
             <div class="IGSideBordersGray">
                 <span>N° do Pedido: <b class="IGNumPedido"></b></span>
@@ -342,18 +452,19 @@ $(document).ready(function()
 </div>
 
 
+<!--Menu 1 sem Boleto - Desktop-->
 <div id="IGOrderDetailsMenu1" class="IGFlexContainer" style="display: none">
     <div style="line-height: 40px;">
-        <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px; padding: 9.5px 10px;">
+        <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px;">
             <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
         </a>
     </div>
     <div style="line-height: 40px;">
-        <button class="IGOrderDetailsButtonLinks1" style="width: 153px;" data-toggle="modal" data-target="#modal--reorderConfirm">
+        <a class="IGOrderDetailsButtonLinks1 IGCTARedoOrder" style="width: 153px;">
             <i style="color: #F27934; margin-right: 10px" class="fas fa-redo-alt"></i><span>REFAZER PEDIDO</span>
-        </button>
+        </a>
     </div>
-    <div style="display:flex; flex-wrap: nowrap; height: 40px;">
+    <div class="IGOrderDetailsSubmenu2">
         <div class="IGOrderDetailsTextContent1">
             <div class="IGSideBordersGray">
                 <span>N° do Pedido: <b class="IGNumPedido"></b></span>
@@ -369,11 +480,87 @@ $(document).ready(function()
         </div>
     </div>
 </div>
+
+
+<!--Menu 1 com Boleto - Mobile-->
+<div id="IGOrderDetailsMenu1WithBoletoMobile" style="display: none">
+    <div id="IGOrderDetailsSubmenu1" class="IGFlexContainer" style="justify-content: center;">
+        <div style="line-height: 40px;">
+            <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px;">
+                <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
+            </a>
+        </div>
+        <div style="line-height: 40px;">
+            <a class="IGOrderDetailsButtonLinks1 IGCTARedoOrder" style="width: 153px;">
+                <i style="color: #F27934; margin-right: 10px" class="fas fa-redo-alt"></i><span>REFAZER PEDIDO</span>
+            </a>
+        </div>
+        <div style="line-height: 40px;">
+            <a target="_blank" id="IGCTABoletoOrderDetailsMobile" class="IGOrderDetailsMainButtonLinks" style="width: 160px; margin-right: 0;">
+                <i style="margin-right: 10px" class="fas fa-barcode"></i><span>VISUALIZAR BOLETO</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="IGFlexContainer" style="margin-top: 20px">
+        <div class="IGOrderDetailsSubmenu2">
+            <div class="IGOrderDetailsTextContent1WithBoleto">
+                <div class="IGSideBordersGray">
+                    <span>N° do Pedido: <b class="IGNumPedido"></b></span>
+                </div>
+            </div>
+            <div class="IGOrderDetailsTextContent1WithBoleto">
+                <div class="IGSideBordersGray">
+                    <span>Data/Hora: <b class="IGDataHoraPedido"></b></span>
+                </div>
+            </div>
+            <div class="IGOrderDetailsTextContent1WithBoleto">
+                <span>Total: <b class="IGValorTotalPedido" style="color: #F27934"></b></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Menu 1 sem Boleto - Mobile-->
+<div id="IGOrderDetailsMenu1Mobile" style="display: none">
+    <div id="IGOrderDetailsSubmenu1" class="IGFlexContainer" style="justify-content: center;">
+        <div style="line-height: 40px;">
+            <a href="/martins/pt/BRL/my-account/orders" class="IGOrderDetailsButtonLinks1" style="width: 97px;">
+                <i style="color: #F27934; margin-right: 10px" class="fas fa-arrow-left"></i><span>VOLTAR</span>
+            </a>
+        </div>
+        <div style="line-height: 40px;">
+            <a class="IGOrderDetailsButtonLinks1 IGCTARedoOrder" style="width: 153px;">
+                <i style="color: #F27934; margin-right: 10px" class="fas fa-redo-alt"></i><span>REFAZER PEDIDO</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="IGFlexContainer" style="margin-top: 10px">
+        <div class="IGOrderDetailsSubmenu2">
+            <div class="IGOrderDetailsTextContent1WithBoleto">
+                <div class="IGSideBordersGray">
+                    <span>N° do Pedido: <b class="IGNumPedido"></b></span>
+                </div>
+            </div>
+            <div class="IGOrderDetailsTextContent1WithBoleto">
+                <div class="IGSideBordersGray">
+                    <span>Data/Hora: <b class="IGDataHoraPedido"></b></span>
+                </div>
+            </div>
+            <div class="IGOrderDetailsTextContent1WithBoleto">
+                <span>Total: <b class="IGValorTotalPedido" style="color: #F27934"></b></span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--FIM Primeiro menu alterado (abaixo de "Detalhes do pedido)-->
 
 
 <!--INÍCIO Segundo menu alterado (azul)-->
-<div class="IGFlexContainer" style="background-color: #D2EEF8; margin-top: 20px; margin-bottom: 20px;">
+<div id="IGOrderDetailsMenu2" class="IGFlexContainer" style="background-color: #D2EEF8; margin-top: 20px; margin-bottom: 20px;">
     <div class="IGOrderDetailsTextContent2" style="width: 65%;">
         <div class="IGSideBordersBlue">
             <span>Destino de entrega: <b style="color: #00cff1; font-weight: bold;" id="IGDestinoEntregaPedido"></b></span>
