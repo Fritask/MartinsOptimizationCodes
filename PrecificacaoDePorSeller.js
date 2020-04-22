@@ -14,6 +14,10 @@ $(document).ready(function()
         {
             var tempStr = IGPrecosProdutosPlus2Pct[i].innerText;
             var tempVar = tempStr.substring(3, tempStr.length);
+            if(tempVar.includes("."))
+            {
+                tempVar = tempVar.replace(".", "");
+            }
             tempVar = tempVar.replace(",", ".");
             tempVar = parseFloat(tempVar).toFixed(2);
             IGNumber[i] = tempVar;
@@ -26,6 +30,8 @@ $(document).ready(function()
                 var IGTempVar = (parseFloat(IGNumber[i]) + (IGNumber[i] * 0.02)).toFixed(2);
                 IGTempVar = String(IGTempVar);
                 IGTempVar = IGTempVar.replace(".", ",");
+                IGTempVar = IGTempVar.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+                
                 tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-top: 10px; margin-bottom: 0px">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
             }
 

@@ -5,6 +5,11 @@ $(document).ready(function()
     
     var IGtempStr = IGPrecosProdutosPlus2Pct[0].innerText;
     var IGtempVar2 = IGtempStr.substring(3, IGtempStr.length);
+    if(IGtempVar2.includes("."))
+    {
+        IGtempVar2 = IGtempVar2.replace(".", "");
+    }
+    IGtempVar2 = IGtempVar2.replace(".", "");
     IGtempVar2 = IGtempVar2.replace(",", ".");
     IGtempVar2 = parseFloat(IGtempVar2).toFixed(2);
     var IGNumber = IGtempVar2;
@@ -18,8 +23,9 @@ $(document).ready(function()
                 var IGTempVar = (parseFloat(IGNumber) + (IGNumber * 0.02)).toFixed(2);
                 IGTempVar = String(IGTempVar);
                 IGTempVar = IGTempVar.replace(".", ",");
+                IGTempVar = IGTempVar.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
 
-                    tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-bottom: 0px; text-align: left;">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
+                tempHtml = '<p style="font-size: 13px; font-weight: normal; color: #525252; margin-bottom: 0px; text-align: left;">De: <del>R$ ' + IGTempVar + '</devl></p><p style="font-size: 13px; font-weight: normal; color: #525252; display: inline">Por:</p>';
 
             $(this).prepend(tempHtml);
         });
