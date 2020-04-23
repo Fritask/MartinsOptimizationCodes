@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('.vendors').each(function( i ){
+        //Obtendo texto "VENDIDO E ENTREGUE POR:"
+        let IGVendidoEEntregueTXT = $(this).children().slice(1,2).children().slice(1,2).find('.cods').slice(1,2).children().text();
+
+        //Se o texto "VENDIDO E ENTREGUE POR:" for referente ao Martins, insere essa informação na linha do faturamento
+        if(IGVendidoEEntregueTXT.includes("Martins"))
+        {
+            $(this).children().slice(1,2).children().first().children().first().append('<div class="IGVendEEntreguePor text-uppercase">' + IGVendidoEEntregueTXT + '</div>');
+        }
+
+        //Ocultando campo "VENDIDO E ENTREGUE POR:" de todos produtos
+        // $(this).children().slice(1,2).children().find('.cods').slice(1,2).css('display', 'none');
+
+    });
+
+    $('.col-2-wrapper').each(function( i ){
+        //Ocultando campo "VENDIDO E ENTREGUE POR:" de todos produtos
+        $(this).find('.cods').slice(1,2).css('display', 'none');
+
+
+        $(this).append('<div class="IGPlusInfoCart">+ Info<div class="IGPlusInfoCartPopUp"></div></div>');
+        $(this).find('.IGPlusInfoCart').find('.IGPlusInfoCartPopUp').append( $(this).find('.cods').first() );
+    });
+
+    $('.IGPlusInfoCart').click(function(){
+        $('.IGPlusInfoCartPopUp').toggle();
+    });
+
+    $('.js-voucher-validation-container').each(function( i ){
+        if(!($(this).children().length > 0))
+        {
+            $(this).parent().css('display', 'none');
+        }
+    });
+
+    // $('<a style="font-size: 16px; font-weight: bold; text-decoration: none; padding: 3px; border: 1px solid #23527C;" class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>').insertBefore('.js-voucher-respond');
+    // $('<a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>').insertBefore('.js-voucher-respond');
+    $('.js-voucher-respond').before('<a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>')
+    $('.IGToggleCupomDesconto').each(function( i ){
+        $(this).click(function(){
+            $(this).next().toggle();
+        })
+    });
+});
+</script>
+
+<style>
+    .IGToggleCupomDesconto {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 3px;
+        border: 1px solid #23527C;
+        background-color: #FFFFFF;
+        color: #23527C;
+    }
+    .IGToggleCupomDesconto:hover {
+        background-color: #23527C;
+        color: #FFFFFF;
+    }
+
+    div.box-select {
+        width: fit-content;
+        padding: 0px 10px;
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+    }
+    /*Ajustar o layout do campo "Faturamento / Expedição:"*/
+    select.selectMartins {
+        border: none;
+        box-shadow: none;
+        margin-top: 0px;
+        padding: 0px 25px 0px 0px;
+    }
+    /*Ajustar texto "VENDIDO E ENTREGUE POR: MARTINS"*/
+    .IGVendEEntreguePor {
+        color: #525252;
+        position: absolute;
+        right: 10px;
+        font-family: Segoe UI, sans-serif;
+        font-size: 12px;
+    }
+    .IGPlusInfoCart {
+        text-decoration: underline;
+        font-style: italic;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000000;
+        text-align: left;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .IGPlusInfoCartPopUp {
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        display: none;
+        background-color: #555555;
+        color: #FFFFFF;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+    }
+    .IGPlusInfoCartPopUp::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 15px;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555555 transparent transparent transparent;
+    }
+</style>
+
+</div>
+
+</body>
+</html>
