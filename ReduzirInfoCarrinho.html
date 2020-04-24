@@ -27,6 +27,11 @@ $(document).ready(function()
         //Inserindo efeito no cursor do mouse nos códigos
         $(this).find('.cods').slice(0,1).css('cursor', 'pointer');
 
+        //Inserindo ícone "X" antes dos códigos
+        $(this).find('.cods').slice(0,1).children().slice(0,1).before('<i style="color: red" class="fas fa-times"></i>');
+
+        $(this).find('p').css('font-size', '14px');
+
         //Insere CTA "+ Info" em todos os produtos
         $(this).append('<div class="IGPlusInfoCart">+ Info</div>');
     });
@@ -57,8 +62,6 @@ $(document).ready(function()
         }
     });
 
-    // $('<a style="font-size: 16px; font-weight: bold; text-decoration: none; padding: 3px; border: 1px solid #23527C;" class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>').insertBefore('.js-voucher-respond');
-    // $('<a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>').insertBefore('.js-voucher-respond');
     $('.js-voucher-respond').before('<div class="IGToggleCupomDescontoParent"><i class="fas fa-cut IGCutIconCupom"></i><a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a></div>')
     $('.IGToggleCupomDescontoParent').each(function( i ){
         $(this).click(function(){
