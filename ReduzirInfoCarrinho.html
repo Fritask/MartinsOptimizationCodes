@@ -18,25 +18,38 @@ $(document).ready(function()
         {
             $(this).children().slice(1,2).children().first().children().first().append('<div class="IGVendEEntreguePor text-uppercase">' + IGVendidoEEntregueTXT + '</div>');
         }
-
-        //Ocultando campo "VENDIDO E ENTREGUE POR:" de todos produtos
-        // $(this).children().slice(1,2).children().find('.cods').slice(1,2).css('display', 'none');
-
     });
 
     $('.col-2-wrapper').each(function( i ){
-        //Ocultando campo "VENDIDO E ENTREGUE POR:" de todos produtos
-        $(this).find('.cods').slice(1,2).css('display', 'none');
+        //Ocultando campo "VENDIDO E ENTREGUE POR:" e os códigos de todos produtos
+        $(this).find('.cods').slice(0,2).css('display', 'none');
 
+        //Inserindo efeito no cursor do mouse nos códigos
+        $(this).find('.cods').slice(0,1).css('cursor', 'pointer');
 
-        $(this).append('<div class="IGPlusInfoCart">+ Info<div class="IGPlusInfoCartPopUp"></div></div>');
-        $(this).find('.IGPlusInfoCart').find('.IGPlusInfoCartPopUp').append( $(this).find('.cods').first() );
+        //Insere CTA "+ Info" em todos os produtos
+        $(this).append('<div class="IGPlusInfoCart">+ Info</div>');
     });
 
+    //Clicar em "+ Info"
     $('.IGPlusInfoCart').click(function(){
-        $('.IGPlusInfoCartPopUp').toggle();
+        $('.IGPlusInfoCart').css('display', 'none');
+        $('.col-2-wrapper').each(function( i ){
+            $(this).find('.cods').slice(0,1).css('display', 'flex');
+        });
     });
 
+    //Clicar nos códigos
+    $('.col-2-wrapper').each(function( i ){
+        $(this).find('.cods').slice(0,1).click(function(){
+            $('.IGPlusInfoCart').css('display', 'block');
+            $('.col-2-wrapper').each(function( i ){
+                $(this).find('.cods').slice(0,1).css('display', 'none');
+            });
+        });
+    });
+
+    //Oculta campo para inserção de cupom de desconto
     $('.js-voucher-validation-container').each(function( i ){
         if(!($(this).children().length > 0))
         {
@@ -46,8 +59,8 @@ $(document).ready(function()
 
     // $('<a style="font-size: 16px; font-weight: bold; text-decoration: none; padding: 3px; border: 1px solid #23527C;" class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>').insertBefore('.js-voucher-respond');
     // $('<a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>').insertBefore('.js-voucher-respond');
-    $('.js-voucher-respond').before('<a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a>')
-    $('.IGToggleCupomDesconto').each(function( i ){
+    $('.js-voucher-respond').before('<div class="IGToggleCupomDescontoParent"><i class="fas fa-cut IGCutIconCupom"></i><a class="IGToggleCupomDesconto" href="javascript:void(0)"><i class="fas fa-ticket-alt"></i> Possui cupom de desconto?</a></div>')
+    $('.IGToggleCupomDescontoParent').each(function( i ){
         $(this).click(function(){
             $(this).next().toggle();
         })
@@ -56,20 +69,33 @@ $(document).ready(function()
 </script>
 
 <style>
-    .IGToggleCupomDesconto {
+    .IGToggleCupomDesconto, .IGToggleCupomDesconto:focus {
         font-size: 16px;
         font-weight: bold;
         text-decoration: none;
-        padding: 3px;
-        border: 1px solid #23527C;
-        background-color: #FFFFFF;
-        color: #23527C;
-    }
-    .IGToggleCupomDesconto:hover {
-        background-color: #23527C;
+        padding: 6px 10px;
+        background-color: #F27934;
         color: #FFFFFF;
     }
-
+    .IGToggleCupomDesconto:hover {
+        background-color: #FFFFFF;
+        color: #F27934;
+        border: 1px solid #F27934;
+        text-decoration: none;
+    }
+    .IGToggleCupomDescontoParent{
+        border: 1px dashed #F27934;
+        padding: 14px 8px;
+        width: fit-content;
+        position: relative;
+        cursor: pointer;
+    }
+    .IGCutIconCupom {
+        position: absolute;
+        top: -7px;
+        left: 20%;
+        color: #F27934;
+    }
     div.box-select {
         width: fit-content;
         padding: 0px 10px;
@@ -80,8 +106,8 @@ $(document).ready(function()
     select.selectMartins {
         border: none;
         box-shadow: none;
-        margin-top: 0px;
-        padding: 0px 25px 0px 0px;
+        margin-top: 0px !important;
+        padding: 0px 25px 0px 0px !important;
     }
     /*Ajustar texto "VENDIDO E ENTREGUE POR: MARTINS"*/
     .IGVendEEntreguePor {
@@ -105,29 +131,22 @@ $(document).ready(function()
         -ms-user-select: none;
         user-select: none;
     }
-    .IGPlusInfoCartPopUp {
-        text-decoration: none;
-        font-style: normal;
-        font-weight: normal;
-        display: none;
-        background-color: #555555;
-        color: #FFFFFF;
-        text-align: center;
-        border-radius: 6px;
-        padding: 8px 10px;
-        position: absolute;
-        z-index: 1;
-        bottom: 125%;
+    @media only screen and (max-width: 992px) {
+        div.box-select>label {
+            width: auto !important;
+        }
     }
-    .IGPlusInfoCartPopUp::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 15px;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555555 transparent transparent transparent;
+    @media only screen and (max-width: 767px) {
+        .IGVendEEntreguePor {
+            right: 0;
+            width: 100%;
+            top: 230px;
+            text-align: center;
+        }
+        div.box-select {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
     }
 </style>
 
