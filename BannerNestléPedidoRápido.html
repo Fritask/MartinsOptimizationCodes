@@ -10,22 +10,43 @@
 $(document).ready(function()
 {
     $('div.c-pedRapido__floatBottomComprar').each(function( i ){
-        $(this).after('<div class="IGBannerNestlePedidoFacil"><img class="IGImgBannerNestlePedidoRapido" src="https://i.imgur.com/uG1ODH9.png"><a target="_blank" href="https://www.martinsatacado.com.br/biggysearch/?text=/landing_page/mix-produtos-nestle" class="IGLinkBannerNestlePedidoFacil"></a></div>');
+        $(this).after('<div class="IGBannerNestlePedidoFacilParent"><div class="IGLoadingCartPedidoFacil"><i class="fas fa-spinner fa-pulse fa-3x"></i><div>Adicionando combo ao carrinho...</div></div><div class="IGBannerNestlePedidoFacil"><img class="IGImgBannerNestlePedidoRapido" src="https://i.imgur.com/uG1ODH9.png"><a href="javascript:void(0)" class="IGLinkBannerNestlePedidoFacil"></a></div></div>');
         
         $(this).children().slice(1,2).children().click(function(){
-            $(this).parent().parent().next().css('opacity', '1');
+            $(this).parent().parent().next().find('.IGLoadingCartPedidoFacil').css('display', 'block');
+            let $IGelement = $(this);
+            setTimeout(function(){
+                $IGelement.parent().parent().next().find('.IGLoadingCartPedidoFacil').remove();
+                $IGelement.parent().parent().next().find('.IGBannerNestlePedidoFacil').css('opacity', '1').find('.IGLinkBannerNestlePedidoFacil').attr('href', 'https://www.martinsatacado.com.br/biggysearch/?text=/landing_page/mix-produtos-nestle').attr('target', '_blank');
+            }, 3000);
         });
     });
 });
 </script>
 
 <style>
-    .IGBannerNestlePedidoFacil {
+    .IGBannerNestlePedidoFacilParent {
         width: 100%;
         position: relative;
         margin-top: 16px;
+    }
+    .IGBannerNestlePedidoFacil {
+        width: 100%;
         opacity: 0;
         transition: opacity 1.5s;
+    }
+    .IGLoadingCartPedidoFacil {
+        position: absolute;
+        width: 100%;
+        display: none;
+        text-align: center;
+        top: 0;
+        left: 0;
+        color: #92D100;
+        font-weight: bold;
+    }
+    .IGLoadingCartPedidoFacil div {
+        margin-top: 10px;
     }
     .IGImgBannerNestlePedidoRapido {
         width: 100%;
@@ -36,6 +57,17 @@ $(document).ready(function()
         left: 0;
         width: 100%;
         height: 100%;
+    }
+    @media only screen and (max-width: 767px) {
+        .IGLoadingCartPedidoFacil {
+            font-size: 11px;
+        }
+        .IGLoadingCartPedidoFacil div {
+            margin-top: 7px;
+        }
+        .IGLoadingCartPedidoFacil i {
+            font-size: 2em;
+        }
     }
 </style>
 
