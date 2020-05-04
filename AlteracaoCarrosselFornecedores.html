@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('.slick-arrow-rotating').first().css('background-color', '#004282 !important').css('margin', '-30px 0px 30px').css('padding', '5px 0px 25px');
+
+    $('.slick-arrow-rotating').first().children().css('margin', '0px').children().children().find('.title1').css('color', '#FFFFFF');
+
+    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
+
+    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
+    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(0,1).css('left', '-45px');
+    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
+
+
+    $('.slick-arrow-rotating').slice(1,2).find('div.title1').each(function( i ){
+        let IGTitle1TxtTemp = $(this).text();
+        $(this).text('');
+        $(this).append('<div class="IGTitle1Child">' + IGTitle1TxtTemp + '</div>');
+        $(this).append('<div class="IGHrV2">&nbsp;</div>');
+    });
+
+    $(window).on('scroll', function()
+    {
+        if($(this).scrollTop() > 171)
+        {
+            $('div.search-section').css('box-shadow', '0px 10px 30px 10px #0000003d');
+        }
+        else
+        {
+            $('div.search-section').css('box-shadow', 'none');
+        }
+    });
+});
+</script>
+
+<style>
+    .IGTitle1Child {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        outline: 10px solid #FFFFFF;
+        background-color: #FFFFFF;
+        position: relative;
+        z-index: 1;
+    }
+    .IGHrV2 {
+        width: 100%;
+        height: 50%;
+        margin-top: 0px;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        border-bottom: 1px solid #004282;
+    }
+    div.parceiromartins-bar-container-fluid {
+        box-shadow: 0px 10px 30px 10px #0000003d;
+    }
+    div.title1 {
+        text-align: center;
+        border: none;
+        position: relative;
+    }
+</style>
+
+</div>
+
+</body>
+</html>
