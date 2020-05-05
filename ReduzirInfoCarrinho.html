@@ -18,6 +18,11 @@ $(document).ready(function()
         {
             $(this).children().slice(1,2).children().first().children().first().append('<div class="IGVendEEntreguePor text-uppercase">' + IGVendidoEEntregueTXT + '</div>');
         }
+        else
+        {
+            // $(this).children().slice(1,2).children().first().css('position', 'relative').prepend('<div class="IGVendEEntreguePorParent"><div class="IGVendEEntreguePor text-uppercase" style="top: 0;">' + IGVendidoEEntregueTXT + '</div></div>');
+            $(this).children().slice(1,2).children().first().prepend('<div class="IGVendEEntreguePorParent"><div class="IGVendEEntreguePor text-uppercase" style="top: 0; right: 0 !important;">' + IGVendidoEEntregueTXT + '</div></div>');
+        }
     });
 
     $('.col-2-wrapper').each(function( i ){
@@ -111,6 +116,13 @@ $(document).ready(function()
         box-shadow: none;
         margin-top: 0px !important;
         padding: 0px 25px 0px 0px !important;
+    }
+    .IGVendEEntreguePorParent {
+        position: relative;
+        padding: 10px 0px;
+        margin: 10px 0px 15px;
+        width: 100%;
+        height: 100%;
     }
     /*Ajustar texto "VENDIDO E ENTREGUE POR: MARTINS"*/
     .IGVendEEntreguePor {
