@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script>
@@ -33,7 +32,7 @@ $(document).ready(function()
 		//Faz as alterações necessárias no banner e em sua cópia
 		$('div.c-stickyBanner').each(function(){
 			$(this).children().first().children().children().css('display', 'none');
-			$(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/oLMRNQH.png">');
+			$(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/GFmEtT7.png">');
 
 		});
 
@@ -55,11 +54,6 @@ $(document).ready(function()
 		{
 			$('#IGClonedBannerCard').css('left', $IGOffsetBanner.left).css('top', $IGOffsetBanner.top - 36);
 		}
-		
-		//Coloca Scroll no início da página
-		window.scrollTo(0, 0);
-		$('section#searchSection').find('div.search-section').removeAttr('style');
-		$('section#searchSection').find('div.search-section').css('position', 'relative');
 
 		//Desabilitando Scroll
 		var IGScrollPosition = [
@@ -71,6 +65,14 @@ $(document).ready(function()
 		IGhtml.data('previous-overflow', IGhtml.css('overflow'));
 		IGhtml.css('overflow', 'hidden');
 		window.scrollTo(IGScrollPosition[0], IGScrollPosition[1]);
+		
+		//Coloca Scroll no início da página
+		setTimeout(function()
+		{
+			window.scrollTo(0, 0);
+			$('section#searchSection').find('div.search-section').removeAttr('style');
+			$('section#searchSection').find('div.search-section').css('position', 'relative');
+		}, 600);
 
 		//Cria botão para remover o elemento de ofuscamento
 		$('#IGClonedBannerCard').children().css('position', 'relative');

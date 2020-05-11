@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/d9a2613e01.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script>
@@ -19,6 +18,10 @@ $(document).ready(function()
     $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(0,1).css('left', '-45px');
     $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
 
+    if ($(window).width() > 991)
+    {
+        $('.slick-arrow-rotating').slice(1,2).children().first().css('margin', '-130px 0px 0px');
+    }
 
     $('.slick-arrow-rotating').slice(1,2).find('div.title1').each(function( i ){
         let IGTitle1TxtTemp = $(this).text();
@@ -60,13 +63,15 @@ $(document).ready(function()
         left: 0;
         border-bottom: 1px solid #004282;
     }
-    div.parceiromartins-bar-container-fluid {
-        box-shadow: 0px 10px 30px 10px #0000003d;
-    }
     div.title1 {
         text-align: center;
         border: none;
         position: relative;
+    }
+    @media only screen and (min-width: 1200px) {
+        div.parceiromartins-bar-container-fluid {
+            box-shadow: 0px 10px 30px 10px #0000003d;
+        }
     }
 </style>
 
