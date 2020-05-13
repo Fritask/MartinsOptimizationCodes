@@ -8,36 +8,91 @@
 <script>
 $(document).ready(function()
 {
+    //Atualiza a página caso ela seja redimensionada
+    // $( window ).resize(function() {
+    //     location.reload(true);
+    // });
+
     var IGFaixaAtual = 0; // 0 = Primeira Faixa (Parceiro)
+
     document.getElementById("IGFaixa0").style.display = "block";
-    $("#IGNomeFaixa0").click(function()
+
+
+    if ($(window).width() < 768)
     {
-        if (IGFaixaAtual != 0)
+        $('#IGCotacaoParentMobile').append($('#IGFaixa2'));
+
+        $("#IGNomeFaixa0").click(function()
         {
-            document.getElementById("IGNomeFaixa" + IGFaixaAtual).classList = "IGFaixaName col col-md-2";
-            document.getElementById("IGNomeFaixa0").classList = "IGFaixaName col col-md-2 active";
-            document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
-            document.getElementById("IGFaixa0").style.display = "block";
-            IGFaixaAtual = 0;
-        }
-    });
-    $("#IGNomeFaixa2").click(function()
+            if (IGFaixaAtual != 0)
+            {
+                $('#IGNomeFaixa2Mobile').removeClass('active');
+                $('#IGNomeFaixa0').addClass('active');
+                $('#IGFaixa2').css('display', 'none');
+                $('#IGFaixa0').css('display', 'block');
+
+                IGFaixaAtual = 0;
+            }
+        });
+
+        $("#IGNomeFaixa2Mobile").click(function()
+        {
+            if (IGFaixaAtual != 2)
+            {
+                $('#IGNomeFaixa0').removeClass('active');
+                $('#IGNomeFaixa2Mobile').addClass('active');
+                $('#IGFaixa0').css('display', 'none');
+                $('#IGFaixa2').css('display', 'block');
+
+                IGFaixaAtual = 2;
+            }
+        });
+    }
+    else
     {
-        if (IGFaixaAtual != 2)
+        $("#IGNomeFaixa0").click(function()
         {
-            document.getElementById("IGNomeFaixa" + IGFaixaAtual).classList = "IGFaixaName col col-md-2";
-            document.getElementById("IGNomeFaixa2").classList = "IGFaixaName col col-md-2 active";
-            document.getElementById("IGFaixa" + IGFaixaAtual).style.display = "none";
-            document.getElementById("IGFaixa2").style.display = "block";
-            IGFaixaAtual = 2;
-        }
-        // window.open("https://vendamais.martinsatacado.com.br/gestao-fiscal?utm_source=martins&utm_medium=link&utm_campaign=algarfiscal&utm_term=algar&utm_content=algargestaofiscal", "_blank");
-    });
+            if (IGFaixaAtual != 0)
+            {
+                $('#IGNomeFaixa2').removeClass('active');
+                $('#IGNomeFaixa0').addClass('active');
+                $('#IGFaixa2').css('display', 'none');
+                $('#IGFaixa0').css('display', 'block');
+
+                IGFaixaAtual = 0;
+            }
+        });
+
+        $("#IGNomeFaixa2").click(function()
+        {
+            if (IGFaixaAtual != 2)
+            {
+                $('#IGNomeFaixa0').removeClass('active');
+                $('#IGNomeFaixa2').addClass('active');
+                $('#IGFaixa0').css('display', 'none');
+                $('#IGFaixa2').css('display', 'block');
+
+                IGFaixaAtual = 2;
+            }
+        });
+    }
+    
     $("#IGNomeFaixa3").click(function()
     {
         window.open("https://www.martinsatacado.com.br/venda-no-marketplace", "_blank");
     });
+
     $("#IGNomeFaixa4").click(function()
+    {
+        window.open("https://www.martinsatacado.com.br/super-ofertas", "_blank");
+    });
+    
+    $("#IGNomeFaixa3Mobile").click(function()
+    {
+        window.open("https://www.martinsatacado.com.br/venda-no-marketplace", "_blank");
+    });
+
+    $("#IGNomeFaixa4Mobile").click(function()
     {
         window.open("https://www.martinsatacado.com.br/super-ofertas", "_blank");
     });
@@ -48,16 +103,28 @@ $(document).ready(function()
         $('#IGMenuServicosOptionAfter').css('display', 'block');
     });
 
-    //
+    //Função clique no CTA "Não sou cliente Martins"
     $('#IGMenuServicosOptionRegister').click(function(){
         window.location.href = "https://www.martinsatacado.com.br/martins/pt/BRL/register";
     });
+
+    // $('div.c-stickyBanner__leftBg').children().first().children().attr('src', 'https://i.imgur.com/bhCPznc.png').css('padding', '0 !important');
+    // $('div.c-stickyBanner__leftBg').children().slice(1,2).children().attr('src', 'https://i.imgur.com/b8I6l0q.png').css('padding', '0 !important');
 });
 </script>
 
 <style>
-    .c-stickyBanner--customOne .c-stickyBanner__item--arrow:after {
-        border-left-color: rgb(0, 175, 240);
+    /* ._psm\@tabletV {
+        padding: 0 !important;
+    }
+    div.c-stickyBanner__itemRight {
+		background-color: #AAFF00 !important;
+	}
+    .c-stickyBanner--customOne .c-stickyBanner__item--arrow:after, .c-stickyBanner--customOne .c-stickyBanner__link:hover .c-stickyBanner__itemRight:after {
+        border-left-color: #AAFF00 !important;
+    } */
+    .IGFaixasContainerMobile {
+        display: none;
     }
     .IGFaixas {
         display: none;
@@ -85,6 +152,8 @@ $(document).ready(function()
         background-color: #F0F1F1;
         z-index: 1;
         font-weight: bold;
+        font-style: italic;
+        padding-right: 1px;
     }
     .IGMenuServicosCTA {
         width: 100%;
@@ -100,7 +169,8 @@ $(document).ready(function()
     #IGMenuServicosOptionAfter {
         display: none;
         width: 143%;
-        margin-left: -25%;
+        margin-left: -20%;
+        margin-top: 15px;
     }
     div.IGFaixaName {
         color: inherit;
@@ -170,18 +240,40 @@ $(document).ready(function()
     @media only screen and (max-width: 767px) {
         .IGRowOpcoesFaixas {
             max-width: calc(100vw - 30px);
-            width: calc(100vw - 30px);
+            min-width: calc(100vw - 30px);
         }
         div.IGFaixaName {
-            width: calc((100vw - 30px)/4);
-            max-width: calc((100vw - 30px)/4);
-            font-size: 12px;
+            min-width: 100%;
+            max-width: 100%;
+            font-size: 14px;
+            border-color: rgba(0, 0, 0, 0);
+            padding: 10px 0;
         }
         #IGFaixa0 {
             overflow: hidden;
         }
         .c-stickyBanner__link {
             max-width: 95vw;
+        }
+        #IGNomeFaixa2, #IGNomeFaixa3, #IGNomeFaixa4 {
+            display: none;
+        }
+        .IGFaixasContainer {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .IGFaixasContainerMobile {
+            display: block;
+            border-top: 1px solid #CCCCCC;
+        }
+        .IGMenuServicosOptions {
+            display: block;
+        }
+        .IGMenuServicosOption {
+            width: auto;
+        }
+        .IGMenuServicosCTATxt {
+            padding-right: 2px;
         }
     }
 </style>
@@ -190,57 +282,88 @@ $(document).ready(function()
 
 <body>
 
-<div class="container IGFaixasContainer">
-    <div class="IGRowOpcoesFaixas">
-        <div id="IGNomeFaixa0" class="IGFaixaName active" style="border-right: 1px solid #F0F1F1;">
-            <p>Cartão Super Empresarial</p>
-        </div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
-            <p>Solicitar cotação</p>
-        </div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-right: 1px solid #F0F1F1;">
-            <p>Ofertas da semana</p>
-        </div><div id="IGNomeFaixa3" class="IGFaixaName">
-            <p>Venda com a gente</p>
+<div>
+    <div class="container IGFaixasContainer">
+        <div class="IGRowOpcoesFaixas">
+            <div id="IGNomeFaixa0" class="IGFaixaName active">
+                <div>Cartão Super Empresarial</div>
+            </div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;">
+                <div>Solicitar cotação</div>
+            </div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;">
+                <div>Ofertas da semana</div>
+            </div><div id="IGNomeFaixa3" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;">
+                <div>Venda com a gente</div>
+            </div>
         </div>
-    </div>
-    <div id="IGFaixa0" class="IGFaixas IGFaixaFade">
-        <h1>Colocar faixa cartão aqui</h1> 
-    </div>
-    <div id="IGFaixa2" class="IGFaixas IGFaixaFade">
-        <div>
-            <div class="row">
-                <div class="col-md-12 border">
-                    <h1 style="text-align: center;">Solicite uma cotação</h1> 
-                    <div style="text-align: center;"> Estoque e preços são online e podem sofrer alterações a qualquer momento.</div>
-                    <div class="IGMenuServicosOptions">
-                        <div class="IGMenuServicosOption">
-                            <div id="IGMenuServicosOptionB4">
-                                <div class="IGMenuServicosOptionTxt" style="border-color: #004282;">Sou cliente <b>Martins</b></div>
-                                <div class="IGMenuServicosCTA">
-                                    <div class="IGMenuServicosCTATxt" style="color: #004282">Clique aqui</div>
+        <div id="IGFaixa0" class="IGFaixas IGFaixaFade">
+            <h1>Colocar faixa cartão aqui</h1> 
+        </div>
+
+        <div id="IGFaixa2" class="IGFaixas IGFaixaFade">
+            <div>
+                <div class="row">
+                    <div class="col-md-12 border">
+                        <h1 style="text-align: center;">Solicite uma cotação</h1> 
+                        <div style="text-align: center;"> Estoque e preços são online e podem sofrer alterações a qualquer momento.</div>
+                        <div class="IGMenuServicosOptions">
+                            <div class="IGMenuServicosOption">
+                                <div id="IGMenuServicosOptionB4">
+                                    <div class="IGMenuServicosOptionTxt" style="border-color: #004282;">Sou cliente <b>Martins</b></div>
+                                    <div class="IGMenuServicosCTA">
+                                        <div class="IGMenuServicosCTATxt" style="color: #004282">Clique aqui</div>
+                                    </div>
+                                </div>
+                                <div id="IGMenuServicosOptionAfter">
+                                    <div>Informe o seu <b>CNPJ</b> e <b>WhatsApp</b> para contato no e-mail <b>cotacao@martins.com.br</b> que iremos te ajudar.</div>
+                                    <div style="text-align: center; margin-top: 15px;">
+                                        <a style="font-weight: bold;" class="btn btn-primary" href="mailto:cotacao@martins.com.br" target="_blank">Enviar e-mail</a><br><br>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="IGMenuServicosOptionAfter">
-                                <div>Informe o seu <b>CNPJ</b> e <b>WhatsApp</b> para contato no e-mail <b>cotacao@martins.com.br</b> que iremos te ajudar.</div>
-                            </div>
-                        </div>
 
-                        <div style="width: 100px;">&nbsp;</div>
+                            <div style="width: 100px;">&nbsp;</div>
 
-                        <div class="IGMenuServicosOption">
-                            <div id="IGMenuServicosOptionRegister">
-                                <div class="IGMenuServicosOptionTxt" style="border-color: #F27934;">Não sou cliente <b>Martins</b></div>
-                                <div class="IGMenuServicosCTA">
-                                    <div class="IGMenuServicosCTATxt" style="color: #F27934">Clique aqui</div>
+                            <div class="IGMenuServicosOption">
+                                <div id="IGMenuServicosOptionRegister">
+                                    <div class="IGMenuServicosOptionTxt" style="border-color: #F27934;">Não sou cliente <b>Martins</b></div>
+                                    <div class="IGMenuServicosCTA">
+                                        <div class="IGMenuServicosCTATxt" style="color: #F27934">Clique aqui</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </div>
-                    <br>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="IGCotacaoParentMobile" class="container IGFaixasContainer IGFaixasContainerMobile">
+        <div class="IGRowOpcoesFaixas">
+            <div id="IGNomeFaixa2Mobile" class="IGFaixaName">
+                <div>Solicitar cotação</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container IGFaixasContainer IGFaixasContainerMobile">
+        <div class="IGRowOpcoesFaixas">
+            <div id="IGNomeFaixa4Mobile" class="IGFaixaName">
+                <div>Ofertas da semana</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container IGFaixasContainer IGFaixasContainerMobile">
+        <div class="IGRowOpcoesFaixas">
+            <div id="IGNomeFaixa3Mobile" class="IGFaixaName">
+                <div>Venda com a gente</div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>
