@@ -28,11 +28,11 @@ $(document).ready(function()
         //Ocultando campo "VENDIDO E ENTREGUE POR:" e os códigos de todos produtos
         $(this).find('.cods').slice(0,2).css('display', 'none');
 
-        //Inserindo efeito no cursor do mouse nos códigos
-        $(this).find('.cods').slice(0,1).css('cursor', 'pointer');
-
         //Inserindo ícone "X" antes dos códigos
         $(this).find('.cods').slice(0,1).children().slice(0,1).before('<i style="color: red" class="fas fa-times"></i>');
+
+        //Inserindo efeito no cursor do mouse nos códigos
+        $(this).find('.cods').slice(0,1).find('.fa-times').css('cursor', 'pointer');
 
         $(this).find('p').css('font-size', '14px');
 
@@ -50,7 +50,7 @@ $(document).ready(function()
 
     //Clicar nos códigos
     $('.col-2-wrapper').each(function( i ){
-        $(this).find('.cods').slice(0,1).click(function(){
+        $(this).find('.cods').slice(0,1).find('.fa-times').click(function(){
             $('.IGPlusInfoCart').css('display', 'block');
             $('.col-2-wrapper').each(function( i ){
                 $(this).find('.cods').slice(0,1).css('display', 'none');
