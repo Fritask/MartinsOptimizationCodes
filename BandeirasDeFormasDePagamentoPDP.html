@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('a.show-price').text('').append('<div class="IGDivInGreenCTA"><img class="IGDivGreenCTAIMG" src="https://i.imgur.com/zVeliBb.png"><div class="IGDivGreenTXT">COMPRAR</div></div>');
+    $('.qdDetails').append('<div class="IGTxtFormasPag">Formas de pagamento:</div>')
+});
+</script>
+
+<style>
+    .IGTxtFormasPag {
+        color: #525252;
+        border-left: 1px solid #DDDDDD;
+        margin-top: 30px;
+        padding: 5px 10px;
+    }
+    .IGDivInGreenCTA {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .IGDivGreenCTAIMG {
+        width: 13%;
+        margin-right: 12px;
+        display: inline;
+    }
+    .IGDivGreenTXT {
+        display: inline;
+    }
+    div.qdDetails>div:nth-of-type(2) {
+        display: block !important;
+    }
+    div.qdForm {
+        margin: 0 !important;
+    }
+    div.sectionButtons {
+        padding: 0 !important;
+    }
+    i.icon-lorry {
+        display: none !important;
+    }
+    a.show-price {
+        background-color: #449d44 !important;
+        border: none;
+        width: calc(100% - 85px) !important;
+        padding: 12px 40px;
+    }
+</style>
+
+</body>
+</html>
