@@ -9,7 +9,15 @@
 $(document).ready(function()
 {
     $('a.show-price').text('').append('<div class="IGDivInGreenCTA"><img class="IGDivGreenCTAIMG" src="https://i.imgur.com/zVeliBb.png"><div class="IGDivGreenTXT">COMPRAR</div></div>');
-    $('.qdDetails').append('<div class="IGTxtFormasPag">Formas de pagamento:</div>')
+    $('.qdDetails').append('<div class="IGTxtFormasPag" id="IGTxtFormasPag1">Formas de pagamento:</div>');
+
+    $('#IGTxtFormasPag1').after('<div id="IGPaymentsParent"><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/boleto.png"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/visa.png"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/master.png"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/tricard.png"></div><div class="IGPaymentsParent"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/elo.svg"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/amex.svg"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/hipercard.svg"></div><div class="IGPaymentLogoParent"><img class="IGPaymentLogo IGPaymentLogoBordered" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/diners.svg"></div>');
+
+    $('.qdDetails').append('<div class="IGTxtFormasPag" id="IGTxtFormasPag2">Compre com segurança e sem sair<br>do seu comércio!</div>');
+    
+    $IGSafetyLogos = $('.c-footer__merchans').slice(2,3).first().clone();
+    $IGSafetyLogos.removeClass('_center').css('margin', '0px');
+    $('#IGTxtFormasPag2').after('<div id="IGPaymentsParentBorderless"><div class="IGPaymentLogoParent IGPaymentLogoParentBorderless"><img class="IGPaymentLogo" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/selo_globalSign.png"></div><div class="IGPaymentLogoParent IGPaymentLogoParentBorderless"><img class="IGPaymentLogo" src="https://scpprd.martins.com.br/_ui/responsive/theme-martins/img/newFooter/selo_googleSafe.gif"></div>');
 });
 </script>
 
@@ -18,7 +26,28 @@ $(document).ready(function()
         color: #525252;
         border-left: 1px solid #DDDDDD;
         margin-top: 30px;
+        margin-bottom: 15px;
         padding: 5px 10px;
+    }
+    #IGPaymentsParent {
+        max-width: 275px;
+    }
+    #IGPaymentsParentBorderless {
+        max-width: 220px;
+    }
+    .IGPaymentLogoParent {
+        padding: 4px;
+        display: inline-block;
+        width: 25%;
+    }
+    .IGPaymentLogoParentBorderless {
+        width: 50% !important;
+    }
+    .IGPaymentLogo {
+        max-width: 100%;
+    }
+    .IGPaymentLogoBordered {
+        border: 1px solid #DDDDDD;
     }
     .IGDivInGreenCTA {
         margin-left: auto;
@@ -49,6 +78,17 @@ $(document).ready(function()
         border: none;
         width: calc(100% - 85px) !important;
         padding: 12px 40px;
+    }
+    @media only screen and (max-width: 991px) {
+        a.show-price {
+            width: calc(100% - 185px) !important;
+            padding: 12px 0px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        a.show-price {
+            width: 217px !important;
+        }
     }
 </style>
 
