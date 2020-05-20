@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('.vendors').each(function( i ){
+        var IGToggleCepError = 0;
+        $(this).children().slice(1,2).find('.box-products-variants').each(function( j ){
+            // if($(this).children().hasClass('bg-danger'))
+            if($(this).hasClass('stock-pendency'))
+            {
+                if(!$(this).children().find('.col-5').find('div').children().find('strong').text().includes("0,00"))
+                {
+                    IGToggleCepError = 1;
+                    return false;
+                }
+            }
+        });
+        if(IGToggleCepError)
+        {
+            $(this).children().slice(1,2).find('.bx-totals').children().slice(1,2).children().find('.gr-line').slice(3,4).after('<div class="IGInvalidCepAlert"><div class="IGInvalidCepTxt">*Um ou mais produtos não estão disponíveis para o seu CEP.<br>Remova do carrinho os itens destacados em vermelho.</div><i class="fas fa-times IGInvalidCepIcon"></i></div>');
+            $('.IGInvalidCepIcon').each(function(){
+                $(this).click(function(){
+                    $(this).parent().css('display', 'none');
+                });
+            });
+
+            $(this).find('.vendor').addClass('bg-danger-vendor');
+
+            $('div.section-btns').children().slice(1,2).children().addClass('disabled');
+        }
+    });
+});
+</script>
+
+<style>
+    .IGInvalidCepAlert {
+        position: relative;
+        padding: 15px;
+        background-color: #f2dede;
+        border: 1px solid #ebccd1;
+        border-radius: 4px;
+        color: #a94442;
+    }
+    .IGInvalidCepTxt {
+        font-weight: bold;
+        text-align: left;
+    }
+    .IGInvalidCepIcon {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+</style>
+
+</body>
+</html>
