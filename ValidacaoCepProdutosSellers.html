@@ -17,7 +17,14 @@ $(document).ready(function()
                 if(!$(this).children().find('.col-5').find('div').children().find('strong').text().includes("0,00"))
                 {
                     IGToggleCepError = 1;
-                    return false;
+
+                    // Zerar preços dos itens com erro
+                    $(this).children().find('.col-5').find('div').children().find('strong').text('R$ 0,00');
+                    $(this).children().find('.col-6').find('div').find('strong').text('R$ 0,00');
+                    $(this).children().find('.col-7').find('strong').text('R$ 0,00');
+                    $(this).children().find('.col-8').find('strong').text('R$ 0,00');
+
+                    // return false;
                 }
             }
         });
@@ -32,7 +39,9 @@ $(document).ready(function()
 
             $(this).find('.vendor').addClass('bg-danger-vendor');
 
+            // Desativar os botões de finalização de compra 
             $('div.section-btns').children().slice(1,2).children().addClass('disabled');
+            $('div.others').find('div').slice(2,3).children().addClass('disabled');
         }
     });
 });
