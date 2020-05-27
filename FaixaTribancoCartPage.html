@@ -32,8 +32,8 @@ $(document).ready(function()
 		//Faz as alterações necessárias no banner e em sua cópia
 		$('div.c-stickyBanner').each(function(){
 			$(this).children().first().children().children().css('display', 'none');
-			$(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/GFmEtT7.png">');
-
+			// $(this).children().first().children().append('<img style="max-width: 100%" src="https://i.imgur.com/GFmEtT7.png">');
+			// $(this).children().first().children().append('<div class="IGBannerCartaoIMG"><img id="IGBannerCartaoIMG01" style="width: 100%;" src="https://i.imgur.com/rT96O6E.png"><img id="IGBannerCartaoIMG02" style="width: 100%;" src="https://i.imgur.com/yw8sXSB.png"><img id="IGBannerCartaoIMG03" style="width: 100%;" src="https://i.imgur.com/gC7HIhe.png"></div>');
 		});
 
 		//Não executa o resto da função se ela já tiver sido executada hoje
@@ -78,7 +78,7 @@ $(document).ready(function()
 		$('#IGClonedBannerCard').children().css('position', 'relative');
 		$('#IGClonedBannerCard').children().append('<div style="background-color: #FFFFFF; display: flex; text-align: center; position: absolute; top: -35px; right: 15px;"><a id="IGCloseFocusedBanner"><i class="fas fa-times"></i></a></div>');
 
-		//Funcionamento do botão de rmeover o elemento de ofuscamento
+		//Funcionamento do botão de remover o elemento de ofuscamento
 		$('#IGCloseFocusedBanner').click(function(){
 			$('#IGFullSizeDivCartPage').css('display', 'none');
 
@@ -98,8 +98,28 @@ $(document).ready(function()
 </script>
 
 <style>
+	._mtxs {
+		margin-top: 0 !important;
+	}
+	/* Estilo Banner Tribanco (INÍCIO)*/
+	.IGBannerCartaoIMG {
+        width: 75%;
+		display: inline-block;
+    }
+	#IGBannerCartaoIMG02, #IGBannerCartaoIMG03 {
+        display: none;
+    }
+	/* Estilo Banner Tribanco (FIM)*/
 	div.c-stickyBanner__item--fixedCta {
-		background-color: #AAFF00;
+		background-color: #52c889;
+		color: #FFFFFF;
+	}
+	div.c-stickyBanner__item--fixedCta:hover, div.c-stickyBanner__item--fixedCta:focus {
+		text-decoration: none;
+        color: #FFFFFF;
+	}
+	div.c-stickyBanner__item--fixedCta:hover {
+		background-color: #05bdfb;
 	}
 	#IGFullSizeDivCartPage {
 		display: none;
@@ -126,7 +146,50 @@ $(document).ready(function()
 	#IGCloseFocusedBanner:hover {
 		cursor: pointer;
 	}
+	/* Estilo Banner Tribanco (INÍCIO)*/
+	@media only screen and (max-width: 1199px) {
+        .IGBannerCartaoIMG {
+            width: 100%;
+        }
+		div.c-stickyBanner__item--fixedCta:after {
+			content: "";
+			border: solid transparent;
+			position: absolute;
+			border-width: 10px;
+			z-index: 1;
+			left: 50%;
+			top: -20px;
+			border-left-color: #52c889;
+			transform: rotate(270deg) translate(0, -50%);
+		}
+		div.c-stickyBanner__item--fixedCta:hover:after {
+			border-left-color: #05bdfb;
+		}
+    }
+	@media only screen and (max-width: 599px) {
+		.IGBannerCartaoIMG {
+            display: block;
+        }
+        #IGBannerCartaoIMG01 {
+            display: none;
+        }
+        #IGBannerCartaoIMG02, #IGBannerCartaoIMG03 {
+            display: block;
+        }
+        .IGBannerCartaoIMG {
+            background-image: url("https://i.imgur.com/SeWUwPY.png");
+            background-size: contain;
+        }
+    }
+	/* Estilo Banner Tribanco (FIM)*/
 </style>
+
+<!-- Substituir imagens do banner com a DIV: -->
+<div class="IGBannerCartaoIMG">
+	<img id="IGBannerCartaoIMG01" style="width: 100%;" src="https://i.imgur.com/rT96O6E.png">
+	<img id="IGBannerCartaoIMG02" style="width: 100%;" src="https://i.imgur.com/yw8sXSB.png">
+	<img id="IGBannerCartaoIMG03" style="width: 100%;" src="https://i.imgur.com/gC7HIhe.png">
+</div>
 
 </body>
 </html>

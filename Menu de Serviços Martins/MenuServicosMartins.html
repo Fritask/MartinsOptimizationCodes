@@ -108,22 +108,78 @@ $(document).ready(function()
         window.location.href = "https://www.martinsatacado.com.br/martins/pt/BRL/register";
     });
 
-    $('div.c-stickyBanner__leftBg').css('background-image', 'url("https://i.imgur.com/V4cKgW9.png")');
+    //Função clique no CTA "Quero Solicitar"
+    $('.IGBannerCartaoCTAParent').click(function(){
+        // window.location.href = "https://www.martinsatacado.com.br/martins/pt/BRL/login";
+        window.open("http://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&utm_medium=Site&utm_campaign=home_b2bhttp://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&utm_medium=Site&utm_campaign=home_b2b", "_blank");
+    });
+
     $('div.c-stickyBanner__leftBg').children().first().children().attr('src', 'https://i.imgur.com/yw8sXSB.png');
     $('div.c-stickyBanner__leftBg').children().slice(1,2).children().attr('src', 'https://i.imgur.com/QAbkxrf.png');
 });
 </script>
 
 <style>
-    /* ._psm\@tabletV {
-        padding: 0 !important;
-    } */
+    /* Estilo Banner Tribanco (INÍCIO)*/
+    #IGBannerCartaoIMG02, #IGBannerCartaoIMG03 {
+        display: none;
+    }
+    .IGBannerCartaoDesktopParent {
+        padding-left: 0;
+        padding-right: 30px;
+        margin-top: 25px;
+        padding-bottom: 10px;
+    }
+    .IGBannerCartaoDesktop {
+        display: flex;
+        cursor: pointer;
+    }
+    .IGBannerCartaoIMG {
+        width: 75%;
+    }
+    .IGBannerCartaoCTAParent {
+        width: 25%;
+        text-align: center;
+        background-color: #52c889;
+        position: relative;
+        color: #FFFFFF;
+    }
+    .IGBannerCartaoCTAParent:after {
+        content: "";
+        border: solid transparent;
+        position: absolute;
+        border-width: 10px;
+        z-index: 1;
+        left: -20px;
+        top: 50%;
+        border-left-color: #52c889;
+        transform: rotate(180deg) translate(0, 50%);
+    }
+    .IGBannerCartaoCTAParent:hover, .IGBannerCartaoCTAParent:focus {
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+    .IGBannerCartaoDesktop:hover .IGBannerCartaoCTAParent {
+        background-color: #05bdfb;
+    }
+    .IGBannerCartaoDesktop:hover .IGBannerCartaoCTAParent:after {
+        border-left-color: #05bdfb;
+    }
+    .IGBannerCartaoCTA {
+        padding-top: 10%;
+        font-weight: bold;
+    }
+    /* Estilo Banner Tribanco (FIM)*/
+    /* div.c-stickyBanner__leftBg {
+        background-image: url("https://i.imgur.com/SeWUwPY.png") !important;
+        background-size: auto !important;
+    }
     div.c-stickyBanner__itemRight {
-		background-color: #AAFF00 !important;
+		background-color: #60d208 !important;
 	}
     .c-stickyBanner--customOne .c-stickyBanner__item--arrow:after, .c-stickyBanner--customOne .c-stickyBanner__link:hover .c-stickyBanner__itemRight:after {
-        border-left-color: #AAFF00 !important;
-    }
+        border-left-color: #60d208 !important;
+    } */
     .IGFaixasContainerMobile {
         display: none;
     }
@@ -233,12 +289,39 @@ $(document).ready(function()
             width: 180px;
             max-width: 180px;
         }
-        .c-stickyBanner__link {
+        /* .c-stickyBanner__link {
             max-width: 716px;
             width: 716px;
+        } */
+    }
+    @media only screen and (max-width: 899px) {
+        /* div.c-stickyBanner__leftBg {
+            background-image: none !important;
+            background-color: #032f50;
+        } */
+        /* Estilo Banner Tribanco (INÍCIO)*/
+        .IGBannerCartaoDesktop {
+            display: block;
         }
+        .IGBannerCartaoCTAParent, .IGBannerCartaoIMG {
+            width: 100%;
+        }
+        .IGBannerCartaoCTAParent:after {
+            top: -20px;
+            left: 50%;
+            transform: rotate(270deg) translate(0, -50%);
+        }
+        .IGBannerCartaoCTA {
+            padding: 15px;
+        }
+        /* Estilo Banner Tribanco (FIM)*/
     }
     @media only screen and (max-width: 767px) {
+        /* Estilo Banner Tribanco (INÍCIO)*/
+        .IGBannerCartaoDesktopParent {
+            padding-right: 0px;
+        }
+        /* Estilo Banner Tribanco (FIM)*/
         .IGRowOpcoesFaixas {
             max-width: calc(100vw - 30px);
             min-width: calc(100vw - 30px);
@@ -253,9 +336,9 @@ $(document).ready(function()
         #IGFaixa0 {
             overflow: hidden;
         }
-        .c-stickyBanner__link {
+        /* .c-stickyBanner__link {
             max-width: 95vw;
-        }
+        } */
         #IGNomeFaixa2, #IGNomeFaixa3, #IGNomeFaixa4 {
             display: none;
         }
@@ -277,6 +360,24 @@ $(document).ready(function()
             padding-right: 2px;
         }
     }
+    /* Estilo Banner Tribanco (INÍCIO)*/
+    @media only screen and (max-width: 599px) {
+        #IGBannerCartaoIMG01 {
+            display: none;
+        }
+        #IGBannerCartaoIMG02, #IGBannerCartaoIMG03 {
+            display: block;
+        }
+        .IGBannerCartaoIMG {
+            background-image: url("https://i.imgur.com/SeWUwPY.png");
+            background-size: contain;
+        }
+        .IGBannerCartaoCTA {
+            padding: 25px;
+            font-size: 16px;
+        }
+    }
+    /* Estilo Banner Tribanco (FIM)*/
 </style>
 
 </head>
@@ -297,7 +398,19 @@ $(document).ready(function()
             </div>
         </div>
         <div id="IGFaixa0" class="IGFaixas IGFaixaFade">
-            <h1>Colocar faixa cartão aqui</h1> 
+            <!-- <h1>Colocar faixa cartão aqui</h1> -->
+            <div class="container IGBannerCartaoDesktopParent">
+                <div class="IGBannerCartaoDesktop">
+                    <div class="IGBannerCartaoIMG">
+                        <img id="IGBannerCartaoIMG01" style="width: 100%;" src="https://i.imgur.com/rT96O6E.png">
+                        <img id="IGBannerCartaoIMG02" style="width: 100%;" src="https://i.imgur.com/yw8sXSB.png">
+                        <img id="IGBannerCartaoIMG03" style="width: 100%;" src="https://i.imgur.com/gC7HIhe.png">
+                    </div>
+                    <div class="IGBannerCartaoCTAParent">
+                        <div class="IGBannerCartaoCTA">QUERO SOLICITAR</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="IGFaixa2" class="IGFaixas IGFaixaFade">
