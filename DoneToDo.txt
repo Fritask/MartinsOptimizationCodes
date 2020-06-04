@@ -1,0 +1,276 @@
+Done
+- Homologuei o ambiente Stage em mobile
+- Inseri uma barra informativa no header
+- Auxiliei no treinamento do pedido rápido
+
+To do
+- Homologar o ambiente Stage em mobile
+- Trabalhar com atividades CRO
+
+Done
+- O Wesley me deu uma ajuda, e eu consegui acessar o ambiente dev Sap, mas ainda não consegui acessar dev Martins
+- Comecei o desenvolvimento da versão mobile dos ícones de categoria em CRO
+- Coloquei em exibição o experimento CRO de redução de informações do carrinho
+
+To do
+- Finalizar a versão mobile dos ícones de categoria em CRO
+- Criar experimento pra página de meus pedidos
+
+Done
+- Finalizei a versão mobile dos ícones de categoria e dos ícones laranjas na home
+- O Evaldo me ajudou com o ambiente dev Martins, mas ainda não consigo acessar
+
+To do
+- Desenvolver experimento CRO de alterações na página "Meus Pedidos"
+
+Done
+- Alinhei com o Flávio e a Carol as novas demandas de CRO
+- Continuei a desenvolver o CRO da página de detalhes do pedido
+
+To do
+- Finalizar o CRO da página de detalhes do pedido
+
+Done
+- Finalizei a versão desktop do CRO da página de detalhes do pedido
+- Desenvolvi o CRO de alteração do banner do cartão super empresarial no carrinho
+
+To do
+- Criar um JIRA pra correção do JIRA 504
+- Homologar o ambiente Stage
+
+Done quinta
+- Finalizei um experimento CRO na página do carrinho que eu já coloquei em exibição e também finalizei um experimento CRO no modal de login
+
+To do
+- Criar um JIRA pra correção do JIRA 504
+- Finalizar experimento CRO de Pedidos
+
+Done
+- Finalizei os experimentos CRO da jornada cruzada com o eFácil
+- Coloquei em exibição o experimento CRO do modal de login
+
+To do
+- Finalizar experimento CRO de Pedidos
+
+Done
+- Fiz uns ajustes nos experimentos da jornada cruzada
+- Fiz uma correção no experimento de foco no banner do carrinho
+- Homologuei o ambiente Stage
+- Voltei a desenvolver o experimento de melhorias nos pedidos
+
+To do
+- Priorizar JIRAs com o Squad de UX
+- Continuar a desenvolver o experimento dos pedidos
+
+Done
+- Finalizei os experimentos CRO dos pedidos
+- Homologuei o ambiente DEV
+- Homologuei o ambiente Stage
+
+To do
+- Desenvolver CRO de redução das informações no carrinho
+- Priorizar JIRAs com o Squad de UX
+
+Done
+- Homologuei alguns JIRAs no ambiente DEV
+- Coloquei em exibição o experimento CRO dos pedidos
+
+To do
+- Homologar alguns JIRAs no ambiente Stage
+- Começar a desenvolver um experimento CRO no pedido fácil
+
+Done
+- Homologuei o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Fiz algumas correções no experimento CRO de precificação
+
+To do
+- Homologar o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Analisar os próximos experimentos CRO
+
+Done
+- Homologuei o ambiente Dev em Mobile e Desktop
+- Comecei a corrigir o experimento de reduzir informações do carrinho
+
+To do
+- Homologar o ambiente Dev e o ambiente Stage em Mobile e Desktop
+- Finalizar o experimento de reduzir informações do carrinho
+- Iniciar o desenvolvimento do experimento no pedido fácil
+
+Done
+- Homologuei o ambiente Stage em Mobile e Desktop
+- Coloquei em exibição o experimento de reduzir informações do carrinho
+
+To do
+- Dar uma olhada geral no site em produção em Mobile e Desktop
+- Possivelmente colocar em exibição o experimento do pedido fácil
+
+Done
+- Homologuei o site em produção e homologuei o ambiente Stage em Mobile e Desktop
+- Ajustei o experimento CRO do pedido fácil e coloquei ele em exibição
+
+To do
+- Homologar o ambiente Stage em Mobile e Desktop
+- Analisar os próximos experimentos CRO
+
+Done
+- Homologuei o site no ambiente Stage em Mobile e Desktop
+- Alinhei algumas demandas com o pessoal de CRO
+
+To do
+- Homologar o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Iniciar o desenvolvimento do experimento de alterações no carrossel de fornecedores da Home
+
+Done
+- Homologuei o ambiente Stage em Mobile e Desktop
+- Comecei a desenvolver um experimento de alterações no carrossel de fornecedores na Home
+
+To do
+- Finalizar o experimento de alterações no carrosel de fornecedores
+- Homologar o ambiente Dev em Mobile e Desktop
+
+Done
+- Finalizei o experimento de alterações no carrossel de fornecedores
+- Naveguei no ambiente Dev em Mobile
+
+To do
+- Testar o experimento de alterações no carrossel
+- Homologar o ambiente Dev em Mobile e Desktop
+
+Done
+- Homologuei o ambiente Dev em Mobile e Desktop
+- Fiz alguns ajustes no experimento de redução de informações do carrinho
+- Desenvolvi um experimento para alterar a logo Tricard no rodapé
+
+To do
+- Homologar o ambiente Dev em Mobile e Desktop
+- Colocar em exibição o experimento de alterações no carrossel de fornecedores
+- Avaliar o restante dos experimentos CRO
+
+Done
+- Homologuei o ambiente Dev em Mobile e Desktop
+- Alinhei algumas correções no JIRA da página de termos de uso com o Fábio e com o pessoal de UX
+- Coloquei em exibição o experimento de alterações no carrossel de marcas da home
+
+To do
+- Homologar o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Possivelmente colocar em exibição o experimento de alteração da logo tricard
+- Avaliar o restante dos experimentos CRO
+
+Done
+- Homologuei o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Coloquei em exibição o experimento de alteração da logo tricard
+- Alterei o banner do cartão super empresarial da página do carrinho
+- Participei da reunião pra definição dos JIRAs da próxima Sprint
+
+To do
+- Homologar o ambiente Stage em Mobile e Desktop
+- Desenvolver um experimento para correções no menu de serviços da Home
+
+Done
+- Homologuei o ambiente Stage em Mobile e Desktop
+- Finalizei um experimento de ajustes no menu de serviços da Home
+
+To do
+- Finalizar a versão mobile desse experimento, colocar tudo em exibição e testar
+
+Done
+- Finalizei o experimento de ajustes no menu de serviços da Home
+- Preparei uma parte desse experimento pra fazer algumas alterações no banner do cartão super empresarial da Home
+
+To do
+- Homologar o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Finalizar a customização do banner do cartão super empresarial e colocar em exibição
+- Fazer alguns ajustes em um experimento da página do carrinho
+
+Done
+- Homologuei o ambiente Stage e o ambiente Dev em Mobile e Desktop
+- Achamos uma falha no 548, mas o problema era só no Impex e o Fábio já resolveu -> testei aqui e está tudo ok
+- Fiz alguns ajustes em um experimento da página do carrinho
+- Fiz alguns ajustes no experimento do menu de serviços da home pois estava afetando o pessoal que usa o ASM no tablet
+
+To do
+- Avaliar o restante dos experimentos CRO
+- Homologar o ambiente Dev em Mobile e Desktop
+
+Done
+- Iniciei o desenvolvimento de um experimento de alterações na PDP
+- Ontem à noite fiz uns ajustes de uns erros que o Evaldo encontrou
+
+To do
+- Homologar o ambiente Stage em Mobile e Desktop
+- Finalizar o experimento de alterações na PDP
+
+Done
+- Homologuei o ambiente Stage em Mobile e Desktop
+- Finalizei o experimento de alterações na PDP
+
+To do
+- Subir o Impex de termos de uso e dar uma passada geral em produção
+- Enviar o experimento de alterações na PDP para code review
+- Começar a desenvolver uma demanda que a Aline e o Evaldo me passaram ontem com relação a uns problemas de seller no carrinho
+
+Done
+- Comecei a desenvolver a demanda da Aline com relação a uns problemas de seller no carrinho
+- Alterei o banner do cartão super empresarial da Home
+
+To do
+- Finalizar a demanda dos problemas de seller no carrinho
+- Ajustar o experimento de alterações na PDP
+
+Done
+- Ajustei o experimento de alterações na PDP e coloquei ele em exibição
+- Alterei o banner do cartão super empresarial da Home
+- Finalizei o experimento CRO para correções de problemas com CEP no carrinho
+
+To do
+- Colocar em exibição o experimento de correções no carrinho
+- Começar a desenvolver um experimento CRO no cadastro
+
+Done
+- Validei com a Aline e com o Evaldo o experimento de correções no carrinho
+- Desenvolvi um experimento para inserir o Banner do cartão super empresarial na PDP
+
+To do
+- Aplicar o mesmo banner da PDP na Home e no Carrinho
+- Começar a desenvolver um experimento CRO no cadastro
+
+Done
+- Criei dois experimentos para aplicar o mesmo banner da PDP na Home e no Carrinho
+- Coloquei em exibição o experimento de validações de CEP no carrinho
+
+To do
+- Começar a desenvolver um experimento CRO no cadastro
+
+Done
+- Desenvolvi um experimento no cadastro e na Home de sucesso no cadastro
+- Solicitei o code review pro wesley e já coloquei em exibição
+
+To do
+- Pretendo conversar com o Wesley Torres sobre algumas alterações no eFácil
+- Participar da reunião de UX de priorização
+- Analisar o funcionamento dos cookies no site
+
+Done
+- Comecei a analisar o funcionamento dos cookies no site
+- Analisei as informações do carrinho pra poder melhorar o experimento de redução de informações
+
+To do
+- Criar JIRA pra sugestões gerais de melhoria do mobile
+- Pretendo conversar com o Wesley Torres sobre alterações no eFácil
+
+Done
+- Homologuei os JIRAs 319 e 503 em Stage
+- Finalizei a análise do funcionamento dos cookies no site
+
+To do
+- Finalizar JIRA de sugestões de melhorias em Mobile
+- Ajudar o Wesley Torres a fazer algumas alterações no site do eFácil
+
+Done
+- Fiz ajustes no experimento de jornada cruzada com o eFácil
+- Fiz ajustes no experimento de personalização do carrossel de marcas da Home
+- Fiz umas calls com o Wesley Torres pra liberar meu acesso à plataforma do eFácil
+
+To do
+- Personalizar a página de pedidos do eFácil
+- Reunião de UX para priorização de alguns JIRAs
