@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    // Basta replicar esta linha de código abaixo e alterar o código do produto
+    $('input[value="martins_1702718"]').next().children().slice(1,2).children().css('position', 'relative').children().css('margin-top', '-25px').after('<div class="IGSeloPreVendaParent"><div class="IGSeloPreVenda"><i class="fas fa-book-open"></i> JORNAL DE OFERTAS</div></div>');
+});
+</script>
+
+<style>
+    .IGSeloPreVendaParent {
+        position: absolute;
+        bottom: 6px;
+        left: 8px;
+        background-color: #FF3E32;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px 5px;
+        border-radius: 3px;
+        user-select: none;
+    }
+</style>
+
+</head>
+
+<body>
+
+</body>
+</html>

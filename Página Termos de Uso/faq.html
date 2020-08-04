@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    var IGAccordion = document.getElementsByClassName("IGAccordion");
+
+    for (var i = 0; i < IGAccordion.length; i++) {
+        IGAccordion[i].addEventListener("click", function() {
+            this.classList.toggle("IGAccordionActive");
+            var IGPanel = this.nextElementSibling;
+            if (IGPanel.style.maxHeight) {
+            IGPanel.style.maxHeight = null;
+            } else {
+            IGPanel.style.maxHeight = IGPanel.scrollHeight + "px";
+            } 
+        });
+    }
+});
+</script>
+
+<style>
+.IGAccordion {
+    background-color: rgba(0,0,0,0.03);
+    color: #004282;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    padding: 18px 32px;
+    font-weight: bold;
+}
+
+.IGAccordionActive, .IGAccordion:hover {
+    color: #001B36;
+}
+
+.IGPanel {
+    color: #212529;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding: 0 20px;
+}
+
+.IGCardTermos {
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .25rem;
+    margin-bottom: 10px;
+}
+</style>
+
+</head>
+
+<body>
+    
+<div class="container" style="max-width: 75vw">
+    <div class="title1" style="text-align: center; padding: 15px 0px; margin-top: 15px">Perguntas Gerais</div>
+    <div class="IGCardTermos">
+        <button class="IGAccordion">1. Por que ser RCA Digital no Martins?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                O Martins possibilita você a ter acesso a mais de 25 mil itens de vários fornecedores e um amplo sortimento para todo e qualquer CNPJ, com isso você pode ter renda adicional através das comissões das vendas para os clientes que você já atende normalmente ou buscando novos CNPJs.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">2. Quem pode ser RCA Digital?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Poderá ser RCA Digital os representantes autônimos que possuem o CORE (Conselho Regional de Representantes Comerciais) ativo.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">3. Quais produtos o RCA Digital pode vender?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                O RCA Digital poderá vender todos os produtos disponíveis no site www.martins.com.br conforme região sua região de atuação.<br>
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="title1" style="text-align: center; padding: 15px 0px; margin-top: 15px">Cadastro</div>
+    <div class="IGCardTermos">
+        <button class="IGAccordion">1. Como faço meu cadastro?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Acesse a página <a target="_blank" href="https://www.martinsatacado.com.br/vem">https://www.martinsatacado.com.br/vem</a> e preencha todos os dados solicitados. É necessário que todas as informações estejam corretas.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">2. De qual forma será o retorno do cadastro?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                O retorno do cadastro será enviado através do e-mail informado no ato do cadastro. Caso seu cadastro seja aprovado, você receberá seus dados de acesso e um manual simples de como realizar suas vendas.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">3. Em quanto tempo será dado o retorno do cadastro?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                O retorno do cadastro pode levar de 2 a 5 dias úteis.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">4. Esse cadastro interfere no seguro desemprego de quem está recebendo?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                O cadastro em si não interfere, mas sim o pagamento de comissão auferida pelas vendas realizadas como representante digital, pois para ter direito ao seguro desemprego o trabalhador não pode ter nenhuma fonte de renda.<br>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="title1" style="text-align: center; padding: 15px 0px; margin-top: 15px">Acesso</div>
+    <div class="IGCardTermos">
+        <button class="IGAccordion">1. Como acesso a plataforma?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Após cadastro, você receberá os dados para acessar a plataforma e começar a vender.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">2. Como ver os clientes que estão na carteira?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Após efetuar o login na plataforma, a pesquisa poderá ser feita por CNPJ ou razão social.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">3. Posso cadastrar um cliente novo?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Sim, desde que o cliente não esteja cadastrado na base de clientes existente do Martins. Não sendo cliente Martins, basta acessar a plataforma e inserir os dados do cliente para cadastrá-lo.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">4. O RCA Digital pode realizar vendas para clientes de outro estado e que não estejam em sua carteira de cliente?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Não, apenas na microrregião do cadastro da cidade do RCA Digital.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">5. Posso vender para qualquer cliente Martins?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Estarão disponíveis os clientes que não estiverem alocados nas bases de outros RCA’s Martins.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">6. Outro representante poderá atuar na mesma microrregião que estou alocado?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Sim, outros representantes poderão atuar na mesma microrregião de acordo com a necessidade do Martins.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">7. O RCA Digital deverá realizar a venda pelo telefone ou presencial? Ou ele poderá realizar a venda da melhor forma que ele achar?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Essa decisão é do RCA digital que encontrará a melhor forma de atender seus clientes.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">8. O Martins possui aplicativo para celular?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Ainda não, mas estamos trabalhando para em breve termos um aplicativo.<br>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="title1" style="text-align: center; padding: 15px 0px; margin-top: 15px">Comissão</div>
+    <div class="IGCardTermos">
+        <button class="IGAccordion">1. Qual o valor de comissão dos produtos?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                As comissões são definidas de acordo com a letra informada no contrato que é disponibilizado no ato do cadastro.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">2. Como é o pagamento da comissão?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                A apuração das comissões dos pedidos transmitidos ao MARTINS, efetivamente faturados e entregues, ocorrerá após o efetivo pagamento pelo cliente, sendo que o valor apurado será levado a crédito do(a) RCA DIGITAL quinzenalmente, desde que seja acumulado um crédito líquido mínimo de R$ 100,00 (cem reais), já deduzido do montante os adiantamentos ou quaisquer outros débitos porventura existentes e de responsabilidade do(a) RCA DIGITAL.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">3. Ainda não atingi o mínimo de R$100,00, eu perco o valor?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                Não, o valor fica retido até que o valor de comissão alcance o mínimo de R$100,00 para pagamento.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="IGCardTermos">
+        <button class="IGAccordion">4. Como faço para acompanhar minha comissão?</button>
+        <div class="IGPanel">
+            <br>
+            <p>
+                O MARTINS expedirá mensalmente um extrato que conterá o resumo demonstrativo de todas as vendas faturadas, entregues e recebidas no mês anterior, das respectivas notas fiscais, bem como da relação de débitos e créditos ocorridos no período.<br>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    // var IGVideoTimer = 60;
+
+    //Verifica se a função já foi aplicada hoje para um cliente
+	function IGCheckIfDifferentDay()
+	{
+		var IGDateVideo = new Date().toLocaleDateString();
+
+		if( localStorage.IGDataVideo == IGDateVideo && localStorage.IGAllowVideo == 0)
+			return false;
+        else if (localStorage.IGDataVideo != IGDateVideo && localStorage.IGAllowVideo == 1)
+        {
+            localStorage.IGDataVideo = IGDateVideo;
+            localStorage.IGAllowVideo = 0;
+            return true;
+        }
+	};
+
+    IGAplicaVideo = function()
+    {
+        if( !IGCheckIfDifferentDay() )
+		{
+			return false;
+		}
+
+        $('body').prepend('<div class="IGASMVideoBG"><div class="IGASMVideoParent"><iframe id="IGASMIFrame" src="https://www.youtube-nocookie.com/embed/dbZ6QKdPNuc?autoplay=1&amp;showinfo=0&amp;controls=0" frameborder="0" allow="autoplay; fullscreen;"></iframe><div id="IGASMVideoIFrameAuxParent"><div id="IGASMVideoIFrameAux"></div></div></div></div>');
+
+        let IGPageH = $(document).height();
+
+        $('.IGASMVideoBG').css('height', IGPageH);
+
+        // if (localStorage.IGVideoWatched == 1)
+        // {
+            $('#IGASMVideoIFrameAux').append('<i class="fas fa-times" id="IGASMCloseBtn"><span style="font-family: SegoeUI, sans-serif"> FECHAR</span></i>');
+            $('#IGASMCloseBtn').click(function(){
+                $('.IGASMVideoBG').remove();
+            });
+        // }
+        // else
+        // {
+        //     $('#IGASMVideoIFrameAux').append('<span id="IGASMVideoTimer"></span>');
+
+        //     var IGASMVideoTimer = setInterval(function() {
+        //         if(IGVideoTimer > 0) {
+        //             $('#IGASMVideoTimer').text(IGVideoTimer);
+        //             IGVideoTimer--;
+        //         }
+        //         else {
+        //             $('#IGASMVideoTimer').remove();
+
+        //             $('#IGASMVideoIFrameAux').append('<i class="fas fa-times" id="IGASMCloseBtn"><span style="font-family: SegoeUI, sans-serif"> FECHAR</span></i>');
+        //             $('#IGASMCloseBtn').click(function(){
+        //                 $('.IGASMVideoBG').remove();
+        //             });
+
+        //             clearInterval(IGASMVideoTimer);
+        //         }
+        //     }, 1000);
+
+        //     localStorage.IGVideoWatched = 1;
+        // }
+        
+    };
+
+    IGAplicaVideo();
+});
+</script>
+
+<style>
+.IGASMVideoParent {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+}
+.IGASMVideoParent iframe {
+    position: absolute;
+    top: 22%;
+    left: 27%;
+    width: 46%;
+    height: 46%;
+}
+.IGASMVideoBG {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    overflow: hidden;
+}
+#IGASMVideoIFrameAuxParent {
+    position: absolute;
+    top: 22%;
+    left: 27%;
+    width: 46%;
+    height: 46%;
+}
+#IGASMVideoIFrameAux {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#IGASMCloseBtn {
+    position: absolute;
+    top: -20px;
+    right: 5px;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+}
+#IGASMVideoTimer {
+    position: absolute;
+    top: -40px;
+    right: 5px;
+    color: #000000;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="IGASMVideoBG"><div class="IGASMVideoParent"><iframe id="IGASMIFrame" src="https://www.youtube-nocookie.com/embed/MbY5D1kq0Jg?autoplay=1&amp;showinfo=0&amp;controls=0" frameborder="0" allow="autoplay; fullscreen;"></iframe></div></div>
+
+</body>
+</html>

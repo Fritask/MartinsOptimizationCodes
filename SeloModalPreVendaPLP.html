@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    // Aplicar para os produtos abaixo
+    // martins_4301550 - PANETONE SMART CHOC.12X400G
+    // martins_4301551- PANETONE SMART FRUTAS 12X400G
+
+    // Inserção do selo pré venda em cada produto
+    $('div[data-sku="santanaimport_0030089"]').children().slice(0,1).find('.containertImg').css('position', 'relative').prepend('<div class="IGSeloPreVendaParent"><div class="IGSeloPreVenda"><i class="fas fa-star"></i> PRODUTO PRÉ VENDA<div class="IGSeloPreVendaTooltip">Os produtos que se encontram em <b>Pré Venda</b> serão priorizados para entrega quando o produto chegar em nosso estoque.</div></div></div>');
+    
+    // Inserção do modal pré venda em cada produto
+    $('div[data-sku="santanaimport_0030089"]').prepend('<div id="IGPreVendaModal1" class="modal fade IGPreVendaModal" tabindex="-1" role="dialog"><div class="modal-dialog " role="document"><div class="modal-content"><div class="modal-header"><div class="IGSeloPreVendaModal"><div><i class="fas fa-star"></i> PRODUTO PRÉ VENDA</div></div><button type="button" class="close IGPreVendaModalClose" data-dismiss="modal" aria-label="Close"><i class="icon-times"></i></button></div><div class="modal-body"><div class="IGPreVendaModalTxt">A modalidade pré-venda trata-se de uma compra antecipada de um produto que ainda não está disponível em nosso estoque. Após a confirmação do pagamento o produto é reservado automaticamente. Os clientes que adquirirem os produtos de pré-venda possuem preferência e receberão os produtos assim que o estoque for disponibilizado.</div><div class="IGPreVendaModalConfirm">ESTOU CIENTE QUE O PRODUTO É PRÉ VENDA</div><div class="IGPreVendaModalCTA">ADICIONAR AO CARRINHO</div></div></div></div></div>');
+    
+    // Inserção da máscara ao botão de compra em cada produto
+    $('#add-to-cart--santanaimport_0030089').css('position', 'relative').prepend('<div class="IGFakeBuyCTA">&nbsp;</div>');
+
+    // Definição do clique da máscara do botão de compra em cada produto
+    $('#add-to-cart--santanaimport_0030089').find('.IGFakeBuyCTA').click(function(){
+        $('#IGPreVendaModal1').modal('show');
+    });
+
+    // Definição do clique do CTA do modal pré venda em cada produto
+    $('div[data-sku="santanaimport_0030089"]').find('.IGPreVendaModal').find('.IGPreVendaModalCTA').click(function(){
+        $('#add-to-cart--santanaimport_0030089').submit();
+        $('#IGPreVendaModal1').modal('hide');
+    });    
+});
+</script>
+
+<style>
+    .IGSeloPreVendaParent {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        background-color: #F27934;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px 5px;
+        border-radius: 3px;
+    }
+    .IGSeloPreVenda {
+        position: relative;
+    }
+    .IGSeloPreVendaModal {
+        width: fit-content;
+        background-color: #F27934;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 3px;
+        margin-left: auto;
+        margin-right: auto;
+        user-select: none;
+    }
+    .IGPreVendaModal {
+        cursor: default;
+    }
+    .IGPreVendaModal .modal-dialog .modal-content {
+        border: none;
+        border-radius: 3px;
+        padding: 15px 30px 30px;
+    }
+    .IGSeloPreVendaTooltip {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+        background-color: #F27934;
+        top: -100px;
+        left: -30px;
+        font-weight: normal;
+        font-size: 13px;
+        padding: 8px;
+        width: 200px;
+        border-radius: 3px;
+    }
+    .IGSeloPreVendaTooltip:after {
+        content:'';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        width: 0;
+        height: 0;
+        border-top: solid 6px #F27934;
+        border-left: solid 5px transparent;
+        border-right: solid 5px transparent;
+    }
+    .IGSeloPreVendaParent:hover > * .IGSeloPreVendaTooltip {
+        opacity: 1;
+    }
+    .IGFakeBuyCTA {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        user-select: none;
+        z-index: 1;
+    }
+    .IGFakeBuyCTA:hover ~ .sectionButtons .boxButton .btn-primary {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+    }
+    .IGFakeBuyCTA:hover ~ .sectionButtons .boxButton .btn-primary i {
+        background-color: #e45c0f;
+    }
+    .IGPreVendaModalConfirm {
+        color: #004282;
+        text-align: center;
+        font-weight: bold;
+        font-size: 11px;
+        user-select: none;
+        margin-top: 30px;
+    }
+    .IGPreVendaModalTxt {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .IGPreVendaModalCTA {
+        width: fit-content;
+        background-color: #004282;
+        color: #FFFFFF;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 3px;
+        border: 1px solid #004282;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        cursor: pointer;
+        user-select: none;
+    }
+    .IGPreVendaModalCTA:hover {
+        background-color: #FFFFFF;
+        color: #004282;
+    }
+    .IGPreVendaModalClose:focus {
+        outline: none;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div id="IGPreVendaModal1" class="modal fade IGPreVendaModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="IGSeloPreVendaModal">
+                    <div>
+                        <i class="fas fa-star"></i> PRODUTO PRÉ VENDA
+                    </div>
+                </div>
+                <button type="button" class="close IGPreVendaModalClose" data-dismiss="modal" aria-label="Close">
+                    <i class="icon-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="IGPreVendaModalTxt">A modalidade pré-venda trata-se de uma compra antecipada de um produto que ainda não está disponível em nosso estoque. Após a confirmação do pagamento o produto é reservado automaticamente. Os clientes que adquirirem os produtos de pré-venda possuem preferência e receberão os produtos assim que o estoque for disponibilizado.</div>
+                <div class="IGPreVendaModalConfirm">ESTOU CIENTE QUE O PRODUTO É PRÉ VENDA</div>
+                <div class="IGPreVendaModalCTA">ADICIONAR AO CARRINHO</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('div.c-pedRapido__floatBottomComprar').each(function( i ){
+        $(this).after('<div class="IGBannerNestlePedidoFacilParent"><div class="IGLoadingCartPedidoFacil"><i class="fas fa-spinner fa-pulse fa-3x"></i><div>Adicionando combo ao carrinho...</div></div></div>');
+        
+        $(this).children().slice(1,2).children().click(function(){
+            $(this).parent().parent().next().find('.IGLoadingCartPedidoFacil').css('display', 'block');
+            let $IGelement = $(this);
+            setTimeout(function(){
+                $IGelement.parent().parent().next().find('.IGLoadingCartPedidoFacil').css('display', 'none');
+            }, 3000);
+        });
+    });
+});
+</script>
+
+<style>
+    .IGBannerNestlePedidoFacilParent {
+        width: 100%;
+        position: relative;
+        user-select: none;
+        z-index: 3;
+    }
+    .IGLoadingCartPedidoFacil {
+        display: none;
+        position: absolute;
+        text-align: center;
+        top: -150px;
+        left: 40%;
+        color: #92D100;
+        font-weight: bold;
+    }
+    @media only screen and (max-width: 767px) {
+        .IGLoadingCartPedidoFacil {
+            font-size: 11px;
+        }
+        .IGLoadingCartPedidoFacil i {
+            font-size: 2em;
+        }
+    }
+</style>
+
+</div>
+
+</body>
+</html>

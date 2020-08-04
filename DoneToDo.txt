@@ -274,3 +274,47 @@ Done
 To do
 - Personalizar a página de pedidos do eFácil
 - Reunião de UX para priorização de alguns JIRAs
+
+Done
+- Homologuei o ambiente Stage em mobile
+- Encerrei o teste A/B de bandeiras de pagamento na PDP
+- Criei uma personalização a partir do teste de bandeiras de pagamento e inseri o banner do cartão Super Empresarial
+- Coloquei essa personalização em exibição
+
+To do
+- Homologar o ambiente Dev em mobile
+- Continuar desenvolvendo um experimento na página do carrinho
+
+Done
+- Homologuei o ambiente Dev em Mobile
+- Continuei a desenvolver um experimento na página do carrinho
+- No fim da tarde tive uma reunião com a Carol, Evaldo e Flávio sobre problemas no cadastro
+
+To do
+- Finalizar o experimento da página do carrinho
+- Ajustar alguns experimentos da Home
+
+Done
+- Finalizei o experimento de empresas Martins no footer
+- Finalizei o experimento de selecionar outra disposição de produtos na PLP
+- Coloquei os dois experimentos em exibição
+
+To do
+- Homologar o ambiente dev
+- Avaliar o restante dos experimentos CRO
+
+Done
+- Homologuei o ambiente Dev
+- Fiz uma correção no teste de selecionar outra disposição de produtos na PLP
+- Fiz uma correção no experimento de empresas Martins no footer
+
+To do
+- Homologar o ambiente dev
+- Verificar o funcionamento das tags de CRO
+
+Done
+- Homologuei o ambiente dev
+- Revisei a estrutura da página de termos de uso pra facilitar a criação de uma página parecida
+
+To do
+- Pretendo homologar o ambiente 
