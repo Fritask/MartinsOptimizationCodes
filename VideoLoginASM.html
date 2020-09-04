@@ -13,16 +13,44 @@ $(document).ready(function()
     //Verifica se a função já foi aplicada hoje para um cliente
 	function IGCheckIfDifferentDay()
 	{
-		var IGDateVideo = new Date().toLocaleDateString();
+		var IGDateVideo = new Date();
 
-		if( localStorage.IGDataVideo == IGDateVideo && localStorage.IGAllowVideo == 0)
-			return false;
-        else if (localStorage.IGDataVideo != IGDateVideo && localStorage.IGAllowVideo == 1)
+        if (!localStorage.IGDataVideo7)
         {
-            localStorage.IGDataVideo = IGDateVideo;
-            localStorage.IGAllowVideo = 0;
-            return true;
+            if (localStorage.IGAllowVideo == 1)
+            {
+                localStorage.IGDataVideo7 = IGDateVideo;
+                localStorage.IGAllowVideo = 0;
+                return true;
+            }
+            
+            return false;
         }
+        else
+        {
+            if ( (IGDateVideo - localStorage.IGDataVideo7) >= 7)
+            {
+                if (localStorage.IGAllowVideo == 1)
+                {
+                    localStorage.IGDataVideo7 = IGDateVideo;
+                    localStorage.IGAllowVideo = 0;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+		// var IGDateVideo = new Date().toLocaleDateString();
+
+		// if( localStorage.IGDataVideo == IGDateVideo && localStorage.IGAllowVideo == 0)
+		// 	return false;
+        // else if (localStorage.IGDataVideo != IGDateVideo && localStorage.IGAllowVideo == 1)
+        // {
+        //     localStorage.IGDataVideo = IGDateVideo;
+        //     localStorage.IGAllowVideo = 0;
+        //     return true;
+        // }
 	};
 
     IGAplicaVideo = function()
