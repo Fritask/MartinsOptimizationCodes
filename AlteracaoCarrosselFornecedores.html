@@ -8,15 +8,13 @@
 <script>
 $(document).ready(function()
 {
-    $('.slick-arrow-rotating').first().css('background-color', '#004282 !important').css('margin', '-30px 0px 30px').css('padding', '5px 0px 25px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().css('background-color', '#004282 !important').css('margin', '-30px 0px 30px').css('padding', '5px 0px 25px');
 
-    $('.slick-arrow-rotating').first().children().css('margin', '0px').children().children().find('.title1').css('color', '#FFFFFF');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().css('margin', '0px').children().children().find('.title1').css('color', '#FFFFFF');
 
-    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
-
-    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
-    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(0,1).css('left', '-45px');
-    $('.slick-arrow-rotating').first().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(0,1).css('left', '-45px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
 
     if ($(window).width() > 991)
     {
@@ -30,6 +28,11 @@ $(document).ready(function()
         $(this).append('<div class="IGHrV2">&nbsp;</div>');
     });
 
+
+    // Move o box de fornecedores para depois do menu dos ícones de categorias
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().insertAfter('section#categoriesBox');
+
+    // Adiciona efeito de sombreamento no header móvel azul do site
     $(window).on('scroll', function()
     {
         if($(this).scrollTop() > 171)
@@ -41,10 +44,17 @@ $(document).ready(function()
             $('div.search-section').css('box-shadow', 'none');
         }
     });
+
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
 });
 </script>
 
 <style>
+    .slick-track img {
+        background-color: #FFFFFF !important;
+        border-radius: 0px;
+    }
+
     .IGTitle1Child {
         width: fit-content;
         margin-left: auto;
@@ -69,6 +79,7 @@ $(document).ready(function()
         position: relative;
     }
     @media only screen and (min-width: 1200px) {
+        /* Adiciona efeito de sombreamento na faixa do parceiro */
         div.parceiromartins-bar-container-fluid {
             box-shadow: 0px 10px 30px 10px #0000003d;
         }
