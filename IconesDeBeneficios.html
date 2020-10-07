@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style>
+    #IGBigBem {
+        background-color: #FFFFFF;
+        height: 245px;
+        user-select: none;
+    }
+    #IGParentBemDesktop{
+        max-width: 1007px;
+        width: 1007px;
+    }
+    #IGParentBemMobile {
+        display: none;
+    }
+    .title1 {
+        text-align: center;
+        padding: 15px 0px 0px;
+    }
+    .IGBemIcons {
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .IGBemIcon {
+        width: 151.8px;
+        height: 151.8px;
+        margin: 0 5.5px;
+        position: relative;
+    }
+    .IGBemIcon:hover, .IGBemIcon:focus {
+        text-decoration: none;
+    }
+    .IGBemIcon:hover .IGBemArrow{
+        animation: IGBemArrowAnimation 0.5s;
+        animation-iteration-count: infinite;
+    }
+    .IGBemIconHead {
+        border-radius: 5px 5px 0px 0px;
+        height: 25%;
+        text-align: center;
+        padding-top: 8px;
+    }
+    .IGBemIconTitle {
+        color: #FFFFFF;
+    }
+    .IGBemIconBody {
+        background-color: #F0F1F1;
+        border-radius: 0px 0px 5px 5px;
+        height: 75%;
+        font-size: 20px;
+        position: relative;
+    }
+    .IGBemArrow {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .IGBemImg {
+        height: 45%;
+        width: auto;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .IGBemImgTriconta {
+        height: auto;
+        width: 85%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @keyframes IGBemArrowAnimation {
+        0% { transform: translate(-50%, 0px); }
+        25% { transform: translate(calc(-50% + 2px), 0px); }
+        50% { transform: translate(-50%, 0px); }
+        75% { transform: translate(calc(-50% + 2px), 0px); }
+        100% { transform: translate(-50%, 0px); }
+    }
+
+    @media only screen and (max-width: 1199px) {
+        #IGBigBem {
+            height: 209.1px;
+        }
+        #IGParentBemDesktop {
+            max-width: 834.8px;
+            width: 834.8px;
+        }
+        .IGBemIcons {
+            margin-bottom: 8.3px;
+        }
+        .IGBemIcon {
+            width: 125.8px;
+            height: 125.8px;
+            margin: 0 4.14px;
+            font-size: 12px;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        #IGBigBem {
+            height: 167.3px;
+        }
+        #IGParentBemDesktop {
+            max-width: 645.5px;
+            width: 645.5px;
+        }
+        .IGBemIcons {
+            margin-bottom: 6px;
+        }
+        .IGBemIcon {
+            width: 97.2px;
+            height: 97.2px;
+            margin: 0 2.8px;
+        }
+        .IGBemIconBody {
+            font-size: 15px;
+        }
+        .IGBemArrow {
+            bottom: 2px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        #IGBigBem {
+            padding-bottom: 25px;
+            height: 100%;
+        }
+        #IGParentBemDesktop {
+            display: none;
+        }
+        #IGParentBemMobile {
+            display: block;
+        }
+        .IGBemIcons {
+            max-width: calc(100vw - 30px);
+            width: calc(100vw - 30px);
+        }
+        .IGBemIcon {
+            width: calc((100vw - 47px)/3);
+            height: calc((100vw - 47px)/3);
+            font-size: 14px;
+        }
+        .IGBemIconHead {
+            padding-top: 7%;
+        }
+        .IGBemIconBody {
+            font-size: 20px;
+        }
+        .IGBemArrow {
+            bottom: 5px;
+        }
+    }
+    @media only screen and (max-width: 430px) {
+        .IGBemIconBody {
+            font-size: 16px;
+        }
+        .IGBemArrow {
+            bottom: 4px;
+        }
+    }
+    @media only screen and (max-width: 380px) {
+        .IGBemIconBody {
+            font-size: 14px;
+        }
+        .IGBemArrow {
+            bottom: 3px;
+        }
+    }
+</style>
+
+
+<div id="IGBigBem">
+    <div id="IGParentBemDesktop" class="container">
+        <div style="border-bottom: none;" class="title1">BENEFÍCIOS PARA VOCÊ</div>
+        <div class="IGBemIcons">
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/beneficios-martins">
+                <div class="IGBemIconHead" style="background-color: #FD792A">
+                    <div class="IGBemIconTitle">Cupons Descontos</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #FD792A" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/cupom-desconto.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/beneficios-martins">
+                <div class="IGBemIconHead" style="background-color: #9065E5">
+                    <div class="IGBemIconTitle">Queda de Preço</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #9065E5" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/queda-de-preco.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/beneficios-martins">
+                <div class="IGBemIconHead" style="background-color: #7DB545">
+                    <div class="IGBemIconTitle">Promoções Exclusivas</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #7DB545" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/proomocoes-especiais.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/martins/pt/BRL/my-account/my-wallet">
+                <div class="IGBemIconHead" style="background-color: #054375">
+                    <div class="IGBemIconTitle">Sua Carteira Digital</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #054375" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImgTriconta" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/logo-triconta.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/bem">
+                <div class="IGBemIconHead" style="background-color: #213871">
+                    <div class="IGBemIconTitle">Cashback</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #213871" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/logo-bem.png">
+            </a>
+        </div>
+    </div>
+
+
+
+    <div id="IGParentBemMobile" class="container">
+        <div style="border-bottom: none;" class="title1">BENEFÍCIOS PARA VOCÊ</div>
+        <div class="IGBemIcons">
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/beneficios-martins">
+                <div class="IGBemIconHead" style="background-color: #FD792A">
+                    <div class="IGBemIconTitle">Cupons Descontos</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #FD792A" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/cupom-desconto.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/beneficios-martins">
+                <div class="IGBemIconHead" style="background-color: #9065E5">
+                    <div class="IGBemIconTitle">Queda de Preço</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #9065E5" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/queda-de-preco.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/beneficios-martins">
+                <div class="IGBemIconHead" style="background-color: #7DB545">
+                    <div class="IGBemIconTitle">Promoções Exclusivas</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #7DB545" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/proomocoes-especiais.png">
+            </a>
+        </div>
+
+
+
+
+
+
+        <div class="IGBemIcons">
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/martins/pt/BRL/my-account/my-wallet">
+                <div class="IGBemIconHead" style="background-color: #054375">
+                    <div class="IGBemIconTitle">Sua Carteira Digital</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #054375" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImgTriconta" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/logo-triconta.png">
+            </a>
+
+            <a class="IGBemIcon" target="_blank" href="https://www.martinsatacado.com.br/bem">
+                <div class="IGBemIconHead" style="background-color: #213871">
+                    <div class="IGBemIconTitle">Cashback</div>
+                </div>
+                <div class="IGBemIconBody">
+                    <i style="color: #213871" class="far fa-arrow-alt-circle-right IGBemArrow"></i>
+                </div>
+                <img class="IGBemImg" src="http://b.martins.com.br/Conteudo/Banner/EmailMarketing/logo-bem.png">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
