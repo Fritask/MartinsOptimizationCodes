@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+    $('.btnSwitchPjPf').slice(0,1).find('span').remove();
+    $('.btnSwitchPjPf').slice(0,1).append('<div><b>Pessoa Jurídica (CNPJ)</b></div>');
+    
+    $('.btnSwitchPjPf').slice(1,2).text('Comprar para consumo').append('<div><b>Pessoa Física (CPF)</b></div>')
+});
+</script>
+
+<style>
+    .btnSwitchPjPf {
+        border-radius: 5px !important;
+        border: none !important;
+        padding: 8px 45px !important;
+        font-size: 16px;
+    }
+
+    .btnSwitchPjPf:nth-child(1) {
+        margin-right: 25px;
+    }
+
+    #IGDivCadParent {
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .btnSwitchPjPf--active {
+        position: relative;
+    }
+
+    .btnSwitchPjPf--active:after {
+        content:'';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        width: 0;
+        height: 0;
+        border-top: solid 10px #F17833;
+        border-left: solid 10px transparent;
+        border-right: solid 10px transparent;
+    }
+
+    #IGDivCad {
+        position: relative;
+        max-width: 530px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #F17833;
+        padding: 10px 20px;
+        border-radius: 3px;
+    }
+
+    @media only screen and (max-width: 561px) {
+        .btnSwitchPjPf {
+            padding: 8px 20px !important;
+        }
+    }
+
+    @media only screen and (max-width: 462px) {
+        .btnSwitchPjPf {
+            padding: 8px 10px !important;
+        }
+    }
+</style>
+
+<div id="IGDivCadParent">
+    <div id="IGDivCad">
+        <span>Inicialmente as compras para consumo estão disponíveis apenas para as cidades de <b>Uberlândia</b> e <b>São Paulo</b>. Em breve disponível para todo o Brasil.</span>
+    </div>
+</div>
+
+</body>
+</html>
