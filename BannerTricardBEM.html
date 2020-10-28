@@ -1,0 +1,129 @@
+<script>
+$(document).ready(function(){
+    $('.cartTotalBem').first().attr('id', 'IGBEMBanner1').before('<div id="IGBEMBanners"></div>');
+    $('#IGBEMBanner1').appendTo('#IGBEMBanners');
+
+    $('#IGBEMBanner1').after('<div id="IGBEMBanner2"><div id="IGBEMBannerIMG"><img class="_1/1" src="https://b.martins.com.br/Conteudo/Banner/EmailMarketing/TricardIconBEM.png"></div><div id="IGBEMBannerDesc"><div>Pague sua compra com o seu</div><div>cartão <b>Martins Super Empresarial</b></div><div id="IGBEMBannerCTA">Pagar agora</div></div></div>');
+
+    $('#IGBEMBannerCTA').click(function(){
+        $('div.c-stickyBanner__item--fixedCta').click();
+    });
+});
+</script>
+
+<style>
+div.box-sticky-banner {
+    display: none;
+}
+#IGBEMBanners {
+    display: flex;
+    user-select: none;
+}
+#IGBEMBanner1, #IGBEMBanner2 {
+    width: calc(50% - 10px) !important;
+}
+#IGBEMBanner2 {
+    margin-top: 24px !important;
+    display: flex;
+    margin-left: 20px;
+}
+#IGBEMBannerIMG {
+    border-radius: 5px 0 0 5px;
+    background-color: #004282 !important;
+    width: 25% !important;
+}
+#IGBEMBannerDesc {
+    border-radius: 0 5px 5px 0;
+    background-color: #F2F3F2 !important;
+    color: #004282;
+    width: 75% !important;
+    padding: 8px 16px !important;
+    position: relative;
+}
+#IGBEMBannerCTA {
+    background-color: #60d208;
+    color: #FFFFFF;
+    border: 1px solid #60d208;
+    border-radius: 5px;
+    padding: 3px 14px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+    font-weight: bold;
+    cursor: pointer;
+}
+#IGBEMBannerCTA:hover {
+    background-color: #F2F3F2;
+    color: #60d208;
+}
+#IGBEMBanner1 .cartTotalBemDesc {
+    padding: 0px 0px 0px 8px !important;
+}
+.cartTotalBemDesc {
+    position: relative;
+}
+.iconTooltipBEM {
+    position: absolute !important;
+    top: 50% !important;
+    right: 10px !important;
+    transform: translate(0, -50%) !important;
+}
+
+@media only screen and (min-width: 1200px) {
+    #IGBEMBanner1 .cartTotalBemLogo img {
+        width: 75% !important;
+    }
+    #IGBEMBanner1 .cartTotalBemDesc ._blue {
+        font-size: 15px !important;
+    }
+    #IGBEMBanner1 .cartTotalBemLogo {
+        padding: 0 !important;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    #IGBEMBanners {
+        display: block;
+    }
+    #IGBEMBanner1, #IGBEMBanner2 {
+        width: 100% !important;
+    }
+    #IGBEMBanner2 {
+        margin: 20px 0px 0px;
+    }
+    #IGBEMBannerIMG, #IGBEMBanner1 .cartTotalBemLogo {
+        width: 20% !important;
+    }
+    #IGBEMBannerDesc, #IGBEMBanner1 .cartTotalBemDesc {
+        width: 80% !important;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #IGBEMBannerIMG {
+        position: relative;
+    }
+    #IGBEMBannerIMG img {
+        top: 50%;
+        position: absolute;
+        transform: translate(0, -50%);
+    }
+}
+@media only screen and (max-width: 470px) {
+    #IGBEMBannerCTA {
+        position: static !important;
+        transform: none !important;
+        width: fit-content !important;
+        margin: 10px auto 0 !important;
+    }
+}
+@media only screen and (max-width: 370px) {
+    .iconTooltipBEM {
+        right: 0px !important;
+        top: 5px !important;
+        transform: none !important;
+    }
+    #IGBEMBanner1 .cartTotalBemLogo {
+        padding: 0 5px !important;
+    }
+}
+</style>
