@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function()
+{
+	//Atualiza a página caso haja redimensionamento (Por Exemplo: alterar orientação do celular)
+	$( window ).resize(function() {
+		location.reload();
+	});
+
+	//Customizações no box address
+	$('.box-address').find('.title').text('Seu pedido será entregue no endereço:');
+	$('.box-address').find('.msg').remove();
+	$('.box-address').append('<p id="IGBoxAdressMsg1">Caso tenha dúvidas sobre o seu pedido entre em contato:</p>');
+	$('#IGBoxAdressMsg1').after('<p id="IGBoxAdressMsg2">WhatsApp (34) 3301 5819 ou no telefone (34) 3218 1310</p>');
+
+	//Cria elemento para ofuscar a página
+	var $IGDiv = $('<div></div>').appendTo('body');
+	$IGDiv.attr('id', 'IGCheckoutDarkDiv');
+
+	$('#IGCheckoutDarkDiv').css('height', $('body').height());
+
+	$('body').height();
+
+	//Cria elemento para posicionar a cópia do box address
+	$('#IGCheckoutDarkDiv').append('<div id="IGCheckoutDarkDivChild" class="container"></div>')
+
+	//Clona o banner e o adiciona ao elemento de ofuscamento
+	$('.box-address').clone().attr('id', 'IGClonedBoxAddress').appendTo('#IGCheckoutDarkDivChild');
+
+	//Define a posição da cópia do box address
+	const $IGOffsetBoxAdress = $('.box-address').position();
+	// $('#IGClonedBoxAddress').css('left', $IGOffsetBoxAdress.left).css('top', $IGOffsetBoxAdress.top);
+
+	if($('section#searchSection').find('div.search-section').css('position') == 'fixed')
+	{
+		$('#IGClonedBoxAddress').css('left', $IGOffsetBoxAdress.left).css('top', $IGOffsetBoxAdress.top + 86);
+	}
+	else
+	{
+		$('#IGClonedBoxAddress').css('left', $IGOffsetBoxAdress.left).css('top', $IGOffsetBoxAdress.top);
+	}
+	
+	//Adiciona CTA para remover o foco no endereço de entrega
+	$('#IGClonedBoxAddress').find('#IGBoxAdressMsg2').after('<div id="IGBoxAdressCTA">AVANÇAR</div>');
+
+	//Funcionamento do botão Avançar
+	$('#IGBoxAdressCTA').click(function(){
+		$('#IGCheckoutDarkDiv').css('display', 'none');
+	});
+});
+</script>
+    
+<style>
+	.box-address {
+		display: block !important;
+	}
+	.box-address .title {
+		margin-bottom: 10px !important;
+	}
+	#IGClonedBoxAddress {
+        z-index: 100000;
+		width: calc(50% - 45px);
+		position: absolute;
+	}
+    #IGCheckoutDarkDiv {
+        z-index: 99999;
+        background-color: #00000080;
+        width: 100%;
+        position: absolute;
+		top: 0;
+		left: 0;
+    }
+	#IGCheckoutDarkDivChild {
+		margin: 0;
+		position: relative;
+	}
+	#IGBoxAdressMsg1 {
+		margin-top: 10px;
+	}
+	#IGBoxAdressCTA {
+		border-radius: 5px;
+		border: 1px solid #3485C2;
+		color: #FFFFFF;
+		background-color: #3485C2;
+		margin: 20px auto 10px;
+		width: fit-content;
+		padding: 5px 20px;
+		cursor: pointer;
+		font-weight: bold;
+		user-select: none;
+	}
+	#IGBoxAdressCTA:hover {
+		background-color: #D2EEF8;
+		color: #3485C2;
+
+	}
+	@media only screen and (max-width: 991px) {
+		#IGClonedBoxAddress {
+			width: calc(100% - 45px);
+		}
+    }
+</style>
+
+</head>
+<body>
+<div id="IGCheckoutDarkDiv"></div>
+
+
+</body>
+</html>
