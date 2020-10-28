@@ -8,20 +8,23 @@
 <script>
 $(document).ready(function()
 {
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().css('background-color', '#004282 !important').css('margin', '-30px 0px 30px').css('padding', '5px 0px 25px');
+    // $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().css('background-color', '#004282 !important').css('margin', '-30px 0px 30px').css('padding', '5px 0px 25px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().css('background-color', '#004282 !important').css('margin', '0px 0px 30px').css('padding', '5px 0px 25px');
 
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().css('margin', '0px').children().children().find('.title1').css('color', '#FFFFFF');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').css('color', '#FFFFFF');
 
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(0,1).css('left', '-45px');
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('a.slick-arrow').slice(0,1).css('left', '-45px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
 
     if ($(window).width() > 991)
     {
-        $('.slick-arrow-rotating').slice(1,2).children().first().css('margin', '-130px 0px 0px');
+        // $('.slick-arrow-rotating').slice(1,2).children().first().css('margin', '-130px 0px 0px');
+        $('.slick-arrow-rotating').slice(1,2).children().first().css('margin', '0px 0px 0px');
     }
 
-    $('.slick-arrow-rotating').slice(1,2).find('div.title1').each(function( i ){
+    // $('.slick-arrow-rotating').slice(1,2).find('div.title1').each(function( i ){
+    $('.slick-arrow-rotating').slice(2,3).find('div.title1').each(function( i ){
         let IGTitle1TxtTemp = $(this).text();
         $(this).text('');
         $(this).append('<div class="IGTitle1Child">' + IGTitle1TxtTemp + '</div>');
@@ -45,7 +48,7 @@ $(document).ready(function()
         }
     });
 
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().children().children().children().find('.slick-slider').find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
 });
 </script>
 
