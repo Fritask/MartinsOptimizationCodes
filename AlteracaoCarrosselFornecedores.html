@@ -9,13 +9,16 @@
 $(document).ready(function()
 {
     // $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().css('background-color', '#004282 !important').css('margin', '-30px 0px 30px').css('padding', '5px 0px 25px');
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().css('background-color', '#004282 !important').css('margin', '0px 0px 30px').css('padding', '5px 0px 25px');
+    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').attr('id', 'IGFornecedoresTitle');
 
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').css('color', '#FFFFFF');
+    $('div#IGFornecedoresTitle').parent().parent().parent().parent().attr('id', 'IGFornecedoresParent');
+    $('#IGFornecedoresParent').css('background-color', '#004282 !important').css('margin', '0px 0px 30px').css('padding', '5px 0px 25px');
 
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('a.slick-arrow').slice(0,1).css('left', '-45px');
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
+    $('div#IGFornecedoresTitle').css('color', '#FFFFFF');
+
+    $('div#IGFornecedoresTitle').next().find('a.slick-arrow').css('background-color', '#FFFFFF').css('width', '45px');
+    $('div#IGFornecedoresTitle').next().find('a.slick-arrow').slice(0,1).css('left', '-45px');
+    $('div#IGFornecedoresTitle').next().find('a.slick-arrow').slice(1,2).css('right', '-40px').css('box-shadow', '-5px 0px 0px 0px #004282');
 
     if ($(window).width() > 991)
     {
@@ -32,8 +35,9 @@ $(document).ready(function()
     });
 
 
-    // Move o box de fornecedores para depois do menu dos ícones de categorias
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').parent().parent().parent().parent().insertAfter('section#categoriesBox');
+    // Move o box de fornecedores para antes do menu dos ícones de categorias
+    $('#IGCarrosselFreteParent').insertBefore('section#categoriesBox');
+    $('#IGFornecedoresParent').insertBefore('#IGCarrosselFreteParent');
 
     // Adiciona efeito de sombreamento no header móvel azul do site
     $(window).on('scroll', function()
@@ -48,9 +52,23 @@ $(document).ready(function()
         }
     });
 
-    $('div.title1:contains(AS MELHORES MARCAS ESTÃO AQUI)').next().find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
+    $('div#IGFornecedoresTitle').next().find('div').children().find('img').css('background-color', '#FFFFFF').css('border-radius', '0px');
+
+
+
+
+
+    $('div.title1:contains(COMPRE NO ATACADO ONLINE COM FRETE GRÁTIS*)').parent().parent().parent().parent().before('<div id="IGCarrosselFreteParent" class="slick-arrow-rotating"><section class="type1"><div class="container"><div id="IGCarrosselFrete" class="box"></div></div></section></div>');
+
+    $('div.title1:contains(COMPRE NO ATACADO ONLINE COM FRETE GRÁTIS*)').next().appendTo('#IGCarrosselFrete');
+
+    $('div.title1:contains(COMPRE NO ATACADO ONLINE COM FRETE GRÁTIS*)').prependTo('#IGCarrosselFrete');
 });
 </script>
+
+
+<div id="IGCarrosselParent" class="slick-arrow-rotating"><section class="type1"><div class="container"><div class="box"></div></div></section></div>
+
 
 <style>
     .slick-track img {
@@ -72,7 +90,8 @@ $(document).ready(function()
         height: 50%;
         margin-top: 0px;
         position: absolute;
-        top: 20%;
+        top: 50%;
+        transform: translate(0, -100%);
         left: 0;
         border-bottom: 1px solid #004282;
     }
