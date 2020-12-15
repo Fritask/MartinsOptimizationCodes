@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function(){
+    if($('div.oc-details').children().slice(1,2).text().includes("111 - PGT.ANTECIPADO"))
+    {
+        $('.product-line').each(function(){
+            if( !($(this).find('.col-1').find('.space-product').find('.vendor').text().includes("Martins")) )
+            {
+                $('div.oc-details').find('.line').slice(1,2).after('<div id="IGMsgBCSLine" class="line"><div id="IGMsgCompraBoletoSeller"><div id="IGMsgCBS1"><span class="fas fa-exclamation-circle"></span></div><div id="IGMsgCBS2"><div id="IGCBSTitle">Caro cliente</div><div id="IGCBSText1">Informamos que, para compras de lojas parceiras, o boleto não será enviado junto à entrega.</div><div id="IGCBSText2">Fique atento ao recebimento através do seu e-mail ou, se preferir, acesse o site para fazer a reimpressão.</div></div></div></div>');
+                return false;
+            }
+        });
+    }
+});
+</script>
+
+<style>
+    #IGMsgBCSLine {
+        padding-top: 0;
+    }
+    #IGMsgCompraBoletoSeller {
+        background-color: #d2eef8;
+        border-radius: 5px;
+        display: flex;
+        color: #525252;
+        width: 100%;
+        padding: 10px 25px;
+    }
+    #IGMsgCBS1 {
+        margin-right: 45px;
+        position: relative;
+    }
+    #IGMsgCBS1 span {
+        font-size: 28px;
+        position: absolute;
+        transform: translate(0, -50%);
+        left: 0;
+        top: 50%;
+    }
+    #IGMsgCBS1 span, #IGCBSTitle {
+        color: #3485c2;
+    }
+    #IGCBSText1 {
+        margin-top: 5px;
+    }
+    .oc-details .line:nth-of-type(2) {
+        border: none;
+    }
+</style>
+
+<a href="https://1drv.ms/x/s!AvJvozhnR4BebPyJAvOmGnC0SpU?e=cAQnfb" target="_blank" class="ASM-btn ASM-btn-customer-list element-separator-height" id="IGASMRestricaoCTA"><span class="fas fa-exclamation-circle"></span><span class="hidden-sm ASM-btn ASM-btn-customers">Restrição Seller</span></a>
+
+<div id="IGMsgBCSLine" class="line"><div id="IGMsgCompraBoletoSeller"><div id="IGMsgCBS1"><span class="fas fa-exclamation-circle"></span></div><div id="IGMsgCBS2"><div id="IGCBSTitle">Caro cliente</div><div id="IGCBSText1">Informamos que, para compras de lojas parceiras, o boleto não será enviado junto à entrega.</div><div id="IGCBSText2">Fique atento ao recebimento através do seu e-mail ou, se preferir, acesse o site para fazer a reimpressão.</div></div></div></div>
+
+</body>
+</html>

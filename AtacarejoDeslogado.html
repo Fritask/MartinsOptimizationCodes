@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function(){
+    //Ajuste: Corrigindo funcionamento da seta em frente ao CTA "DEPARTAMENTOS"
+    $('i.rotate90').removeClass("rotate90");
+
+
+    //Ajuste: Tratamento no modal de login (permitir o fechamento clicando fora do modal)
+    var IGWaitLogin = setInterval(function() {
+        if ($('div.dropdown-menu').length) {
+            $('div.dropdown-menu').before('<div id="IGCloseLoginAnywhere">&nbsp;</div>');
+            $('.pt-login').mouseover(function(){
+                $('#IGCloseLoginAnywhere').css('display', 'block');
+            });
+
+            $('.pt-close').click(function(){
+                $('#IGCloseLoginAnywhere').css('display', 'none');
+            });
+    
+            $('#IGCloseLoginAnywhere').click(function(){
+                $('.pt-close').click();
+                $('#IGCloseLoginAnywhere').css('display', 'none');
+            });
+            clearInterval(IGWaitLogin);
+        }
+    }, 300);
+});
+</script>
+
+<style>
+    section#helpUser {
+        display: none;
+    }
+    #IGAtcrjHeaderFaixaOut {
+        background-color: #e5e5e5;
+        user-select: none;
+    }
+    #IGAtcrjHeaderFaixaIn {
+        max-width: 1170px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 2%;
+        align-items: center;
+    }
+    #IGAtcrjChooseBusiness {
+        max-width: fit-content;
+        display: flex;
+        margin-right: auto;
+        padding: 10px 0 0;
+    }
+    .IGAtcrjChooseBsnsCTA {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        background-color: #ffffff;
+        color: #6d7384;
+        padding: 7px 22px;
+        display: flex;
+        cursor: pointer;
+    }
+    .IGAtcrjChooseBsnsCTA:hover, .IGAtcrjChooseBsnsCTA:focus {
+        text-decoration: none;
+    }
+    .IGAtcrjChooseBsnsCTA:hover {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    .IGAtcrjChooseBsnsActive {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    #IGAtcrjChooseAtacado {
+        margin-right: 8px;
+    }
+    .IGAtcrjChooseBsnsCTA .fas {
+        margin-right: 10px;
+        font-size: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .IGAtcrjChooseBsnsCTA div {
+        font-size: 12px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    nav#menuMaster {
+        background-color: #004282;
+        user-select: none;
+    }
+    .menuMasterD .container .menuLiFirst {
+        cursor: pointer;
+    }
+    .menuMasterD .container>ul>li:after {
+        display: none;
+    }
+    .menuMasterD .container>ul>li a:hover, .menuMasterD .container>ul>li a:focus {
+        text-decoration: none;
+    }
+    /* Alterações no modal de login */
+    #IGCloseLoginAnywhere {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+    }
+</style>
+
+<div id="IGAtcrjHeaderFaixaOut">
+    <div id="IGAtcrjHeaderFaixaIn">
+        <div id="IGAtcrjChooseBusiness">
+            <a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive">
+                <i class="fas fa-store-alt"></i><div>ATACADO</div>
+            </a>
+            <a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA">
+                <i class="fas fa-shopping-cart"></i><div>ATACAREJO</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

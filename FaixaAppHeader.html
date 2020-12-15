@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function(){
+    if($('body').hasClass("page-SecureCustomerPortalRegisterPage") && ($( window ).width() <= 425))
+    {
+        $('#IGFaixaAppTopo').addClass('IGHidden');
+    }
+    $('#IGFaixaAppMClose').click(function(){
+        $('#IGFaixaAppTopo').css('display', 'none');
+    });
+});
+</script>
+
+<style>
+    .IGHidden {
+        display: none;
+    }
+    #IGFaixaAppTopo {
+        width: 100%;
+        background-color: #F17833;
+        height: 50px;
+        position: relative;
+    }
+    #IGFaixaAppDesktop {
+        width: 58%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .IGFaixaAppDesktopChildren {
+        width: fit-content;
+        display: flex;
+        color: #ffffff;
+        font-size: 15px;
+    }
+    #IGFaixaAppLeft {
+        float: left;
+    }
+    #IGFaixaAppRight {
+        float: right;
+        margin-top: 2px;
+    }
+    #IGFaixaAppLeft img {
+        margin-right: 10px;
+    }
+    .IGFaixaAppCTA {
+        background-color: #000000;
+        padding: 5px 20px 8px;
+        border-radius: 5px;
+        margin-left: 10px;
+        display: inline;
+        color: #ffffff;
+        user-select: none;
+        cursor: pointer;
+        border: 1px solid #000000;
+    }
+    .IGFaixaAppCTA:focus, .IGFaixaAppCTA:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .IGFaixaAppCTA:hover {
+        background-color: #F17833;
+        border: 1px solid #ffffff;
+    }
+    .IGFaixaAppCTA img {
+        margin-left: 10px;
+    }
+    #IGFaixaAppGoogle {
+        margin-right: 5px;
+    }
+
+    #IGFaixaAppMobile {
+        width: fit-content;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #IGFaixaAppMobileC1 {
+        width: 38px;
+        position: relative;
+    }
+    #IGFaixaAppMClose {
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translate(0, -50%);
+    }
+    .IGFaixaAppMobileS {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #IGFaixaAppMobileC2 {
+        min-width: 58px;
+        position: relative;
+    }
+    #IGFaixaAppMobileC3 {
+        width: fit-content;
+        position: relative;
+        text-align: center;
+        margin-left: 10px;
+    }
+    #IGFaixaAppMobileC3 > div {
+        height: 100%;
+    }
+    #IGFaixaAppMobileText {
+        margin: 6px 0px 8px;
+    }
+    @media only screen and (max-width: 1774px) {
+        #IGFaixaAppDesktop {
+            width: calc(1200px - 8vw);
+        }
+    }
+
+    @media only screen and (max-width: 1191px) {
+        #IGFaixaAppDesktop {
+            width: 95%;
+        }
+        .IGFaixaAppDesktopChildren {
+            font-size: 13px;
+        }
+    }
+    
+    @media only screen and (min-width: 992px) {
+        #IGFaixaAppMobile {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        #IGFaixaAppDesktop {
+            display: none;
+        }
+        #IGFaixaAppMobile {
+            display: flex;
+        }
+        .IGFaixaAppCTA {
+            margin: 0 !important;
+            padding: 5px 10px 8px;
+        }
+        #IGFaixaAppTopo {
+            height: 70px;
+            background-color: #f0f0f0;
+        }
+    }
+    
+    @media only screen and (max-width: 357px) {
+        #IGFaixaAppMobile {
+            margin: 0;
+        }
+        #IGFaixaAppMobileC1 {
+            width: 30px;
+        }
+        .IGFaixaAppCTA {
+            font-size: 12px;
+        }
+        #IGFaixaAppMobileC3 {
+            margin-left: 1px;
+        }
+        #IGFaixaAppMClose {
+            left: 10px;
+        }
+    }
+</style>
+
+<div id="IGFaixaAppTopo">
+    <div id="IGFaixaAppDesktop">
+        <div class="IGFaixaAppDesktopChildren" id="IGFaixaAppLeft">
+            <div>
+                <img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hb5/h97/9920820477982/smartphoneBar/smartphoneBar.png"><span>Baixe agora o novo APP Martins e conheça todas as novidades.</span>
+            </div>
+        </div>
+        <div class="IGFaixaAppDesktopChildren" id="IGFaixaAppRight">
+            <div>
+                <span>Já disponível nas lojas:<a target="_blank" href="https://play.google.com/store/apps/details?id=com.martins_app&amp;hl=pt-BR&amp;showAllReviews=true" id="IGFaixaAppGoogle" class="IGFaixaAppCTA">Google Play<img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/ha3/h94/9920820543518/iconGooglePlay/iconGooglePlay.png"></a><a target="_blank" href="https://apps.apple.com/us/app/id1529162155" id="IGFaixaAppApple" class="IGFaixaAppCTA">Apple Store<img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/ha5/h91/9920820609054/iconAppleStore/iconAppleStore.png"></a></span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="IGFaixaAppMobile">
+        <div id="IGFaixaAppMClose">
+            <i class="fas fa-times"></i>
+        </div>
+        <div id="IGFaixaAppMobileC1">
+            <div class="IGFaixaAppMobileS">
+                &nbsp;
+            </div>
+        </div>
+        <div id="IGFaixaAppMobileC2">
+            <div class="IGFaixaAppMobileS">
+                <img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h87/h6e/9926436847646/logo_app/logo-app.png">
+            </div>
+        </div>
+        <div id="IGFaixaAppMobileC3">
+            <div>
+                <div id="IGFaixaAppMobileText">Baixe agora o novo APP do Martins</div>
+                <div>
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.martins_app&amp;hl=pt-BR&amp;showAllReviews=true" id="IGFaixaAppGoogleMobile" class="IGFaixaAppCTA">Google Play<img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/ha3/h94/9920820543518/iconGooglePlay/iconGooglePlay.png"></a>
+                    <a target="_blank" href="https://apps.apple.com/us/app/id1529162155" id="IGFaixaAppAppleMobile" class="IGFaixaAppCTA">Apple Store<img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/ha5/h91/9920820609054/iconAppleStore/iconAppleStore.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
