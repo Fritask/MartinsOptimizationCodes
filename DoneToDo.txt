@@ -317,4 +317,146 @@ Done
 - Revisei a estrutura da página de termos de uso pra facilitar a criação de uma página parecida
 
 To do
-- Pretendo homologar o ambiente 
+- Pretendo homologar o ambiente Stage, caso subir o pacote hoje
+- Vou ter uma reunião com o Squad de UX para análise e priorização dos JIRAs
+- Se já estiver tudo certo, pretendo começar a desenvolver a estrutura da LP do FAQ
+
+Done
+- Fiz um ajuste no CTA do banner do cartão super empresarial na Home
+- Fiz uma juste no CTA da PDP
+
+Done
+- Reverti as alterações que eu fiz nas chamadas de solicitação do cartão super Empresarial na Home e na PDP
+- Continuei a desenvolver o código da LP de FAQ
+- Avaliei com o Flávio e com a Carol a possibilidade de inserir um vídeo na Home para login via ASM
+
+To do
+- Pretendo começar a desenvolver o experimento de inserir um vídeo na Home
+- Pretendo terminar de estruturar a página de FAQ, está  faltando as perguntas e respostas e a imagem do Banner
+
+Done
+- Finalizei a estrutura de perguntas e respostas da página do FAQ
+- Comecei a desenvolver o experimento de inserir um vídeo após login via ASM
+- Homologuei o ambiente de migração em mobile
+- Tive uma call com o Flávio, Carol e Evaldo pra pensar em como não exibir o vídeo para usuários do VEM no login via ASM
+
+To do
+- Pretendo finalizar a página do FAQ, só falta o banner
+- Vou continuar a desenvolver o experimento do vídeo
+- Homologar o ambiente de migração em mobile
+- Homologar o ambiente Dev em Mobile
+
+Done
+- Continuei a desenvolver o experimento do vídeo após login via ASM
+- Homologuei o ambiente Dev em Mobile
+
+To do
+- Finalizar o experimetno do vídeo após login via ASM
+- Ajustar experimentos CRO que dependiam dos ícones de categoria como personalização
+
+Done
+- Finalizei o desenvolvimento do experimento do vídeo após login via ASM e coloquei em exibiçao
+- Finalizei o experimento da página do FAQ VEM e coloquei em exibiçao
+- Desativei os experimentos que alteravam o banner do cartão super empresarial
+- Reestruturei o experimento de ícones laranjas na Home e coloquei em exibiçao
+
+To do
+- Ajustar os experimentos CRO que dependiam dos ícones de categoria como personalização
+- Reunião de priorização de JIRAs UX
+
+Done
+- Continuei a ajustar alguns experimentos CRO da Home
+- Tive uma reunião para novas demandas de CRO
+- Tive uma reunião para priorização dos JIRAs de UX
+
+To do
+- Corrigir o experimento CRO do vídeo após login via ASM
+- Finalizar os ajustes em todos os experimentos da Home
+
+Done
+- Corrigi o experimento CRO do vídeo após login via ASM
+- Finalizei alguns ajustes estruturais em alguns experimentos da Home
+- Agendei uma personalização para sábado pra customizar a faixa do topo do site
+- No sábado apareceram alguns problemas no login e tentamos encontrar uma solução via CRO, mas não fizemos alterações
+- Alterei a mensagem da faixa do topo do site
+
+To do
+- Reativar e acompanhar alguns experimentos da Home
+- Começar a avaliar algumas sugestões CRO da Driven
+
+Done
+- Eu, o Flávio, a Carol e o Evaldo tiramos um tempo pra falar sobre reset de senha e cadastro
+- Coloquei em exibição o menu de serviços da Home, mas o banner do cartão não estava aparecendo
+
+To do
+- Vou ver o que pode estar fazendo o banner sumir e pretendo colocar em exibição novamente
+- Homologar o ambiente de migração
+- Vamos ter uma reunião do projeto Buybox
+- Vamos ter uma reunião sobre reset de senha e cadastro
+
+Done
+- Finalizei os ajustes no experimento CRO do Menu de serviços na Home e coloquei em exibição
+- Homologuei o JIRA 721 em Dev
+- Tivemos uma reunião do projeto Buybox e uma reunião pra documentar as atividades realizadas em CRO
+- Recebi uma nova demanda CRO pra inserir 2 banners em uma página de termo associado
+
+To do
+- Homologar o JIRA 721 em Stage
+- Vamos ter uma reunião pra finalizar a documentação das atividades CRO
+- Pretendo iniciar o desenvolvimento da demanda CRO de 2 banners em uma página de termo associado
+
+Done
+- Ajudei a Carol com algumas informações para finalizar uma apresentação das atividades CRO
+- Comecei a desenvolver as alterações do JIRA 707 via CRO enquanto não é implementado no site, esse é o JIRA para desativar os pontos de compras do site
+
+To do
+- Colocar as alterações do JIRA 707 em exibição
+- Homologar Stage
+- Iniciar o desenvolvimento da demanda CRO pra inserir 2 banners em uma página de termo associado
+
+Done
+- Homologuei Stage
+- Testei o experimento de remoção de pontos de compra do site
+- Agendei uma personalização para hoje pra customizar a faixa do topo do site
+
+To do
+- Navegar pelo site pra dar uma testada geral
+- Colocar em exibição o experimento de remover os pontos de compra
+- Pretendo iniciar o desenvolvimento da demanda CRO pra inserir 2 banners em uma página de termo associado
+
+Done
+- Coloquei em exibição o experimento para remover os pontos de compra do site
+- Tive uma reunião para análise de novas sugestões de experimentos
+- Desenvolvi um experimento pra inserir 2 banners na Home do site em mobile
+
+To do
+- Desenvolver um experimento para criar um efeito túnel no checkout
+- Analisar o próximo experimento a ser desenvolvido
+
+Done
+- Comecei a desenvolver um experimento pra criar um efeito túnel no checkout
+- Compensei horas na parte da tarde
+
+To do
+- Finalizar o experimento de efeito túnel no checkout
+- Testar esse experimento
+- Analisar o próximo experimento a ser desenvolvido
+
+Done
+- Concluí o experimento de efeito túnel, coloquei em exibição e testei
+
+To do
+- Vou participar de uma reunião sobre protótipos buybox
+- Vou participar de uma reunião sobre a ferramenta Acoustic
+
+Done
+- Desenvolvi um experimento CRO pra adicionar uma faixa informativa sobre a Live na Home
+- Atualizei o carrossel de melhores marcas
+- Fiz uns agendamentos para algumas personalizações serem ativadas
+
+Done
+- Foquei em testar o atacarejo
+
+To do
+- Homologar produção por causa do deploy
+- Ajustar alguns experimentos CRO porque nem todos vão ser exibidos para clientes PF

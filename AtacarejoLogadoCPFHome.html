@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function(){
+    if ($('span.cpf').length)
+    {
+        // Implementação da faixa do topo
+        $('#helpUser').before('<div id="IGAtcrjHeaderFaixaOut"><div id="IGAtcrjHeaderFaixaIn"><div id="IGAtcrjChooseBusiness"><a href="#" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA"><i class="fas fa-store-alt"></i><div>ATACADO</div></a><a href="#" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive"><i class="fas fa-shopping-cart"></i><div>ATACAREJO</div></a></div><div id="IGAtcrjHeaderCTAs"><div id="IGAtcrjHeaderCTAName">OLÁ, <span id="IGCliName"></span></div><div id="IGAtcrjHeaderCTAAcc">MINHA CONTA</div><a id="IGAtcrjHeaderCTAAtendimento">ATENDIMENTO</a><a href="https://www.martinsatacado.com.br/logout" id="IGAtcrjHeaderCTASair">SAIR</a></div></div></div>');
+        $('a.logout').next().prepend('<a id="IGAtcrjHeaderCTAAccMbl">MINHA CONTA</a><a id="IGAtcrjHeaderCTAAtendimentoMbl">ATENDIMENTO</a>');
+
+
+        // Implementação da faixa de ícones Atacarejo
+        setTimeout(function(){
+            $('#IGCarrosselAtacarejo').after('<div class="container" id="IGAtcrjFaixaIcons"><div id="IGAtcrjFaixaIconsLeft"><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconMap"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h02/h25/9987981115422/territorio_nacional/territorio-nacional.png"><div><div>Entregamos em</div><div>todo o Brasil</div></div></div><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconBox"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf1/h21/9987981049886/mix_martins/mix-martins.png"><div><div>Mix com mais</div><div>de 25mil itens</div></div></div></div><div id="IGAtcrjFaixaIconsRight"><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconCard"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hb7/h28/9987980984350/cartao_credito/cartao-credito.png"><div><div>Pagamento via Boleto</div><div>ou Cartao de Crédito</div></div></div><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconChat"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h79/h29/9987980918814/atendimento_online/atendimento-online.png"><div><div>Atencimento online</div><div>personalizado</div></div></div></div></div>');
+        }, 300);
+
+
+        // Segmentação do estilo
+        $('#helpUser').before('<style>.menuUser .secundaryLinks a[href="https://www.martinsatacado.com.br/martins/my-account/orders"]{display:none}section#principalBanners{display:none}#IGAtcrjHeaderFaixaOut{background-color:#e5e5e5;user-select:none}#IGAtcrjHeaderFaixaIn{max-width:1170px;width:100%;margin:0 auto;display:flex;padding:0 2%;align-items:center}#IGAtcrjChooseBusiness{max-width:fit-content;display:flex;margin-right:auto;padding:10px 0 0}.IGAtcrjChooseBsnsCTA{border-top-right-radius:5px;border-top-left-radius:5px;background-color:#fff;color:#6d7384;padding:7px 22px;display:flex;cursor:pointer}#IGAtcrjHeaderCTAAtendimento:focus,#IGAtcrjHeaderCTAAtendimento:hover,#IGAtcrjHeaderCTASair:focus,#IGAtcrjHeaderCTASair:hover,.IGAtcrjChooseBsnsCTA:focus,.IGAtcrjChooseBsnsCTA:hover,.menuMasterD .container>ul>li a:focus,.menuMasterD .container>ul>li a:hover{text-decoration:none}.IGAtcrjChooseBsnsCTA:hover{background-color:#ff5c0a;color:#fff}.IGAtcrjChooseBsnsActive{background-color:#ff5c0a;color:#fff}#IGAtcrjChooseAtacado{margin-right:8px}.IGAtcrjChooseBsnsCTA .fas{margin-right:10px;font-size:18px;margin-top:auto;margin-bottom:auto}.IGAtcrjChooseBsnsCTA div{font-size:12px;margin-top:auto;margin-bottom:auto}#IGAtcrjHeaderCTAs{max-width:fit-content;display:flex;margin-left:auto;color:#004282;font-size:12px;font-weight:700}#IGAtcrjHeaderCTAAcc,#IGAtcrjHeaderCTAAtendimento,#IGAtcrjHeaderCTASair{margin-left:45px;cursor:pointer}nav#menuMaster{background-color:#004282;user-select:none}.menuMasterD .container .menuLiFirst{cursor:pointer}.menuMasterD .container>ul>li:after{display:none}#IGAtcrjFaixaIcons{display:flex;align-items:center;padding:12px 0;margin-top:50px;color:#6d7384}#IGAtcrjFaixaIcons img{height:30px;margin-right:15px;width:auto}.IGAtcrjFaixaIcon{width:fit-content;display:flex}#IGAtcrjFaixaIconsLeft,#IGAtcrjFaixaIconsRight{display:flex;margin:0 auto;width:40%}#IGAtcrjFaixaIconBox,#IGAtcrjFaixaIconChat{margin-left:auto}#IGCarrosselAtacarejo{padding:0!important;margin-bottom:25px}#IGCarrosselAtacarejo img{margin:0!important}#IGCarrosselAtacarejo .slick-arrow{top:50%;transform:translate(0,-50%);height:42px;width:42px;border:1px solid #fd792a;border-radius:50%;background-color:#fff}#IGCarrosselAtacarejo .slick-arrow i{color:#fd792a;font-size:25px}#IGCarrosselAtacarejo .slick-arrow:first-of-type{left:calc((100vw/94.5) * 18)}#IGCarrosselAtacarejo .slick-arrow:last-of-type{right:calc((100vw/94.5) * 18)}#IGCarrosselAtacarejo .slick-dots{bottom:-33px!important}#IGCarrosselAtacarejo .slick-dots li{width:9px;height:9px;background-color:#cecece;border:none;margin-right:20px}#IGCarrosselAtacarejo .slick-dots li.slick-active{width:13px;height:13px;background-color:#ff5c0a}@media only screen and (min-width:768px){section#helpUser>div:nth-of-type(1){display:none}}@media only screen and (max-width:991px){#IGAtcrjFaixaIcons{display:block;margin-top:30px}#IGAtcrjFaixaIconsLeft{margin-bottom:20px}#IGAtcrjFaixaIconsLeft,#IGAtcrjFaixaIconsRight{width:100%}.IGAtcrjFaixaIcon{margin:0 auto;display:block;text-align:center}#IGAtcrjFaixaIcons img{margin-right:0}}@media only screen and (max-width:767px){#IGCarrosselAtacarejo .slick-arrow:first-of-type{left:1%!important}#IGCarrosselAtacarejo .slick-arrow:last-of-type{right:1%!important}#IGCarrosselAtacarejo .slick-arrow{height:35px;width:35px}#IGAtcrjHeaderCTAs{display:none}#IGAtcrjChooseBusiness{margin-left:auto}section#helpUser{border-top:1px solid #e6e6e6}#IGAtcrjHeaderCTAAccMbl,#IGAtcrjHeaderCTAAtendimentoMbl{color:#004282;font-size:12px;font-weight:700}#myAccountTitle,#storeNavTitle{display:none}}@media only screen and (max-width:425px){#IGCarrosselAtacarejo .slick-arrow{display:none!important}#IGCarrosselAtacarejo .slick-track{height:calc(100vw/2.84)}#IGCarrosselAtacarejo .slick-slide{position:relative}#IGCarrosselAtacarejo .slick-current img{z-index:2}#IGCarrosselAtacarejo img{margin:0!important;position:absolute;height:calc(100vw/2.84);width:calc(100%*1.69);max-width:calc(100%*1.69)}#IGCarrosselAtacarejo .slick-dots li.slick-active{width:11px;height:11px}#IGCarrosselAtacarejo .slick-dots li{width:7px;height:7px}}</style>');
+
+
+        // Serviço: Obter primeiro nome do cliente CPF
+        var IGVarCliData = $('div.welcome').find('span').slice(1,2).text();
+        var IGVarCliName = IGVarCliData.substr(0, IGVarCliData.indexOf(' '));
+        $('#IGCliName').text(IGVarCliName);
+
+
+        // Serviço: Clique dos CTAs da nova faixa do topo
+        $('#IGAtcrjHeaderCTAAcc').click(function(){
+            $('#myAccountTitle').click();
+        });
+        $('#IGAtcrjHeaderCTAAccMbl').click(function(){
+            $('#myAccountTitle').click();
+        });
+
+        
+        // Banner ponta a ponta
+        $('div.title1:contains(CARROSSEL ATACAREJO)').next().attr('id', 'IGCarrosselAtacarejo');
+        $('div.title1:contains(CARROSSEL ATACAREJO)').remove();
+        $('#IGCarrosselAtacarejo').insertAfter('nav#menuMaster');
+    }
+});
+</script>
+
+<style>
+    .menuUser .secundaryLinks a[href="https://www.martinsatacado.com.br/martins/my-account/orders"] {
+        display: none;
+    }
+    section#principalBanners {
+        display: none;
+    }
+    #IGAtcrjHeaderFaixaOut {
+        background-color: #e5e5e5;
+        user-select: none;
+    }
+    #IGAtcrjHeaderFaixaIn {
+        max-width: 1170px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 2%;
+        align-items: center;
+    }
+    #IGAtcrjChooseBusiness {
+        max-width: fit-content;
+        display: flex;
+        margin-right: auto;
+        padding: 10px 0 0;
+    }
+    .IGAtcrjChooseBsnsCTA {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        background-color: #ffffff;
+        color: #6d7384;
+        padding: 7px 22px;
+        display: flex;
+        cursor: pointer;
+    }
+    .IGAtcrjChooseBsnsCTA:hover, .IGAtcrjChooseBsnsCTA:focus, .menuMasterD .container>ul>li a:hover, .menuMasterD .container>ul>li a:focus, #IGAtcrjHeaderCTAAtendimento:hover, #IGAtcrjHeaderCTAAtendimento:focus, #IGAtcrjHeaderCTASair:hover, #IGAtcrjHeaderCTASair:focus {
+        text-decoration: none;
+    }
+    .IGAtcrjChooseBsnsCTA:hover {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    .IGAtcrjChooseBsnsActive {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    #IGAtcrjChooseAtacado {
+        margin-right: 8px;
+    }
+    .IGAtcrjChooseBsnsCTA .fas {
+        margin-right: 10px;
+        font-size: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .IGAtcrjChooseBsnsCTA div {
+        font-size: 12px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    #IGAtcrjHeaderCTAs {
+        max-width: fit-content;
+        display: flex;
+        margin-left: auto;
+        color: #004282;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #IGAtcrjHeaderCTAAcc, #IGAtcrjHeaderCTAAtendimento, #IGAtcrjHeaderCTASair {
+        margin-left: 45px;
+        cursor: pointer;
+    }
+    nav#menuMaster {
+        background-color: #004282;
+        user-select: none;
+    }
+    .menuMasterD .container .menuLiFirst {
+        cursor: pointer;
+    }
+    .menuMasterD .container>ul>li:after {
+        display: none;
+    }
+    /* Alterações faixa de ícones Atacarejo */
+    #IGAtcrjFaixaIcons {
+        display: flex;
+        align-items: center;
+        padding: 12px 0px;
+        margin-top: 50px;
+        color: #6d7384;
+    }
+    #IGAtcrjFaixaIcons img {
+        height: 30px;
+        margin-right: 15px;
+        width: auto;
+    }
+    .IGAtcrjFaixaIcon {
+        width: fit-content;
+        display: flex;
+    }
+    #IGAtcrjFaixaIconsLeft, #IGAtcrjFaixaIconsRight {
+        display: flex;
+        margin: 0 auto;
+        width: 40%;
+    }
+    #IGAtcrjFaixaIconBox, #IGAtcrjFaixaIconChat {
+        margin-left: auto;
+    }
+    /* Alterações Carrossel de Banner ponta a ponta */
+    #IGCarrosselAtacarejo {
+        padding: 0 !important;
+        margin-bottom: 25px;
+    }
+    #IGCarrosselAtacarejo img {
+        margin: 0 !important;
+    }
+    #IGCarrosselAtacarejo .slick-arrow {
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 42px;
+        width: 42px;
+        border: 1px solid #fd792a;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+    #IGCarrosselAtacarejo .slick-arrow i {
+        color: #fd792a;
+        font-size: 25px;
+    }
+    #IGCarrosselAtacarejo .slick-arrow:first-of-type {
+        left: calc((100vw/94.5) * 18);
+    }
+    #IGCarrosselAtacarejo .slick-arrow:last-of-type {
+        right: calc((100vw/94.5) * 18);
+    }
+    #IGCarrosselAtacarejo .slick-dots {
+        bottom: -33px !important;
+    }
+    #IGCarrosselAtacarejo .slick-dots li {
+        width: 9px;
+        height: 9px;
+        background-color: #cecece;
+        border: none;
+        margin-right: 20px;
+    }
+    #IGCarrosselAtacarejo .slick-dots li.slick-active {
+        width: 13px;
+        height: 13px;
+        background-color:#ff5c0a;
+    }
+    @media only screen and (min-width: 768px) {
+        /* Responsividade geral (fora banner) para mobile */
+        section#helpUser>div:nth-of-type(1) {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        /* Alterações faixa de ícones Atacarejo */
+        #IGAtcrjFaixaIcons {
+            display: block;
+            margin-top: 30px;
+        }
+        #IGAtcrjFaixaIconsLeft {
+            margin-bottom: 20px;
+        }
+        #IGAtcrjFaixaIconsLeft, #IGAtcrjFaixaIconsRight {
+            width: 100%;
+        }
+        .IGAtcrjFaixaIcon {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        #IGAtcrjFaixaIcons img {
+            margin-right: 0px;
+        }
+    }
+    @media only screen and (max-width: 767px)
+    {
+        #IGCarrosselAtacarejo .slick-arrow:first-of-type {
+            left: 1% !important;
+        }
+        #IGCarrosselAtacarejo .slick-arrow:last-of-type {
+            right: 1% !important;
+        }
+        #IGCarrosselAtacarejo .slick-arrow {
+            height: 35px;
+            width: 35px;
+        }
+        /* Responsividade geral (fora banner) para mobile */
+        #IGAtcrjHeaderCTAs {
+            display: none;
+        }
+        #IGAtcrjChooseBusiness {
+            margin-left: auto;
+        }
+        section#helpUser {
+            border-top: 1px solid #e6e6e6;
+        }
+        #IGAtcrjHeaderCTAAccMbl, #IGAtcrjHeaderCTAAtendimentoMbl {
+            color: #004282;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #myAccountTitle, #storeNavTitle {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 425px)
+    {
+        #IGCarrosselAtacarejo .slick-arrow {
+            display: none !important;
+        }
+        #IGCarrosselAtacarejo .slick-track {
+            height: calc(100vw/2.84);
+        }
+        #IGCarrosselAtacarejo .slick-slide {
+            position: relative;
+        }
+        #IGCarrosselAtacarejo .slick-current img{
+            z-index: 2;
+        }
+        #IGCarrosselAtacarejo img  {
+            margin: 0 !important;
+            position: absolute;
+            height: calc(100vw/2.84);
+            width: calc(100%*1.69);
+            max-width: calc(100%*1.69);
+        }
+        #IGCarrosselAtacarejo .slick-dots li.slick-active {
+            width: 11px;
+            height: 11px;
+        }
+        #IGCarrosselAtacarejo .slick-dots li {
+            width: 7px;
+            height: 7px;
+        }
+    }
+</style>
+
+<div id="IGAtcrjHeaderFaixaOut">
+    <div id="IGAtcrjHeaderFaixaIn">
+        <div id="IGAtcrjChooseBusiness">
+            <a href="#" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA">
+                <i class="fas fa-store-alt"></i><div>ATACADO</div>
+            </a>
+            <a href="#" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive">
+                <i class="fas fa-shopping-cart"></i><div>ATACAREJO</div>
+            </a>
+        </div>
+        <div id="IGAtcrjHeaderCTAs">
+            <div id="IGAtcrjHeaderCTAName">OLÁ, <span id="IGCliName"></span></div>
+            <div id="IGAtcrjHeaderCTAAcc">MINHA CONTA</div>
+            <a id="IGAtcrjHeaderCTAAtendimento">ATENDIMENTO</a>
+            <a href="https://www.martinsatacado.com.br/logout" id="IGAtcrjHeaderCTASair">SAIR</a>
+        </div>
+    </div>
+</div>
+
+
+<a id="IGAtcrjHeaderCTAAccMbl">MINHA CONTA</a><a id="IGAtcrjHeaderCTAAtendimentoMbl">ATENDIMENTO</a>
+
+
+<div class="container" id="IGAtcrjFaixaIcons">
+    <div id="IGAtcrjFaixaIconsLeft">
+        <div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconMap">
+            <img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h02/h25/9987981115422/territorio_nacional/territorio-nacional.png">
+            <div>
+                <div>Entregamos em</div>
+                <div>todo o Brasil</div>
+            </div>
+        </div>
+        <div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconBox">
+            <img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf1/h21/9987981049886/mix_martins/mix-martins.png">
+            <div>
+                <div>Mix com mais</div>
+                <div>de 25mil itens</div>
+            </div>
+        </div>
+    </div>
+    <div id="IGAtcrjFaixaIconsRight">
+        <div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconCard">
+            <img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hb7/h28/9987980984350/cartao_credito/cartao-credito.png">
+            <div>
+                <div>Pagamento via Boleto</div>
+                <div>ou Cartao de Crédito</div>
+            </div>
+        </div>
+        <div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconChat">
+            <img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h79/h29/9987980918814/atendimento_online/atendimento-online.png">
+            <div>
+                <div>Atencimento online</div>
+                <div>personalizado</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

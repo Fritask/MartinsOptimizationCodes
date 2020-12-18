@@ -7,29 +7,44 @@
 
 <script>
 $(document).ready(function(){
-    //Ajuste: Corrigindo funcionamento da seta em frente ao CTA "DEPARTAMENTOS"
-    $('i.rotate90').removeClass("rotate90");
+    if (! ($('span.hello').length))
+    {
+        // Implementação da faixa do topo
+        $('#helpUser').before('<div id="IGAtcrjHeaderFaixaOut"><div id="IGAtcrjHeaderFaixaIn"><div id="IGAtcrjChooseBusiness"><a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive"><i class="fas fa-store-alt"></i><div>ATACADO</div></a><a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA"><i class="fas fa-shopping-cart"></i><div>ATACAREJO</div></a></div></div></div>');
+        
+        
+        // Segmentação do estilo
+        $('#helpUser').before('<style>section#helpUser{display:none}#IGAtcrjHeaderFaixaOut{background-color:#e5e5e5;user-select:none}#IGAtcrjHeaderFaixaIn{max-width:1170px;width:100%;margin:0 auto;display:flex;padding:0 2%;align-items:center}#IGAtcrjChooseBusiness{max-width:fit-content;display:flex;margin-right:auto;padding:10px 0 0}.IGAtcrjChooseBsnsCTA{border-top-right-radius:5px;border-top-left-radius:5px;background-color:#fff;color:#6d7384;padding:7px 22px;display:flex;cursor:pointer}.IGAtcrjChooseBsnsCTA:focus,.IGAtcrjChooseBsnsCTA:hover,.menuMasterD .container>ul>li a:focus,.menuMasterD .container>ul>li a:hover{text-decoration:none}.IGAtcrjChooseBsnsCTA:hover{background-color:#ff5c0a;color:#fff}.IGAtcrjChooseBsnsActive{background-color:#ff5c0a;color:#fff}#IGAtcrjChooseAtacado{margin-right:8px}.IGAtcrjChooseBsnsCTA .fas{margin-right:10px;font-size:18px;margin-top:auto;margin-bottom:auto}.IGAtcrjChooseBsnsCTA div{font-size:12px;margin-top:auto;margin-bottom:auto}nav#menuMaster{background-color:#004282;user-select:none}.menuMasterD .container .menuLiFirst{cursor:pointer}.menuMasterD .container>ul>li:after{display:none}#IGCloseLoginAnywhere{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:999}@media only screen and (max-width:425px){#IGAtcrjChooseBusiness{margin-left:auto}}</style>');
 
 
-    //Ajuste: Tratamento no modal de login (permitir o fechamento clicando fora do modal)
-    var IGWaitLogin = setInterval(function() {
-        if ($('div.dropdown-menu').length) {
-            $('div.dropdown-menu').before('<div id="IGCloseLoginAnywhere">&nbsp;</div>');
-            $('.pt-login').mouseover(function(){
-                $('#IGCloseLoginAnywhere').css('display', 'block');
-            });
+        // Ajuste: Tratamento no modal de login (permitir o fechamento clicando fora do modal)
+        var IGWaitLogin = setInterval(function() {
+            if ($('div.dropdown-menu').length) {
+                $('div.dropdown-menu').before('<div id="IGCloseLoginAnywhere">&nbsp;</div>');
+                $('.pt-login').mouseover(function(){
+                    $('#IGCloseLoginAnywhere').css('display', 'block');
+                });
 
-            $('.pt-close').click(function(){
-                $('#IGCloseLoginAnywhere').css('display', 'none');
-            });
-    
-            $('#IGCloseLoginAnywhere').click(function(){
-                $('.pt-close').click();
-                $('#IGCloseLoginAnywhere').css('display', 'none');
-            });
-            clearInterval(IGWaitLogin);
+                $('.pt-close').click(function(){
+                    $('#IGCloseLoginAnywhere').css('display', 'none');
+                });
+        
+                $('#IGCloseLoginAnywhere').click(function(){
+                    $('.pt-close').click();
+                    $('#IGCloseLoginAnywhere').css('display', 'none');
+                });
+                clearInterval(IGWaitLogin);
+            }
+        }, 300);
+
+
+        // Ocultando carrossel do atacarejo
+        if ($('div.title1:contains(CARROSSEL ATACAREJO)').length)
+        {
+            $('div.title1:contains(CARROSSEL ATACAREJO)').next().css('display', 'none');
+            $('div.title1:contains(CARROSSEL ATACAREJO)').css('display', 'none');
         }
-    }, 300);
+    }
 });
 </script>
 
@@ -64,7 +79,7 @@ $(document).ready(function(){
         display: flex;
         cursor: pointer;
     }
-    .IGAtcrjChooseBsnsCTA:hover, .IGAtcrjChooseBsnsCTA:focus {
+    .IGAtcrjChooseBsnsCTA:hover, .IGAtcrjChooseBsnsCTA:focus, .menuMasterD .container>ul>li a:hover, .menuMasterD .container>ul>li a:focus {
         text-decoration: none;
     }
     .IGAtcrjChooseBsnsCTA:hover {
@@ -99,9 +114,6 @@ $(document).ready(function(){
     .menuMasterD .container>ul>li:after {
         display: none;
     }
-    .menuMasterD .container>ul>li a:hover, .menuMasterD .container>ul>li a:focus {
-        text-decoration: none;
-    }
     /* Alterações no modal de login */
     #IGCloseLoginAnywhere {
         display: none;
@@ -111,6 +123,13 @@ $(document).ready(function(){
         width: 100vw;
         height: 100vh;
         z-index: 999;
+    }
+    /* Ajustes para mobile */
+    @media only screen and (max-width: 425px)
+    {
+        #IGAtcrjChooseBusiness {
+            margin-left: auto;
+        }
     }
 </style>
 
@@ -126,6 +145,7 @@ $(document).ready(function(){
         </div>
     </div>
 </div>
+
 
 </body>
 </html>

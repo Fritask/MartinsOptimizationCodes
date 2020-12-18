@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+$(document).ready(function(){
+    if ($('span.cnpj').length)
+    {
+        // Implementação da faixa do topo
+        $('#helpUser').before('<div id="IGAtcrjHeaderFaixaOut"><div id="IGAtcrjHeaderFaixaIn"><div id="IGAtcrjChooseBusiness"><a href="#" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive"><i class="fas fa-store-alt"></i><div>ATACADO</div></a><a href="#" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA"><i class="fas fa-shopping-cart"></i><div>ATACAREJO</div></a></div><div id="IGAtcrjHeaderCTAs"><div id="IGAtcrjHeaderCTAName">OLÁ, <span id="IGCliName"></span></div><div id="IGAtcrjHeaderCTAAcc">MINHA CONTA</div><a id="IGAtcrjHeaderCTAAtendimento">ATENDIMENTO</a><a href="https://www.martinsatacado.com.br/logout" id="IGAtcrjHeaderCTASair">SAIR</a></div></div></div>');
+        $('a.logout').next().prepend('<a id="IGAtcrjHeaderCTAAccMbl">MINHA CONTA</a><a id="IGAtcrjHeaderCTAAtendimentoMbl">ATENDIMENTO</a>');
+        
+        // Segmentação do estilo
+        $('#helpUser').before('<style>.menuUser .secundaryLinks a[href="https://www.martinsatacado.com.br/martins/my-account/orders"]{display:none}#IGAtcrjHeaderFaixaOut{background-color:#e5e5e5;user-select:none}#IGAtcrjHeaderFaixaIn{max-width:1170px;width:100%;margin:0 auto;display:flex;padding:0 2%;align-items:center}#IGAtcrjChooseBusiness{max-width:fit-content;display:flex;margin-right:auto;padding:10px 0 0}.IGAtcrjChooseBsnsCTA{border-top-right-radius:5px;border-top-left-radius:5px;background-color:#fff;color:#6d7384;padding:7px 22px;display:flex;cursor:pointer}#IGAtcrjHeaderCTAAtendimento:focus,#IGAtcrjHeaderCTAAtendimento:hover,#IGAtcrjHeaderCTASair:focus,#IGAtcrjHeaderCTASair:hover,.IGAtcrjChooseBsnsCTA:focus,.IGAtcrjChooseBsnsCTA:hover,.menuMasterD .container>ul>li a:focus,.menuMasterD .container>ul>li a:hover{text-decoration:none}.IGAtcrjChooseBsnsCTA:hover{background-color:#ff5c0a;color:#fff}.IGAtcrjChooseBsnsActive{background-color:#ff5c0a;color:#fff}#IGAtcrjChooseAtacado{margin-right:8px}.IGAtcrjChooseBsnsCTA .fas{margin-right:10px;font-size:18px;margin-top:auto;margin-bottom:auto}.IGAtcrjChooseBsnsCTA div{font-size:12px;margin-top:auto;margin-bottom:auto}#IGAtcrjHeaderCTAs{max-width:fit-content;display:flex;margin-left:auto;color:#004282;font-size:12px;font-weight:700}#IGAtcrjHeaderCTAAcc,#IGAtcrjHeaderCTAAtendimento,#IGAtcrjHeaderCTASair{margin-left:45px;cursor:pointer}nav#menuMaster{background-color:#004282;user-select:none}.menuMasterD .container .menuLiFirst{cursor:pointer}.menuMasterD .container>ul>li:after{display:none}@media only screen and (min-width:768px){section#helpUser>div:nth-of-type(1){display:none}}@media only screen and (max-width:767px){#IGAtcrjHeaderCTAs{display:none}#IGAtcrjChooseBusiness{margin-left:auto}section#helpUser{border-top:1px solid #e6e6e6}#IGAtcrjHeaderCTAAccMbl,#IGAtcrjHeaderCTAAtendimentoMbl{color:#004282;font-size:12px;font-weight:700}#myAccountTitle,#storeNavTitle{display:none}}</style>');
+
+
+        // Ocultando carrossel do atacarejo
+        if ($('div.title1:contains(CARROSSEL ATACAREJO)').length)
+        {
+            $('div.title1:contains(CARROSSEL ATACAREJO)').next().css('display', 'none');
+            $('div.title1:contains(CARROSSEL ATACAREJO)').css('display', 'none');
+        }
+
+
+        // Serviço: Obter primeiro nome do cliente CPF
+        var IGVarCliData = $('div.welcome').find('span').slice(1,2).text();
+        var IGVarCliName = IGVarCliData.substr(0, IGVarCliData.indexOf(' '));
+        $('#IGCliName').text(IGVarCliName);
+
+
+        // Serviço: Clique dos CTAs da nova faixa do topo
+        $('#IGAtcrjHeaderCTAAcc').click(function(){
+            $('#myAccountTitle').click();
+        });
+        $('#IGAtcrjHeaderCTAAccMbl').click(function(){
+            $('#myAccountTitle').click();
+        });
+    }
+});
+</script>
+
+<style>
+    .menuUser .secundaryLinks a[href="https://www.martinsatacado.com.br/martins/my-account/orders"] {
+        display: none;
+    }
+    #IGAtcrjHeaderFaixaOut {
+        background-color: #e5e5e5;
+        user-select: none;
+    }
+    #IGAtcrjHeaderFaixaIn {
+        max-width: 1170px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 2%;
+        align-items: center;
+    }
+    #IGAtcrjChooseBusiness {
+        max-width: fit-content;
+        display: flex;
+        margin-right: auto;
+        padding: 10px 0 0;
+    }
+    .IGAtcrjChooseBsnsCTA {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        background-color: #ffffff;
+        color: #6d7384;
+        padding: 7px 22px;
+        display: flex;
+        cursor: pointer;
+    }
+    .IGAtcrjChooseBsnsCTA:hover, .IGAtcrjChooseBsnsCTA:focus, .menuMasterD .container>ul>li a:hover, .menuMasterD .container>ul>li a:focus, #IGAtcrjHeaderCTAAtendimento:hover, #IGAtcrjHeaderCTAAtendimento:focus, #IGAtcrjHeaderCTASair:hover, #IGAtcrjHeaderCTASair:focus {
+        text-decoration: none;
+    }
+    .IGAtcrjChooseBsnsCTA:hover {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    .IGAtcrjChooseBsnsActive {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    #IGAtcrjChooseAtacado {
+        margin-right: 8px;
+    }
+    .IGAtcrjChooseBsnsCTA .fas {
+        margin-right: 10px;
+        font-size: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .IGAtcrjChooseBsnsCTA div {
+        font-size: 12px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    #IGAtcrjHeaderCTAs {
+        max-width: fit-content;
+        display: flex;
+        margin-left: auto;
+        color: #004282;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #IGAtcrjHeaderCTAAcc, #IGAtcrjHeaderCTAAtendimento, #IGAtcrjHeaderCTASair {
+        margin-left: 45px;
+        cursor: pointer;
+    }
+    nav#menuMaster {
+        background-color: #004282;
+        user-select: none;
+    }
+    .menuMasterD .container .menuLiFirst {
+        cursor: pointer;
+    }
+    .menuMasterD .container>ul>li:after {
+        display: none;
+    }
+    @media only screen and (min-width: 768px) {
+        /* Responsividade geral (fora banner) para mobile */
+        section#helpUser>div:nth-of-type(1) {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 767px)
+    {
+        /* Responsividade geral (fora banner) para mobile */
+        #IGAtcrjHeaderCTAs {
+            display: none;
+        }
+        #IGAtcrjChooseBusiness {
+            margin-left: auto;
+        }
+        section#helpUser {
+            border-top: 1px solid #e6e6e6;
+        }
+        #IGAtcrjHeaderCTAAccMbl, #IGAtcrjHeaderCTAAtendimentoMbl {
+            color: #004282;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #myAccountTitle, #storeNavTitle {
+            display: none;
+        }
+    }
+</style>
+
+<div id="IGAtcrjHeaderFaixaOut">
+    <div id="IGAtcrjHeaderFaixaIn">
+        <div id="IGAtcrjChooseBusiness">
+            <a href="#" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA">
+                <i class="fas fa-store-alt"></i><div>ATACADO</div>
+            </a>
+            <a href="#" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive">
+                <i class="fas fa-shopping-cart"></i><div>ATACAREJO</div>
+            </a>
+        </div>
+        <div id="IGAtcrjHeaderCTAs">
+            <div id="IGAtcrjHeaderCTAName">OLÁ, <span id="IGCliName"></span></div>
+            <div id="IGAtcrjHeaderCTAAcc">MINHA CONTA</div>
+            <a id="IGAtcrjHeaderCTAAtendimento">ATENDIMENTO</a>
+            <a href="https://www.martinsatacado.com.br/logout" id="IGAtcrjHeaderCTASair">SAIR</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
