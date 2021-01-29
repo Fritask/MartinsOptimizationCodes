@@ -12,7 +12,7 @@ $(document).ready(function(){
         $('.product-line').each(function(){
             if( !($(this).find('.col-1').find('.space-product').find('.vendor').text().includes("Martins")) )
             {
-                $('div.oc-details').find('.line').slice(1,2).after('<div id="IGMsgBCSLine" class="line"><div id="IGMsgCompraBoletoSeller"><div id="IGMsgCBS1"><span class="fas fa-exclamation-circle"></span></div><div id="IGMsgCBS2"><div id="IGCBSTitle">Caro cliente</div><div id="IGCBSText1">Informamos que, para compras de lojas parceiras, o boleto não será enviado junto à entrega.</div><div id="IGCBSText2">Fique atento ao recebimento através do seu e-mail ou, se preferir, acesse o site para fazer a reimpressão.</div></div></div></div>');
+                $('div.oc-details').find('.line').slice(1,2).after('<div id="IGMsgBCSLine" class="line"><div id="IGMsgCompraBoletoSeller"><div id="IGMsgCBS1"><span class="fas fa-exclamation-circle"></span></div><div id="IGMsgCBS2"><div id="IGCBSText1"><b>Informe Martins:</b>  Em suas compras de lojas parceiras, o boleto não será enviado junto à entrega. Fique atento ao recebimento através do seu e-mail ou, se preferir, acesse o site para fazer a reimpressão através de: <b>minha conta &gt; reimpressão de boletos</b>.</div><div id="IGCBSText2"><b>Importante:</b> O vencimento do boleto pode ocorrer antes do recebimento de seu pedido.</div></div></div></div>');
                 return false;
             }
         });
@@ -43,11 +43,11 @@ $(document).ready(function(){
         left: 0;
         top: 50%;
     }
-    #IGMsgCBS1 span, #IGCBSTitle {
+    #IGMsgCBS1 span {
         color: #3485c2;
     }
-    #IGCBSText1 {
-        margin-top: 5px;
+    #IGCBSText2 {
+        margin-top: 10px;
     }
     .oc-details .line:nth-of-type(2) {
         border: none;
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 <a href="https://1drv.ms/x/s!AvJvozhnR4BebPyJAvOmGnC0SpU?e=cAQnfb" target="_blank" class="ASM-btn ASM-btn-customer-list element-separator-height" id="IGASMRestricaoCTA"><span class="fas fa-exclamation-circle"></span><span class="hidden-sm ASM-btn ASM-btn-customers">Restrição Seller</span></a>
 
-<div id="IGMsgBCSLine" class="line"><div id="IGMsgCompraBoletoSeller"><div id="IGMsgCBS1"><span class="fas fa-exclamation-circle"></span></div><div id="IGMsgCBS2"><div id="IGCBSTitle">Caro cliente</div><div id="IGCBSText1">Informamos que, para compras de lojas parceiras, o boleto não será enviado junto à entrega.</div><div id="IGCBSText2">Fique atento ao recebimento através do seu e-mail ou, se preferir, acesse o site para fazer a reimpressão.</div></div></div></div>
+<div id="IGMsgBCSLine" class="line"><div id="IGMsgCompraBoletoSeller"><div id="IGMsgCBS1"><span class="fas fa-exclamation-circle"></span></div><div id="IGMsgCBS2"><div id="IGCBSText1"><b>Informe Martins:</b>  Em suas compras de lojas parceiras, o boleto não será enviado junto à entrega. Fique atento ao recebimento através do seu e-mail ou, se preferir, acesse o site para fazer a reimpressão através de: <b>minha conta &gt; reimpressão de boletos</b>.</div><div id="IGCBSText2"><b>Importante:</b> O vencimento do boleto pode ocorrer antes do recebimento de seu pedido.</div></div></div></div>
 
 </body>
 </html>

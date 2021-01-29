@@ -10,11 +10,11 @@ $(document).ready(function(){
     if (! ($('span.hello').length))
     {
         // Implementação da faixa do topo
-        $('#helpUser').before('<div id="IGAtcrjHeaderFaixaOut"><div id="IGAtcrjHeaderFaixaIn"><div id="IGAtcrjChooseBusiness"><a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive"><i class="fas fa-store-alt"></i><div>ATACADO</div></a><a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA"><i class="fas fa-shopping-cart"></i><div>ATACAREJO</div></a></div></div></div>');
+        $('#helpUser').before('<div id="IGAtcrjHeaderFaixaOut"><div id="IGAtcrjHeaderFaixaIn"><div id="IGAtcrjChooseBusiness"><a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive"><i class="fas fa-store-alt"></i><div>ATACADO</div></a><a id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA"><i class="fas fa-shopping-cart"></i><div>ATACAREJO</div></a></div></div></div>');
         
         
         // Segmentação do estilo
-        $('#helpUser').before('<style>section#helpUser{display:none}#IGAtcrjHeaderFaixaOut{background-color:#e5e5e5;user-select:none}#IGAtcrjHeaderFaixaIn{max-width:1170px;width:100%;margin:0 auto;display:flex;padding:0 2%;align-items:center}#IGAtcrjChooseBusiness{max-width:fit-content;display:flex;margin-right:auto;padding:10px 0 0}.IGAtcrjChooseBsnsCTA{border-top-right-radius:5px;border-top-left-radius:5px;background-color:#fff;color:#6d7384;padding:7px 22px;display:flex;cursor:pointer}.IGAtcrjChooseBsnsCTA:focus,.IGAtcrjChooseBsnsCTA:hover,.menuMasterD .container>ul>li a:focus,.menuMasterD .container>ul>li a:hover{text-decoration:none}.IGAtcrjChooseBsnsCTA:hover{background-color:#ff5c0a;color:#fff}.IGAtcrjChooseBsnsActive{background-color:#ff5c0a;color:#fff}#IGAtcrjChooseAtacado{margin-right:8px}.IGAtcrjChooseBsnsCTA .fas{margin-right:10px;font-size:18px;margin-top:auto;margin-bottom:auto}.IGAtcrjChooseBsnsCTA div{font-size:12px;margin-top:auto;margin-bottom:auto}nav#menuMaster{background-color:#004282;user-select:none}.menuMasterD .container .menuLiFirst{cursor:pointer}.menuMasterD .container>ul>li:after{display:none}#IGCloseLoginAnywhere{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:999}@media only screen and (max-width:425px){#IGAtcrjChooseBusiness{margin-left:auto}}</style>');
+        $('#helpUser').before('<style>section#helpUser{display:none}#IGAtcrjHeaderFaixaOut{background-color:#e5e5e5;user-select:none}#IGAtcrjHeaderFaixaIn{max-width:1170px;width:100%;margin:0 auto;display:flex;padding:0 2%;align-items:center}#IGAtcrjChooseBusiness{max-width:fit-content;display:flex;margin-right:auto;padding:10px 0 0}.IGAtcrjChooseBsnsCTA{border-top-right-radius:5px;border-top-left-radius:5px;background-color:#fff;color:#6d7384;padding:7px 22px;display:flex;cursor:pointer}.IGAtcrjChooseBsnsCTA:focus,.IGAtcrjChooseBsnsCTA:hover,.menuMasterD .container>ul>li a:focus,.menuMasterD .container>ul>li a:hover{text-decoration:none}.IGAtcrjChooseBsnsCTA:hover{background-color:#ff5c0a;color:#fff}.IGAtcrjChooseBsnsActive{background-color:#ff5c0a;color:#fff}#IGAtcrjChooseAtacado{margin-right:8px}.IGAtcrjChooseBsnsCTA .fas{margin-right:10px;font-size:18px;margin-top:auto;margin-bottom:auto}.IGAtcrjChooseBsnsCTA div{font-size:12px;margin-top:auto;margin-bottom:auto}nav#menuMaster{background-color:#004282;user-select:none}.menuMasterD .container .menuLiFirst{cursor:pointer}.menuMasterD .container>ul>li:after{display:none}#IGCloseLoginAnywhere{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:999}#IGCadastroCTAParent{position:relative;z-index:1000}#IGCadastroCTA{display:block;border-radius:5px;position:absolute;white-space:nowrap;color:#fff;top:50%;left:5px;transform:translate(0,-50%);font-size:12px;padding:8px 15px;background-color:#ff5c0a;cursor:pointer;font-weight:700}#IGCadastroCTA:focus,#IGCadastroCTA:hover{text-decoration:none}#IGNewLoginCTA{height:fit-content;margin:auto 0;z-index:1000}#IGNewLoginCTA p{margin:0 0 0 5px;font-size:12px;text-decoration:underline}.pt-login .fa-user-circle{font-size:20px;margin:0}.pt-login-label{display:none}.IGCTAsLoginCadMobile{font-size:13px;font-style:normal;margin-top:5px}.logedOut a{text-align:center;color:transparent!important}.logedOut i.icon-user-circle{color:#fff!important}@media only screen and (min-width:992px){div.boxTools{width:22%!important}}@media only screen and (max-width:991px){div.boxTools{margin:0!important}}@media only screen and (max-width:425px){#IGAtcrjChooseBusiness{margin-left:auto}}@media only screen and (max-width:330px){.logedOut a:first-of-type{margin-right:0!important}}</style>');
 
 
         // Ajuste: Tratamento no modal de login (permitir o fechamento clicando fora do modal)
@@ -34,16 +34,143 @@ $(document).ready(function(){
                     $('#IGCloseLoginAnywhere').css('display', 'none');
                 });
                 clearInterval(IGWaitLogin);
+
+
+                // Implementação do CTA "CADASTRE-SE"
+                $('div.pt-web').find('.boxTools').prepend('<div id="IGCadastroCTAParent"><a id="IGCadastroCTA" href="/martins/pt/BRL/register">CADASTRE-SE</a></div>');
+
+                // Implementação do CTA "FAÇA SEU LOGIN"
+                $('.pt-lg').append('<div id="IGNewLoginCTA"><p><a href="/martins/pt/BRL/login">FAÇA SEU LOGIN</a></p></div>');
+
+                // Tratamento dos ícones de cadastro e login mobile
+                $('.logedOut').children().first().find('i').removeClass('icon-user-circle').addClass('icon-sign-in').prepend('<div class="IGCTAsLoginCadMobile">Cadastre</div>');
+                $('.logedOut').children().last().find('i').removeClass('icon-sign-in').addClass('icon-user-circle').prepend('<div class="IGCTAsLoginCadMobile">Login</div>');
             }
         }, 300);
 
 
-        // Ocultando carrossel do atacarejo
-        if ($('div.title1:contains(CARROSSEL ATACAREJO)').length)
+        // AQUI QUE A MÁGICA ACONTECE *************************************************
+        if (localStorage.IGActiveAtcrjDeslogado == 1)
         {
-            $('div.title1:contains(CARROSSEL ATACAREJO)').next().css('display', 'none');
-            $('div.title1:contains(CARROSSEL ATACAREJO)').css('display', 'none');
+            // Desativa CTA do Atacado e ativa CTA do Atacarejo
+            $('#IGAtcrjChooseAtacado').removeClass('IGAtcrjChooseBsnsActive');
+            $('#IGAtcrjChooseAtacarejo').addClass('IGAtcrjChooseBsnsActive');
+
+
+            // Altera função do CTA "ATACADO"
+            $('#IGAtcrjChooseAtacado').attr('href', '#');
+            $('#IGAtcrjChooseAtacado').click(function(){
+                location.reload();
+            });
+
+
+            // Segmentação do estilo ATACAREJO
+            $('#helpUser').before('<style>body{background-color:#f5f5f5}#IGBigBem,#IGCarrosselFrete,section#categoriesBox,section#principalBanners{display:none}#IGAtcrjFaixaIcons{display:flex;align-items:center;padding:12px 0;margin-top:50px;color:#6d7384}#IGAtcrjFaixaIcons img{height:30px;margin-right:15px;width:auto}.IGAtcrjFaixaIcon{width:fit-content;display:flex}#IGAtcrjFaixaIconsLeft,#IGAtcrjFaixaIconsRight{display:flex;margin:0 auto;width:40%}#IGAtcrjFaixaIconBox,#IGAtcrjFaixaIconChat{margin-left:auto}.IGAtcrjTitle{font-size:22px;color:#ff5c0a;font-weight:700;margin:25px auto}.IGAtcrjTitle div{padding-left:15px;border-left:solid 3px}#IGAtcrjOfertasDoDiaCrsl .slick-slide{height:127px;display:block;text-align:center}#IGAtcrjOfertasDoDiaCrsl .slick-slide:focus,#IGAtcrjOfertasDoDiaCrsl .slick-slide:hover{text-decoration:none;color:#7a7f8e;outline:0}#IGAtcrjOfertasDoDiaCrsl .slick-track{background-color:#fff;border-radius:5px;overflow:hidden}#IGAtcrjOfertasDoDiaCrsl .slick-slide:hover{background-color:rgba(0,0,0,.1)}#IGAtcrjOfertasDoDiaCrsl .slick-slide img{background-color:rgba(0,0,0,0)!important;margin:33px auto 5px}.IGAtcrjOfertasImgTxt{color:#7a7f8e}#IGAtcrjPesquisePorMarcasCrsl{margin-bottom:50px}#IGAtcrjPesquisePorMarcasCrsl img{border-radius:5px}#IGAtcrjPesquisePorMarcasCrsl img:hover{box-shadow:0 0 5px 4px rgba(0,0,0,.2);z-index:1}#IGAtcrjPesquisePorMarcasCrsl .slick-slide:focus{outline:0!important}#IGAtcrjBannerFreteProg a{display:block}#IGAtcrjBannerFreteProg a:hover img{box-shadow:0 0 5px 4px rgba(0,0,0,.2)}#IGAtcrjBannerFreteProg img{border-radius:5px;max-width:100%}#IGAtcrjContainerFaixaLead{margin-top:50px}#IGAtcrjFaixaLead{background:url(https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hfd/hb5/10138861469726/IGAtcrjFaixaLeadDesktop/IGAtcrjFaixaLeadDesktop.png) no-repeat;display:flex;height:142px;align-items:center;border-radius:5px;user-select:none}.IGAtcrjFaixaLeadChild{width:50%}#IGAtcrjFaixaLeadChildLeft{width:35%;float:right}#IGAtcrjFaixaLeadChildLeft div{color:#fff;font-weight:700}#IGAtcrjFaixaLeadChildLeft ins{color:#cecece;margin-top:10px;display:block;font-size:12px;cursor:pointer}#IGAtcrjFaixaLeadChildRight{margin-left:30px}#IGAtcrjFaixaLeadMail{color:#fff;margin-bottom:5px;font-size:13px}#IGAtcrjFaixaLeadForm{display:flex;align-items:center}#IGAtcrjFaixaLeadForm input{color:#033f85;padding:10px;font-size:13px;width:230px;text-align:left;border-radius:5px;border:none}#IGAtcrjFaixaLeadForm input:focus{outline:0}#IGAtcrjFaixaLeadCTA{margin-left:10px;color:#fff;font-weight:700;background-image:linear-gradient(to right,#ff5d00 ,#ffa87d);height:fit-content;padding:10px 12px;border-radius:5px;cursor:pointer}#IGAtcrjContainerFaixaLeadMobile{margin-top:50px;user-select:none;display:none}#IGAtcrjFaixaLeadMobile{position:relative;width:fit-content;margin:0 auto}#IGAtcrjFaixaLeadMobile img{max-width:100%}.IGAtcrjFaixaLeadChildMobile{position:absolute}.IGAtcrjFaixaLeadChildMobile:first-of-type{top:10px;left:35%;width:65%}.IGAtcrjFaixaLeadChildMobile:first-of-type div{font-size:14px;color:#fff;font-weight:700}.IGAtcrjFaixaLeadChildMobile:first-of-type ins{color:#cecece;display:block;font-size:12px;width:fit-content}.IGAtcrjFaixaLeadChildMobile:last-of-type{position:absolute;bottom:15px;left:50%;transform:translate(-50%,0);text-align:center}.IGAtcrjFaixaLeadChildMobile:last-of-type div:first-of-type{color:#fff;margin-bottom:5px;font-size:13px}.IGAtcrjFaixaLeadChildMobile:last-of-type input{color:#033f85;padding:10px;font-size:13px;width:260px;text-align:center;border-radius:5px;border:none}.IGAtcrjFaixaLeadChildMobile:last-of-type div:last-of-type{margin-top:8px;color:#fff;font-weight:700;background-image:linear-gradient(to right,#ff5d00 ,#ffa87d);height:fit-content;padding:10px 12px;border-radius:5px;cursor:pointer}section.destaques{border:none!important;margin:10px 0 50px!important}.destaques .titleBox{display:none}#IGAtcrjPesquisePorMarcasCrsl .slick-track,.destaques .slick-track{padding:10px 0}.destaques .slideModelProduct .productItem>a{background-color:#fff;height:380px;padding:25px 10px 8px;border-radius:5px;width:180px;position:relative}.destaques .slideModelProduct .productItem>a:hover{transform:scale(1.05)}.destaques .slideModelProduct .productItem>a:focus{outline:0!important}.destaques .slideModelProduct .slick-slide img{margin:0 auto 15px;padding:0}.productItem .details{text-align:left}.productItem .details .description{color:#7c8293;font-weight:700;font-size:13px;min-height:37px;max-height:37px;overflow:hidden}.productItem .details .value{color:#ff5c0a;font-size:17px}.productItem .details .obs{display:none}.IGCarrosselProdPrecoDe{margin:0;color:#babdc5;font-weight:700;font-size:15px;text-decoration:line-through}.IGCarrosselProdPrecoClosedBox{font-size:14px;font-weight:700;margin:0;color:#7a7f8e}.IGCarrosselProdPrecoInfo{color:#80b8ff;font-size:14px;margin-left:5px}.IGActrjProductCTAs{position:absolute;bottom:8px;width:160px}.IGAtcrjProductBuy,.IGAtcrjProductQtd{width:100%;border-radius:5px;text-align:center;height:34px;font-weight:700}.IGAtcrjProductQtd{background-color:#e5e5e5;color:#6d7384;padding:0 20px;margin-bottom:5px}.IGAtcrjProductQtdInner{display:flex;height:100%;align-items:center}.IGAtcrjProductQtdValue{margin:0 auto}.IGAtcrjProductBuy{background-color:#ff5c0a;color:#fff}.IGAtcrjProductBuyInner{display:flex;margin:0 auto;width:fit-content;height:100%;align-items:center}.IGAtcrjProductBuyInner i{margin-left:5px;font-size:17px}#IGAtcrjBannersMetade{display:flex}#IGAtcrjBannersMetade a{display:block}#IGAtcrjBannersMetade a:last-of-type{margin-left:auto}#IGAtcrjBannersMetade img{border-radius:5px}#IGAtcrjBannersMetade img:hover{box-shadow:0 0 5px 4px rgba(0,0,0,.2)}@media only screen and (max-width:1199px){#IGAtcrjBannersMetade img{max-width:calc(100% - 10px)}}@media only screen and (max-width:991px){#IGAtcrjBannersMetade{display:block;margin-top:50px}#IGAtcrjBannersMetade img{min-width:100%;max-width:100%}#IGAtcrjBannersMetade a:last-of-type{margin-top:10px}#IGAtcrjPesquisePorMarcas{margin-bottom:0}#IGAtcrjBannerFreteProg a{max-width:fit-content;margin:0 auto}#IGAtcrjBannerFreteProg a:hover img{box-shadow:none}#IGAtcrjBannerFreteProg img{border-radius:0;content:url(https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf2/hd3/10138883522590/IGAtcrjBannerFreteProgMobile/IGAtcrjBannerFreteProgMobile.png);max-width:100%}#IGAtcrjContainerFaixaLeadMobile{display:block}#IGAtcrjContainerFaixaLead{display:none}}#IGCarrosselAtacarejo{padding:0!important;margin-bottom:25px}#IGCarrosselAtacarejo img{margin:0!important}#IGAtcrjPesquisePorMarcasCrsl .slick-arrow,#IGCarrosselAtacarejo .slick-arrow,.destaques .slideModelProduct .slick-arrow{top:50%;transform:translate(0,-50%);height:42px;width:42px;border:1px solid #fd792a;border-radius:50%;background-color:#fff}#IGAtcrjPesquisePorMarcasCrsl .slick-arrow i,#IGCarrosselAtacarejo .slick-arrow i,.destaques .slideModelProduct .slick-arrow i{color:#fd792a;font-size:25px}#IGCarrosselAtacarejo .slick-arrow:first-of-type{left:calc((100vw/94.5) * 18)}#IGCarrosselAtacarejo .slick-arrow:last-of-type{right:calc((100vw/94.5) * 18)}#IGAtcrjPesquisePorMarcasCrsl .slick-dots,#IGCarrosselAtacarejo .slick-dots,.destaques .slideModelProduct .slick-dots{bottom:-33px!important}#IGAtcrjPesquisePorMarcasCrsl .slick-dots li,#IGCarrosselAtacarejo .slick-dots li,.destaques .slideModelProduct .slick-dots li{width:9px;height:9px;background-color:#cecece;border:none;margin-right:20px}#IGAtcrjPesquisePorMarcasCrsl .slick-dots li.slick-active,#IGCarrosselAtacarejo .slick-dots li.slick-active,.destaques .slideModelProduct .slick-dots li.slick-active{width:13px;height:13px;background-color:#ff5c0a}@media only screen and (max-width:991px){#IGAtcrjOfertasDoDia{width:100%;padding:0}#IGAtcrjOfertasDoDiaCrsl .slick-slide{width:calc(100vw/3)!important}#IGAtcrjOfertasDoDiaCrsl .slick-arrow,#IGAtcrjPesquisePorMarcasCrsl .slick-arrow,.destaques .slideModelProduct .slick-arrow{top:50%;transform:translate(0,-50%);height:35px;width:35px}#IGAtcrjOfertasDoDiaCrsl .slick-arrow i,#IGAtcrjPesquisePorMarcasCrsl .slick-arrow i,.destaques .slideModelProduct .slick-arrow i{color:#fd792a;font-size:15px}#IGAtcrjOfertasDoDiaCrsl .slick-arrow:first-of-type{left:-4px!important}#IGAtcrjOfertasDoDiaCrsl .slick-arrow:last-of-type{right:-4px!important}#IGAtcrjFaixaIcons{display:block;margin-top:30px}#IGAtcrjFaixaIconsLeft{margin-bottom:20px}#IGAtcrjFaixaIconsLeft,#IGAtcrjFaixaIconsRight{width:100%}.IGAtcrjFaixaIcon{margin:0 auto;display:block;text-align:center}#IGAtcrjFaixaIcons img{margin-right:0}}@media only screen and (max-width:767px){#IGCarrosselAtacarejo .slick-arrow:first-of-type{left:1%!important}#IGCarrosselAtacarejo .slick-arrow:last-of-type{right:1%!important}#IGCarrosselAtacarejo .slick-arrow{height:35px;width:35px}}</style>');
+
+
+            // Implementação da faixa de ícones Atacarejo
+            setTimeout(function(){
+                $('#IGCarrosselAtacarejo').after('<div class="container" id="IGAtcrjFaixaIcons"><div id="IGAtcrjFaixaIconsLeft"><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconMap"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h02/h25/9987981115422/territorio_nacional/territorio-nacional.png"><div><div>Entregamos em</div><div>todo o Brasil</div></div></div><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconBox"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf1/h21/9987981049886/mix_martins/mix-martins.png"><div><div>Mix com mais</div><div>de 25mil itens</div></div></div></div><div id="IGAtcrjFaixaIconsRight"><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconCard"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hb7/h28/9987980984350/cartao_credito/cartao-credito.png"><div><div>Pagamento via Boleto</div><div>ou Cartao de Crédito</div></div></div><div class="IGAtcrjFaixaIcon" id="IGAtcrjFaixaIconChat"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h79/h29/9987980918814/atendimento_online/atendimento-online.png"><div><div>Atencimento online</div><div>personalizado</div></div></div></div></div>');
+            }, 300);
+
+
+            // Banner ponta a ponta
+            $('div.title1:contains(CARROSSEL ATACAREJO)').next().attr('id', 'IGCarrosselAtacarejo');
+            $('div.title1:contains(CARROSSEL ATACAREJO)').remove();
+            $('#IGCarrosselAtacarejo').css('display', 'block');
+            $('#IGCarrosselAtacarejo').insertAfter('nav#menuMaster');
+
+
+            // Carrossel de Produtos
+            $('section.destaques').find('.slideModelProduct').attr('id', 'IGCarrosselProdutos1');
+            $('section.destaques').css('display', 'block');
+            $('#IGCarrosselProdutos1').find('.productItem').find('.value').each(function() {
+                if ($(this).text().includes("R$"))
+                {
+                    $(this).before('<p class="IGCarrosselProdPrecoDe">' + $(this).text() + '</p>');
+                    $(this).append('<i class="fas fa-info-circle IGCarrosselProdPrecoInfo"></i>');
+                    $(this).after('<p class="IGCarrosselProdPrecoClosedBox">Cx. Fechada ' + $(this).text() + '</p>');
+                }
+            });
+            $('#IGCarrosselProdutos1').find('.productItem a').append('<div class=IGActrjProductCTAs><div class=IGAtcrjProductQtd><div class=IGAtcrjProductQtdInner><div><i class="fas fa-minus"></i></div><div class=IGAtcrjProductQtdValue><span>01</span></div><div><i class="fas fa-plus"></i></div></div></div><div class=IGAtcrjProductBuy><div class=IGAtcrjProductBuyInner><div>COMPRAR</div><i class="fas fa-shopping-cart"></i></div></div></div>');
+
+
+            // Ícones Ofertas do dia
+            $('div.title1:contains(OFERTAS DO DIA)').next().attr('id', 'IGAtcrjOfertasDoDiaCrsl');
+            $('div.title1:contains(OFERTAS DO DIA)').remove();
+            $('#IGAtcrjOfertasDoDiaCrsl').css('display', 'block');
+
+            $('section#categoriesBox').before('<div class="container IGAtcrjTitle"><div>Ofertas do dia</div></div>').before('<div id="IGAtcrjOfertasDoDia" class="container"></div>');
+            $('#IGAtcrjOfertasDoDia').append($('#IGAtcrjOfertasDoDiaCrsl'));
+
+            $('#IGAtcrjOfertasDoDiaCrsl').find('img').each(function(){
+                $(this).after('<div class="IGAtcrjOfertasImgTxt">' + $(this).attr('title') + '</div>');
+            });
+
+            setTimeout(function(){
+                $('#IGAtcrjOfertasDoDiaCrsl').find('.slick-arrow').find('i').slice(0,1).removeClass().addClass('fas fa-arrow-left');
+                $('#IGAtcrjOfertasDoDiaCrsl').find('.slick-arrow').find('i').slice(1,2).removeClass().addClass('fas fa-arrow-right');
+            }, 300);
+
+
+            // Movendo Carrossel de produtos e Banner Metade
+            $('section#categoriesBox').before($('section.destaques')).before('<div class="container" id="IGAtcrjBannersMetade"><a href=""><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h1e/hba/10142087577630/DESTAQUE%20CAFETEIRAS/DESTAQUE-CAFETEIRAS.png"></a><a href=""><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/he7/hac/10142087938078/DESTAQUE%20WHISKY%20ATACAREJO/DESTAQUE-WHISKY-ATACAREJO.jpg"></a></div>');
+        
+            
+            // Pesquise por marcas
+            $('div.title1:contains(PESQUISE POR MARCAS)').next().attr('id', 'IGAtcrjPesquisePorMarcasCrsl');
+            $('div.title1:contains(PESQUISE POR MARCAS)').remove();
+            $('#IGAtcrjPesquisePorMarcasCrsl').css('display', 'block');
+
+            $('section#categoriesBox').before('<div class="container IGAtcrjTitle"><div>Pesquise por Marcas</div></div>').before('<div id="IGAtcrjPesquisePorMarcas" class="container"></div>');
+            $('#IGAtcrjPesquisePorMarcas').append($('#IGAtcrjPesquisePorMarcasCrsl'));
+
+
+            // Banner frete progressivo
+            $('section#categoriesBox').before('<div class="container" id="IGAtcrjBannerFreteProg"><a href=""><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h6d/h18/10137457983518/IGAtcrjBannerFreteProg/IGAtcrjBannerFreteProg.png"></a></div>');
+
+
+            // Faixa Lead
+            $('section#categoriesBox').before('<div class="container" id="IGAtcrjContainerFaixaLead"><div id="IGAtcrjFaixaLead"><div class="IGAtcrjFaixaLeadChild"><div id="IGAtcrjFaixaLeadChildLeft"><div>Quer receber nossas ofertas, lançamentos e novidades em primeira mão?</div><ins>Política de privacidade</ins></div></div><div class="IGAtcrjFaixaLeadChild"><div id="IGAtcrjFaixaLeadChildRight"><div id="IGAtcrjFaixaLeadMail">Informe seu Email</div><div id="IGAtcrjFaixaLeadForm"><input type="email" placeholder="nome@domínio.com"><div id="IGAtcrjFaixaLeadCTA">CADASTRAR</div></div></div></div></div></div>');
+
+            // Faixa Lead Mobile
+            $('section#categoriesBox').before('<div class="container" id="IGAtcrjContainerFaixaLeadMobile"><div id="IGAtcrjFaixaLeadMobile"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h44/hd3/10138883588126/IGAtcrjFaixaLeadMobile/IGAtcrjFaixaLeadMobile.png"><div class="IGAtcrjFaixaLeadChildMobile"><div>Quer receber nossas ofertas, lançamentos e novidades em primeira mão?</div><ins>Política de privacidade</ins></div><div class="IGAtcrjFaixaLeadChildMobile"><div>Informe seu Email</div><input type="email" placeholder="nome@domínio.com"><div id="IGAtcrjFaixaLeadCTAMobile">CADASTRAR</div></div></div></div>');
+
+
+            // Ocultando o resto de informações antes do footer
+            $('.slick-arrow-rotating').remove();
+            $('.img-carousel').remove();
+            $('.IGFaixasContainer').parent().remove();
+            $('#IGFaixaAppTopo').remove();
         }
+        else
+        {
+            // Ocultando carrossel do atacarejo, ofertas do dia, carrossel de produtos e pesquise por marcas
+            if ($('div.title1:contains(CARROSSEL ATACAREJO)').length)
+            {
+                $('div.title1:contains(CARROSSEL ATACAREJO)').next().css('display', 'none');
+                $('div.title1:contains(CARROSSEL ATACAREJO)').remove();
+            }
+            if ($('div.title1:contains(OFERTAS DO DIA)').length)
+            {
+                $('div.title1:contains(OFERTAS DO DIA)').next().css('display', 'none');
+                $('div.title1:contains(OFERTAS DO DIA)').remove();
+            }
+            if ($('div.title1:contains(PESQUISE POR MARCAS)').length)
+            {
+                $('div.title1:contains(PESQUISE POR MARCAS)').css('display', 'none');
+                $('div.title1:contains(PESQUISE POR MARCAS)').remove();
+            }
+            if ($('section.destaques').length)
+            {
+                $('section.destaques').css('display', 'none');
+            }
+        }
+
+        
+        $('#IGAtcrjChooseAtacarejo').click(function(){
+            
+        });
     }
 });
 </script>
@@ -124,11 +251,621 @@ $(document).ready(function(){
         height: 100vh;
         z-index: 999;
     }
-    /* Ajustes para mobile */
+    #IGCadastroCTAParent {
+        position: relative;
+        z-index: 1000;
+    }
+    #IGCadastroCTA {
+        display: block;
+        border-radius: 5px;
+        position: absolute;
+        white-space: nowrap;
+        color: #fff;
+        top: 50%;
+        left: 5px;
+        transform: translate(0, -50%);
+        font-size: 12px;
+        padding: 8px 15px;
+        background-color: #ff5c0a;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    #IGCadastroCTA:hover, #IGCadastroCTA:focus {
+        text-decoration: none;
+    }
+    #IGNewLoginCTA {
+        height: fit-content;
+        margin: auto 0;
+        z-index: 1000;
+    }
+    #IGNewLoginCTA p {
+        margin: 0 0 0 5px;
+        font-size: 12px;
+        text-decoration: underline;
+    }
+    .pt-login .fa-user-circle {
+        font-size: 20px;
+        margin: 0;
+    }
+    .pt-login-label {
+        display: none;
+    }
+    .IGCTAsLoginCadMobile {
+        font-size: 13px;
+        font-style: normal;
+        margin-top: 5px;
+    }
+    .logedOut a {
+        text-align: center;
+        color: rgba(0,0,0,0) !important;
+    }
+    .logedOut i.icon-user-circle {
+        color: #ffffff !important;
+    }
+    @media only screen and (min-width: 992px) {
+        div.boxTools {
+            width: 22% !important;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        div.boxTools {
+            margin: 0 !important;
+        }
+    }
     @media only screen and (max-width: 425px)
     {
         #IGAtcrjChooseBusiness {
             margin-left: auto;
+        }
+    }
+    @media only screen and (max-width: 330px)
+    {
+        .logedOut a:first-of-type {
+            margin-right: 0 !important;
+        }
+    }
+    @media only screen and (max-width: 425px)
+    {
+        #IGCarrosselAtacarejo .slick-arrow, .destaques .slideModelProduct .slick-arrow, #IGAtcrjPesquisePorMarcasCrsl .slick-arrow {
+            display: none !important;
+        }
+        #IGCarrosselAtacarejo .slick-track {
+            height: calc(100vw/2.84);
+        }
+        #IGCarrosselAtacarejo .slick-slide {
+            position: relative;
+        }
+        #IGCarrosselAtacarejo .slick-current img{
+            z-index: 2;
+        }
+        #IGCarrosselAtacarejo img  {
+            margin: 0 !important;
+            position: absolute;
+            height: calc(100vw/2.84);
+            width: calc(100%*1.69);
+            max-width: calc(100%*1.69);
+        }
+        #IGCarrosselAtacarejo .slick-dots li.slick-active {
+            width: 11px;
+            height: 11px;
+        }
+        #IGCarrosselAtacarejo .slick-dots li {
+            width: 7px;
+            height: 7px;
+        }
+    }
+    @media only screen and (max-width: 385px) {
+        .IGAtcrjFaixaLeadChildMobile:first-of-type {
+            width: 60%;
+        }
+        .IGAtcrjFaixaLeadChildMobile:first-of-type {
+            font-size: 12px;
+        }
+        .IGAtcrjFaixaLeadChildMobile:first-of-type div {
+            font-size: 13px;
+        }
+        .IGAtcrjFaixaLeadChildMobile:last-of-type {
+            bottom: 8px;
+        }
+        .IGAtcrjFaixaLeadChildMobile:last-of-type div:first-of-type {
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+        .IGAtcrjFaixaLeadChildMobile:last-of-type input, .IGAtcrjFaixaLeadChildMobile:last-of-type div:last-of-type {
+            font-size: 12px;
+            padding: 5px;
+        }
+        .IGAtcrjFaixaLeadChildMobile:last-of-type div:last-of-type {
+            margin-top: 5px;
+        }
+    }
+</style>
+
+<!-- ESTILO HOME ATACAREJO DESLOGADO -->
+<style>
+    body {
+        background-color: #f5f5f5;
+    }
+    section#principalBanners, section#categoriesBox, #IGCarrosselFrete, #IGBigBem {
+        display: none;
+    }
+    /* Alterações faixa de ícones Atacarejo */
+    #IGAtcrjFaixaIcons {
+        display: flex;
+        align-items: center;
+        padding: 12px 0px;
+        margin-top: 50px;
+        color: #6d7384;
+    }
+    #IGAtcrjFaixaIcons img {
+        height: 30px;
+        margin-right: 15px;
+        width: auto;
+    }
+    .IGAtcrjFaixaIcon {
+        width: fit-content;
+        display: flex;
+    }
+    #IGAtcrjFaixaIconsLeft, #IGAtcrjFaixaIconsRight {
+        display: flex;
+        margin: 0 auto;
+        width: 40%;
+    }
+    #IGAtcrjFaixaIconBox, #IGAtcrjFaixaIconChat {
+        margin-left: auto;
+    }
+    /* Alterações ícones ofertas do dia */
+    .IGAtcrjTitle {
+        font-size: 22px;
+        color: #ff5c0a;
+        font-weight: bold;
+        margin: 25px auto;
+    }
+    .IGAtcrjTitle div {
+        padding-left: 15px;
+        border-left: solid 3px;
+    }
+    #IGAtcrjOfertasDoDiaCrsl .slick-slide {
+        height: 127px;
+        display: block;
+        text-align: center;
+    }
+    #IGAtcrjOfertasDoDiaCrsl .slick-slide:focus, #IGAtcrjOfertasDoDiaCrsl .slick-slide:hover {
+        text-decoration: none;
+        color: #7a7f8e;
+        outline: none;
+    }
+    #IGAtcrjOfertasDoDiaCrsl .slick-track {
+        background-color: #ffffff;
+        border-radius: 5px;
+        overflow: hidden
+    }
+    #IGAtcrjOfertasDoDiaCrsl .slick-slide:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+    #IGAtcrjOfertasDoDiaCrsl .slick-slide img {
+        background-color: rgba(0,0,0,0) !important;
+        margin: 33px auto 5px;
+    }
+    .IGAtcrjOfertasImgTxt {
+        color: #7a7f8e;
+    }
+    /* Alterações carrossel pesquise por marcas */
+    #IGAtcrjPesquisePorMarcasCrsl {
+        margin-bottom: 50px;
+    }
+    #IGAtcrjPesquisePorMarcasCrsl img {
+        border-radius: 5px;
+    }
+    #IGAtcrjPesquisePorMarcasCrsl img:hover {
+        box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    #IGAtcrjPesquisePorMarcasCrsl .slick-slide:focus {
+        outline: none !important;
+    }
+    /* Alterações banner frete progressivo */
+    #IGAtcrjBannerFreteProg a {
+        display: block;
+    }
+    #IGAtcrjBannerFreteProg a:hover img {
+        box-shadow: 0 0 5px 4px rgba(0,0,0,.2);
+    }
+    #IGAtcrjBannerFreteProg img {
+        border-radius: 5px;
+        max-width: 100%;
+    }
+    /* Alterações Faixa Lead */
+    #IGAtcrjContainerFaixaLead {
+        margin-top: 50px;
+    }
+    #IGAtcrjFaixaLead {
+        background: url(https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hfd/hb5/10138861469726/IGAtcrjFaixaLeadDesktop/IGAtcrjFaixaLeadDesktop.png) no-repeat;
+        display: flex;
+        height: 142px;
+        align-items: center;
+        border-radius: 5px;
+        user-select: none;
+    }
+    .IGAtcrjFaixaLeadChild {
+        width: 50%;
+    }
+    #IGAtcrjFaixaLeadChildLeft {
+        width: 35%;
+        float: right;
+    }
+    #IGAtcrjFaixaLeadChildLeft div {
+        color: #ffffff;
+        font-weight: bold;
+    }
+    #IGAtcrjFaixaLeadChildLeft ins {
+        color: #cecece;
+        margin-top: 10px;
+        display: block;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    #IGAtcrjFaixaLeadChildRight {
+        margin-left: 30px;
+    }
+    #IGAtcrjFaixaLeadMail {
+        color: #ffffff;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+    #IGAtcrjFaixaLeadForm {
+        display: flex;
+        align-items: center;
+    }
+    #IGAtcrjFaixaLeadForm input {
+        color: #033f85;
+        padding: 10px;
+        font-size: 13px;
+        width: 230px;
+        text-align: left;
+        border-radius: 5px;
+        border: none;
+    }
+    #IGAtcrjFaixaLeadForm input:focus {
+        outline: none;
+    }
+    #IGAtcrjFaixaLeadCTA {
+        margin-left: 10px;
+        color: #ffffff;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #ff5d00 , #ffa87d);
+        height: fit-content;
+        padding: 10px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    /* Alterações Faixa Lead Mobile */
+    #IGAtcrjContainerFaixaLeadMobile {
+        margin-top: 50px;
+        user-select: none;
+        display: none;
+    }
+    #IGAtcrjFaixaLeadMobile {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    #IGAtcrjFaixaLeadMobile img {
+        max-width: 100%;
+    }
+    .IGAtcrjFaixaLeadChildMobile {
+        position: absolute;
+    }
+    .IGAtcrjFaixaLeadChildMobile:first-of-type {
+        top: 10px;
+        left: 35%;
+        width: 65%;
+    }
+    .IGAtcrjFaixaLeadChildMobile:first-of-type div {
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: bold;
+    }
+    .IGAtcrjFaixaLeadChildMobile:first-of-type ins {
+        color: #cecece;
+        display: block;
+        font-size: 12px;
+        width: fit-content;
+    }
+    .IGAtcrjFaixaLeadChildMobile:last-of-type {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        text-align: center;
+    }
+    .IGAtcrjFaixaLeadChildMobile:last-of-type div:first-of-type {
+        color: #ffffff;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+    .IGAtcrjFaixaLeadChildMobile:last-of-type input {
+        color: #033f85;
+        padding: 10px;
+        font-size: 13px;
+        width: 260px;
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+    }
+    .IGAtcrjFaixaLeadChildMobile:last-of-type div:last-of-type {
+        margin-top: 8px;
+        color: #ffffff;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #ff5d00 , #ffa87d);
+        height: fit-content;
+        padding: 10px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    /* Alterações carrossel de produtos */
+    section.destaques {
+        border: none !important;
+        margin: 10px 0 50px !important;
+    }
+    .destaques .titleBox {
+        display: none;
+    }
+    .destaques .slick-track, #IGAtcrjPesquisePorMarcasCrsl .slick-track {
+        padding: 10px 0;
+    }
+    .destaques .slideModelProduct .productItem > a {
+        background-color: #ffffff;
+        height: 380px;
+        padding: 25px 10px 8px;
+        border-radius: 5px;
+        width: 180px;
+        position: relative;
+    }
+    .destaques .slideModelProduct .productItem > a:hover {
+        transform: scale(1.05);
+    }
+    .destaques .slideModelProduct .productItem > a:focus {
+        outline: none !important;
+    }
+    .destaques .slideModelProduct .slick-slide img {
+        margin: 0 auto 15px;
+        padding: 0;
+    }
+    .productItem .details {
+        text-align: left;
+    }
+    .productItem .details .description {
+        color: #7c8293;
+        font-weight: bold;
+        font-size: 13px;
+        min-height: 37px;
+        max-height: 37px;
+        overflow: hidden;
+    }
+    .productItem .details .value {
+        color: #ff5c0a;
+        font-size: 17px;
+    }
+    .productItem .details .obs {
+        display: none;
+    }
+    .IGCarrosselProdPrecoDe {
+        margin: 0;
+        color: #babdc5;
+        font-weight: bold;
+        font-size: 15px;
+        text-decoration: line-through;
+    }
+    .IGCarrosselProdPrecoClosedBox {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0;
+        color: #7a7f8e;
+    }
+    .IGCarrosselProdPrecoInfo {
+        color: #80b8ff;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .IGActrjProductCTAs {
+        position: absolute;
+        bottom: 8px;
+        width: 160px;
+    }
+    .IGAtcrjProductQtd, .IGAtcrjProductBuy {
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        height: 34px;
+        font-weight: bold;
+    }
+    .IGAtcrjProductQtd {
+        background-color: #e5e5e5;
+        color: #6d7384;
+        padding: 0 20px;
+        margin-bottom: 5px;
+    }
+    .IGAtcrjProductQtdInner {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    .IGAtcrjProductQtdValue {
+        margin: 0 auto;
+    }
+    .IGAtcrjProductBuy {
+        background-color: #ff5c0a;
+        color: #ffffff;
+    }
+    .IGAtcrjProductBuyInner {
+        display: flex;
+        margin: 0 auto;
+        width: fit-content;
+        height: 100%;
+        align-items: center;
+    }
+    .IGAtcrjProductBuyInner i {
+        margin-left: 5px;
+        font-size: 17px;
+    }
+    /* Implementação de Banner Metade */
+    #IGAtcrjBannersMetade {
+        display: flex;
+    }
+    #IGAtcrjBannersMetade a {
+        display: block;
+    }
+    #IGAtcrjBannersMetade a:last-of-type {
+        margin-left: auto;
+    }
+    #IGAtcrjBannersMetade img {
+        border-radius: 5px;
+    }
+    #IGAtcrjBannersMetade img:hover {
+        box-shadow: 0 0 5px 4px rgba(0,0,0,.2);
+    }
+    @media only screen and (max-width: 1199px) {
+        #IGAtcrjBannersMetade img {
+            max-width: calc(100% - 10px);
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        /* Implementação de Banner Metade */
+        #IGAtcrjBannersMetade {
+            display: block;
+            margin-top: 50px;
+        }
+        #IGAtcrjBannersMetade img {
+            min-width: 100%;
+            max-width: 100%;
+        }
+        #IGAtcrjBannersMetade a:last-of-type {
+            margin-top: 10px;
+        }
+        /* Alterações carrossel pesquise por marcas */
+        #IGAtcrjPesquisePorMarcas {
+            margin-bottom: 0px;
+        }
+        /* Alterações banner frete progressivo */
+        #IGAtcrjBannerFreteProg a {
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+        #IGAtcrjBannerFreteProg a:hover img {
+            box-shadow: none;
+        }
+        #IGAtcrjBannerFreteProg img {
+            border-radius: 0;
+            content: url(https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf2/hd3/10138883522590/IGAtcrjBannerFreteProgMobile/IGAtcrjBannerFreteProgMobile.png);
+            max-width: 100%;
+        }
+        /* Alterações Faixa Lead Mobile */
+        #IGAtcrjContainerFaixaLeadMobile {
+            display: block;
+        }
+        #IGAtcrjContainerFaixaLead {
+            display: none;
+        }
+    }
+    /* Alterações Carrossel de Banner ponta a ponta */
+    #IGCarrosselAtacarejo {
+        padding: 0 !important;
+        margin-bottom: 25px;
+    }
+    #IGCarrosselAtacarejo img {
+        margin: 0 !important;
+    }
+    #IGCarrosselAtacarejo .slick-arrow, .destaques .slideModelProduct .slick-arrow, #IGAtcrjPesquisePorMarcasCrsl .slick-arrow {
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 42px;
+        width: 42px;
+        border: 1px solid #fd792a;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+    #IGCarrosselAtacarejo .slick-arrow i, .destaques .slideModelProduct .slick-arrow i, #IGAtcrjPesquisePorMarcasCrsl .slick-arrow i {
+        color: #fd792a;
+        font-size: 25px;
+    }
+    #IGCarrosselAtacarejo .slick-arrow:first-of-type {
+        left: calc((100vw/94.5) * 18);
+    }
+    #IGCarrosselAtacarejo .slick-arrow:last-of-type {
+        right: calc((100vw/94.5) * 18);
+    }
+    #IGCarrosselAtacarejo .slick-dots, .destaques .slideModelProduct .slick-dots, #IGAtcrjPesquisePorMarcasCrsl .slick-dots {
+        bottom: -33px !important;
+    }
+    #IGCarrosselAtacarejo .slick-dots li, .destaques .slideModelProduct .slick-dots li, #IGAtcrjPesquisePorMarcasCrsl .slick-dots li {
+        width: 9px;
+        height: 9px;
+        background-color: #cecece;
+        border: none;
+        margin-right: 20px;
+    }
+    #IGCarrosselAtacarejo .slick-dots li.slick-active, .destaques .slideModelProduct .slick-dots li.slick-active, #IGAtcrjPesquisePorMarcasCrsl .slick-dots li.slick-active {
+        width: 13px;
+        height: 13px;
+        background-color:#ff5c0a;
+    }
+    @media only screen and (max-width: 991px) {
+        /* Alteraçoes ícones ofertas do dia */
+        #IGAtcrjOfertasDoDia {
+            width: 100%;
+            padding: 0;
+        }
+        #IGAtcrjOfertasDoDiaCrsl .slick-slide {
+            width: calc(100vw/3) !important;
+        }
+        #IGAtcrjOfertasDoDiaCrsl .slick-arrow, .destaques .slideModelProduct .slick-arrow, #IGAtcrjPesquisePorMarcasCrsl .slick-arrow {
+            top: 50%;
+            transform: translate(0, -50%);
+            height: 35px;
+            width: 35px;
+        }
+        #IGAtcrjOfertasDoDiaCrsl .slick-arrow i, .destaques .slideModelProduct .slick-arrow i, #IGAtcrjPesquisePorMarcasCrsl .slick-arrow i {
+            color: #fd792a;
+            font-size: 15px;
+        }
+        #IGAtcrjOfertasDoDiaCrsl .slick-arrow:first-of-type {
+            left: -4px !important;
+        }
+        #IGAtcrjOfertasDoDiaCrsl .slick-arrow:last-of-type {
+            right: -4px !important;
+        }
+        /* Alterações faixa de ícones Atacarejo */
+        #IGAtcrjFaixaIcons {
+            display: block;
+            margin-top: 30px;
+        }
+        #IGAtcrjFaixaIconsLeft {
+            margin-bottom: 20px;
+        }
+        #IGAtcrjFaixaIconsLeft, #IGAtcrjFaixaIconsRight {
+            width: 100%;
+        }
+        .IGAtcrjFaixaIcon {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        #IGAtcrjFaixaIcons img {
+            margin-right: 0px;
+        }
+    }
+    @media only screen and (max-width: 767px)
+    {
+        #IGCarrosselAtacarejo .slick-arrow:first-of-type {
+            left: 1% !important;
+        }
+        #IGCarrosselAtacarejo .slick-arrow:last-of-type {
+            right: 1% !important;
+        }
+        #IGCarrosselAtacarejo .slick-arrow {
+            height: 35px;
+            width: 35px;
         }
     }
 </style>
@@ -139,12 +876,21 @@ $(document).ready(function(){
             <a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacado" class="IGAtcrjChooseBsnsCTA IGAtcrjChooseBsnsActive">
                 <i class="fas fa-store-alt"></i><div>ATACADO</div>
             </a>
-            <a href="/martins/pt/BRL/login" id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA">
+            <a id="IGAtcrjChooseAtacarejo" class="IGAtcrjChooseBsnsCTA">
                 <i class="fas fa-shopping-cart"></i><div>ATACAREJO</div>
             </a>
         </div>
     </div>
 </div>
+
+
+
+<div id="IGCadastroCTAParent"><a id="IGCadastroCTA" href="/martins/pt/BRL/register">CADASTRE-SE</a></div>
+
+
+
+<div id="IGNewLoginCTA"><p><a href="/martins/pt/BRL/login">FAÇA SEU LOGIN</a></p></div>
+
 
 
 </body>

@@ -17,11 +17,25 @@ $(document).ready(function(){
         $('#helpUser').before('<style>.menuUser .secundaryLinks a[href="https://www.martinsatacado.com.br/martins/my-account/orders"]{display:none}#IGAtcrjHeaderFaixaOut{background-color:#e5e5e5;user-select:none}#IGAtcrjHeaderFaixaIn{max-width:1170px;width:100%;margin:0 auto;display:flex;padding:0 2%;align-items:center}#IGAtcrjChooseBusiness{max-width:fit-content;display:flex;margin-right:auto;padding:10px 0 0}.IGAtcrjChooseBsnsCTA{border-top-right-radius:5px;border-top-left-radius:5px;background-color:#fff;color:#6d7384;padding:7px 22px;display:flex;cursor:pointer}#IGAtcrjHeaderCTAAtendimento:focus,#IGAtcrjHeaderCTAAtendimento:hover,#IGAtcrjHeaderCTASair:focus,#IGAtcrjHeaderCTASair:hover,.IGAtcrjChooseBsnsCTA:focus,.IGAtcrjChooseBsnsCTA:hover,.menuMasterD .container>ul>li a:focus,.menuMasterD .container>ul>li a:hover{text-decoration:none}.IGAtcrjChooseBsnsCTA:hover{background-color:#ff5c0a;color:#fff}.IGAtcrjChooseBsnsActive{background-color:#ff5c0a;color:#fff}#IGAtcrjChooseAtacado{margin-right:8px}.IGAtcrjChooseBsnsCTA .fas{margin-right:10px;font-size:18px;margin-top:auto;margin-bottom:auto}.IGAtcrjChooseBsnsCTA div{font-size:12px;margin-top:auto;margin-bottom:auto}#IGAtcrjHeaderCTAs{max-width:fit-content;display:flex;margin-left:auto;color:#004282;font-size:12px;font-weight:700}#IGAtcrjHeaderCTAAcc,#IGAtcrjHeaderCTAAtendimento,#IGAtcrjHeaderCTASair{margin-left:45px;cursor:pointer}nav#menuMaster{background-color:#004282;user-select:none}.menuMasterD .container .menuLiFirst{cursor:pointer}.menuMasterD .container>ul>li:after{display:none}@media only screen and (min-width:768px){section#helpUser>div:nth-of-type(1){display:none}}@media only screen and (max-width:767px){#IGAtcrjHeaderCTAs{display:none}#IGAtcrjChooseBusiness{margin-left:auto}section#helpUser{border-top:1px solid #e6e6e6}#IGAtcrjHeaderCTAAccMbl,#IGAtcrjHeaderCTAAtendimentoMbl{color:#004282;font-size:12px;font-weight:700}#myAccountTitle,#storeNavTitle{display:none}}</style>');
 
 
-        // Ocultando carrossel do atacarejo
+        // Ocultando carrossel do atacarejo, ofertas do dia e carrossel de produtos
         if ($('div.title1:contains(CARROSSEL ATACAREJO)').length)
         {
             $('div.title1:contains(CARROSSEL ATACAREJO)').next().css('display', 'none');
             $('div.title1:contains(CARROSSEL ATACAREJO)').css('display', 'none');
+        }
+        if ($('div.title1:contains(OFERTAS DO DIA)').length)
+        {
+            $('div.title1:contains(OFERTAS DO DIA)').next().css('display', 'none');
+            $('div.title1:contains(OFERTAS DO DIA)').css('display', 'none');
+        }
+        if ($('div.title1:contains(PESQUISE POR MARCAS)').length)
+        {
+            $('div.title1:contains(PESQUISE POR MARCAS)').next().css('display', 'none');
+            $('div.title1:contains(PESQUISE POR MARCAS)').css('display', 'none');
+        }
+        if ($('section.destaques').length)
+        {
+            $('section.destaques').css('display', 'none');
         }
 
 
