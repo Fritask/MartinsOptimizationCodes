@@ -1,3 +1,29 @@
+<script>
+$(document).ready(function(){
+    $('.btnGridlist').each(function(){
+        $(this).removeClass('active');
+    });
+    $('#listNoImageProducts').addClass('active');
+    $('.products').addClass('list').addClass('listNoImage');
+});
+
+$(document).ready(function(){
+    $('.btnGridlist').each(function(){
+        $(this).removeClass('active');
+    });
+    $('#gridProducts').addClass('active');
+    $('.products').removeClass('list').removeClass('listNoImage');
+});
+
+$(document).ready(function(){
+    $('.btnGridlist').each(function(){
+        $(this).removeClass('active');
+    });
+    $('#listProducts').addClass('active');
+    $('.products').addClass('list').removeClass('listNoImage');
+});
+</script>
+
 <style>
     .IGMtsServices {
         display: inline;
@@ -37,33 +63,7 @@
     }
 </style>
 
-<script>
 
-
-$(document).ready(function(){
-    $('.btnGridlist').each(function(){
-        $(this).removeClass('active');
-    });
-    $('#listNoImageProducts').addClass('active');
-    $('.products').addClass('list').addClass('listNoImage');
-});
-
-$(document).ready(function(){
-    $('.btnGridlist').each(function(){
-        $(this).removeClass('active');
-    });
-    $('#gridProducts').addClass('active');
-    $('.products').removeClass('list').removeClass('listNoImage');
-});
-
-$(document).ready(function(){
-    $('.btnGridlist').each(function(){
-        $(this).removeClass('active');
-    });
-    $('#listProducts').addClass('active');
-    $('.products').addClass('list').removeClass('listNoImage');
-});
-</script>
 
 
 

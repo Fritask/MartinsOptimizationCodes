@@ -1,0 +1,42 @@
+<script>
+events.domReady(function(){
+    $('section#category').prepend('<div class="container IGFaixaOfertasParent"><a class="IGFaixaOfertas" href="javascript:void(0);"><img class="IGFaixaOfertasImg" src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h2c/h62/10322544623646/Banner%20Ofertas%20do%20Dia%20Atacarejo%201/Banner-Ofertas-do-Dia-Atacarejo-1.jpg"><img class="IGFaixaOfertasImg" src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hda/h62/10322544689182/Banner%20Ofertas%20do%20Dia%20Atacarejo%202/Banner-Ofertas-do-Dia-Atacarejo-2.jpg"></a></div>');
+});
+</script>
+
+<div class="container IGFaixaOfertasParent">
+    <a class="IGFaixaOfertas" href="javascript:void(0);">
+        <img class="IGFaixaOfertasImg" src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h2c/h62/10322544623646/Banner%20Ofertas%20do%20Dia%20Atacarejo%201/Banner-Ofertas-do-Dia-Atacarejo-1.jpg">
+        <img class="IGFaixaOfertasImg" src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hda/h62/10322544689182/Banner%20Ofertas%20do%20Dia%20Atacarejo%202/Banner-Ofertas-do-Dia-Atacarejo-2.jpg">
+    </a>
+</div>
+
+
+<style>
+    .IGFaixaOfertasImg {
+        width: 100%;
+    }
+    .IGFaixaOfertasParent {
+        margin-top: 30px;
+        user-select: none;
+    }
+
+    @media only screen and (min-width: 992px) {
+        .IGFaixaOfertas {
+            padding-left: 5px;
+        }
+    }
+    @media only screen and (min-width: 900px) {
+        .IGFaixaOfertas {
+            display: flex;
+        }
+        .IGFaixaOfertasImg {
+            width: 50%;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .IGFaixaOfertasParent {
+            margin-bottom: 30px;
+        }
+    }
+</style>
