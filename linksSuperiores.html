@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+events.domReady(function(){
+    $('#searchSection').find('.search-section').prepend('<div class="container" id="IGTopLinksParent"><div id="IGTopLinksDesktop" class="IGTopLinks"><div class="IGTopLinksLeft"><a href="https://www.martinsatacado.com.br/beneficios-martins">Descontos</a><a href="https://www.martinsatacado.com.br/beneficios-martins">Promoções</a><a href="https://www.martinsatacado.com.br/bem">Programa BEM</a></div><div class="IGTopLinksRight"><a href="https://www.martinsatacado.com.br/venda-no-marketplace">Venda com a gente</a><a href="https://api.whatsapp.com/send?phone=553433015819&text=Ol%C3%A1">Atendimento</a><a href="tel:08007295220">Central de Vendas: 0800 729 5220</a></div></div><div id="IGTopLinksMobile" class="IGTopLinks"><a href="tel:08007295220">Central de Vendas: 0800 729 5220</a></div></div>')
+});
+</script>
+
+<style>
+.anchorLogoMartins.ml10 {
+    margin-left: 25px !important;
+}
+
+.pt-modal-toggle .pt-master-login {
+    top: 29px;
+}
+
+.pt-menu2 {
+    z-index: 100;
+}
+
+.pt-modal-toggle {
+    top: -40px !important;
+}
+
+#IGTopLinksParent {
+    padding-bottom: 10px;
+}
+
+.IGTopLinks {
+    display: flex;
+}
+
+#IGTopLinksMobile {
+    display: none;
+    text-align: center;
+}
+
+.IGTopLinksLeft a:not(:first-of-type), .IGTopLinksRight a:not(:first-of-type) {
+    margin-left: 24px;
+}
+
+.IGTopLinks a, .IGTopLinks a:hover {
+    color: #ffffff;
+}
+
+.IGTopLinksLeft {
+    margin-left: 133px;
+}
+.IGTopLinksRight {
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+@media only screen and (max-width: 991px)
+{
+    #IGTopLinksParent {
+        padding-bottom: 20px;
+    }
+
+    #IGTopLinksMobile {
+        display: block;
+    }
+
+    #IGTopLinksDesktop {
+        display: none;
+    }
+}
+</style>
+
+<div class="container" id="IGTopLinksParent">
+    <div id="IGTopLinksDesktop" class="IGTopLinks">
+        <div class="IGTopLinksLeft">
+            <a href="https://www.martinsatacado.com.br/beneficios-martins">Descontos</a>
+            <a href="https://www.martinsatacado.com.br/beneficios-martins">Promoções</a>
+            <a href="https://www.martinsatacado.com.br/bem">Programa BEM</a>
+        </div>
+        <div class="IGTopLinksRight">
+            <a href="https://www.martinsatacado.com.br/venda-no-marketplace">Venda com a gente</a>
+            <a href="https://api.whatsapp.com/send?phone=553433015819&text=Ol%C3%A1">Atendimento</a>
+            <a href="tel:08007295220">Central de Vendas: 0800 729 5220</a>
+        </div>
+    </div>
+
+    <div id="IGTopLinksMobile" class="IGTopLinks">
+        <a href="tel:08007295220">Central de Vendas: 0800 729 5220</a>
+    </div>
+</div>
+</body>
+</html>

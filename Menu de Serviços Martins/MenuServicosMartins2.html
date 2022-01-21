@@ -6,16 +6,16 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script>
-$(document).ready(function()
+events.domReady(function()
 {
     //Atualiza a página caso ela seja redimensionada
     // $( window ).resize(function() {
     //     location.reload(true);
     // });
 
-    var IGFaixaAtual = 0; // 0 = Primeira Faixa (Parceiro)
+    $('#categoriesBox').after('<div id="IGMenuServicos"><div class="container IGFaixasContainer"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa0" class="IGFaixaName active"><div>Cartão Super Empresarial</div></div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;"><div>Solicitar cotação</div></div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;"><div>Serviços Telecom</div></div><div id="IGNomeFaixa3" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;"><div>Venda com a gente</div></div></div><div id="IGFaixa0" class="IGFaixas IGFaixaFade"></div><div id="IGFaixa2" class="IGFaixas IGFaixaFade"><div><div class="row"><div class="col-md-12 border"><h1 style="text-align: center;">Solicite uma cotação</h1> <div style="text-align: center;"> Estoque e preços são online e podem sofrer alterações a qualquer momento.</div><div class="IGMenuServicosOptions"><div class="IGMenuServicosOption"><div id="IGMenuServicosOptionB4"><div class="IGMenuServicosOptionTxt" style="border-color: #004282;">Sou cliente <b>Martins</b></div><div class="IGMenuServicosCTA"><div class="IGMenuServicosCTATxt" style="color: #004282">Clique aqui</div></div></div><div id="IGMenuServicosOptionAfter"><div>Informe o seu <b>CNPJ</b> e <b>WhatsApp</b> para contato no e-mail <b>cotacao@martins.com.br</b> que iremos te ajudar.</div><div style="text-align: center; margin-top: 15px;"><a style="font-weight: bold;" class="btn btn-primary" href="mailto:cotacao@martins.com.br" target="_blank">Enviar e-mail</a><br><br></div></div></div><div style="width: 100px;">&nbsp;</div><div class="IGMenuServicosOption"><div id="IGMenuServicosOptionRegister"><div class="IGMenuServicosOptionTxt" style="border-color: #F27934;">Não sou cliente <b>Martins</b></div><div class="IGMenuServicosCTA"><div class="IGMenuServicosCTATxt" style="color: #F27934">Clique aqui</div></div></div></div></div><br></div></div></div></div></div><div id="IGCotacaoParentMobile" class="container IGFaixasContainer IGFaixasContainerMobile"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa2Mobile" class="IGFaixaName"><div>Solicitar cotação</div></div></div></div><div class="container IGFaixasContainer IGFaixasContainerMobile"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa4Mobile" class="IGFaixaName"><div>Serviços Telecom</div></div></div></div><div class="container IGFaixasContainer IGFaixasContainerMobile"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa3Mobile" class="IGFaixaName"><div>Venda com a gente</div></div></div></div></div>');
 
-    document.getElementById("IGFaixa0").style.display = "block";
+    var IGFaixaAtual = 0; // 0 = Primeira Faixa (Parceiro)
 
 
     if ($(window).width() < 768)
@@ -84,7 +84,7 @@ $(document).ready(function()
 
     $("#IGNomeFaixa4").click(function()
     {
-        window.open("https://www.martinsatacado.com.br/super-ofertas", "_blank");
+        window.open("https://vendamais.martinsatacado.com.br/gestao-fiscal", "_blank");
     });
     
     $("#IGNomeFaixa3Mobile").click(function()
@@ -94,7 +94,7 @@ $(document).ready(function()
 
     $("#IGNomeFaixa4Mobile").click(function()
     {
-        window.open("https://www.martinsatacado.com.br/super-ofertas", "_blank");
+        window.open("https://vendamais.martinsatacado.com.br/gestao-fiscal", "_blank");
     });
 
     //Função clique no CTA "Sou cliente Martins"
@@ -114,14 +114,27 @@ $(document).ready(function()
         window.open("http://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&utm_medium=Site&utm_campaign=home_b2bhttp://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&utm_medium=Site&utm_campaign=home_b2b", "_blank");
     });
 
-    $('div.c-stickyBanner__leftBg').children().first().children().attr('src', 'https://i.imgur.com/yw8sXSB.png');
-    $('div.c-stickyBanner__leftBg').children().slice(1,2).children().attr('src', 'https://i.imgur.com/QAbkxrf.png');
+    $('div.c-stickyBanner').appendTo('#IGFaixa0');
+
+    // Verifica se o usuário está logado
+    if (($('span.hello').length)) {
+        $('.c-stickyBanner__link').attr('href', 'https://www.martinsatacado.com.br/')
+    }
+    else {
+        $('.c-stickyBanner__link').attr('href', 'https://www.martinsatacado.com.br/login')
+    }
 });
 </script>
 
 <style>
+    div.box-sticky-banner {
+        display: none;
+    }
     #IGMenuServicos {
         margin-top: 30px;
+    }
+    #IGMenuServicos img._phsm{
+        padding: 0px !important;
     }
     /* Estilo Banner Tribanco (INÍCIO)*/
     #IGBannerCartaoIMG02, #IGBannerCartaoIMG03 {
@@ -139,6 +152,10 @@ $(document).ready(function()
     }
     .IGBannerCartaoIMG {
         width: 75%;
+    }
+    #IGFaixa0 {
+        display: block;
+        margin-top: 20px;
     }
     .IGBannerCartaoCTAParent {
         width: 25%;
@@ -383,9 +400,7 @@ $(document).ready(function()
     /* Estilo Banner Tribanco (FIM)*/
 </style>
 
-</head>
 
-<body>
 
 <div id="IGMenuServicos">
     <div class="container IGFaixasContainer">
@@ -395,25 +410,13 @@ $(document).ready(function()
             </div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;">
                 <div>Solicitar cotação</div>
             </div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;">
-                <div>Ofertas da semana</div>
+                <div>Serviços Telecom</div>
             </div><div id="IGNomeFaixa3" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;">
                 <div>Venda com a gente</div>
             </div>
         </div>
         <div id="IGFaixa0" class="IGFaixas IGFaixaFade">
             <!-- <h1>Colocar faixa cartão aqui</h1> -->
-            <div class="container IGBannerCartaoDesktopParent">
-                <div class="IGBannerCartaoDesktop">
-                    <div class="IGBannerCartaoIMG">
-                        <img id="IGBannerCartaoIMG01" style="width: 100%;" src="https://i.imgur.com/rT96O6E.png">
-                        <img id="IGBannerCartaoIMG02" style="width: 100%;" src="https://i.imgur.com/yw8sXSB.png">
-                        <img id="IGBannerCartaoIMG03" style="width: 100%;" src="https://i.imgur.com/gC7HIhe.png">
-                    </div>
-                    <div class="IGBannerCartaoCTAParent">
-                        <div class="IGBannerCartaoCTA">QUERO SOLICITAR</div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div id="IGFaixa2" class="IGFaixas IGFaixaFade">
@@ -467,7 +470,7 @@ $(document).ready(function()
     <div class="container IGFaixasContainer IGFaixasContainerMobile">
         <div class="IGRowOpcoesFaixas">
             <div id="IGNomeFaixa4Mobile" class="IGFaixaName">
-                <div>Ofertas da semana</div>
+                <div>Serviços Telecom</div>
             </div>
         </div>
     </div>
@@ -482,5 +485,4 @@ $(document).ready(function()
 </div>
 
 
-</body>
 </html>

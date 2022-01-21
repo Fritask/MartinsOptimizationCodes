@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+events.domReady(function(){
+    $('#principalBanners').after('<div class="container" id="IGMainCards"><div class="IGMainCard"><a href="https://www.martinsatacado.com.br/busca/landing_page/?text=mix-protetor-solar"><img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/he2/h2e/11083445436446/Banner SubTop 02/Banner-SubTop-02.jpg"></a></div><div class="IGMainCard"><a href="https://www.martinsatacado.com.br/busca/landing_page/?text=loja-parceiras-inseticidas-repelentes"><img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h3a/h2f/11083445469214/Banner SubTop 04/Banner-SubTop-04.jpg"></a></div><div class="IGMainCard"><a href="https://www.martinsatacado.com.br/black-friday-martins-2021"><img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf3/h31/11083445501982/Banner SubTop 03/Banner-SubTop-03.jpg"></a></div><div class="IGMainCard"><a href="https://www.martinsatacado.com.br/busca/landing_page/?text=sub-top-varejo-farma"><img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hb1/hb1/11086095220766/Banner SubTop/Banner-SubTop.jpg"></a></div></div>');
+});
+</script>
+
+<style>
+#IGBigBem {
+    display: none;
+}
+
+#IGMainCards {
+    display: flex;
+    margin-top: 32px;
+}
+
+.IGMainCard {
+    width: 25%;
+}
+
+.IGMainCard img {
+    width: 100%;
+}
+
+.IGMainCard:not(:first-of-type) {
+    margin-left: 32px;
+}
+
+@media only screen and (max-width: 480px)
+{
+    .IGMainCard {
+        width: auto;
+        min-width: 130px;
+    }
+
+    #IGMainCards {
+        overflow-x: scroll;
+    }
+}
+</style>
+
+<div class="container" id="IGMainCards">
+    <div class="IGMainCard">
+        <a href="https://www.martinsatacado.com.br/busca/landing_page/?text=mix-protetor-solar">
+            <img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/he2/h2e/11083445436446/Banner SubTop 02/Banner-SubTop-02.jpg">
+        </a>
+    </div>
+
+    <div class="IGMainCard">
+        <a href="https://www.martinsatacado.com.br/busca/landing_page/?text=loja-parceiras-inseticidas-repelentes">
+            <img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h3a/h2f/11083445469214/Banner SubTop 04/Banner-SubTop-04.jpg">
+        </a>
+    </div>
+
+    <div class="IGMainCard">
+        <a href="https://www.martinsatacado.com.br/black-friday-martins-2021">
+            <img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hf3/h31/11083445501982/Banner SubTop 03/Banner-SubTop-03.jpg">
+        </a>
+    </div>
+
+    <div class="IGMainCard">
+        <a href="https://www.martinsatacado.com.br/busca/landing_page/?text=sub-top-varejo-farma">
+            <img src="https://imgprd.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hb1/hb1/11086095220766/Banner SubTop/Banner-SubTop.jpg">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

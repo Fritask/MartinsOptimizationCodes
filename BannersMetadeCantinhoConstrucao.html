@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+events.domReady(function(){
+    if (! ($('span.cpf').length) ) {
+        $('section#principalBanners').after('<div class="container" id="IGAtcdBannersMetade"><a href="https://www.martinsatacado.com.br/cantinho-da-construcao-ofertas"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h27/h5e/10359717724190/atacado-banner-metade-home-01/atacado-banner-metade-home-01.jpg"></a><a href="https://www.martinsatacado.com.br/cantinho-da-construcao-pra-voce"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hd5/h5e/10359717789726/atacado-banner-metade-home-02/atacado-banner-metade-home-02.jpg"></a></div>');
+    }
+});
+</script>
+
+<style>
+    /* Implementação de Banner Metade */
+    #IGAtcdBannersMetade {
+        display: flex;
+        margin: 0px auto 25px;
+    }
+    #IGAtcdBannersMetade a {
+        display: block;
+    }
+    #IGAtcdBannersMetade a:first-of-type {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+    #IGAtcdBannersMetade a:last-of-type {
+        margin-left: 10px;
+        margin-right: auto;
+    }
+    #IGAtcdBannersMetade img {
+        border-radius: 5px;
+    }
+    #IGAtcdBannersMetade img:hover {
+        box-shadow: 0 0 5px 4px rgba(0,0,0,.2);
+    }
+    @media only screen and (max-width: 1199px) {
+        #IGAtcdBannersMetade img {
+            max-width: calc(100% - 10px);
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        /* Implementação de Banner Metade */
+        #IGAtcdBannersMetade {
+            display: block;
+        }
+        #IGAtcdBannersMetade img {
+            min-width: 100%;
+            max-width: 100%;
+        }
+        #IGAtcdBannersMetade a:first-of-type {
+            margin-right: auto;
+        }
+        #IGAtcdBannersMetade a:last-of-type {
+            margin-top: 10px;
+            margin-left: auto;
+        }
+    }
+</style>
+
+<!-- Atacado Banners Metade -->
+<div class="container" id="IGAtcdBannersMetade">
+    <a href="https://www.martinsatacado.com.br/cantinho-da-construcao-ofertas"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h27/h5e/10359717724190/atacado-banner-metade-home-01/atacado-banner-metade-home-01.jpg"></a>
+    <a href="https://www.martinsatacado.com.br/cantinho-da-construcao-pra-voce"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hd5/h5e/10359717789726/atacado-banner-metade-home-02/atacado-banner-metade-home-02.jpg"></a>
+</div>
+
+
+<div class="container" id="IGAtcdBannersMetade"><a href="https://www.martinsatacado.com.br/cantinho-da-construcao-ofertas"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/h27/h5e/10359717724190/atacado-banner-metade-home-01/atacado-banner-metade-home-01.jpg"></a><a href="https://www.martinsatacado.com.br/cantinho-da-construcao-pra-voce"><img src="https://www.martinsatacado.com.br/medias/sys_master/img_martins/img_martins/hd5/h5e/10359717789726/atacado-banner-metade-home-02/atacado-banner-metade-home-02.jpg"></a></div>
+
+
+
+</body>
+</html>

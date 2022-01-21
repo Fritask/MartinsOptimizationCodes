@@ -1,0 +1,113 @@
+<style>div.box-sticky-banner{display:none}#IGMenuServicos{margin-top:30px}#IGMenuServicos img._phsm{padding:0!important}#IGBannerCartaoIMG02,#IGBannerCartaoIMG03{display:none}.IGBannerCartaoDesktopParent{padding-left:0;padding-right:30px;margin-top:25px;padding-bottom:10px}.IGBannerCartaoDesktop{display:flex;cursor:pointer}.IGBannerCartaoIMG{width:75%}#IGFaixa0{display:block;margin-top:20px}.IGBannerCartaoCTAParent{width:25%;text-align:center;background-color:#52c889;position:relative;color:#fff}.IGBannerCartaoCTAParent:after{content:"";border:solid transparent;position:absolute;border-width:10px;z-index:1;left:-20px;top:50%;border-left-color:#52c889;transform:rotate(180deg) translate(0,50%)}.IGBannerCartaoCTAParent:focus,.IGBannerCartaoCTAParent:hover{text-decoration:none;color:#fff}.IGBannerCartaoDesktop:hover .IGBannerCartaoCTAParent{background-color:#05bdfb}.IGBannerCartaoDesktop:hover .IGBannerCartaoCTAParent:after{border-left-color:#05bdfb}.IGBannerCartaoCTA{padding-top:10%;font-weight:700}.IGFaixasContainerMobile{display:none}.IGFaixas{display:none}.IGMenuServicosOptions{margin-left:auto;margin-right:auto;width:50%;display:flex;margin-top:20px}.IGMenuServicosOption{width:50%;text-align:center}.IGMenuServicosOptionTxt{border-bottom:4px solid;padding:0 20px 8px}.IGMenuServicosCTATxt{width:fit-content;margin-left:auto;margin-right:auto;outline:3px solid #f0f1f1;background-color:#f0f1f1;z-index:1;font-weight:700;font-style:italic;padding-right:1px}.IGMenuServicosCTA{width:100%;background-color:rgba(0,0,0,0);position:absolute;bottom:-20%;left:0}#IGMenuServicosOptionB4,#IGMenuServicosOptionRegister{cursor:pointer;position:relative}#IGMenuServicosOptionAfter{display:none;width:143%;margin-left:-20%;margin-top:15px}div.IGFaixaName{color:inherit;text-align:center;border-bottom:2px solid #ccc;font-weight:400;cursor:pointer;padding-top:15px;width:285px;max-width:285px;display:inline-block}div.IGFaixaName.active,div.IGFaixaName:hover{color:#004282;border-bottom:4px solid #004282;font-weight:700}.IGFaixasContainer{padding-top:10px;padding-bottom:30px;background-color:#f0f1f1}.IGRowOpcoesFaixas{max-width:1140px;width:1140px;margin:0 auto}.IGFaixaFade{-webkit-animation-name:fade;-webkit-animation-duration:1.5s;animation-name:fade;animation-duration:1.5s}@-webkit-keyframes fade{from{opacity:.4}to{opacity:1}}@keyframes fade{from{opacity:.4}to{opacity:1}}@media only screen and (max-width:1199px){.IGRowOpcoesFaixas{max-width:940px;width:940px}div.IGFaixaName{width:235px;max-width:235px}}@media only screen and (max-width:991px){.IGRowOpcoesFaixas{max-width:720px;width:720px;margin-right:0}div.IGFaixaName{width:180px;max-width:180px}}@media only screen and (max-width:899px){.IGBannerCartaoDesktop{display:block}.IGBannerCartaoCTAParent,.IGBannerCartaoIMG{width:100%}.IGBannerCartaoCTAParent:after{top:-20px;left:50%;transform:rotate(270deg) translate(0,-50%)}.IGBannerCartaoCTA{padding:15px}}@media only screen and (max-width:767px){.IGBannerCartaoDesktopParent{padding-right:0}.IGRowOpcoesFaixas{max-width:calc(100vw - 30px);min-width:calc(100vw - 30px)}div.IGFaixaName{min-width:100%;max-width:100%;font-size:14px;border-color:transparent;padding:10px 0}#IGFaixa0{overflow:hidden}#IGNomeFaixa2,#IGNomeFaixa3,#IGNomeFaixa4{display:none}.IGFaixasContainer{padding-top:0;padding-bottom:0}.IGFaixasContainerMobile{display:block;border-top:1px solid #ccc}.IGMenuServicosOptions{display:block}.IGMenuServicosOption{width:auto}.IGMenuServicosCTATxt{padding-right:2px}}@media only screen and (max-width:599px){#IGBannerCartaoIMG01{display:none}#IGBannerCartaoIMG02,#IGBannerCartaoIMG03{display:block}.IGBannerCartaoIMG{background-image:url(https://i.imgur.com/SeWUwPY.png);background-size:contain}.IGBannerCartaoCTA{padding:25px;font-size:16px}}</style>
+<script>
+events.domReady(function()
+{
+    //Atualiza a página caso ela seja redimensionada
+    // $( window ).resize(function() {
+    //     location.reload(true);
+    // });
+
+    $('#categoriesBox').after('<div id="IGMenuServicos"><div class="container IGFaixasContainer"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa0" class="IGFaixaName active"><div>Cartão Super Empresarial</div></div><div id="IGNomeFaixa2" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;"><div>Solicitar cotação</div></div><div id="IGNomeFaixa4" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;"><div>Serviços Telecom</div></div><div id="IGNomeFaixa3" class="IGFaixaName" style="border-left: 1px solid #F0F1F1;"><div>Venda com a gente</div></div></div><div id="IGFaixa0" class="IGFaixas IGFaixaFade"></div><div id="IGFaixa2" class="IGFaixas IGFaixaFade"><div><div class="row"><div class="col-md-12 border"><h1 style="text-align: center;">Solicite uma cotação</h1> <div style="text-align: center;"> Estoque e preços são online e podem sofrer alterações a qualquer momento.</div><div class="IGMenuServicosOptions"><div class="IGMenuServicosOption"><div id="IGMenuServicosOptionB4"><div class="IGMenuServicosOptionTxt" style="border-color: #004282;">Sou cliente <b>Martins</b></div><div class="IGMenuServicosCTA"><div class="IGMenuServicosCTATxt" style="color: #004282">Clique aqui</div></div></div><div id="IGMenuServicosOptionAfter"><div>Informe o seu <b>CNPJ</b> e <b>WhatsApp</b> para contato no e-mail <b>cotacao@martins.com.br</b> que iremos te ajudar.</div><div style="text-align: center; margin-top: 15px;"><a style="font-weight: bold;" class="btn btn-primary" href="mailto:cotacao@martins.com.br" target="_blank">Enviar e-mail</a><br><br></div></div></div><div style="width: 100px;">&nbsp;</div><div class="IGMenuServicosOption"><div id="IGMenuServicosOptionRegister"><div class="IGMenuServicosOptionTxt" style="border-color: #F27934;">Não sou cliente <b>Martins</b></div><div class="IGMenuServicosCTA"><div class="IGMenuServicosCTATxt" style="color: #F27934">Clique aqui</div></div></div></div></div><br></div></div></div></div></div><div id="IGCotacaoParentMobile" class="container IGFaixasContainer IGFaixasContainerMobile"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa2Mobile" class="IGFaixaName"><div>Solicitar cotação</div></div></div></div><div class="container IGFaixasContainer IGFaixasContainerMobile"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa4Mobile" class="IGFaixaName"><div>Serviços Telecom</div></div></div></div><div class="container IGFaixasContainer IGFaixasContainerMobile"><div class="IGRowOpcoesFaixas"><div id="IGNomeFaixa3Mobile" class="IGFaixaName"><div>Venda com a gente</div></div></div></div></div>');
+
+    var IGFaixaAtual = 0; // 0 = Primeira Faixa (Parceiro)
+
+
+    if ($(window).width() < 768)
+    {
+        $('#IGCotacaoParentMobile').append($('#IGFaixa2'));
+
+        $("#IGNomeFaixa0").click(function()
+        {
+            if (IGFaixaAtual != 0)
+            {
+                $('#IGNomeFaixa2Mobile').removeClass('active');
+                $('#IGNomeFaixa0').addClass('active');
+                $('#IGFaixa2').css('display', 'none');
+                $('#IGFaixa0').css('display', 'block');
+
+                IGFaixaAtual = 0;
+            }
+        });
+
+        $("#IGNomeFaixa2Mobile").click(function()
+        {
+            if (IGFaixaAtual != 2)
+            {
+                $('#IGNomeFaixa0').removeClass('active');
+                $('#IGNomeFaixa2Mobile').addClass('active');
+                $('#IGFaixa0').css('display', 'none');
+                $('#IGFaixa2').css('display', 'block');
+
+                IGFaixaAtual = 2;
+            }
+        });
+    }
+    else
+    {
+        $("#IGNomeFaixa0").click(function()
+        {
+            if (IGFaixaAtual != 0)
+            {
+                $('#IGNomeFaixa2').removeClass('active');
+                $('#IGNomeFaixa0').addClass('active');
+                $('#IGFaixa2').css('display', 'none');
+                $('#IGFaixa0').css('display', 'block');
+
+                IGFaixaAtual = 0;
+            }
+        });
+
+        $("#IGNomeFaixa2").click(function()
+        {
+            if (IGFaixaAtual != 2)
+            {
+                $('#IGNomeFaixa0').removeClass('active');
+                $('#IGNomeFaixa2').addClass('active');
+                $('#IGFaixa0').css('display', 'none');
+                $('#IGFaixa2').css('display', 'block');
+
+                IGFaixaAtual = 2;
+            }
+        });
+    }
+    
+    $("#IGNomeFaixa3").click(function()
+    {
+        window.open("https://www.martinsatacado.com.br/venda-no-marketplace", "_blank");
+    });
+
+    $("#IGNomeFaixa4").click(function()
+    {
+        window.open("https://vendamais.martinsatacado.com.br/gestao-fiscal", "_blank");
+    });
+    
+    $("#IGNomeFaixa3Mobile").click(function()
+    {
+        window.open("https://www.martinsatacado.com.br/venda-no-marketplace", "_blank");
+    });
+
+    $("#IGNomeFaixa4Mobile").click(function()
+    {
+        window.open("https://vendamais.martinsatacado.com.br/gestao-fiscal", "_blank");
+    });
+
+    //Função clique no CTA "Sou cliente Martins"
+    $('#IGMenuServicosOptionB4').click(function(){
+        $(this).find('.IGMenuServicosCTA').css('display', 'none');
+        $('#IGMenuServicosOptionAfter').css('display', 'block');
+    });
+
+    //Função clique no CTA "Não sou cliente Martins"
+    $('#IGMenuServicosOptionRegister').click(function(){
+        window.location.href = "https://www.martinsatacado.com.br/martins/pt/BRL/register";
+    });
+
+    //Função clique no CTA "Quero Solicitar"
+    $('.IGBannerCartaoCTAParent').click(function(){
+        // window.location.href = "https://www.martinsatacado.com.br/martins/pt/BRL/login";
+        window.open("http://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&utm_medium=Site&utm_campaign=home_b2bhttp://www2.tribanco.com.br/lojista/Pages/cartao-empresarial.aspx?utm_source=BtoB&utm_medium=Site&utm_campaign=home_b2b", "_blank");
+    });
+
+    $('div.c-stickyBanner').appendTo('#IGFaixa0');
+});
+</script>

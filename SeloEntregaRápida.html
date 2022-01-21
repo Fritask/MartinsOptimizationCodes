@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script>
+    events.domReady(function(){
+        $('.product').prepend('<div class="IGFastShip"><i class="fas fa-shipping-fast"></i><div class="IGFastShipTxt">ENTREGA RÁPIDA</div></div>');
+    });
+</script>
+
+<style>
+    .IGFastShip {
+        position: absolute;
+        background: #ff9900;
+        top: 0;
+        right: 0;
+        color: #fff;
+        padding: 10px 7px;
+        display: flex;
+        font-weight: bold;
+        z-index: 1;
+    }
+    .IGFastShip .fas {
+        align-self: center;
+    }
+    .IGFastShipTxt {
+        display: none;
+    }
+    .IGFastShip:hover .fas {
+        margin-right: 5px;
+    }
+    .IGFastShip:hover .IGFastShipTxt {
+        display: block;
+    }
+</style>
+
+
+<div class="IGFastShip">
+    <i class="fas fa-shipping-fast"></i><div class="IGFastShipTxt">ENTREGA RÁPIDA</div>
+</div>
+
+<div class="IGFastShip"><i class="fas fa-shipping-fast"></i><div class="IGFastShipTxt">ENTREGA RÁPIDA</div></div>
+
+
+</html>

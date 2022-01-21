@@ -1,0 +1,80 @@
+<style>
+/* Modal Content */
+#lgpdMdAccept {
+    background-color: #fefefe;
+    margin: auto;
+    width: 70%;
+    overflow: hidden;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    height: auto;
+    padding: 10px 38px;
+    position: fixed; 
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    -webkit-box-shadow: -1px 1px 19px -5px rgba(176,176,176,1);
+    -moz-box-shadow: -1px 1px 19px -5px rgba(176,176,176,1);
+    box-shadow: -1px 1px 19px -5px rgba(176,176,176,1);
+    border: 1px solid #e2e2e2;
+    transition: all 300ms;
+    
+}
+#lgpdMdAccept.hidden{bottom: -115px;transition: all 300ms;}
+#lgpdMdAccept a.lgpdAcceptLink{color: #004282;}
+
+#lgpdMdAccept p{float: left;  width: 80%;  margin-bottom: 0;}
+#lgpdAcceptButton{float: right; background: #f67d39; border: 1px solid #fefefe;  font-size: 16px; margin: 15px 0; padding: 8px 10px; color: #fff;}
+#lgpdAcceptButton:hover{border-color: #bd500b;}
+
+@media only screen and (max-width: 949px) {
+    #lgpdMdAccept{width: 90%;padding: 8px 18px;bottom: 32px;font-size: 12px;}
+    #lgpdAcceptButton {float: initial;width: 100%;}
+    #lgpdMdAccept p{text-align: justify;width: 100%;}
+}
+</style>
+<script>
+events.domReady(function() {
+    $('body').find('main').find('footer').append('<div id="lgpdMdAccept" class="lgpd-opened hidden"><p><strong>cookies:</strong> utilizamos seus dados para analisar e personalizar nossos conteúdos e anúncios durante a sua navegação em nossa plataforma e em serviços de terceiros parceiros.<br> Ao navegar pelo site, você autoriza o Martins a coletar tais informações e utilizá-las para estas finalidades.<br><a href="/termos-de-uso" id="lgpdAcceptLink" target="_blank">Política de Privacidade</a>.</p><button id="lgpdAcceptButton">continuar e fechar</button></div>');
+    
+    // Obtém todos os cookies do documento
+    var cookies = document.cookie;
+    var urlDominio= window.location.host;
+
+    function cookieLgpd() { 
+        // Verifica se o cookie existe
+        if (cookies.indexOf("lgpdAccept") == -1) {
+            // Entra aqui caso o cookie não exista no  navegador do usuário 
+            // Crio um objeto Date do Javascript pegando a data de hoje e incrementando + 7 dias nessa data
+            var diasparaexpirar = 7;
+            var expiracao = new Date();
+            expiracao.setTime(expiracao.getTime() + (1000 * 60 * 60 * 24 * diasparaexpirar));
+
+            // Converte a data para GMT
+            expiracao = expiracao.toUTCString();
+
+            // Crio o cookie com a data de expiração
+            document.cookie = 'lgpdAccept=true; expires=' + expiracao + ';domain='+urlDominio+'; path=/';
+
+        }
+        
+    }
+    if ((cookies.indexOf("lgpdAccept") > 1)) {
+        $("#lgpdMdAccept").addClass("hidden");
+    }else{
+        $("#lgpdMdAccept").removeClass("hidden");
+    }
+
+
+    // When the user clicks anywhere outside of the modal, close it  
+
+    $("#lgpdAcceptButton").click(function(event) {        
+            $("#lgpdMdAccept").fadeOut(100);
+            $("#lgpdMdAccept").addClass("hidden");
+            cookieLgpd()
+    });
+    
+});  
+</script>
